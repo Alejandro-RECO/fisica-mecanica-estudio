@@ -1,0 +1,686 @@
+---
+titulo: Magnitudes escalares y vectoriales
+unidad: vectores
+orden: 1
+sesiones: []
+
+pregunta_guia: >
+  Dos personas empujan un carro varado, cada una con 400 N. ¿Por qué a veces el carro recibe el
+  doble de empuje y a veces no se mueve ni un centímetro, si el número es el mismo?
+prerrequisitos:
+  - unidades-y-dimensiones
+  - analisis-dimensional
+conceptos_clave:
+  - Una magnitud escalar queda completamente descrita por un valor numérico y su unidad.
+  - Una magnitud vectorial necesita además una dirección; sin ella no queda determinada.
+  - La magnitud de un vector se escribe sin flecha y nunca es negativa.
+  - Dos vectores son iguales si coinciden en magnitud y dirección, sin importar en qué punto se dibujen.
+  - El vector opuesto conserva la magnitud e invierte el sentido.
+  - El ángulo θ se mide desde el eje x positivo, en sentido antihorario y de 0° a 360°; el rango completo es lo que permite que el ángulo distinga un vector de su opuesto.
+errores_frecuentes:
+  - Creer que el vector opuesto tiene magnitud negativa
+  - Escribir un vector igualado a un número, sin la flecha
+  - Pensar que dos vectores dibujados en puntos distintos no pueden ser iguales
+  - Confundir antiparalelos con opuestos, cuando opuestos exige además magnitudes iguales
+tiempo_estudio_min: 30
+
+esencial:
+  - "Escalar: valor numérico y unidad. Vectorial: valor numérico, unidad y dirección."
+  - "El vector lleva flecha, A⃗. Su magnitud va sin flecha, |A⃗| = A, y nunca es negativa."
+  - "Iguales: misma magnitud y mismo ángulo θ, sin importar en qué punto se dibujen. θ se mide desde el eje x positivo, en antihorario, de 0° a 360°."
+  - "Opuestos: misma magnitud y dirección contraria. Antiparalelos solo exige lo segundo."
+tiempo_repaso_min: 5
+
+fuentes:
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 2
+    fecha: 2026-08-30
+    aporta: >
+      Definición de magnitud escalar: cantidad física que queda completamente descrita por un
+      valor numérico y su respectiva unidad de medida. Ejemplos: tiempo, masa, densidad y
+      temperatura, con m = 5,0 kg, t = 2,00 s y T = 10 °C. Además, que los escalares se comportan
+      como números reales y admiten suma, resta, multiplicación y división.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 3
+    fecha: 2026-08-30
+    aporta: >
+      Principio de homogeneidad dimensional al sumar magnitudes: las cantidades sumadas deben
+      tener las mismas dimensiones. Se usa en la comprobación dimensional del ejemplo.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 5
+    fecha: 2026-08-30
+    aporta: >
+      Definición de cantidad vectorial: se especifica por completo mediante un valor numérico, con
+      unidades apropiadas, y una dirección. Definición geométrica de vector como segmento de recta
+      dirigido. Ejemplos: desplazamiento, velocidad, aceleración y fuerza. Notación A⃗ con flecha.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 1
+    fecha: 2026-08-30
+    aporta: >
+      Anatomía del vector: origen (cola), punta (cabeza), magnitud y línea de acción del vector.
+      Notación de la magnitud como |A⃗| = A, la misma letra sin flecha entre barras.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 6
+    fecha: 2026-08-30
+    aporta: >
+      Infografía de otra procedencia, en estilo visual distinto al resto del documento, que
+      caracteriza el vector con tres elementos: módulo (la longitud de la flecha), dirección (la
+      recta sobre la que actúa) y sentido (hacia dónde apunta la flecha). Rotula además punto de
+      aplicación y ángulo θ como inclinación respecto de una referencia. Es el lado B de la
+      contradicción declarada.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 7
+    fecha: 2026-08-30
+    aporta: >
+      Vectores paralelos: dos vectores son paralelos si tienen la misma dirección. Vectores
+      iguales: dos vectores son iguales si tienen la misma dirección y magnitud. La figura dibuja
+      los dos vectores en puntos distintos del plano.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 8
+    fecha: 2026-08-30
+    aporta: >
+      Vectores antiparalelos: dos vectores son antiparalelos si tienen direcciones opuestas.
+      Vectores opuestos: dos vectores son opuestos si tienen la misma magnitud y dirección
+      contraria.
+  - tipo: deduccion
+    aporta: >
+      Que la magnitud nunca es negativa. Se deriva de la dia. 1, donde la magnitud es la longitud
+      del segmento entre la cola y la cabeza: una longitud no puede ser negativa. Ella no lo
+      enuncia.
+  - tipo: deduccion
+    aporta: >
+      Que un vector en el plano queda determinado por exactamente dos números, la magnitud A y el
+      ángulo θ. Se arma juntando la definición de la dia. 5 con el ángulo θ que rotula la dia. 6.
+      Ella no cuenta los datos ni escribe el par.
+  - tipo: deduccion
+    aporta: >
+      La convención completa de medida del ángulo que usa esta lección y toda la unidad: θ se mide
+      desde el eje x positivo, girando en sentido antihorario, con rango completo de 0° a 360° y en
+      grados. Es una suposición del proyecto, no de la docente: en las 28 diapositivas no hay un
+      solo ángulo con valor numérico, la dia. 6 rotula θ como inclinación respecto de una
+      referencia sin decir cuál, y la dia. 15 solo dibuja el primer cuadrante. Es la convención
+      estándar y la que hace que el coseno y el seno traigan solo el signo correcto en la lección
+      04. Duda abierta con la docente.
+  - tipo: deduccion
+    aporta: >
+      Que el rango completo de 0° a 360° es la premisa que sostiene el criterio del ángulo. Si θ
+      fuera una inclinación de recta, naturalmente módulo 180° como sugiere el rótulo de la dia. 6,
+      la condición θ_A = θ_B no distinguiría A⃗ de −A⃗ y las dos condiciones escritas con ángulo se
+      caerían.
+  - tipo: deduccion
+    aporta: >
+      Que escribir las condiciones de igualdad y de oposición con el ángulo θ las vuelve
+      independientes de cuál de las dos lecturas de la palabra dirección sea la correcta.
+  - tipo: deduccion
+    aporta: >
+      Que una misma fuerza aplicada sobre puntos distintos de un cuerpo extenso puede hacerlo girar
+      de maneras distintas, y que por eso el punto de aplicación importa físicamente aunque no sea
+      un ingrediente del vector. Es un anticipo del torque, que no aparece en ninguna de las 28
+      diapositivas de esta presentación. Se usa para explicar por qué la dia. 6 rotula el punto de
+      aplicación y la dia. 7 aun así llama iguales a dos vectores dibujados en puntos distintos.
+  - tipo: deduccion
+    aporta: >
+      La jerarquía entre las cuatro definiciones de las dia. 7 y 8: todo par de vectores iguales es
+      paralelo y todo par de opuestos es antiparalelo, pero no al revés. Ella enuncia las cuatro
+      sueltas y no dice cómo se contienen.
+  - tipo: deduccion
+    aporta: >
+      Que el vector no depende del punto donde se dibuje. Se lee de la figura de la dia. 7, que
+      pone A⃗ y B⃗ en puntos distintos del plano y aun así los llama iguales. Ella no lo enuncia.
+  - tipo: deduccion
+    aporta: >
+      El vector nulo 0⃗ como caso límite A = 0, y la suma A⃗ + (−A⃗) = 0⃗ para vectores sobre una
+      misma recta. El PDF no menciona el vector nulo y no introduce la suma hasta la dia. 9.
+  - tipo: deduccion
+    aporta: >
+      El ejemplo resuelto del carro varado y el ejercicio propuesto del dron, con todos sus
+      números. El PDF no resuelve ni un solo ejemplo numérico en sus 28 diapositivas.
+  - tipo: deduccion
+    aporta: >
+      Uso de grados para los ángulos (0°, 90°, 180° y 270°). El PDF nunca escribe un ángulo con
+      valor numérico, así que no dice si trabaja en grados o en radianes. Queda como duda declarada.
+
+confianza: media
+estado: con-dudas
+revision:
+  fecha: 2026-08-30
+  veredicto: coherente-con-reparos
+  chequeos: [aritmetica-exacta, coherencia-con-la-fuente, notacion, casos-limite]
+  observaciones:
+    - "El argumento de la lectura provisional se sostiene: bajo el modelo de tres elementos, ambas expresiones de la diapositiva 8 pierden sentido y antiparalelos pasaria a ser subconjunto de paralelos, que la presentacion separa."
+    - "La jerarquia iguales dentro de paralelos y opuestos dentro de antiparalelos, confirmada contra OpenStax 2.1."
+    - "Reparo corregido: la convencion angular no estaba declarada. Se fijo para todo el sitio (theta desde +x, antihorario, de 0 a 360 grados) y se declaro como suposicion del proyecto, porque en 28 diapositivas no hay un solo angulo con valor numerico."
+    - "Reparo corregido: el ejercicio media theta desde el norte mientras la leccion 04 la fija desde +x. Unificado."
+    - "Confianza media, no alta: la contradiccion sigue abierta y es fuente contra si misma, asi que la jerarquia de fuentes no la resuelve."
+contradicciones:
+  - afirmacion: cuántos elementos hacen falta para que un vector quede determinado
+    dice_a: >
+      La dia. 5, escrita con la plantilla de la docente, usa dos elementos: una cantidad vectorial
+      se especifica por completo mediante un valor numérico, con unidades apropiadas, y una
+      dirección.
+    dice_b: >
+      La dia. 6, una infografía de otra procedencia y en estilo visual distinto al resto del
+      documento, usa tres: módulo, dirección entendida como la recta sobre la que actúa, y sentido
+      entendido como hacia dónde apunta la flecha.
+    lectura_provisional: >-
+      el modelo de dos elementos, en el que la palabra dirección ya lleva el sentido adentro
+    por_que: >
+      Las dia. 7 y 8, también suyas, solo funcionan así: si dirección fuera únicamente la recta,
+      la expresión direcciones opuestas de la dia. 8 no significaría nada, y dos vectores
+      antiparalelos de igual magnitud caerían dentro de la definición de iguales de la dia. 7. Son
+      tres diapositivas suyas contra una infografía ajena. Queda abierta porque si el parcial
+      pregunta por los elementos de un vector, la respuesta esperada bien puede ser la terna
+      módulo, dirección y sentido, que es la que se enseña en el colegio en Colombia.
+dudas_para_docente:
+  - >
+    ¿Cuáles son los elementos de un vector: dos (valor numérico con unidades y dirección, dia. 5) o
+    tres (módulo, dirección y sentido, dia. 6)? Es exactamente la respuesta que habría que dar si
+    lo pregunta en el parcial.
+  - >
+    Cuando en la dia. 7 dice misma dirección, ¿está incluyendo el sentido? Es decir, dos vectores
+    que apuntan hacia lados contrarios, ¿tienen la misma dirección o direcciones distintas?
+  - >
+    ¿El punto de aplicación hace parte del vector? La dia. 6 lo rotula como un elemento, pero la
+    figura de la dia. 7 llama iguales a dos vectores dibujados en puntos distintos.
+  - >
+    ¿Desde qué eje y en qué sentido mide los ángulos: desde el eje x positivo girando en
+    antihorario, o desde el eje más cercano al vector? Y cuando el vector apunta hacia el
+    occidente, ¿escribe θ = 180° o θ = 0° con signo aparte? Ninguna diapositiva lo fija: la dia. 6
+    rotula θ como "inclinación respecto a una referencia" sin decir cuál, y la dia. 15 solo dibuja
+    el primer cuadrante. Aquí se asume desde el eje x positivo, en antihorario y de 0° a 360°, que
+    es la convención estándar. Importa en esta lección porque aquí se introduce el par (A, θ) y de
+    ese rango depende que el ángulo distinga un vector de su opuesto.
+  - >
+    ¿Los ángulos se trabajan en grados o en radianes? En las 28 diapositivas no aparece ni un
+    ángulo con valor numérico, así que el documento no lo dice.
+---
+
+import Nota from '../../../componentes/Nota.astro';
+import Ejemplo from '../../../componentes/Ejemplo.astro';
+import Paso from '../../../componentes/Paso.astro';
+import Ejercicio from '../../../componentes/Ejercicio.astro';
+
+## De qué se trata
+
+Un carro se vara en una vía recta. Ana y Beto se bajan a empujarlo y cada uno hace una fuerza de
+$400\ \mathrm{N}$. En un primer intento el carro sale andando con ganas; en un segundo intento, con
+las mismas dos personas y la misma fuerza de cada una, el carro no se mueve ni un centímetro. El
+número no cambió. Cambió algo que el número solo no alcanza a decir.
+
+Ese "algo" es lo que separa dos familias de cantidades en toda la física. Hay cantidades a las que
+les basta un número acompañado de su unidad para quedar completamente descritas: si te digo que una
+caja tiene una masa de $5{,}0\ \mathrm{kg}$, no te falta nada por preguntar. Y hay otras a las que,
+por más precisión que le pongas al número, siempre les falta un dato: **hacia dónde**. Decir que se
+hizo una fuerza de $400\ \mathrm{N}$ deja abierta la pregunta de si se empujó hacia adelante, hacia
+atrás o hacia el andén, y esas tres situaciones producen efectos distintos sobre el mismo carro.
+
+Las primeras se llaman **magnitudes escalares** y las segundas, **magnitudes vectoriales**. La
+herramienta que se inventó para manejar las segundas es el **vector**, y esta lección se ocupa de
+tres cosas: qué datos hacen falta para que un vector quede determinado, cuándo dos vectores son el
+mismo, y qué significa el vector opuesto. Con eso, la escena del carro varado queda resuelta.
+
+## Escalar y vectorial: dos maneras de quedar descrita
+
+Una **magnitud escalar** es una cantidad física que queda completamente descrita o definida por un
+valor numérico y su respectiva unidad de medida. Los ejemplos que da la presentación son el tiempo,
+la masa, la densidad y la temperatura:
+
+$$
+m = 5{,}0\ \mathrm{kg}
+\qquad
+t = 2{,}00\ \mathrm{s}
+\qquad
+T = 10\ {}^{\circ}\mathrm{C}
+$$
+
+Fíjate en que cada uno de esos renglones está completo. No queda ninguna pregunta pendiente sobre
+la masa de la caja después de escribir $5{,}0\ \mathrm{kg}$. Por eso los escalares se comportan como
+números reales y admiten sin más las cuatro operaciones básicas: suma, resta, multiplicación y
+división.
+
+Una **magnitud vectorial**, en cambio, se especifica por completo mediante un valor numérico, con
+unidades apropiadas, **y una dirección**. Los ejemplos que ella da son el desplazamiento, la
+velocidad, la aceleración y la fuerza. Aquí el renglón $F = 400\ \mathrm{N}$ está incompleto: es una
+respuesta a medias, porque no dice hacia dónde.
+
+<Nota tipo="clave">
+
+La diferencia no está en el número ni en la unidad, que son iguales en los dos casos. Está en si el
+número y la unidad **agotan** la descripción o no. Escalar: la agotan. Vectorial: falta la dirección.
+
+</Nota>
+
+Desde el punto de vista geométrico, un **vector** es un segmento de recta dirigido: una flecha. Esa
+representación no es un dibujo decorativo, sino la manera de guardar los dos datos al mismo tiempo.
+La longitud de la flecha guarda el valor numérico y la inclinación de la flecha guarda la dirección.
+
+## Anatomía de un vector
+
+La flecha tiene partes con nombre, y esos nombres se usan durante toda la unidad:
+
+| Parte | Qué es |
+|---|---|
+| Origen o cola | El punto donde arranca la flecha |
+| Punta o cabeza | El extremo donde está la punta de flecha |
+| Magnitud | La longitud del segmento entre la cola y la cabeza |
+| Línea de acción | La recta a la que pertenece la flecha, prolongada en los dos sentidos |
+
+La notación es lo primero que hay que fijar, porque se usa en las 28 diapositivas de la presentación
+y se va a usar en el tablero:
+
+$$
+\vec{A} \quad\text{es el vector} \qquad\qquad |\vec{A}| = A \quad\text{es su magnitud}
+$$
+
+**El vector siempre lleva flecha encima.** Su magnitud es la misma letra **sin** flecha, y se escribe
+entre barras cuando se quiere ser explícito. Son dos objetos distintos: $\vec{A}$ tiene dirección y
+$A$ no, porque $A$ es solo un número con unidades. Un renglón que iguale un vector a un número es
+falso aunque el número esté bien.
+
+<div class="amplia">
+
+De aquí se puede deducir una propiedad que la presentación no enuncia pero que se usa todo el
+tiempo. Como la magnitud es la **longitud** del segmento, y una longitud no puede ser negativa:
+
+$$
+A = |\vec{A}| \ge 0
+$$
+
+La magnitud de un vector es cero o positiva, nunca negativa. Si te da negativa, el error está antes.
+
+</div>
+
+## Dos números y una convención para el ángulo
+
+También se puede contar cuántos datos hacen falta para que el vector quede completo. En el plano, la
+magnitud es un número y la dirección se fija con un solo ángulo $\theta$, de modo que un vector queda
+determinado por una pareja de números:
+
+$$
+\vec{A} \;\longleftrightarrow\; (A,\ \theta)
+$$
+
+**Exactamente dos números en el plano, ni uno más.** Esa cuenta es la que hace posible el método de
+componentes que viene más adelante en la unidad: si dos números bastan, se puede escoger cuáles dos
+usar.
+
+Ahora bien, un ángulo suelto no dice nada mientras no se declare desde dónde se mide y hacia qué lado
+se gira. La convención que se usa en esta lección y en toda la unidad tiene **tres** partes, y hay
+que enunciarlas las tres:
+
+- **Desde dónde:** desde el **eje $x$ positivo**.
+- **Hacia qué lado:** girando en sentido **antihorario**, que es el sentido positivo.
+- **Hasta dónde:** con el **rango completo**, $0^{\circ} \le \theta \lt 360^{\circ}$, y en **grados**.
+
+Con eso, los dos símbolos del par quedan declarados así:
+
+| Símbolo | Qué es | Unidad |
+|---|---|---|
+| $A = \lvert\vec{A}\rvert$ | magnitud del vector; nunca es negativa | la de la cantidad que se describe: $\mathrm{N}$ si es una fuerza, $\mathrm{m/s}$ si es una velocidad, $\mathrm{m}$ si es un desplazamiento |
+| $\theta$ | ángulo desde el eje $x$ positivo, en sentido antihorario | grados, con $0^{\circ} \le \theta \lt 360^{\circ}$ |
+
+La tercera parte de la convención parece de trámite y no lo es: **es la que hace que el ángulo
+alcance para distinguir un vector de su opuesto.** Si el rango llegara solo hasta $180^{\circ}$
+—que es lo natural cuando uno piensa $\theta$ como la "inclinación" de la recta sobre la que está la
+flecha—, entonces $\vec{A}$ y $-\vec{A}$ tendrían el mismo $\theta$, porque comparten esa recta. Con
+el rango completo eso no ocurre: la flecha que apunta al oriente tiene $\theta = 0^{\circ}$ y la que
+apunta al occidente tiene $\theta = 180^{\circ}$, que son dos números distintos. Guarda esa premisa:
+más abajo, cuando se escriban las condiciones de igualdad y de oposición con el ángulo, todo va a
+colgar de ella.
+
+<Nota tipo="ojo">
+
+**Esta convención la pone el proyecto, no la docente.** En las 28 diapositivas de la presentación no
+hay un solo ángulo con valor numérico; la diapositiva 6 rotula $\theta$ como "inclinación respecto a
+una referencia" sin decir cuál es la referencia, y la diapositiva 15 dibuja $\theta$ desde el eje $x$
+pero solo en el primer cuadrante. Se adoptó la convención estándar —desde $+x$, antihorario, de
+$0^{\circ}$ a $360^{\circ}$— porque es la que hace que el coseno y el seno traigan ya el signo
+correcto en los cuatro cuadrantes, que es lo que se usa en la lección de componentes. La duda está
+abierta y hay que preguntársela a ella: si en el tablero mide los ángulos desde el eje más cercano al
+vector, los signos se ponen a mano y varias cosas cambian de forma.
+
+</Nota>
+
+<Nota tipo="ojo">
+
+En esta lección la palabra **dirección incluye el sentido**, que es como la usan las diapositivas 5,
+7 y 8. Pero el asunto no está cerrado: mira el recuadro del comienzo de la página. En la práctica,
+si en el parcial te piden "los elementos de un vector", lo más seguro es nombrar los tres —módulo,
+dirección y sentido— y aclarar en un renglón que en el material del curso la dirección ya trae el
+sentido adentro.
+
+</Nota>
+
+## Qué cambia si cambia cada parte
+
+Forzar los casos extremos es lo que separa entender de repetir. Toma $\vec{F}$, el empuje de Ana
+sobre el carro, con $F = 400\ \mathrm{N}$ hacia el oriente:
+
+| Si cambia esto | Qué pasa con el vector | En la escena del carro |
+|---|---|---|
+| La magnitud se duplica, $A \to 2A$ | Sigue apuntando al mismo lado, pero mide el doble | Ana empuja con $800\ \mathrm{N}$ hacia el oriente |
+| Solo cambia el ángulo $\theta$ | Mide lo mismo, pero apunta a otro lado | Ana empuja con los mismos $400\ \mathrm{N}$, pero hacia el andén |
+| El ángulo gira $180^{\circ}$ | Aparece el vector opuesto, $-\vec{F}$ | Ana deja de empujar y se pone a halar |
+| La magnitud se anula, $A \to 0$ | Queda el vector nulo $\vec{0}$: no hay flecha que dibujar y la dirección deja de significar algo | Ana no hace fuerza |
+| Solo cambia el punto donde se dibuja | No cambia nada: sigue siendo el mismo vector | Ana empuja desde el baúl en vez de desde la puerta, con la misma fuerza y hacia el mismo lado |
+
+<div class="amplia">
+
+El último renglón es el que más cuesta y es el que la figura de la diapositiva 7 muestra sin decirlo:
+ahí $\vec{A}$ y $\vec{B}$ están dibujados en puntos distintos del plano y aun así ella los llama
+iguales. **Un vector no guarda memoria de dónde lo dibujaste.** Lo que lo define es la pareja
+magnitud y dirección, y nada más.
+
+Otra cosa distinta es el efecto físico. Una misma fuerza aplicada sobre puntos distintos de un cuerpo
+extenso puede hacerlo girar de maneras distintas —empujar una puerta junto a la chapa no es lo mismo
+que empujarla junto a la bisagra—, y por eso la infografía de la diapositiva 6 rotula el punto de
+aplicación. Pero eso es una propiedad de la fuerza sobre ese cuerpo, no un ingrediente del vector: el
+vector es el mismo. Ese efecto de giro tiene nombre, se llama torque, y se estudia bastante más
+adelante en el curso; **no aparece en ninguna de las 28 diapositivas de esta presentación** y aquí
+solo se menciona para separar dos cosas que se confunden.
+
+</div>
+
+## Cuándo dos vectores son iguales, y cuándo son opuestos
+
+La presentación da cuatro definiciones en dos diapositivas. Conviene verlas juntas, porque dos de
+ellas se parecen mucho a las otras dos y en el parcial se confunden:
+
+| Nombre | Condición | Diapositiva |
+|---|---|---|
+| Paralelos | Misma dirección | 7 |
+| Iguales | Misma dirección **y** misma magnitud | 7 |
+| Antiparalelos | Direcciones opuestas | 8 |
+| Opuestos | Misma magnitud **y** dirección contraria | 8 |
+
+Escritas con el ángulo, las dos condiciones fuertes quedan sin ninguna ambigüedad. Los dos ángulos
+que aparecen abajo están medidos con la convención que ya se declaró: desde el eje $x$ positivo, en
+sentido antihorario y con el rango completo de $0^{\circ}$ a $360^{\circ}$. Dos vectores son iguales
+cuando coinciden en las dos cosas:
+
+$$
+\vec{A} = \vec{B}
+\quad\Longleftrightarrow\quad
+A = B
+\quad\text{y}\quad
+\theta_A = \theta_B
+$$
+
+Y $\vec{B}$ es el opuesto de $\vec{A}$ cuando miden lo mismo pero apuntan hacia lados contrarios, es
+decir, cuando sus ángulos difieren en media vuelta:
+
+$$
+\vec{B} = -\vec{A}
+\quad\Longleftrightarrow\quad
+B = A
+\quad\text{y}\quad
+\theta_B = \left(\theta_A + 180^{\circ}\right) \bmod 360^{\circ}
+$$
+
+Ese $\bmod 360^{\circ}$ no es adorno: es lo que devuelve el resultado al rango declarado cuando se
+pasa de una vuelta completa. Si $\theta_A = 30^{\circ}$, la suma da $210^{\circ}$ y no hay nada que
+ajustar; pero si $\theta_A = 180^{\circ}$, la suma da $360^{\circ}$, que se sale del rango, y el
+módulo lo devuelve a $\theta_B = 0^{\circ}$, que es la respuesta correcta: el opuesto de un vector
+que apunta al occidente apunta al oriente.
+
+<div class="amplia">
+
+Escribirlas con $\theta$ tiene una ventaja concreta: **no depende de cuál de las dos lecturas de la
+palabra "dirección" sea la correcta**, porque el ángulo distingue por sí solo el oriente
+($\theta = 0^{\circ}$) del occidente ($\theta = 180^{\circ}$). Ojo con la premisa de la que esto
+cuelga: distingue **porque el rango es de $0^{\circ}$ a $360^{\circ}$**. Si $\theta$ fuera la
+inclinación de la recta, con rango hasta $180^{\circ}$, oriente y occidente compartirían ángulo y la
+condición $\theta_A = \theta_B$ no separaría $\vec{A}$ de $-\vec{A}$. Mientras la duda con la docente
+siga abierta, esta —con la convención declarada al lado— es la forma segura de escribir la condición
+en una hoja de examen.
+
+De las cuatro definiciones sale una jerarquía que la presentación no dibuja pero que se deduce
+comparándolas:
+
+- Todo par de vectores **iguales** es también **paralelo**, porque la igualdad pide la misma
+  dirección y le agrega una condición sobre la magnitud. Lo contrario no vale: dos vectores pueden
+  ser paralelos y medir distinto.
+- Todo par de vectores **opuestos** es también **antiparalelo**, por la misma razón. Y otra vez, lo
+  contrario no vale: dos vectores pueden apuntar hacia lados contrarios y medir distinto, y entonces
+  son antiparalelos pero **no** opuestos.
+
+**Paralelo y antiparalelo hablan solo de la dirección. Igual y opuesto agregan una exigencia sobre
+la magnitud.** Ese es todo el asunto.
+
+</div>
+
+Falta una consecuencia del vector opuesto, que es la que resuelve la escena del carro. Si dos
+vectores están sobre una misma recta, combinarlos es sumar sus magnitudes con el signo que les
+corresponda según el sentido. Entonces, cuando un vector se combina con su opuesto:
+
+$$
+\vec{A} + (-\vec{A}) = \vec{0}
+$$
+
+Lo que quedó no es "nada": es el vector nulo, y en el caso de las fuerzas se escribe
+$0\ \mathrm{N}$, con su unidad.
+
+## El carro varado: la respuesta
+
+<Ejemplo titulo="Cuatro empujes de un carro varado">
+
+El carro está sobre una vía recta que va de oriente a occidente. Sobre él se hacen estos cuatro
+empujes, en momentos distintos:
+
+- $\vec{F}_1$: Ana empuja con $400\ \mathrm{N}$ hacia el oriente.
+- $\vec{F}_2$: Beto empuja con $400\ \mathrm{N}$ hacia el oriente, parado junto al baúl.
+- $\vec{F}_3$: en otro intento, Beto se pasa al frente y empuja con $400\ \mathrm{N}$ hacia el occidente.
+- $\vec{F}_4$: un tercero, más liviano, empuja con $200\ \mathrm{N}$ hacia el occidente.
+
+Clasifica los pares y calcula el **empuje total** —la suma de las fuerzas aplicadas— que recibe el
+carro en cada intento.
+
+<Paso n="1" razon="Antes de poner un signo o un ángulo hay que decir hacia dónde apunta el eje positivo y desde dónde se mide el ángulo. Sin eso, ningún número de los que siguen significa algo.">
+
+Se toma el eje $x$ positivo hacia el oriente, y los ángulos se miden desde ese eje en sentido
+antihorario, como quedó declarado arriba. Con esa referencia, cada empuje queda determinado por su
+par de magnitud y ángulo:
+
+$$
+\vec{F}_1 \leftrightarrow (400\ \mathrm{N},\ 0^{\circ})
+\qquad
+\vec{F}_2 \leftrightarrow (400\ \mathrm{N},\ 0^{\circ})
+$$
+
+$$
+\vec{F}_3 \leftrightarrow (400\ \mathrm{N},\ 180^{\circ})
+\qquad
+\vec{F}_4 \leftrightarrow (200\ \mathrm{N},\ 180^{\circ})
+$$
+
+</Paso>
+
+<Paso n="2" razon="La definición de vectores iguales de la diapositiva 7 pide las dos condiciones a la vez, y el punto donde está parado cada uno no entra en la cuenta.">
+
+$\vec{F}_1$ y $\vec{F}_2$ tienen la misma magnitud ($400\ \mathrm{N} = 400\ \mathrm{N}$) y el mismo
+ángulo ($0^{\circ} = 0^{\circ}$), así que son **vectores iguales**: $\vec{F}_1 = \vec{F}_2$.
+
+Que Beto esté parado junto al baúl y Ana no, es irrelevante para la igualdad de los vectores. Y por
+ser iguales, además son paralelos.
+
+</Paso>
+
+<Paso n="3" razon="La definición de vectores opuestos de la diapositiva 8 exige las dos cosas: igual magnitud y dirección contraria.">
+
+$\vec{F}_1$ y $\vec{F}_3$ miden lo mismo, $400\ \mathrm{N} = 400\ \mathrm{N}$, y sus ángulos cumplen
+la condición de media vuelta:
+
+$$
+\left(\theta_1 + 180^{\circ}\right) \bmod 360^{\circ}
+= \left(0^{\circ} + 180^{\circ}\right) \bmod 360^{\circ}
+= 180^{\circ} = \theta_3
+$$
+
+Se cumplen las dos exigencias, así que son **vectores opuestos**:
+
+$$
+\vec{F}_3 = -\vec{F}_1
+$$
+
+Ojo con lo que esto **no** dice: la magnitud de $\vec{F}_3$ sigue siendo $F_3 = 400\ \mathrm{N}$,
+positiva. El signo menos invirtió el sentido, no encogió la flecha.
+
+</Paso>
+
+<Paso n="4" razon="Este es el par que separa las dos palabras que más se confunden, y por eso es el que suele caer en el parcial.">
+
+$\vec{F}_1$ y $\vec{F}_4$ tienen ángulos que difieren en $180^{\circ}$, así que son
+**antiparalelos**. Pero $200\ \mathrm{N} \ne 400\ \mathrm{N}$, de modo que **no** son opuestos.
+
+$$
+\vec{F}_4 \ne -\vec{F}_1
+$$
+
+Antiparalelos sí, opuestos no. La condición sobre la dirección se cumple; la de la magnitud, no.
+
+</Paso>
+
+<Paso n="5" razon="Sobre una misma recta, combinar vectores es sumar magnitudes con el signo del sentido. Aquí es donde la clasificación se vuelve una respuesta física.">
+
+Primer intento, Ana y Beto del mismo lado. Los dos empujes son iguales y se refuerzan:
+
+$$
+\vec{F}_1 + \vec{F}_2 \;\longrightarrow\; 800\ \mathrm{N} \text{ hacia el oriente}
+$$
+
+Segundo intento, Beto se pasó al frente. Los dos empujes son opuestos y se cancelan:
+
+$$
+\vec{F}_1 + \vec{F}_3 = \vec{F}_1 + (-\vec{F}_1) = \vec{0}
+\;\longrightarrow\; 0\ \mathrm{N}
+$$
+
+Tercer intento, con el tercero adelante. Son antiparalelos pero no opuestos, así que no se cancelan
+del todo:
+
+$$
+\vec{F}_1 + \vec{F}_4 \;\longrightarrow\; 200\ \mathrm{N} \text{ hacia el oriente}
+$$
+
+</Paso>
+
+<Paso n="6" razon="Comprobación dimensional: sin ella no se sabe si el resultado siquiera puede ser una fuerza.">
+
+Las cuatro cantidades son fuerzas, con $[F] = MLT^{-2}$ y unidad el newton. La comprobación tiene
+tres partes:
+
+1. **Comparar magnitudes fue legítimo** porque los cuatro empujes tienen las mismas dimensiones.
+   Decir que $200\ \mathrm{N} \ne 400\ \mathrm{N}$ tiene sentido; preguntar si una fuerza es mayor
+   que una velocidad, no.
+2. **Las combinaciones respetan la homogeneidad dimensional**: se sumaron newton con newton y salió
+   newton. Si hubiera salido $\mathrm{N^2}$ o un número sin unidad, el procedimiento estaría mal.
+3. **El resultado nulo se escribió $0\ \mathrm{N}$**, no un cero pelado. Un número sin unidad no es
+   una fuerza.
+
+</Paso>
+
+</Ejemplo>
+
+Con eso, la pregunta del comienzo queda respondida. Los $400\ \mathrm{N}$ de cada persona son solo
+la **magnitud** del empuje, y la magnitud es apenas la mitad del dato. Lo que cambió entre un
+intento y otro fue la dirección: en el primero los dos empujes eran **vectores iguales** y sumaron
+$800\ \mathrm{N}$ hacia el oriente; en el segundo eran **vectores opuestos** y dieron
+$0\ \mathrm{N}$. El número era el mismo, pero el vector no, y el carro responde al vector.
+
+## Qué se malinterpreta
+
+**El error del menos que encoge.** Mucha gente lee $-\vec{A}$ como "un vector de magnitud negativa"
+o "un vector más pequeño". Ninguna de las dos. El opuesto tiene exactamente la misma magnitud,
+$|-\vec{A}| = A$, y esa magnitud es positiva; lo único que cambia es hacia dónde apunta. El error
+nace de arrastrar la intuición de los números reales, donde poner un menos sí produce algo menor que
+cero. En los vectores el signo menos no toca la longitud de la flecha: la voltea.
+
+**El error de la flecha que se olvida.** Escribir $\vec{F} = 400\ \mathrm{N}$ es un renglón falso,
+aunque el $400$ esté bien y la $\mathrm{N}$ también. A la izquierda hay un vector y a la derecha un
+número: no pueden ser iguales. Lo correcto es $|\vec{F}| = F = 400\ \mathrm{N}$, o bien
+$\vec{F} = 400\ \mathrm{N}$ hacia el oriente. Este error nace de la prisa de copiar del tablero, y es
+de los que un profesor tacha de una porque se ve desde lejos.
+
+**El error de creer que el sitio importa.** Dos flechas dibujadas en esquinas distintas de la hoja
+pueden ser el mismo vector. Si tienen la misma magnitud y la misma dirección, son iguales, y así lo
+dibuja la diapositiva 7. Lo que engaña es que en la hoja se ven separadas; pero un vector no es un
+punto del plano, es una pareja de magnitud y dirección.
+
+**El error de tratar antiparalelos y opuestos como sinónimos.** Se parecen porque las dos palabras
+hablan de vectores que apuntan hacia lados contrarios. La diferencia es que **opuestos** exige
+además que midan lo mismo. Todos los opuestos son antiparalelos; no todos los antiparalelos son
+opuestos.
+
+<Ejercicio titulo="Cuatro velocidades sobre una cancha">
+
+Un dron sobrevuela una cancha. En cuatro momentos distintos tiene estas velocidades, todas sobre la
+línea que va de sur a norte. Toma el eje $x$ positivo hacia el oriente y el eje $y$ positivo hacia el
+norte, y mide los ángulos desde el eje $x$ positivo en sentido antihorario, con el rango de
+$0^{\circ}$ a $360^{\circ}$.
+
+- $\vec{v}_1 = 12\ \mathrm{m/s}$ hacia el norte, sobre el arco occidental.
+- $\vec{v}_2 = 12\ \mathrm{m/s}$ hacia el sur.
+- $\vec{v}_3 = 12\ \mathrm{m/s}$ hacia el norte, sobre el arco oriental.
+- $\vec{v}_4 = 5\ \mathrm{m/s}$ hacia el sur.
+
+Responde:
+
+1. Escribe el par $(v, \theta)$ de cada velocidad. ¿Qué pares son iguales? ¿Cuáles son opuestos?
+   ¿Cuáles son antiparalelos sin ser opuestos?
+2. ¿Cuánto vale $\lvert\vec{v}_2\rvert$?
+3. Es cierto que $\vec{v}_2 = -\vec{v}_1$. ¿Se sigue de ahí que $v_2 = -v_1$?
+
+<div slot="solucion">
+
+**1.** Con el eje $x$ positivo hacia el oriente y los ángulos medidos desde ahí en sentido
+antihorario, el norte queda en $\theta = 90^{\circ}$ y el sur en $\theta = 270^{\circ}$. Los pares de
+magnitud y ángulo son entonces
+
+$$
+\vec{v}_1 \leftrightarrow (12\ \mathrm{m/s},\ 90^{\circ})
+\qquad
+\vec{v}_2 \leftrightarrow (12\ \mathrm{m/s},\ 270^{\circ})
+$$
+
+$$
+\vec{v}_3 \leftrightarrow (12\ \mathrm{m/s},\ 90^{\circ})
+\qquad
+\vec{v}_4 \leftrightarrow (5\ \mathrm{m/s},\ 270^{\circ})
+$$
+
+- **Iguales:** $\vec{v}_1$ y $\vec{v}_3$. Misma magnitud y mismo ángulo. Que estén sobre arcos
+  distintos de la cancha no cambia nada: el vector no depende del punto donde se dibuje.
+- **Opuestos:** $\vec{v}_1$ y $\vec{v}_2$, y también $\vec{v}_3$ y $\vec{v}_2$, porque
+  $\vec{v}_1 = \vec{v}_3$. Misma magnitud, y los ángulos cumplen la condición de media vuelta:
+  $(90^{\circ} + 180^{\circ}) \bmod 360^{\circ} = 270^{\circ}$. La condición funciona igual de
+  regreso, y ahí sí hace falta el módulo:
+  $(270^{\circ} + 180^{\circ}) \bmod 360^{\circ} = 450^{\circ} \bmod 360^{\circ} = 90^{\circ}$.
+- **Antiparalelos sin ser opuestos:** $\vec{v}_1$ y $\vec{v}_4$, y $\vec{v}_3$ y $\vec{v}_4$.
+  Apuntan hacia lados contrarios, pero $5\ \mathrm{m/s} \ne 12\ \mathrm{m/s}$.
+
+**2.** $\lvert\vec{v}_2\rvert = 12\ \mathrm{m/s}$. Positiva, aunque el dron vaya hacia el sur. La
+magnitud es la longitud de la flecha y una longitud no es negativa; el sur está guardado en el
+ángulo, en el $270^{\circ}$, no en el signo del número.
+
+**3.** No. $\vec{v}_2 = -\vec{v}_1$ es una igualdad **entre vectores** y dice que $\vec{v}_2$ mide lo
+mismo que $\vec{v}_1$ y apunta al lado contrario. Al pasar a las magnitudes, el sentido se pierde y
+lo que queda es
+
+$$
+v_2 = |\vec{v}_2| = |\vec{v}_1| = v_1 = 12\ \mathrm{m/s}
+$$
+
+Escribir $v_2 = -v_1$ diría que $12\ \mathrm{m/s} = -12\ \mathrm{m/s}$, que es falso. Aquí es donde
+se ve para qué sirve la flecha: quitarla no es un descuido de notación, cambia lo que dice el
+renglón.
+
+</div>
+
+</Ejercicio>

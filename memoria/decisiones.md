@@ -33,9 +33,13 @@ No entra el razonamiento que llevó a la decisión, solo la decisión.
 - **2026-08-30** — Bibliografía del curso: Tipler, Young & Freedman, Serway, Fishbane. No se tienen
   los libros, así que **no se citan páginas**; se usan para saber qué convención esperar. Ver
   `docs/bibliografia.md`.
-- **2026-08-30** — Trigonometría en español: se escribe `sen`, no `sin`. KaTeX no trae `\sen`, así
-  que va como `\operatorname{sen}`. Fijado al aparecer la primera función trigonométrica del sitio,
-  en `05-analisis-dimensional`.
+- **2026-08-30** — ~~Trigonometría en español: se escribe `sen`, no `sin`.~~ **Revocada el mismo día**,
+  ver la línea de abajo. Se fijó cuando ninguna fuente del curso resolvía el punto.
+- **2026-08-30** — Trigonometría: se escribe **`sin`**, con `\sin` de KaTeX. `VectoresFisica.pdf`
+  dia. 22 lo escribe así en la plantilla Beamer de la docente (`C = AB sin θ`), y ella es la
+  autoridad final aunque la convención del español sea `sen`. El único `sen` del PDF está en un
+  objeto pegado de otra herramienta. La duda sigue abierta en `dudas.md` porque `\sin` es el
+  comando por defecto de LaTeX y pudo no ser una elección suya.
 - **2026-08-30** — Una contradicción entre fuentes se declara en **una sola** lección, la que la
   origina, y las demás remiten a ella. `[leccion].astro` renderiza `<Disputa>` automáticamente desde
   el frontmatter, así que declararla en varias la repite en pantalla. La del separador decimal vive
@@ -43,3 +47,11 @@ No entra el razonamiento que llevó a la decisión, solo la decisión.
 - **2026-08-30** — Lo verificado contra una URL leída en la sesión sube de `tipo: deduccion` a
   `tipo: abierta` con `ref` y `fecha`. Dominios ya usados: `nist.gov` y `openstax.org`, permitidos en
   `.claude/settings.json` para que no haya que reaprobarlos.
+- **2026-08-30** — **Convención angular de todo el sitio:** θ se mide **desde el eje x positivo, en
+  sentido antihorario, con rango completo de 0° a 360°**, y en **grados**. Es suposición del
+  proyecto, no de la docente: en las 28 diapositivas de `VectoresFisica.pdf` no hay un solo ángulo
+  con valor numérico. Se declara en cada lección que la use y la duda está abierta en `dudas.md`.
+  El rango completo no es un detalle: sin él, θ_A = θ_B no distingue un vector de su opuesto.
+- **2026-08-30** — Los vectores se escriben **con flecha** (`\vec{A}`), nunca en negrita, y la
+  magnitud es la misma letra sin flecha. Es la notación de la docente en las 28 diapositivas.
+  OpenStax usa negrita **y** flecha; gana ella. Los unitarios llevan sombrero.

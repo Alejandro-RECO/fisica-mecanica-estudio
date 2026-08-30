@@ -41,3 +41,31 @@
     marcado exactamente 60 km/h en el velocímetro.
   ver:
     - desplazamiento
+
+# --- Vectores ---
+
+- id: vector-unitario
+  termino: Vector unitario
+  categoria: Vectores
+  definicion: >
+    Vector de magnitud exactamente 1 y sin unidades, cuyo único aporte es la dirección.
+    Se obtiene dividiendo un vector entre su propia magnitud, û = A⃗/|A⃗|, y permite escribir
+    cualquier vector como magnitud por dirección: A⃗ = |A⃗| û.
+  ejemplo: >
+    Para F⃗ = (60î + 80ĵ) N, la magnitud es 100 N y el unitario es û = 0,6î + 0,8ĵ, sin unidades.
+    Una fuerza de 250 N en esa misma dirección es 250 N · û = (150î + 200ĵ) N.
+  ver:
+    - base-cartesiana
+
+- id: base-cartesiana
+  termino: Base cartesiana
+  categoria: Vectores
+  definicion: >
+    El trío de vectores unitarios î, ĵ y k̂ que apuntan en el sentido positivo de los ejes x, y
+    y z. Son perpendiculares entre sí y permiten escribir cualquier vector como suma de sus
+    componentes.
+  ejemplo: >
+    Un desplazamiento de 3 m al oriente y 4 m al norte se escribe d⃗ = (3î + 4ĵ) m, con el eje x
+    hacia el oriente y el eje y hacia el norte.
+  ver:
+    - vector-unitario

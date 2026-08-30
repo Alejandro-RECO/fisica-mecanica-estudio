@@ -1,0 +1,789 @@
+---
+titulo: Componentes y suma analítica
+unidad: vectores
+orden: 4
+
+pregunta_guia: >
+  Un dron de domicilios hace tres tramos seguidos en direcciones distintas y termina lejos de la
+  sede. Con el método gráfico tocaría dibujarlo a escala y medir con regla. ¿Cómo se obtienen la
+  distancia y la dirección finales con números, sin dibujar nada?
+prerrequisitos:
+  - escalares-y-vectores
+  - suma-y-resta-grafica
+  - vectores-unitarios
+conceptos_clave:
+  - La componente vectorial es un vector sobre el eje; la componente escalar es un número con signo. Los une el vector unitario.
+  - Con el ángulo medido desde el eje x positivo, las fórmulas del coseno y el seno ya traen el signo correcto en los cuatro cuadrantes.
+  - Sumar vectores se reduce a sumar componentes eje por eje, porque los ejes son perpendiculares y no se mezclan.
+  - El camino de vuelta usa Pitágoras para la magnitud y la arcotangente para el ángulo, pero la arcotangente hay que ubicarla por cuadrante.
+errores_frecuentes:
+  - Sumar las componentes escalares para obtener la magnitud, como si A fuera Ax + Ay
+  - Agregarle el signo a mano a una componente cuando la fórmula ya se lo puso
+  - Aceptar el ángulo que devuelve la arcotangente sin mirar en qué cuadrante cayó el vector
+  - Dar por hecho que el coseno siempre va con x, incluso cuando el ángulo se mide desde la vertical
+tiempo_estudio_min: 45
+
+esencial:
+  - "Aₓ = A cos θ y A_y = A sin θ, con θ medido desde el eje x positivo. La fórmula ya trae el signo; no se le agrega otro a mano."
+  - "Signos por cuadrante: I (+,+) · II (−,+) · III (−,−) · IV (+,−). Son los signos del coseno y del seno, porque A nunca es negativa."
+  - "Sumar vectores es sumar componentes eje por eje: Cₓ = Aₓ + Bₓ y C_y = A_y + B_y."
+  - "De vuelta: A = √(Aₓ² + A_y²), y el ángulo se saca con arctan de los valores absolutos y se ubica por cuadrante."
+tiempo_repaso_min: 8
+
+fuentes:
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 15
+    fecha: 2026-08-30
+    aporta: >
+      La ecuación vectorial A⃗ = A⃗ₓ + A⃗_y, las componentes escalares Aₓ = A cos θ y A_y = A sen θ
+      —así, con "sen", que es literalmente como está escrito en la diapositiva—, la magnitud
+      A = √(Aₓ² + A_y²), la dirección tan θ = A_y/Aₓ, la figura del triángulo de descomposición con θ
+      medido desde el eje x, y la advertencia literal de que las componentes pueden ser positivas o
+      negativas. Esta diapositiva completa está fuera de su plantilla Beamer: es la única del bloque
+      15–18 sin barra de título, en Arial y con fórmulas serif de OpenOffice Math.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 16
+    fecha: 2026-08-30
+    aporta: >
+      El planteamiento de la tabla de signos de Aₓ y A_y en los cuatro cuadrantes. La diapositiva
+      la deja completamente vacía; es la actividad de clase, no un contenido dado.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 17
+    fecha: 2026-08-30
+    aporta: >
+      La suma analítica con vectores unitarios, con los tres pasos escritos por ella hasta llegar a
+      C⃗ = (Aₓ + Bₓ)î + (A_y + B_y)ĵ y a C⃗ = Cₓî + C_yĵ, más la figura del paralelogramo con las
+      componentes dibujadas sobre los ejes. En esa figura, Bₓî se dibuja como una flecha que apunta
+      hacia la izquierda con el unitario î sin voltear: es el respaldo directo de que el signo lo
+      carga el número Bₓ y no el vector unitario.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 18
+    fecha: 2026-08-30
+    aporta: >
+      La multiplicación de un escalar por un vector en componentes, nA⃗ = nAₓî + nA_yĵ, con el paso
+      intermedio de la distribución. Eso es todo lo que trae la diapositiva: la resta en componentes
+      no aparece en ella.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 22
+    fecha: 2026-08-30
+    aporta: >
+      C = AB sin θ, compuesto con su plantilla Beamer. Es el único "sin" del documento que sí está
+      hecho con su plantilla, y en las 28 diapositivas no hay ni un "sen" compuesto con ella.
+      Sostiene la abreviatura trigonométrica que usa esta lección.
+  - tipo: deduccion
+    aporta: >
+      La tabla de signos por cuadrante que la diapositiva 16 deja en blanco, y el argumento de por
+      qué el signo lo pone la función trigonométrica y no una regla aparte.
+  - tipo: deduccion
+    aporta: >
+      La deducción de Aₓ = A cos θ y A_y = A sin θ desde el triángulo rectángulo de la figura de la
+      diapositiva 15, y su extensión a cualquier ángulo por la definición de seno y coseno en la
+      circunferencia unitaria. Ella escribe las fórmulas ya hechas.
+  - tipo: deduccion
+    aporta: >
+      El puente A⃗ₓ = Aₓî entre la componente vectorial de la diapositiva 15 y la representación con
+      unitarios de la diapositiva 17. Ella usa las dos notaciones y nunca escribe el enlace. Que el
+      signo lo cargue el número y no el unitario no se deduce aquí: lo respalda la figura de la
+      diapositiva 17.
+  - tipo: deduccion
+    aporta: >
+      La advertencia de que arctan(A_y/Aₓ) no distingue cuadrantes opuestos, la regla del ángulo de
+      referencia para corregirla y los dos casos sobre los ejes que la regla no cubre (Aₓ = 0, y
+      A_y = 0 con Aₓ menor que cero). No aparece en ninguna diapositiva.
+  - tipo: deduccion
+    aporta: >
+      La resta en componentes, Dₓ = Aₓ − Bₓ y D_y = A_y − B_y, derivada de juntar la suma de la
+      diapositiva 17 con el caso n = −1 de la diapositiva 18. Ella nunca la escribe: la dia. 18 solo
+      trae nA⃗ = nAₓî + nA_yĵ.
+  - tipo: deduccion
+    aporta: >
+      SUPOSICIÓN DEL PROYECTO, no dato de la fuente: θ se mide desde el eje x positivo, en sentido
+      antihorario, de 0° a 360° y en grados. El PDF usa θ en las 28 diapositivas y nunca le pone un
+      valor numérico, y la figura de la dia. 15 solo dibuja el primer cuadrante, donde las
+      convenciones posibles coinciden. Toda la lección depende de esta suposición.
+  - tipo: deduccion
+    aporta: >
+      Los casos límite, el ejemplo numérico del dron y el ejercicio de la caminata, con todos sus
+      datos. En 28 diapositivas el PDF no resuelve un solo cálculo.
+
+confianza: media
+estado: revisado
+revision:
+  fecha: 2026-08-30
+  veredicto: coherente-con-reparos
+  chequeos: [aritmetica-exacta, coherencia-con-la-fuente, notacion, casos-limite]
+  observaciones:
+    - "Los dos problemas recalculados componente por componente, en doble precision y con los intermedios redondeados: sin un solo error aritmetico. Dron 198,58 m a 105,97 grados; caminata 1,598 km a 194,24 grados."
+    - "La tabla de signos por cuadrante y la regla del angulo de referencia verificadas en los cuatro cuadrantes, equivalentes a las de OpenStax."
+    - "Reparo corregido: el frontmatter citaba la diapositiva 15 con sin cuando ella escribe sen. La fuente ahora transcribe lo que ella escribe."
+    - "Reparo corregido: la tabla dejaba sin cubrir el caso A_y = 0 con A_x negativo, y el texto afirmaba que solo quedaba un caso fuera."
+    - "Confianza media, no alta: si la docente mide los angulos desde el eje mas cercano en vez de desde +x, todos los numeros del ejemplo y del ejercicio cambian. Es duda abierta."
+dudas_para_docente:
+  - "¿Los ángulos los va a dar medidos desde el eje x positivo, o desde el eje más cercano al vector? En la dia. 15 la figura mide θ desde el eje x, pero solo muestra el primer cuadrante y en las 28 diapositivas nunca aparece un ángulo con valor numérico. Todo el sitio asume, como suposición declarada y no como dato de la fuente, la convención estándar: desde el eje x positivo, en sentido antihorario, de 0° a 360°."
+  - "¿Trabaja los ángulos en grados o en radianes? El PDF no lo dice en ninguna parte. El ejemplo y el ejercicio de aquí están en grados."
+  - "¿Escribe sen o sin? El único sen del documento está en la dia. 15, y esa diapositiva completa está fuera de su plantilla: es la única del bloque 15–18 sin barra de título Beamer, en Arial y con fórmulas serif de OpenOffice Math. El único sin compuesto con su plantilla es el de la dia. 22. Es decir, no hay ni un sen hecho con su plantilla. Aquí se usa sin en todas partes, que es la lectura provisional del proyecto; el contrapeso que impide cerrar la duda es que \\sin es el comando por defecto de LaTeX y podría venir de la herramienta y no de una elección suya."
+  - "¿La diapositiva 15 es suya o prestada? Es la única del bloque 15–18 sin su plantilla Beamer, y de eso depende cuál abreviatura va a escribir en el tablero: si la lámina es prestada, el sen no es suyo y lo que ella escribe es sin."
+  - "La tabla de signos por cuadrante de la dia. 16 quedó en blanco en la presentación. ¿Lo que llenó en el tablero coincide con la tabla de esta lección?"
+---
+
+import Nota from '../../../componentes/Nota.astro';
+import Ejemplo from '../../../componentes/Ejemplo.astro';
+import Paso from '../../../componentes/Paso.astro';
+import Ejercicio from '../../../componentes/Ejercicio.astro';
+
+## De qué se trata
+
+Sumar vectores con regla y transportador funciona, pero tiene un techo bajo. Dibujas el polígono a
+escala, mides la flecha que lo cierra y lees el ángulo con el transportador: el resultado termina
+dependiendo de qué tan bien afilaste el lápiz. Con dos vectores todavía se aguanta. Con tres, el
+error se acumula y la respuesta ya no sirve ni para un parcial ni para un puente.
+
+La salida es cambiar de idioma. En lugar de tratar cada vector como una flecha entera, lo partimos en
+dos pedazos perpendiculares: cuánto avanza hacia el oriente y cuánto avanza hacia el norte. Esos dos
+pedazos son las **componentes**, y entre los dos guardan exactamente la misma información que la
+flecha original. Si sabes cuánto te moviste al oriente y cuánto al norte, ya sabes dónde quedaste;
+no hace falta nada más.
+
+La ganancia viene toda de la perpendicularidad. Como el eje horizontal y el vertical no se estorban
+—moverte hacia el oriente no te acerca ni te aleja del norte—, cada eje se puede llevar en una
+columna aparte, como dos cuentas de banco separadas. Sumar vectores se convierte entonces en sumar
+números, dos veces, y sumar números no tiene error de lápiz. Al final se rearman las dos columnas en
+una sola flecha y se recuperan su magnitud y su ángulo. Eso es la **suma analítica**, y es el método
+con el que de verdad se resuelven problemas.
+
+## Componente vectorial y componente escalar
+
+Ella escribe dos cosas que se parecen mucho y que no son lo mismo. Conviene separarlas antes de
+calcular nada, porque casi todos los errores del tema nacen de confundirlas.
+
+En la diapositiva 15 aparece esta ecuación:
+
+$$
+\vec{A} = \vec{A}_x + \vec{A}_y
+$$
+
+Fíjate en las flechas: **los tres son vectores**. $\vec{A}_x$ es la *componente vectorial* de
+$\vec{A}$ sobre el eje $x$. Es un vector de verdad, acostado sobre el eje horizontal, que apunta
+hacia un lado o hacia el otro. Lo mismo $\vec{A}_y$ sobre el eje vertical. La ecuación dice que el
+vector original es la suma de esos dos, y no es más que la regla del paralelogramo que ya viste, con
+los dos sumandos elegidos perpendiculares entre sí.
+
+En la misma diapositiva aparecen estas otras dos:
+
+$$
+A_x = A\cos\theta
+\qquad
+A_y = A\sin\theta
+$$
+
+Aquí **no hay ninguna flecha**, y eso es deliberado. $A_x$ es la *componente escalar*: un número con
+unidades y con signo, que dice cuánto mide $\vec{A}_x$ y hacia qué lado del eje apunta. La letra $A$
+sin flecha es la magnitud de $\vec{A}$, que nunca es negativa. Y $\theta$ es el ángulo medido desde
+el eje $x$ positivo.
+
+El puente entre las dos notaciones son los vectores unitarios que ya conoces:
+
+$$
+\vec{A}_x = A_x\,\hat{i}
+\qquad
+\vec{A}_y = A_y\,\hat{j}
+$$
+
+El número $A_x$ carga la magnitud **y el signo**; el unitario $\hat{i}$ carga la dirección del eje y
+nada más. Por eso una componente que apunta hacia la izquierda se escribe con $A_x$ negativo y con
+$\hat{i}$ intacto, y **no** volteando el unitario. Así lo dibuja ella: en la figura de la diapositiva
+17, la componente $B_x\hat{i}$ aparece como una flecha que apunta hacia la izquierda, y el unitario
+que la acompaña sigue escrito $\hat{i}$, sin voltear ni cambiar de signo. Lo que se volteó fue el
+número. Si sustituyes estas dos igualdades en la primera ecuación queda la forma que ella usa de la
+diapositiva 17 en adelante:
+
+$$
+\vec{A} = A_x\hat{i} + A_y\hat{j}
+$$
+
+<Nota tipo="clave">
+
+Cuando digas "la componente", pregúntate si te refieres al **vector** $\vec{A}_x$ o al **número**
+$A_x$. La ecuación $\vec{A} = \vec{A}_x + \vec{A}_y$ es cierta y es vectorial. La versión sin flechas
+$A = A_x + A_y$ es **falsa**, y es el error más caro de todo el tema.
+
+</Nota>
+
+## De dónde salen las fórmulas
+
+La figura de la diapositiva 15 tiene todo lo que hace falta. Un vector $\vec{A}$ arranca en el origen
+y forma un ángulo $\theta$ con el eje $x$ positivo. Si desde la punta bajas una perpendicular hasta
+el eje $x$, aparece un triángulo rectángulo cuyos tres lados son justamente lo que buscamos: la
+hipotenusa es el vector, de longitud $A$; el cateto **adyacente** a $\theta$ es la proyección
+horizontal, de longitud $A_x$; y el cateto **opuesto** a $\theta$ es la proyección vertical, de
+longitud $A_y$.
+
+A partir de ahí solo se aplican las definiciones de coseno y seno en un triángulo rectángulo:
+
+$$
+\cos\theta = \frac{\text{cateto adyacente}}{\text{hipotenusa}} = \frac{A_x}{A}
+\qquad
+\sin\theta = \frac{\text{cateto opuesto}}{\text{hipotenusa}} = \frac{A_y}{A}
+$$
+
+Despejando cada una se obtienen las dos fórmulas de la presentación:
+
+$$
+A_x = A\cos\theta
+\qquad
+A_y = A\sin\theta
+$$
+
+Cada símbolo, con lo que significa y en qué se mide:
+
+| Símbolo | Qué es | Unidad |
+|---|---|---|
+| $A$ | magnitud de $\vec{A}$; **nunca es negativa** | la de la cantidad: $\mathrm{m}$, $\mathrm{N}$, $\mathrm{m/s}$ |
+| $A_x$, $A_y$ | componentes escalares, con signo | la misma que $A$ |
+| $\vec{A}_x$, $\vec{A}_y$ | componentes vectoriales, sobre cada eje | la misma que $A$ |
+| $\theta$ | ángulo desde el eje $x$ positivo, en sentido antihorario | grados (adimensional) |
+| $\hat{i}$, $\hat{j}$ | unitarios de los ejes, de magnitud 1 | ninguna |
+
+Sobre $\theta$ hay que ser explícito, porque de ahí cuelga todo lo demás. Que se mida **desde el eje
+$x$ positivo, girando en sentido antihorario, de $0^\circ$ a $360^\circ$ y en grados** es una
+**suposición del proyecto, no un dato de la presentación**: en las 28 diapositivas ella usa $\theta$
+sin ponerle nunca un valor numérico, y la figura de la diapositiva 15 dibuja únicamente el primer
+cuadrante, que es justo donde todas las convenciones posibles coinciden y por eso no permite decidir.
+Se adopta esa convención porque es la estándar y porque es la única con la que el signo de cada
+componente sale solo de la función trigonométrica. Está anotada como duda abierta al final: si en el
+tablero ella mide el ángulo desde el eje más cercano al vector, las fórmulas siguen sirviendo, pero
+el signo deja de salir solo y toca ponerlo mirando el dibujo.
+
+<Nota tipo="ojo">
+
+La fórmula del seno aparece en la presentación con dos abreviaturas distintas, y **de dónde viene
+cada una es lo que decide**. El único $\mathrm{sen}$ de todo el documento está en la diapositiva 15,
+y esa diapositiva **completa está fuera de su plantilla**: es la única del bloque 15–18 sin la barra
+de título de Beamer, compuesta en Arial y con las fórmulas en la tipografía serif de OpenOffice Math.
+No es un objeto ajeno pegado dentro de una lámina suya: es una lámina entera importada. El único
+$\sin$ que sí está compuesto con su plantilla es el de la diapositiva 22, $C = AB\sin\theta$.
+
+Es **la misma función** y solo cambia la abreviatura. Aquí se escribe $\sin$ en todas partes porque
+en las 28 diapositivas no hay ni un solo $\mathrm{sen}$ hecho con su plantilla, mientras que sí hay
+un $\sin$ que lo está. Aun así, cuál de las dos espera ver en el parcial es una duda abierta y no se
+cierra en esta lección: $\sin$ también es el comando por defecto de LaTeX, así que podría venir de la
+herramienta y no de una decisión suya.
+
+</Nota>
+
+<div class="amplia">
+
+Hay un detalle que vale la pena mirar de frente, porque es lo que hace que las fórmulas sigan
+sirviendo cuando el vector no está en el primer cuadrante. **El triángulo rectángulo solo existe si
+$\theta$ está entre $0^\circ$ y $90^\circ$.** Un ángulo de $160^\circ$ no puede ser ángulo interior
+de ningún triángulo rectángulo, así que la deducción de arriba, tomada al pie de la letra, no
+aplicaría.
+
+Lo que la salva es que el seno y el coseno están definidos para **cualquier** ángulo, no solo para
+los agudos, mediante la circunferencia unitaria: $\cos\theta$ es la coordenada $x$ y $\sin\theta$ es
+la coordenada $y$ del punto que queda sobre la circunferencia de radio 1 al girar $\theta$ desde el
+eje $x$ positivo. Multiplicar por $A$ es agrandar esa circunferencia hasta radio $A$, y entonces las
+coordenadas del punto donde queda la punta del vector son exactamente $(A\cos\theta,\ A\sin\theta)$.
+
+Bajo esa definición, $A_x = A\cos\theta$ no es una extensión ni una generalización: **es la
+definición misma de la coordenada horizontal de la punta del vector**. Y de ahí sale, gratis, la
+tabla de signos de la sección siguiente.
+
+</div>
+
+## Los signos por cuadrante
+
+La diapositiva 16 plantea esta tabla y **la deja completamente vacía**: pone $A_x$ y $A_y$ en cada
+uno de los cuatro cuadrantes y ningún signo. Es la actividad de clase. Se llena aquí, y lo que
+importa no es el resultado sino el argumento, porque el argumento se transfiere y la tabla
+memorizada no.
+
+El razonamiento tiene un solo paso. La magnitud $A$ es **siempre positiva**, así que multiplicar por
+ella no puede cambiarle el signo a nada. Entonces el signo de $A_x$ es, literalmente, el signo de
+$\cos\theta$, y el signo de $A_y$ es el signo de $\sin\theta$. Y esos signos ya los conoces de la
+circunferencia unitaria: $\cos\theta$ es la coordenada horizontal del punto, que es negativa cuando
+el punto está a la izquierda del eje $y$; $\sin\theta$ es la coordenada vertical, que es negativa
+cuando el punto está por debajo del eje $x$.
+
+| Cuadrante | Rango de $\theta$ | Signo de $\cos\theta$ | Signo de $\sin\theta$ | $A_x$ | $A_y$ |
+|---|---|---|---|---|---|
+| I | $0^\circ \lt \theta \lt 90^\circ$ | $+$ | $+$ | $+$ | $+$ |
+| II | $90^\circ \lt \theta \lt 180^\circ$ | $-$ | $+$ | $-$ | $+$ |
+| III | $180^\circ \lt \theta \lt 270^\circ$ | $-$ | $-$ | $-$ | $-$ |
+| IV | $270^\circ \lt \theta \lt 360^\circ$ | $+$ | $-$ | $+$ | $-$ |
+
+Léela también al derecho y al revés. **De ida**: si te dan el ángulo, la tabla te dice qué signos
+tienen que salir, y eso es un control de errores que cuesta tres segundos. **De vuelta**: si te dan
+las componentes, los signos te dicen en qué cuadrante está el vector, y eso es exactamente lo que vas
+a necesitar para no equivocarte con la arcotangente.
+
+<Nota tipo="ojo">
+
+**La fórmula ya trae el signo. No le pongas otro.** Si $\theta = 160^\circ$, entonces
+$\cos 160^\circ$ ya es un número negativo, y escribir $A_x = -A\cos 160^\circ$ "porque el vector
+apunta hacia la izquierda" da un resultado **positivo**: dos negativos se cancelan y acabas con el
+error contrario al que querías evitar.
+
+El signo se pone a mano **solo** cuando el enunciado te da el ángulo agudo respecto al eje más
+cercano en lugar del ángulo desde el eje $x$ positivo. En ese caso calculas la magnitud de la
+componente con el ángulo agudo y le asignas el signo mirando el dibujo. Lo que no se puede es hacer
+las dos cosas.
+
+</Nota>
+
+## De componentes a magnitud y dirección
+
+Ese es el camino de ida. El de vuelta —de dos números a una flecha— es el que casi siempre pide el
+enunciado, porque la respuesta de un problema de física se da en magnitud y dirección, no en
+componentes sueltas.
+
+Como $\vec{A}_x$ y $\vec{A}_y$ son perpendiculares, el triángulo que forman con $\vec{A}$ es
+rectángulo y $\vec{A}$ es la hipotenusa. El teorema de Pitágoras da entonces la magnitud, que es la
+fórmula de la diapositiva 15:
+
+$$
+A^{2} = A_x^{2} + A_y^{2}
+\quad\Longrightarrow\quad
+A = \sqrt{A_x^{2} + A_y^{2}}
+$$
+
+Se toma solo la raíz positiva porque $A$ es una magnitud. Y fíjate en que los cuadrados borran los
+signos: no importa en qué cuadrante esté el vector, la magnitud sale positiva sola.
+
+Que esto sea consistente con las fórmulas de ida se comprueba en una línea, y de paso explica por
+qué la identidad pitagórica de trigonometría aparece justo aquí:
+
+$$
+A_x^{2} + A_y^{2} = A^{2}\cos^{2}\theta + A^{2}\sin^{2}\theta = A^{2}\left(\cos^{2}\theta + \sin^{2}\theta\right) = A^{2}
+$$
+
+Para el ángulo, la diapositiva 15 da $\tan\theta = A_y / A_x$. De dónde sale es inmediato: al dividir
+las dos componentes, la magnitud se cancela.
+
+$$
+\frac{A_y}{A_x} = \frac{A\sin\theta}{A\cos\theta} = \tan\theta
+$$
+
+Que $A$ se cancele tiene un significado físico y no es un accidente algebraico: **la dirección de un
+vector no depende de cuán largo sea**, solo de la proporción entre sus componentes. Un vector de
+$3\ \mathrm{m}$ al oriente y $4\ \mathrm{m}$ al norte apunta hacia el mismo lado que uno de
+$30\ \mathrm{m}$ y $40\ \mathrm{m}$.
+
+### La trampa de la arcotangente
+
+Aquí está el error que más caro cuesta, porque el estudiante calcula bien y entrega mal.
+
+La tangente **no distingue un vector de su opuesto**. Mira los vectores de componentes
+$(3\ \mathrm{m},\ 4\ \mathrm{m})$ y $(-3\ \mathrm{m},\ -4\ \mathrm{m})$: apuntan exactamente en
+sentidos contrarios, pero los dos dan $A_y/A_x = 4/3$. El cociente destruye la información del
+cuadrante, porque menos entre menos es más. Y como la calculadora solo puede devolver un valor,
+devuelve siempre uno entre $-90^\circ$ y $+90^\circ$, es decir, **siempre te contesta en el primer o
+en el cuarto cuadrante**, aunque tu vector esté en el segundo o en el tercero.
+
+La solución es no pedirle a la arcotangente el ángulo final. Se le pide el **ángulo de referencia**,
+que es el ángulo agudo entre el vector y el eje horizontal, y para eso se le entregan valores
+absolutos:
+
+$$
+\alpha = \arctan\left\lvert \frac{A_y}{A_x} \right\rvert
+\qquad\text{con}\qquad
+0^\circ \le \alpha \lt 90^\circ
+$$
+
+El extremo $90^\circ$ queda **excluido** y no por capricho: para que esta fórmula tenga sentido hace
+falta $A_x \neq 0$, y mientras $A_x$ no sea cero el cociente es finito y la arcotangente nunca
+alcanza los $90^\circ$. El caso $A_x = 0$ se trata aparte, unas líneas más abajo.
+
+Y después se ubica ese ángulo en el cuadrante que dicten los signos, que ya sabes leer de la tabla
+anterior:
+
+| Signos | Cuadrante | $\theta$ desde el eje $x$ positivo |
+|---|---|---|
+| $A_x \gt 0$ y $A_y \gt 0$ | I | $\theta = \alpha$ |
+| $A_x \lt 0$ y $A_y \gt 0$ | II | $\theta = 180^\circ - \alpha$ |
+| $A_x \lt 0$ y $A_y \lt 0$ | III | $\theta = 180^\circ + \alpha$ |
+| $A_x \gt 0$ y $A_y \lt 0$ | IV | $\theta = 360^\circ - \alpha$ |
+
+Fíjate en que las cuatro filas piden signos **estrictos**: todas exigen que ninguna de las dos
+componentes sea cero. Un vector acostado exactamente sobre un eje no cae en ninguna de ellas, así que
+**quedan dos casos por fuera** de la tabla, y los dos se resuelven mirando, sin calculadora.
+
+**Si $A_x = 0$**, el cociente $A_y/A_x$ ni siquiera existe y la tangente se dispara. No hay nada que
+calcular, porque el vector es vertical: $\theta = 90^\circ$ si $A_y \gt 0$ y $\theta = 270^\circ$ si
+$A_y \lt 0$.
+
+**Si $A_y = 0$**, el vector es horizontal y el ángulo de referencia sale $\alpha = 0^\circ$. Entonces
+$\theta = 0^\circ$ si $A_x \gt 0$, y $\theta = 180^\circ$ si $A_x \lt 0$. Este último —el vector
+apuntando sobre el semieje $x$ negativo— es el que se cuela sin que nadie lo note: no tiene fila
+propia en la tabla. En la práctica casi nunca hace daño, porque con $\alpha = 0^\circ$ las filas del
+segundo y del tercer cuadrante devuelven las dos $180^\circ$, que es la respuesta correcta. Pero la
+tabla no lo cubre, y conviene saberlo en vez de confiar en que la coincidencia salga bien.
+
+Y si las dos componentes son cero, el vector es nulo y no tiene dirección definida.
+
+## Sumar vectores se vuelve sumar números
+
+Con todo lo anterior, la suma sale sola. Es la deducción de la diapositiva 17, renglón por renglón.
+Partimos de dos vectores ya escritos en componentes:
+
+$$
+\vec{C} = \vec{A} + \vec{B} = \left(A_x\hat{i} + A_y\hat{j}\right) + \left(B_x\hat{i} + B_y\hat{j}\right)
+$$
+
+Como la suma de vectores es conmutativa y asociativa, se pueden reagrupar los cuatro sumandos, y
+como el producto de un escalar por un vector es distributivo, se puede factorizar cada unitario:
+
+$$
+\vec{C} = \left(A_x + B_x\right)\hat{i} + \left(A_y + B_y\right)\hat{j}
+$$
+
+Comparando con la forma general $\vec{C} = C_x\hat{i} + C_y\hat{j}$, la conclusión es que las
+componentes se suman por separado:
+
+$$
+C_x = A_x + B_x
+\qquad
+C_y = A_y + B_y
+$$
+
+Y con más de dos vectores es lo mismo, sumando más términos en cada columna. Ese es todo el método.
+
+Lo que hay que entender no es el álgebra sino **por qué se puede**: $\hat{i}$ y $\hat{j}$ apuntan en
+direcciones perpendiculares, así que ningún múltiplo de $\hat{i}$ puede aportar nada en la dirección
+de $\hat{j}$. Los dos ejes llevan cuentas independientes. Esta es la misma idea que después hace
+funcionar el movimiento de proyectiles, donde el eje horizontal y el vertical se resuelven por
+separado como si fueran dos problemas distintos.
+
+<div class="amplia">
+
+La diapositiva 18 trae una operación más, y trae exactamente una: multiplicar un vector por un escalar
+$n$ es multiplicar cada componente por $n$.
+
+$$
+n\vec{A} = n\left(A_x\hat{i} + A_y\hat{j}\right) = nA_x\hat{i} + nA_y\hat{j}
+$$
+
+Con $n$ positivo el vector se estira o se encoge sin cambiar de dirección; con $n$ negativo, además,
+se voltea. El caso $n = -1$ es el vector opuesto.
+
+**Lo que sigue ya no está en la diapositiva 18: se deduce aquí**, juntando ese caso $n = -1$ con la
+suma por componentes de la diapositiva 17. Como restar es sumar el opuesto, la **resta** no necesita
+fórmula propia. Llama $\vec{D}$ a la diferencia entre $\vec{A}$ y $\vec{B}$:
+
+$$
+\vec{D} = \vec{A} - \vec{B} = \vec{A} + (-1)\vec{B} = \left(A_x - B_x\right)\hat{i} + \left(A_y - B_y\right)\hat{j}
+$$
+
+Y comparando ese resultado con la forma general $\vec{D} = D_x\hat{i} + D_y\hat{j}$, las componentes
+de la diferencia quedan:
+
+$$
+D_x = A_x - B_x
+\qquad
+D_y = A_y - B_y
+$$
+
+Restar vectores analíticamente es restar componentes. Nada más.
+
+</div>
+
+## Qué significa cada parte
+
+Forzar los casos extremos es lo que separa entender de repetir. Cada fila de esta tabla es un control
+que puedes correr mentalmente sobre cualquier resultado.
+
+| Si pasa esto | Entonces |
+|---|---|
+| $\theta = 0^\circ$ | $A_x = A$ y $A_y = 0$. El vector está acostado sobre el eje $x$ y una sola componente carga con todo |
+| $\theta = 90^\circ$ | $A_x = 0$ y $A_y = A$. El vector es vertical y la componente horizontal desaparece |
+| $\theta = 45^\circ$ | $A_x = A_y = A/\sqrt{2} \approx 0{,}707\,A$. **No** vale $A/2$ cada una: repartir por igual no es repartir a la mitad |
+| $\lvert A_x \rvert \gt A$ | Imposible. Como $\lvert\cos\theta\rvert \le 1$, ninguna componente puede superar la magnitud. Si te pasa, hay un error aritmético |
+| $A = 0$ | Las dos componentes son cero, y al revés también: el vector nulo no tiene dirección definida |
+| $A_x$ y $A_y$ cambian de signo a la vez | El vector se voltea por completo: es $-\vec{A}$, con la misma magnitud y sentido contrario |
+| Siempre | $A_x^{2} + A_y^{2} = A^{2}$. Es el control más barato que existe para verificar una descomposición |
+
+## Ejemplo resuelto
+
+<Ejemplo titulo="El dron de domicilios, en tres tramos">
+
+Un dron sale de la sede y vuela tres tramos seguidos, todos horizontales. Los ángulos están medidos
+desde el eje $x$ positivo, en sentido antihorario, y las tres magnitudes vienen con tres cifras
+significativas:
+
+- $\vec{A}$: $500\ \mathrm{m}$ a $25^\circ$
+- $\vec{B}$: $700\ \mathrm{m}$ a $160^\circ$
+- $\vec{C}$: $300\ \mathrm{m}$ a $300^\circ$
+
+¿A qué distancia de la sede quedó, y en qué dirección?
+
+<Paso n="1" razon="Antes de escribir un número hay que declarar el marco. Un ángulo de 160° no significa nada si no se dice desde dónde se mide ni hacia qué lado se gira.">
+
+Tomo el eje $x$ positivo hacia el **oriente** y el eje $y$ positivo hacia el **norte**. Todos los
+ángulos se miden desde el eje $x$ positivo girando en sentido antihorario.
+
+Con eso ya puedo anticipar los signos, que es el control que voy a usar en cada paso:
+$\vec{A}$ cae en el cuadrante I, así que espero $(+,+)$; $\vec{B}$ en el II, espero $(-,+)$; y
+$\vec{C}$ en el IV, espero $(+,-)$.
+
+</Paso>
+
+<Paso n="2" razon="Descomponer el primer tramo. 25° está en el primer cuadrante, así que las dos componentes tienen que salir positivas — y salen. La predicción de signos ya se cumplió una vez.">
+
+$$
+\begin{aligned}
+A_x &= A\cos\theta_A = 500\ \mathrm{m} \times \cos 25^\circ = 500\ \mathrm{m} \times 0{,}9063 = 453{,}2\ \mathrm{m} \\[6pt]
+A_y &= A\sin\theta_A = 500\ \mathrm{m} \times \sin 25^\circ = 500\ \mathrm{m} \times 0{,}4226 = 211{,}3\ \mathrm{m}
+\end{aligned}
+$$
+
+</Paso>
+
+<Paso n="3" razon="El segundo tramo está en el cuadrante II. El coseno de 160° ya es negativo, así que la fórmula pone el signo sola: no hay que agregarle ninguno a mano.">
+
+$$
+\begin{aligned}
+B_x &= 700\ \mathrm{m} \times \cos 160^\circ = 700\ \mathrm{m} \times (-0{,}9397) = -657{,}8\ \mathrm{m} \\[6pt]
+B_y &= 700\ \mathrm{m} \times \sin 160^\circ = 700\ \mathrm{m} \times 0{,}3420 = 239{,}4\ \mathrm{m}
+\end{aligned}
+$$
+
+El resultado es $(-,+)$, que es justo lo que decía la tabla para el segundo cuadrante.
+
+</Paso>
+
+<Paso n="4" razon="Tercer tramo, cuadrante IV: x positivo, y negativo. Si aquí te hubiera salido la componente vertical positiva, lo más probable es que la calculadora estuviera en radianes.">
+
+$$
+\begin{aligned}
+C_x &= 300\ \mathrm{m} \times \cos 300^\circ = 300\ \mathrm{m} \times 0{,}5000 = 150{,}0\ \mathrm{m} \\[6pt]
+C_y &= 300\ \mathrm{m} \times \sin 300^\circ = 300\ \mathrm{m} \times (-0{,}8660) = -259{,}8\ \mathrm{m}
+\end{aligned}
+$$
+
+</Paso>
+
+<Paso n="5" razon="Sumar cada eje por separado. Se puede porque î y ĵ son perpendiculares: nada de lo que pasa en x afecta lo que pasa en y.">
+
+$$
+\begin{aligned}
+R_x &= A_x + B_x + C_x = 453{,}2\ \mathrm{m} - 657{,}8\ \mathrm{m} + 150{,}0\ \mathrm{m} = -54{,}6\ \mathrm{m} \\[6pt]
+R_y &= A_y + B_y + C_y = 211{,}3\ \mathrm{m} + 239{,}4\ \mathrm{m} - 259{,}8\ \mathrm{m} = 190{,}9\ \mathrm{m}
+\end{aligned}
+$$
+
+El vector resultante, en la notación de la diapositiva 17, es
+
+$$
+\vec{R} = \left(-54{,}6\ \mathrm{m}\right)\hat{i} + \left(190{,}9\ \mathrm{m}\right)\hat{j}
+$$
+
+Los signos son $(-,+)$, así que $\vec{R}$ apunta hacia el **segundo cuadrante**: al noroccidente.
+Anótalo antes de seguir, porque es lo que va a salvar el paso 7.
+
+</Paso>
+
+<Paso n="6" razon="La magnitud sale de Pitágoras. Los cuadrados borran el signo negativo de Rx, así que el resultado es positivo sin necesidad de intervenir.">
+
+$$
+R = \sqrt{R_x^{2} + R_y^{2}} = \sqrt{(-54{,}6\ \mathrm{m})^{2} + (190{,}9\ \mathrm{m})^{2}} = \sqrt{39\,424\ \mathrm{m^{2}}} = 198{,}6\ \mathrm{m}
+$$
+
+Con tres cifras significativas, $R = 199\ \mathrm{m}$.
+
+Control rápido de que el número es razonable: el dron voló
+$500\ \mathrm{m} + 700\ \mathrm{m} + 300\ \mathrm{m} = 1\,500\ \mathrm{m}$ de
+recorrido, y solo quedó a $199\ \mathrm{m}$ de la sede. Es coherente, porque los tramos apuntan a
+lados opuestos y se cancelan casi del todo. La magnitud de una suma nunca puede pasar de la suma de
+las magnitudes, y aquí está muy por debajo.
+
+</Paso>
+
+<Paso n="7" razon="Aquí es donde se pierde el punto. Se le pide a la arcotangente el ángulo de referencia con valores absolutos, y el cuadrante lo pone uno mirando los signos del paso 5.">
+
+$$
+\alpha = \arctan\left\lvert \frac{190{,}9\ \mathrm{m}}{-54{,}6\ \mathrm{m}} \right\rvert = \arctan(3{,}496) = 74{,}0^\circ
+$$
+
+Como $R_x \lt 0$ y $R_y \gt 0$, el vector está en el cuadrante II, y la tabla dice
+$\theta = 180^\circ - \alpha$:
+
+$$
+\theta = 180^\circ - 74{,}0^\circ = 106{,}0^\circ
+$$
+
+Si en cambio le hubieras entregado a la calculadora el cociente con su signo,
+$190{,}9\ \mathrm{m} / (-54{,}6\ \mathrm{m})$,
+te habría devuelto $-74{,}0^\circ$, que es una dirección del cuarto cuadrante: **exactamente la
+opuesta** a la correcta. El dron habría terminado en el suroriente en vez de en el noroccidente.
+
+</Paso>
+
+<Paso n="8" razon="Comprobación numérica de ida y vuelta: descomponer el resultado tiene que devolver las componentes de partida. Es el control más honesto que hay.">
+
+$$
+\begin{aligned}
+R\cos\theta &= 198{,}6\ \mathrm{m} \times \cos 106{,}0^\circ = -54{,}7\ \mathrm{m} \\[6pt]
+R\sin\theta &= 198{,}6\ \mathrm{m} \times \sin 106{,}0^\circ = 190{,}9\ \mathrm{m}
+\end{aligned}
+$$
+
+Frente a los $-54{,}6\ \mathrm{m}$ y $190{,}9\ \mathrm{m}$ de partida. La diferencia de una décima en
+la componente horizontal viene de haber redondeado el ángulo a $106{,}0^\circ$, no de un error de
+método.
+
+</Paso>
+
+<Paso n="9" razon="Comprobación dimensional. Es lo último que se mira antes de entregar y lo primero que delata un resultado imposible.">
+
+El coseno y el seno son cocientes entre dos longitudes, así que son **adimensionales**. Por lo tanto
+
+$$
+[A_x] = [A] \cdot 1 = L
+$$
+
+y cada término de la suma del paso 5 está en metros: solo se pueden sumar cantidades de la misma
+dimensión, y aquí todas lo son. Para la magnitud,
+
+$$
+[R] = \sqrt{L^{2} + L^{2}} = L
+$$
+
+que es lo correcto para una distancia, y por eso la respuesta va en metros. Para el ángulo,
+
+$$
+[\tan\theta] = \frac{L}{L} = 1
+$$
+
+es decir, adimensional, como debe ser el argumento de una arcotangente. Si al ir a calcular $\alpha$
+te queda un cociente con unidades sin cancelar, el error está antes.
+
+**Respuesta:** el dron quedó a $199\ \mathrm{m}$ de la sede, en la dirección $106^\circ$ medida desde
+el oriente en sentido antihorario. Como $90^\circ$ es el norte, eso es apenas $16^\circ$ hacia el
+occidente del norte.
+
+</Paso>
+
+</Ejemplo>
+
+Con eso queda respondida la pregunta del principio. **La distancia y la dirección finales no se
+miden: se calculan.** Se proyecta cada tramo sobre dos ejes perpendiculares con
+$A_x = A\cos\theta$ y $A_y = A\sin\theta$, se suman las dos columnas por separado, y se rearma el
+resultado con Pitágoras para la magnitud y con la arcotangente —ubicada por cuadrante— para el
+ángulo. Ni regla, ni transportador, ni error de lápiz.
+
+## Qué se malinterpreta
+
+**El error grande, con nombre propio: sumar las componentes para obtener la magnitud.** Es escribir
+$A = A_x + A_y$. Nace de leer la ecuación vectorial $\vec{A} = \vec{A}_x + \vec{A}_y$, que es
+perfectamente cierta, como si fuera una ecuación entre números, que es perfectamente falsa. Con
+$A_x = 3\ \mathrm{m}$ y $A_y = 4\ \mathrm{m}$ la magnitud es $5\ \mathrm{m}$, no $7\ \mathrm{m}$. La
+diferencia de $2\ \mathrm{m}$ es justamente lo que aporta el hecho de que los dos pedazos sean
+perpendiculares en lugar de ir uno detrás del otro. Por eso ella escribe las flechas donde las
+escribe: no es adorno tipográfico, es la diferencia entre dos ecuaciones distintas.
+
+**El segundo: creer que el coseno "es de $x$" y el seno "es de $y$".** Eso solo es cierto cuando
+$\theta$ se mide desde el eje $x$. Si el enunciado da el ángulo respecto a la vertical —como pasa
+casi siempre con planos inclinados y con cuerdas que cuelgan—, los papeles se intercambian y la
+componente horizontal lleva el seno. La regla que no falla es dibujar el triángulo e identificar cuál
+cateto queda **adyacente** al ángulo que te dieron: ese es el del coseno, siempre.
+
+**El tercero: poner el signo dos veces.** Ya quedó dicho arriba, pero se repite porque reaparece en
+cada parcial. Con $\theta$ medido desde el eje $x$ positivo, la función trigonométrica trae el signo
+incorporado. Agregarle un menos "porque el vector apunta hacia la izquierda" lo cancela.
+
+**El cuarto: firmar lo que diga la arcotangente.** La calculadora nunca te va a contestar con un
+ángulo del segundo o del tercer cuadrante, porque no puede. Mirar los signos de $R_x$ y $R_y$ antes
+de aceptar el ángulo cuesta cinco segundos y es la diferencia entre un vector y su opuesto.
+
+<Ejercicio titulo="La caminata que no cierra">
+
+Un excursionista camina $4{,}0\ \mathrm{km}$ en la dirección $210^\circ$ y enseguida
+$2{,}5\ \mathrm{km}$ en la dirección $40^\circ$. Los dos ángulos están medidos desde el oriente, en
+sentido antihorario.
+
+**(a)** Encuentra su desplazamiento resultante: magnitud y dirección.
+
+**(b)** ¿Qué tendría que caminar, en magnitud y dirección, para volver al punto de partida?
+
+Antes de tocar la calculadora para el ángulo, mira los signos de $R_x$ y $R_y$ y decide en qué
+cuadrante va a caer el resultado. Escríbelo. Después compara.
+
+<div slot="solucion">
+
+**(a)** Se descompone cada tramo. El primero está en el cuadrante III, así que sus dos componentes
+deben salir negativas; el segundo está en el I y las dos deben salir positivas.
+
+$$
+\begin{aligned}
+d_{1x} &= 4{,}0\ \mathrm{km} \times \cos 210^\circ = 4{,}0\ \mathrm{km} \times (-0{,}8660) = -3{,}46\ \mathrm{km} \\[6pt]
+d_{1y} &= 4{,}0\ \mathrm{km} \times \sin 210^\circ = 4{,}0\ \mathrm{km} \times (-0{,}5000) = -2{,}00\ \mathrm{km} \\[6pt]
+d_{2x} &= 2{,}5\ \mathrm{km} \times \cos 40^\circ = 2{,}5\ \mathrm{km} \times 0{,}7660 = 1{,}92\ \mathrm{km} \\[6pt]
+d_{2y} &= 2{,}5\ \mathrm{km} \times \sin 40^\circ = 2{,}5\ \mathrm{km} \times 0{,}6428 = 1{,}61\ \mathrm{km}
+\end{aligned}
+$$
+
+Se suma cada eje por separado:
+
+$$
+\begin{aligned}
+R_x &= -3{,}46\ \mathrm{km} + 1{,}92\ \mathrm{km} = -1{,}54\ \mathrm{km} \\[6pt]
+R_y &= -2{,}00\ \mathrm{km} + 1{,}61\ \mathrm{km} = -0{,}39\ \mathrm{km}
+\end{aligned}
+$$
+
+Las dos componentes son negativas, así que el resultado cae en el **cuadrante III**. Esa era la
+predicción que había que escribir antes de calcular.
+
+$$
+R = \sqrt{(-1{,}54\ \mathrm{km})^{2} + (-0{,}39\ \mathrm{km})^{2}} = \sqrt{2{,}524\ \mathrm{km^{2}}} = 1{,}59\ \mathrm{km}
+$$
+
+Con dos cifras significativas, $R = 1{,}6\ \mathrm{km}$.
+
+$$
+\alpha = \arctan\left\lvert \frac{-0{,}39\ \mathrm{km}}{-1{,}54\ \mathrm{km}} \right\rvert = \arctan(0{,}253) = 14{,}2^\circ
+$$
+
+Cuadrante III, así que $\theta = 180^\circ + \alpha = 194^\circ$.
+
+Aquí es donde la calculadora engaña de la forma más peligrosa: si le entregas el cociente con signos,
+$(-0{,}39\ \mathrm{km}) / (-1{,}54\ \mathrm{km})$, te devuelve $+14^\circ$, un ángulo del **primer**
+cuadrante que se ve
+perfectamente creíble y que apunta al lado exactamente contrario. Menos entre menos dio más y la
+información del cuadrante se perdió en la división.
+
+**Respuesta (a):** el desplazamiento resultante es de $1{,}6\ \mathrm{km}$ en la dirección
+$194^\circ$, es decir, hacia el suroccidente, casi al occidente.
+
+**(b)** Para volver al punto de partida necesita recorrer el **vector opuesto**: la misma magnitud,
+sentido contrario.
+
+$$
+-\vec{R} = \left(1{,}54\ \mathrm{km}\right)\hat{i} + \left(0{,}39\ \mathrm{km}\right)\hat{j}
+$$
+
+Ahora las dos componentes son positivas, así que el vector está en el cuadrante I y el ángulo de
+referencia es el mismo:
+
+$$
+\theta = 14^\circ
+$$
+
+**Respuesta (b):** $1{,}6\ \mathrm{km}$ en la dirección $14^\circ$, o sea $194^\circ - 180^\circ$,
+como tenía que ser: restarle media vuelta a la dirección de ida.
+
+**Comprobación dimensional.** Todas las componentes están en $\mathrm{km}$, dimensión $L$, y solo se
+suman entre sí. La magnitud queda $\sqrt{L^{2} + L^{2}} = L$, correcto para un desplazamiento. El
+argumento de la arcotangente es $L/L = 1$, adimensional. Y un control final: el excursionista caminó
+$4{,}0\ \mathrm{km} + 2{,}5\ \mathrm{km} = 6{,}5\ \mathrm{km}$ de recorrido pero solo se alejó
+$1{,}6\ \mathrm{km}$ del origen, lo cual es coherente porque los dos tramos apuntan casi en sentidos
+opuestos.
+
+</div>
+
+</Ejercicio>

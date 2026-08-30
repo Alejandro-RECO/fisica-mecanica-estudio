@@ -3,7 +3,11 @@
     "allow": [
       "WebFetch(domain:www.nist.gov)",
       "WebFetch(domain:openstax.org)",
-      "WebFetch(domain:www.bipm.org)"
+      "WebFetch(domain:www.bipm.org)",
+      "WebFetch(domain:hyperphysics.phy-astr.gsu.edu)",
+      "WebFetch(domain:katex.org)",
+      "WebFetch(domain:hyperphysics.gsu.edu)",
+      "WebFetch(domain:phys.libretexts.org)"
     ]
   }
 }

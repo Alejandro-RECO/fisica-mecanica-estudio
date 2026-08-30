@@ -33,7 +33,7 @@ Prerrequisitos del curso: Cálculo Diferencial e Integral.
 |---|---|---|---|---|
 | `magnitudes-y-medicion` | Magnitudes, unidades y medición | 1 | `semana1.pdf` (26 p, texto) · `incertidumbre_practica1.pdf` (15 p, imágenes) | `semana1.pdf` fichado y con 5 lecciones publicadas; **falta `incertidumbre_practica1.pdf`**, que cubre la parte de medición del programa |
 | `calculo-para-fisica` | Derivadas y primitivas como herramienta | transversal | `derivadasyprimitivasprint.pdf` (35 p, texto) | sin fichar |
-| `vectores` | Magnitudes escalares y vectoriales | 2 | `VectoresFisica.pdf` (28 p, imágenes) | sin fichar |
+| `vectores` | Magnitudes escalares y vectoriales | 2 | `VectoresFisica.pdf` (28 p, imágenes) | **fichado** (`memoria/sesiones/2026-08-30-vectores.md`): 6 lecciones propuestas. Sin lecciones escritas todavía. El PDF define todo y **no resuelve un solo ejemplo numérico** |
 | `cinematica-1d` | Movimiento en una dimensión | 2–4 | `cinematica1.pdf` (24 p, imágenes) · `graficas de cinematica1.pdf` (9 p, imágenes) | sin fichar |
 | `cinematica-2d` | Movimiento en el plano | 5–6 | — | sin material |
 | `dinamica` | Fuerzas y leyes de Newton | 7–8 | — | sin material |

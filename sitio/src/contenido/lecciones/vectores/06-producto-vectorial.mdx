@@ -1,0 +1,899 @@
+---
+titulo: Producto vectorial (producto cruz)
+unidad: vectores
+orden: 6
+sesiones: []
+
+pregunta_guia: >
+  Aprietas una tuerca con una llave. ¿Por qué rinde tanto empujar perpendicular al brazo y no
+  pasa absolutamente nada si jalas a lo largo de él? ¿Y por qué el giro que produces apunta a
+  una dirección donde no está ni la llave ni tu mano?
+prerrequisitos:
+  - vectores-unitarios
+  - componentes-y-suma-analitica
+  - producto-escalar
+conceptos_clave:
+  - El producto vectorial de dos vectores es otro vector, no un número.
+  - Su magnitud es AB sin θ, que es el área del paralelogramo que forman los dos vectores.
+  - Su dirección es perpendicular al plano de los dos, y el sentido lo fija la regla de la mano derecha.
+  - No es conmutativo; invertir el orden de los factores invierte el vector resultado.
+  - Se anula cuando los vectores son paralelos y es máximo cuando son perpendiculares, al revés que el producto escalar.
+  - En componentes se calcula con un determinante de 3x3 expandido por cofactores.
+errores_frecuentes:
+  - Escribir el resultado del producto cruz como un número sin dirección, igual que si fuera el producto punto
+  - Intercambiar los factores sin cambiar el signo, por costumbre del producto de números
+  - "Confundir cuál de los dos productos se anula: el cruz muere con vectores paralelos, el punto con perpendiculares"
+  - Perder el signo menos del cofactor de ĵ al expandir el determinante
+  - Escribir A⃗ × A⃗ = 0 como número en vez del vector nulo
+tiempo_estudio_min: 40
+
+esencial:
+  - "El resultado es un VECTOR: magnitud AB sin θ, dirección perpendicular al plano de los dos, sentido por la mano derecha."
+  - "Mano derecha: dedos a lo largo del primer factor, se cierran hacia el segundo por el ángulo menor, el pulgar da el sentido."
+  - "No es conmutativo: A⃗ × B⃗ = −(B⃗ × A⃗). Y A⃗ × A⃗ = 0⃗ siempre."
+  - "Paralelos (θ = 0°) da cero; perpendiculares (θ = 90°) da el máximo AB. Justo al revés que el producto punto."
+  - "En componentes: determinante con î ĵ k̂ arriba, el primer factor en la fila del medio y el segundo abajo."
+tiempo_repaso_min: 8
+
+fuentes:
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 22
+    fecha: 2026-08-30
+    aporta: >
+      Definición y nombre: "El producto vectorial de dos vectores A⃗ y B⃗ se denota con A⃗ × B⃗. Por
+      esta notación, el producto vectorial también se denomina producto cruz. El resultado del
+      producto vectorial es un nuevo vector." Escribe C⃗ = A⃗ × B⃗ y la magnitud C = AB sin θ, con
+      la función trigonométrica abreviada "sin" en su propia plantilla.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 23
+    fecha: 2026-08-30
+    aporta: >
+      Figura del disco: A⃗ y B⃗ acostados en un plano con el ángulo θ entre ellos, C⃗ = A⃗ × B⃗
+      saliendo perpendicular hacia arriba y −C⃗ = B⃗ × A⃗ hacia abajo. Al lado, la foto de una mano
+      con el rótulo "Regla de la mano derecha". De aquí sale que el resultado es perpendicular al
+      plano y que hay dos sentidos posibles.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 24
+    fecha: 2026-08-30
+    aporta: >
+      Seis viñetas ilustradas de la regla de la mano derecha, en dos filas de tres, con los vectores
+      rotulados en minúscula (a⃗, b⃗ y el resultado c⃗). La fila de arriba y la de abajo muestran el
+      mismo par de vectores con el pulgar hacia lados opuestos.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 25
+    fecha: 2026-08-30
+    aporta: >
+      Planteamiento en componentes con A⃗ = Aₓî + A_yĵ + A_zk̂ y B⃗ = Bₓî + B_yĵ + B_zk̂, el
+      producto escrito como (Aₓî + A_yĵ + A_zk̂) × (Bₓî + B_yĵ + B_zk̂), la forma de determinante
+      con î ĵ k̂ en la primera fila, y el resultado final
+      (A_yB_z − A_zB_y)î + (A_zBₓ − AₓB_z)ĵ + (AₓB_y − A_yBₓ)k̂.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 26
+    fecha: 2026-08-30
+    aporta: >
+      Los seis productos cruz entre vectores unitarios planteados con el signo igual vacío:
+      î×î=, ĵ×ĵ=, k̂×k̂=, î×ĵ=, k̂×î=, ĵ×k̂=. Es la actividad de clase; la diapositiva no trae
+      ninguna respuesta.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 27
+    fecha: 2026-08-30
+    aporta: >
+      La pregunta "¿Es conmutativo el producto vectorial?" con A⃗ × B⃗ ≟ B⃗ × A⃗ y nada más en la
+      diapositiva. No escribe la conclusión.
+  - tipo: deduccion
+    aporta: >
+      La forma compacta A⃗ × B⃗ = (AB sin θ) n̂, que junta en un solo renglón la magnitud de la
+      dia. 22 con la dirección perpendicular de la dia. 23. Es la escritura estándar del producto
+      vectorial, pero NO aparece en ninguna de las 28 diapositivas: ella escribe la magnitud y
+      dibuja la dirección por separado y nunca las une en una igualdad. SÍMBOLO DEL PROYECTO, no
+      de ella: el nombre n̂ para el unitario perpendicular al plano no está en el PDF y no debe
+      darse por sentado que lo use en el tablero.
+  - tipo: deduccion
+    aporta: >
+      Los seis productos entre unitarios que la dia. 26 deja vacíos, con su razón: los tres iguales
+      dan el vector nulo porque θ = 0, y los tres distintos dan magnitud 1 en la única dirección
+      perpendicular a ambos ejes, con el sentido que fija la mano derecha. De ahí se arma la regla
+      cíclica y los tres productos invertidos, que la diapositiva ni siquiera plantea.
+  - tipo: deduccion
+    aporta: >
+      La respuesta a la dia. 27: A⃗ × B⃗ = −(B⃗ × A⃗), obtenida invirtiendo el barrido de la mano
+      derecha y confirmada por el intercambio de las dos últimas filas del determinante de la
+      dia. 25. La figura de la dia. 23 ya lo tiene dibujado, pero ella no escribe la igualdad.
+  - tipo: deduccion
+    aporta: >
+      La expansión por cofactores del determinante de la dia. 25, que la diapositiva omite: pasa del
+      determinante al resultado final sin el paso intermedio. También la ruta alterna, distribuyendo
+      los nueve productos de unitarios, que es la primera línea que ella escribe y no desarrolla.
+  - tipo: deduccion
+    aporta: >
+      La lectura geométrica de AB sin θ como el área del paralelogramo de lados A⃗ y B⃗, y la
+      descomposición de B⃗ en parte paralela y parte perpendicular a A⃗ como origen del seno. No
+      está en el PDF.
+  - tipo: deduccion
+    aporta: >
+      El contraste sistemático entre el producto escalar y el producto vectorial: qué devuelve cada
+      uno, cuál se anula con paralelos y cuál con perpendiculares, y cuál conmuta. Las diapositivas
+      19 a 27 presentan las dos operaciones seguidas pero nunca las comparan.
+  - tipo: deduccion
+    aporta: >
+      El torque τ⃗ = r⃗ × F⃗ como situación física donde aparece el producto cruz, usado aquí para
+      responder la pregunta guía. No está en la presentación ni figura en el programa oficial de las
+      16 semanas.
+  - tipo: deduccion
+    aporta: >
+      Todos los números del ejemplo y del ejercicio, incluida la comprobación de perpendicularidad
+      con dos productos escalares. Las 28 diapositivas del PDF no resuelven un solo cálculo.
+
+confianza: alta
+estado: revisado
+revision:
+  fecha: 2026-08-30
+  veredicto: coherente-con-reparos
+  chequeos: [aritmetica-exacta, coherencia-con-la-fuente, notacion, casos-limite]
+  observaciones:
+    - "Todos los numeros recalculados: exactos, incluidas las dos comprobaciones de perpendicularidad que dan cero y el seno de 106,26 grados que da 0,96 exacto."
+    - "El ciclo de unitarios, la expansion por cofactores y las dos tablas de contraste: sin una sola fila invertida. La expansion coincide con la que ella pega al pie de la diapositiva 25."
+    - "Reparo corregido: describia el pulgar como perpendicular a la palma. Un pulgar extendido esta en el plano de la palma; seguida al pie de la letra, esa instruccion daba un resultado acostado sobre el plano de los dos vectores, que es lo que la propia leccion declara imposible."
+    - "Reparo corregido: el seno de 79,9 grados venia con el valor del angulo sin redondear, dentro del paso que ensena a verificar."
+    - "Verificado contra el syllabus renderizado que el torque no aparece en ninguna de las 16 semanas, asi que se presenta como motivacion y no como tema evaluable."
+dudas_para_docente:
+  - "¿En el parcial va a pedir el producto cruz en 3D con las tres componentes, o solo el caso plano, con los dos vectores en xy y el resultado sobre z? La dia. 25 introduce A_z k̂ sin haber explicado nunca el paso de dos a tres dimensiones —todo el bloque anterior, dia. 15 a 18, es plano— y no resuelve un solo ejemplo con números. Es la duda que más pesa para preparar el parcial, porque cambia por completo qué hay que practicar."
+  - "¿Cómo quedaron llenos en el tablero los seis productos entre unitarios de la dia. 26? Aquí están deducidos, no copiados, y conviene contrastarlos con lo que ella escribió."
+  - "En las 28 diapositivas no hay un solo ángulo con valor numérico, así que no se sabe si trabaja en grados o en radianes. El ejemplo y el ejercicio usan grados."
+  - "¿Entra el torque en el curso? El producto vectorial casi solo se usa allí, y el programa oficial de 16 semanas no lo lista: la semana 8 es fricción, planos inclinados y segunda ley aplicada al movimiento circular."
+  - "¿Escribe sen o sin? La dia. 22, que es la de este tema, trae C = AB sin θ compuesto con su plantilla Beamer, y es el respaldo principal de que aquí se escriba sin. La duda completa, con la evidencia de la dia. 15, está declarada en la lección de componentes y en dudas.md; no se repite aquí."
+---
+
+import Nota from '../../../componentes/Nota.astro';
+import Ejemplo from '../../../componentes/Ejemplo.astro';
+import Paso from '../../../componentes/Paso.astro';
+import Ejercicio from '../../../componentes/Ejercicio.astro';
+
+## De qué se trata
+
+Dos vectores dibujados desde un mismo punto hacen dos cosas a la vez: se abren un cierto ángulo y,
+al abrirse, definen un plano. El producto escalar de la lección anterior se ocupó de lo primero
+midiendo el parecido, es decir, cuánto de un vector va en la dirección del otro. Queda pendiente lo
+contrario, que es igual de físico: cuánto se **escapa** un vector de la línea del otro, y en qué
+plano ocurre esa apertura.
+
+El producto vectorial mide justamente eso, y aquí viene lo que a todo el mundo le suena raro la
+primera vez: **el resultado no es un número, es un vector**. La razón es que un número no alcanzaría
+para guardar la información. Dos vectores que se abren no solo se abren *tanto*: se abren dentro de
+un plano y con un sentido de giro, del primero hacia el segundo. Un vector sí puede cargar las tres
+cosas al tiempo. Su longitud guarda cuánto, su dirección guarda en qué plano —apuntando
+perpendicular a él, que es la única dirección que un plano señala sin ambigüedad— y su sentido
+guarda hacia qué lado se dio el giro. La docente lo dice en una línea en la diapositiva 22: "el
+resultado del producto vectorial es un nuevo vector".
+
+Y no es una invención de matemáticos. Piensa en la llave de la pregunta: empujarla perpendicular al
+brazo la hace girar, jalarla a lo largo del brazo no logra nada por fuerte que seas, y el giro que
+produces ocurre alrededor de un eje que no está ni sobre la llave ni sobre tu mano. Cuánto, en qué
+plano y hacia qué lado. Esa es exactamente la información que devuelve un producto cruz.
+
+## La magnitud: cuánto se sale un vector de la línea del otro
+
+Empecemos por el tamaño del resultado, que es lo que la diapositiva 22 escribe.
+
+Pon $\vec{A}$ y $\vec{B}$ con la cola en el mismo punto y llama $\theta$ al ángulo entre ellos,
+medido siempre por el lado corto, de modo que $0^\circ \le \theta \le 180^\circ$. Ahora parte
+$\vec{B}$ en dos pedazos perpendiculares entre sí: uno acostado sobre la línea de $\vec{A}$ y otro
+levantado perpendicularmente a esa línea. Esa descomposición es la misma que usaste para hallar
+componentes, solo que tomando como eje la dirección de $\vec{A}$ en vez del eje $x$:
+
+$$
+B_{\parallel} = B\cos\theta
+\qquad
+B_{\perp} = B\sin\theta
+$$
+
+El pedazo paralelo, $B\cos\theta$, es precisamente el que recoge el producto escalar. Al producto
+vectorial le toca el otro, el que se sale de la línea. Multiplicando la magnitud de $\vec{A}$ por esa
+parte que se escapa se obtiene la magnitud del producto cruz, que es la fórmula de la diapositiva 22:
+
+$$
+C = \lvert\vec{A}\times\vec{B}\rvert = A\,B\sin\theta
+$$
+
+Aquí $A = \lvert\vec{A}\rvert$ y $B = \lvert\vec{B}\rvert$ son las magnitudes de los dos vectores,
+cada una con sus propias unidades y siempre positivas; $\theta$ es el ángulo entre ellos, que no
+tiene unidades; y $C = \lvert\vec{C}\rvert$ es la magnitud del resultado, cuyas unidades son el
+**producto** de las de $\vec{A}$ y las de $\vec{B}$. Si los dos están en metros, $C$ queda en
+$\mathrm{m^2}$; si uno está en metros y el otro en newton, $C$ queda en $\mathrm{N\,m}$.
+
+Fíjate en un detalle que evita errores más adelante: como $\theta$ va de $0^\circ$ a $180^\circ$,
+el seno nunca es negativo. Por eso la fórmula entrega directamente una magnitud, sin necesidad de
+valor absoluto, y **jamás debe darte un número negativo**. Si te dio negativo, el ángulo que
+metiste no es el que va.
+
+Sobre la abreviatura: aquí se escribe $\sin$ porque así lo escribe ella en su plantilla en esta
+misma diapositiva 22, y la discusión completa de $\sin$ contra $\mathrm{sen}$ está en la lección de
+componentes y suma analítica.
+
+### Lo que la magnitud significa: un área
+
+Esa expresión no es un montón de símbolos. Dibuja el paralelogramo que tiene a $\vec{A}$ y a
+$\vec{B}$ como lados, con las colas juntas. Tomando a $\vec{A}$ como base, la altura del
+paralelogramo es la distancia perpendicular desde la punta de $\vec{B}$ hasta la línea de
+$\vec{A}$, y eso es exactamente $B\sin\theta$. Y el área de un paralelogramo es base por altura:
+
+$$
+\text{área} = A\,(B\sin\theta) = \lvert\vec{A}\times\vec{B}\rvert
+$$
+
+**La magnitud del producto cruz es el área del paralelogramo que forman los dos vectores.** Esta
+lectura no está en el PDF y vale la pena tenerla, porque explica sola dos cosas: por qué dos
+vectores paralelos dan cero —el paralelogramo se aplasta y no encierra nada— y por qué las unidades
+salen multiplicadas, como en cualquier área.
+
+## La dirección: la regla de la mano derecha
+
+La magnitud no termina el trabajo. La diapositiva 23 lo muestra con una figura muy clara: $\vec{A}$
+y $\vec{B}$ acostados sobre un disco, y **dos** flechas perpendiculares al disco, una que sale hacia
+arriba rotulada $\vec{C} = \vec{A}\times\vec{B}$ y otra hacia abajo rotulada
+$-\vec{C} = \vec{B}\times\vec{A}$. Ser perpendicular al plano deja dos posibilidades, y hay que
+escoger una. La que se escoge, universalmente, es la que da la **regla de la mano derecha**.
+
+Como no puedo ponerte la mano encima de la hoja, aquí va con palabras precisas. Hazlo con la mano
+mientras lees; es la única forma de que quede:
+
+1. Dibuja $\vec{A}$ y $\vec{B}$ con la cola en el mismo punto. Los dos definen un plano.
+2. Extiende la **mano derecha** —la derecha, no la otra— con los cuatro dedos estirados apuntando a
+   lo largo del **primer factor**, $\vec{A}$.
+3. Gira la muñeca hasta que puedas cerrar los dedos barriendo el ángulo $\theta$ desde $\vec{A}$
+   hacia $\vec{B}$, **por el lado corto**, sin dar la vuelta larga.
+4. Cierra los dedos. El **pulgar**, extendido y perpendicular a los dedos, apunta el sentido de
+   $\vec{A}\times\vec{B}$: queda a lo largo del eje del giro que acabas de hacer, saliendo del plano.
+
+Esas son las seis viñetas de la diapositiva 24: en la fila de arriba los dedos van de un vector al
+otro y el pulgar sale hacia arriba; en la de abajo, con los mismos dos vectores barridos al revés,
+el pulgar sale hacia abajo.
+
+Hay una versión equivalente que es más fácil de verificar solo, sin espejo. Imagina un tornillo de
+rosca derecha, de los normales, parado perpendicular al plano. Gíralo como si giraras de $\vec{A}$
+hacia $\vec{B}$ por el lado corto. **Hacia donde avanzaría el tornillo, ahí apunta
+$\vec{A}\times\vec{B}$.**
+
+Con la magnitud y el sentido juntos, la definición completa queda así:
+
+$$
+\vec{A}\times\vec{B} = \left(A\,B\sin\theta\right)\hat{n}
+$$
+
+donde $\hat{n}$ es el vector unitario perpendicular al plano de $\vec{A}$ y $\vec{B}$ que la mano
+derecha selecciona. Recuerda que un unitario no tiene unidades: todas las unidades del resultado
+vienen del factor $AB$.
+
+Dos advertencias sobre ese renglón. La primera es que **es escritura del proyecto, no de ella**: la
+diapositiva 22 da la magnitud y la diapositiva 23 dibuja la dirección, pero en las 28 diapositivas
+nunca junta las dos cosas en una sola igualdad, y el nombre $\hat{n}$ para ese unitario no aparece
+en ninguna parte del PDF. Es la notación estándar y sirve para pensar, pero no des por hecho que la
+vas a ver en el tablero con ese símbolo. La segunda es que la igualdad no es una fórmula de
+calcular: para usarla tendrías que conocer de antemano $\hat{n}$, que es justo lo que la mano
+derecha decide a ojo. Para calcular de verdad está el determinante que viene más adelante.
+
+<Nota tipo="clave" titulo="Tres precisiones donde se pierde la gente">
+
+**El barrido es por el ángulo menor.** Si lo haces por el lado largo, el pulgar sale al revés y todo
+tu resultado queda con el signo cambiado.
+
+**Los dedos arrancan en el primer factor.** En $\vec{A}\times\vec{B}$ arrancan en $\vec{A}$; en
+$\vec{B}\times\vec{A}$ arrancan en $\vec{B}$. No es lo mismo, y esa es la razón de todo lo que sigue.
+
+**El resultado no vive en el plano.** Si al terminar tu vector quedó acostado sobre el mismo plano
+de $\vec{A}$ y $\vec{B}$, algo se hizo mal. La comprobación es inmediata y la usaremos en el
+ejemplo: el resultado tiene que dar producto escalar cero contra los dos originales.
+
+</Nota>
+
+## Qué significa cada parte
+
+Forzar los extremos de la fórmula es lo que separa entender de repetir. Todo el comportamiento está
+en el $\sin\theta$, porque $A$ y $B$ solo escalan el resultado.
+
+| Si el ángulo es | El seno vale | El resultado es | Lectura física |
+|---|---|---|---|
+| $\theta = 0^\circ$ (paralelos) | $0$ | $\vec{0}$ | Ninguno se sale de la línea del otro; el paralelogramo se aplasta |
+| $\theta = 30^\circ$ | $0{,}5$ | La mitad del máximo | Solo la mitad de $\vec{B}$ se escapa de la línea de $\vec{A}$ |
+| $\theta = 90^\circ$ (perpendiculares) | $1$ | Máximo, de magnitud $AB$ | Todo $\vec{B}$ se sale de la línea de $\vec{A}$ |
+| $\theta = 150^\circ$ | $0{,}5$ | La mitad del máximo, otra vez | El seno no distingue $30^\circ$ de $150^\circ$ |
+| $\theta = 180^\circ$ (antiparalelos) | $0$ | $\vec{0}$ | Están sobre la misma recta; siguen sin encerrar área |
+
+De la primera fila sale un caso particular que conviene tener de memoria, porque aparece todo el
+tiempo al operar. Un vector es paralelo a sí mismo, así que
+
+$$
+\vec{A}\times\vec{A} = \vec{0}
+$$
+
+Y presta atención al símbolo: es el **vector nulo** $\vec{0}$, no el número $0$. Un producto cruz
+siempre devuelve un vector, incluso cuando el vector que devuelve mide cero. Escribir
+$\vec{A}\times\vec{B} = 0$ sin flecha es el mismo tipo de error que escribir
+$\vec{A}\cdot\vec{B} = \vec{0}$ con flecha: mezcla dos clases de objetos.
+
+### El contraste con el producto escalar
+
+Las dos operaciones se llaman parecido, se escriben parecido y se enseñan seguidas, así que es
+obligatorio separarlas bien. La presentación las pone una detrás de la otra —diapositivas 19 a 21 el
+punto, 22 a 27 el cruz— pero nunca las compara. Esta tabla es la comparación.
+
+| | Producto escalar $\vec{A}\cdot\vec{B}$ | Producto vectorial $\vec{A}\times\vec{B}$ |
+|---|---|---|
+| Qué devuelve | Un **escalar**: un número con unidades | Un **vector**: magnitud, dirección y sentido |
+| Fórmula | $AB\cos\theta$ | Magnitud $AB\sin\theta$, dirección $\hat{n}$ |
+| Qué mide | Cuánto de un vector va **en la dirección** del otro | Cuánto se **sale** un vector de la línea del otro |
+| Con paralelos ($\theta = 0^\circ$) | **Máximo**, vale $AB$ | **Cero** |
+| Con perpendiculares ($\theta = 90^\circ$) | **Cero** | **Máximo**, de magnitud $AB$ |
+| Al invertir el orden | No cambia: $\vec{A}\cdot\vec{B} = \vec{B}\cdot\vec{A}$ | Cambia de signo |
+| Consigo mismo | $\vec{A}\cdot\vec{A} = A^2$ | $\vec{A}\times\vec{A} = \vec{0}$ |
+
+<Nota tipo="clave">
+
+Si de esta tabla solo te llevas un renglón, que sea el de cuál se anula. **El producto punto muere
+con vectores perpendiculares; el producto cruz muere con vectores paralelos.** Están cruzados, y por
+eso se confunden. El ancla para no equivocarte no es la memoria, es la figura: dos vectores
+paralelos no encierran ningún paralelogramo y ni siquiera definen **un** plano —hay infinitos que
+los contienen—, así que no hay una dirección perpendicular que señalar. El resultado no puede ser
+otra cosa que $\vec{0}$.
+
+</Nota>
+
+## El orden sí importa: el producto cruz no es conmutativo
+
+Esta es la pregunta que la diapositiva 27 deja planteada y no responde:
+
+$$
+\vec{A}\times\vec{B} \stackrel{?}{=} \vec{B}\times\vec{A}
+$$
+
+La respuesta es **no**, y hay que decirla completa, porque el "no" a secas se olvida.
+
+Compara las dos operaciones parte por parte. Las magnitudes son idénticas: $AB\sin\theta$ y
+$BA\sin\theta$ son el mismo número, porque multiplicar escalares sí conmuta y el ángulo entre los
+dos vectores es el mismo sin importar desde cuál lo mires. La dirección tampoco cambia: los dos
+resultados son perpendiculares al mismo plano.
+
+Lo que cambia es el **sentido**. Al invertir el orden, los dedos de la mano derecha arrancan ahora
+en $\vec{B}$ y barren hacia $\vec{A}$: el mismo ángulo, pero recorrido al contrario. El pulgar se va
+para el otro lado. Mismo tamaño, misma recta, sentido opuesto, que es la definición de vector
+opuesto:
+
+$$
+\vec{A}\times\vec{B} = -\left(\vec{B}\times\vec{A}\right)
+$$
+
+A esta propiedad se le llama **anticonmutatividad**, y la figura de la diapositiva 23 ya la traía
+dibujada sin decirlo: rotula la flecha de arriba $\vec{C} = \vec{A}\times\vec{B}$ y la de abajo
+$-\vec{C} = \vec{B}\times\vec{A}$. Es la misma igualdad, en dibujo.
+
+De ella sale, de regalo, una segunda demostración de que $\vec{A}\times\vec{A} = \vec{0}$: poniendo
+$\vec{B} = \vec{A}$ en la igualdad anterior, un vector resulta ser igual a su propio opuesto, y el
+único vector que cumple eso es el nulo.
+
+<Nota tipo="ojo">
+
+Esta es **la diferencia más importante con el producto escalar**, y la fuente número uno de errores
+de signo del tema. En $\vec{A}\cdot\vec{B}$ puedes intercambiar los factores cuando quieras, como en
+cualquier multiplicación de números. En $\vec{A}\times\vec{B}$ **no puedes intercambiarlos sin
+escribir un signo menos**. Si a mitad de un desarrollo reordenas un producto cruz por comodidad y no
+pones el menos, la respuesta queda exactamente al revés: la magnitud sale bien y el sentido sale mal.
+
+</Nota>
+
+## Los productos entre î, ĵ y k̂
+
+La diapositiva 26 plantea seis productos entre vectores unitarios y los deja con el igual vacío: es
+la actividad de clase. Aquí quedan resueltos **con su razón**, que es lo que se transfiere; el
+resultado suelto se olvida.
+
+Recuerda de la lección 03 lo único que se necesita: $\hat{i}$, $\hat{j}$ y $\hat{k}$ apuntan por los
+sentidos positivos de los ejes $x$, $y$ y $z$, tienen magnitud exactamente $1$, no tienen unidades y
+son perpendiculares entre sí porque los ejes lo son.
+
+**Cada uno consigo mismo.** El ángulo es $\theta = 0^\circ$ y $\sin 0^\circ = 0$, así que los tres
+productos se anulan:
+
+$$
+\hat{i}\times\hat{i} = \vec{0}
+\qquad
+\hat{j}\times\hat{j} = \vec{0}
+\qquad
+\hat{k}\times\hat{k} = \vec{0}
+$$
+
+**Dos distintos.** Ahora $\theta = 90^\circ$ y hay que resolver las dos preguntas por separado. La
+magnitud es $(1)(1)\sin 90^\circ = 1$, de modo que el resultado es otro vector unitario. La
+dirección tiene que ser perpendicular a los dos: el único eje perpendicular a $x$ y a $y$ es el eje
+$z$, así que $\hat{i}\times\hat{j}$ solo puede ser $\hat{k}$ o $-\hat{k}$. Y el sentido lo decide la
+mano derecha: dedos a lo largo de $+x$, ciérralos hacia $+y$, y el pulgar sale hacia $+z$. Repitiendo
+el mismo razonamiento con los otros dos pares:
+
+$$
+\hat{i}\times\hat{j} = \hat{k}
+\qquad
+\hat{j}\times\hat{k} = \hat{i}
+\qquad
+\hat{k}\times\hat{i} = \hat{j}
+$$
+
+Que los tres salgan con signo positivo no es suerte. Los ejes $x$, $y$, $z$ se dibujan siempre
+formando un **sistema derecho**, elegido justamente para que la mano derecha funcione con ellos. Si
+alguien dibujara el eje $z$ al revés, estos tres signos se invertirían y se rompería todo el
+formalismo.
+
+Y por anticonmutatividad, los tres productos al revés son los opuestos:
+
+$$
+\hat{j}\times\hat{i} = -\hat{k}
+\qquad
+\hat{k}\times\hat{j} = -\hat{i}
+\qquad
+\hat{i}\times\hat{k} = -\hat{j}
+$$
+
+<Nota tipo="clave" titulo="La regla cíclica">
+
+Escribe $\hat{i}$, $\hat{j}$ y $\hat{k}$ en un círculo, en ese orden, girando en el sentido de las
+manecillas del reloj. Entonces:
+
+- Si vas **a favor** del círculo, el producto es el unitario que sigue, con signo **más**:
+  $\hat{i}\times\hat{j} = \hat{k}$.
+- Si vas **en contra**, es el que sigue con signo **menos**: $\hat{j}\times\hat{i} = -\hat{k}$.
+- Si los dos son iguales, es $\vec{0}$.
+
+Con eso te ahorras memorizar nueve resultados: memorizas un círculo. Fíjate además en que la
+diapositiva 26 pide precisamente los tres del sentido cíclico —$\hat{i}\times\hat{j}$,
+$\hat{k}\times\hat{i}$ y $\hat{j}\times\hat{k}$—, que son los tres que dan positivo.
+
+</Nota>
+
+Vale la pena ponerlo al lado de lo que hiciste con el producto escalar en la diapositiva 21, porque
+las dos listas se parecen tanto que se cruzan en la memoria:
+
+| | Producto punto | Producto cruz |
+|---|---|---|
+| Iguales | $\hat{i}\cdot\hat{i} = 1$ (un **número**) | $\hat{i}\times\hat{i} = \vec{0}$ (un **vector**) |
+| Distintos | $\hat{i}\cdot\hat{j} = 0$ (un **número**) | $\hat{i}\times\hat{j} = \hat{k}$ (un **vector**) |
+
+## La forma de determinante
+
+Ya tenemos las piezas para calcular en componentes, que es como se resuelve de verdad un problema:
+midiendo ángulos a ojo no se llega lejos. Sean, como en la diapositiva 25,
+
+$$
+\vec{A} = A_x\hat{i} + A_y\hat{j} + A_z\hat{k}
+\qquad
+\vec{B} = B_x\hat{i} + B_y\hat{j} + B_z\hat{k}
+$$
+
+donde las seis componentes son escalares con signo, cada una con las unidades de su vector.
+
+### De dónde sale el resultado
+
+El producto vectorial es **distributivo** respecto de la suma: cada término del primer factor
+multiplica a cada término del segundo. Eso es lo que autoriza la primera línea que ella escribe en
+la diapositiva 25. Pero hay que hacerlo con cuidado, porque al no ser conmutativo **no se pueden
+reordenar los factores**: lo que venga de $\vec{A}$ va siempre a la izquierda. Salen nueve términos:
+
+$$
+\begin{aligned}
+\vec{A}\times\vec{B} =\;& A_xB_x(\hat{i}\times\hat{i}) + A_xB_y(\hat{i}\times\hat{j}) + A_xB_z(\hat{i}\times\hat{k}) \\[2pt]
++\;& A_yB_x(\hat{j}\times\hat{i}) + A_yB_y(\hat{j}\times\hat{j}) + A_yB_z(\hat{j}\times\hat{k}) \\[2pt]
++\;& A_zB_x(\hat{k}\times\hat{i}) + A_zB_y(\hat{k}\times\hat{j}) + A_zB_z(\hat{k}\times\hat{k})
+\end{aligned}
+$$
+
+Los tres de la diagonal mueren, porque son un unitario consigo mismo. Los otros seis se reemplazan
+por la tabla que acabamos de construir:
+
+$$
+\begin{aligned}
+\vec{A}\times\vec{B} =\;& A_xB_y\,\hat{k} - A_xB_z\,\hat{j} - A_yB_x\,\hat{k} \\[2pt]
++\;& A_yB_z\,\hat{i} + A_zB_x\,\hat{j} - A_zB_y\,\hat{i}
+\end{aligned}
+$$
+
+Y agrupando por unitario queda el resultado que aparece al pie de la diapositiva 25:
+
+$$
+\vec{A}\times\vec{B} = (A_yB_z - A_zB_y)\,\hat{i} + (A_zB_x - A_xB_z)\,\hat{j} + (A_xB_y - A_yB_x)\,\hat{k}
+$$
+
+### El determinante es la manera de no memorizar eso
+
+Nadie se aprende seis productos con sus signos bajo presión. El determinante de $3\times3$ los
+reproduce solo, y por eso ella lo escribe:
+
+$$
+\vec{A}\times\vec{B} =
+\begin{vmatrix}
+\hat{i} & \hat{j} & \hat{k} \\
+A_x & A_y & A_z \\
+B_x & B_y & B_z
+\end{vmatrix}
+$$
+
+El orden de las filas **es** el orden de los factores: los unitarios arriba, el primer factor en la
+fila del medio y el segundo abajo. Intercambiar los dos vectores es intercambiar las dos últimas
+filas, y una propiedad conocida de los determinantes dice que eso cambia el signo del resultado. La
+anticonmutatividad que dedujimos con la mano quedó codificada en la notación.
+
+La diapositiva 25 escribe el determinante, pone el signo igual y salta directamente al resultado.
+El paso que falta es la **expansión por cofactores** a lo largo de la primera fila. Cada unitario se
+multiplica por el determinante $2\times2$ que queda al tapar su fila y su columna, y los signos
+alternan $+$, $-$, $+$:
+
+$$
+\vec{A}\times\vec{B} =
+\hat{i}
+\begin{vmatrix} A_y & A_z \\ B_y & B_z \end{vmatrix}
+-\;\hat{j}
+\begin{vmatrix} A_x & A_z \\ B_x & B_z \end{vmatrix}
++\;\hat{k}
+\begin{vmatrix} A_x & A_y \\ B_x & B_y \end{vmatrix}
+$$
+
+Cada determinante de $2\times2$ es la diagonal principal menos la otra:
+
+$$
+\vec{A}\times\vec{B} = (A_yB_z - A_zB_y)\,\hat{i} - (A_xB_z - A_zB_x)\,\hat{j} + (A_xB_y - A_yB_x)\,\hat{k}
+$$
+
+<Nota tipo="ojo" titulo="El menos del cofactor de ĵ">
+
+Compara ese renglón con el de la diapositiva 25 y verás que el término del medio se ve distinto:
+ella escribe $(A_zB_x - A_xB_z)\,\hat{j}$ con signo más. **Es lo mismo**, porque meter el menos
+dentro del paréntesis invierte los dos términos:
+
+$$
+-\,(A_xB_z - A_zB_x) = (A_zB_x - A_xB_z)
+$$
+
+El error clásico es expandir con los tres signos en $+$ y quedarse con la componente $y$ invertida.
+El resultado sale con la magnitud correcta y apuntando a un lado que no es, y lo peor es que se ve
+razonable. Por eso la comprobación del ejemplo que sigue no es opcional: un vector con la componente
+$y$ volteada ya **no** es perpendicular a los originales, y el producto escalar lo delata en seis
+multiplicaciones.
+
+</Nota>
+
+## Un caso con números
+
+Las 28 diapositivas del PDF no resuelven un solo cálculo, así que este ejemplo es del proyecto, no
+de ella. El planteamiento sí sigue exactamente su notación.
+
+<Ejemplo titulo="Producto cruz con determinante, y cómo comprobar que no te equivocaste">
+
+Dados $\vec{A} = (2\,\hat{i} + 3\,\hat{j} - \hat{k})\ \mathrm{m}$ y
+$\vec{B} = (4\,\hat{i} - \hat{j} + 2\,\hat{k})\ \mathrm{m}$, calcula $\vec{A}\times\vec{B}$, halla su
+magnitud y verifica el resultado por dos caminos independientes.
+
+<Paso n="1" razon="Antes de escribir nada hay que fijar quién es el primer factor, porque el orden decide el signo. El enunciado pide A×B, así que A va en la fila del medio.">
+
+Las componentes escalares, con su signo y sus unidades, son
+
+$$
+A_x = 2\ \mathrm{m}, \quad A_y = 3\ \mathrm{m}, \quad A_z = -1\ \mathrm{m}
+$$
+
+$$
+B_x = 4\ \mathrm{m}, \quad B_y = -1\ \mathrm{m}, \quad B_z = 2\ \mathrm{m}
+$$
+
+Ojo con $A_z$ y $B_y$: cuando un término se escribe $-\hat{k}$, la componente es $-1$, no $1$. Ese
+signo perdido es el error de arranque más común.
+
+</Paso>
+
+<Paso n="2" razon="Se saca la unidad afuera del determinante. Todas las entradas están en metros, así que cada producto de dos entradas dará metros cuadrados: el resultado será un área.">
+
+$$
+\vec{A}\times\vec{B} =
+\begin{vmatrix}
+\hat{i} & \hat{j} & \hat{k} \\
+2 & 3 & -1 \\
+4 & -1 & 2
+\end{vmatrix}
+\ \mathrm{m^2}
+$$
+
+</Paso>
+
+<Paso n="3" razon="Expansión por cofactores a lo largo de la primera fila. El signo menos del término de ĵ es del cofactor, no del cálculo: se escribe aunque los números de adentro salgan positivos.">
+
+$$
+\vec{A}\times\vec{B} =
+\hat{i}\left[(3)(2) - (-1)(-1)\right]
+-\;\hat{j}\left[(2)(2) - (-1)(4)\right]
++\;\hat{k}\left[(2)(-1) - (3)(4)\right]
+$$
+
+Resolviendo cada corchete por separado, con cuidado con los signos:
+
+$$
+\begin{aligned}
+\hat{i}: \quad & 6 - 1 = 5 \\[2pt]
+\hat{j}: \quad & -\left[4 - (-4)\right] = -8 \\[2pt]
+\hat{k}: \quad & -2 - 12 = -14
+\end{aligned}
+$$
+
+</Paso>
+
+<Paso n="4" razon="El resultado se escribe como vector y con unidades. Un producto cruz que termina en un número pelado está mal por definición.">
+
+$$
+\vec{A}\times\vec{B} = (5\,\hat{i} - 8\,\hat{j} - 14\,\hat{k})\ \mathrm{m^2}
+$$
+
+</Paso>
+
+<Paso n="5" razon="Primera verificación, y la más barata que existe: el resultado tiene que ser perpendicular a los dos vectores originales, así que su producto escalar con cada uno debe dar cero.">
+
+$$
+\vec{A}\cdot(\vec{A}\times\vec{B}) = (2)(5) + (3)(-8) + (-1)(-14) = 10 - 24 + 14 = 0
+$$
+
+$$
+\vec{B}\cdot(\vec{A}\times\vec{B}) = (4)(5) + (-1)(-8) + (2)(-14) = 20 + 8 - 28 = 0
+$$
+
+Los dos dan cero, en unidades de $\mathrm{m}\cdot\mathrm{m^2} = \mathrm{m^3}$. El vector calculado es
+perpendicular al plano de $\vec{A}$ y $\vec{B}$, como debe ser. Si alguno de los dos no hubiera dado
+cero, el error estaría en la expansión y casi siempre es el signo del cofactor.
+
+</Paso>
+
+<Paso n="6" razon="Segunda verificación, por un camino completamente distinto: la magnitud calculada por componentes debe coincidir con AB sin θ, que es la fórmula de la diapositiva 22.">
+
+La magnitud por componentes, con Pitágoras en tres dimensiones:
+
+$$
+\lvert\vec{A}\times\vec{B}\rvert = \sqrt{(5)^2 + (-8)^2 + (-14)^2} = \sqrt{285} = 16{,}88\ \mathrm{m^2}
+$$
+
+Las magnitudes de los originales y su producto escalar:
+
+$$
+A = \sqrt{4 + 9 + 1} = \sqrt{14}\ \mathrm{m},
+\qquad
+B = \sqrt{16 + 1 + 4} = \sqrt{21}\ \mathrm{m}
+$$
+
+$$
+AB = \sqrt{294} = 17{,}146\ \mathrm{m^2}
+$$
+
+$$
+\vec{A}\cdot\vec{B} = (2)(4) + (3)(-1) + (-1)(2) = 3\ \mathrm{m^2}
+$$
+
+De ahí sale el ángulo. Los $\mathrm{m^2}$ se cancelan arriba y abajo, como debe ser, porque un
+coseno no tiene unidades:
+
+$$
+\cos\theta = \frac{3\ \mathrm{m^2}}{17{,}146\ \mathrm{m^2}} = 0{,}17496
+\quad\Longrightarrow\quad
+\theta = 79{,}9^\circ
+$$
+
+Con ese ángulo, $\sin 79{,}9^\circ \approx 0{,}9845$, y la fórmula de la diapositiva 22 da
+
+$$
+AB\sin\theta = (17{,}146\ \mathrm{m^2})(0{,}9845) = 16{,}88\ \mathrm{m^2}
+$$
+
+Coincide con $\sqrt{285}$. Dos rutas independientes dieron el mismo número, así que el resultado
+está cerrado.
+
+</Paso>
+
+<Paso n="7" razon="Comprobación dimensional. Toda respuesta se revisa contra las dimensiones antes de entregarla, y aquí además la respuesta tiene una lectura geométrica que se puede verificar.">
+
+Los dos vectores son longitudes, así que
+
+$$
+[\vec{A}\times\vec{B}] = L \cdot L = L^{2}
+$$
+
+y la respuesta quedó en $\mathrm{m^2}$, que es dimensión de área. Coherente. Si hubiera salido en
+$\mathrm{m}$ o en $\mathrm{m^3}$, el error estaría en el manejo de las unidades.
+
+Y hay más: ese $16{,}88\ \mathrm{m^2}$ **es** literalmente el área del paralelogramo que forman
+$\vec{A}$ y $\vec{B}$. Como el ángulo entre ellos es de casi $80^\circ$, el paralelogramo es casi un
+rectángulo, y en efecto el área resultó muy cerca del máximo posible $AB = 17{,}15\ \mathrm{m^2}$,
+que es lo que valdría si fueran exactamente perpendiculares. Todo cuadra.
+
+</Paso>
+
+</Ejemplo>
+
+## Qué se malinterpreta
+
+**"El producto cruz da un número."** Es el error más frecuente y nace de que las dos operaciones se
+ven seguidas, se llaman casi igual y solo se diferencian por el símbolo de en medio. Regla mecánica
+que sirve de alarma: si un renglón empieza con $\vec{A}\times\vec{B}$ y termina en un número sin
+dirección, está mal siempre, sin excepción. Y al revés: si un renglón empieza con
+$\vec{A}\cdot\vec{B}$ y termina en un vector, también.
+
+**"El orden da igual."** Viene de la costumbre de toda la vida con los números y del producto punto,
+donde efectivamente da igual. Aquí no: $\vec{A}\times\vec{B}$ y $\vec{B}\times\vec{A}$ son vectores
+opuestos. En el determinante es el mismo error con otra cara, intercambiar las filas 2 y 3, y el
+determinante también cambia de signo. Es la respuesta que la diapositiva 27 pregunta y no escribe.
+
+**Confundir cuál de los dos se anula.** Mucha gente memoriza "cero cuando son perpendiculares" sin
+recordar de cuál de las dos operaciones. La memoria no ayuda porque las dos frases suenan igual de
+razonables; la figura sí. Dos vectores paralelos no encierran paralelogramo y no definen un plano
+único: producto cruz cero. Dos vectores perpendiculares no comparten nada de dirección: producto
+punto cero.
+
+**El signo del cofactor de $\hat{j}$.** Ya está explicado arriba y se repite aquí porque es el que
+más cuesta puntos en el parcial: la componente $y$ del determinante lleva un menos delante que no
+sale de los números sino de la posición en la matriz.
+
+<Nota tipo="ojo" titulo="El seno no distingue agudo de obtuso">
+
+Un detalle fino que suele cobrarse en el parcial. Como $\sin 30^\circ = \sin 150^\circ = 0{,}5$, la
+magnitud del producto cruz **no puede decirte** si el ángulo entre los dos vectores es agudo u
+obtuso. El producto escalar sí, porque el coseno cambia de signo: positivo si el ángulo es menor que
+$90^\circ$ y negativo si es mayor.
+
+Por eso, cuando un problema te pide el ángulo entre dos vectores, el camino seguro es el producto
+punto. El producto cruz solo te dará el ángulo agudo equivalente.
+
+</Nota>
+
+## La llave y la tuerca: la respuesta a la pregunta del principio
+
+Vuelve a la llave. La magnitud física que describe la capacidad de una fuerza para producir giro se
+llama **torque**, y se calcula justamente con un producto cruz:
+
+$$
+\vec{\tau} = \vec{r}\times\vec{F}
+$$
+
+donde $\vec{r}$ es el vector que va **desde el eje de giro** —el centro de la tuerca— hasta el punto
+donde aplicas la fuerza, medido en metros, y $\vec{F}$ es la fuerza en newton. El resultado queda en
+$\mathrm{N\,m}$, y sus dimensiones son $[\tau] = L \cdot MLT^{-2} = ML^{2}T^{-2}$.
+
+Las dos mitades de la pregunta se responden solas.
+
+**Por qué rinde empujar perpendicular.** La magnitud es $\tau = rF\sin\theta$. Si empujas
+perpendicular al brazo, $\theta = 90^\circ$, el seno vale $1$ y obtienes todo el torque que esa
+fuerza puede dar: $rF$. Si jalas a lo largo del brazo, $\theta = 0^\circ$, el seno vale $0$ y el
+torque es exactamente cero, por fuerte que jales; lo único que consigues es tratar de arrancar la
+tuerca de su sitio, no de girarla. Y ahí ves también por qué una llave larga afloja mejor: $r$
+multiplica.
+
+**Por qué el giro apunta a un lado donde no hay nada.** El torque es perpendicular al plano que
+forman la llave y la fuerza, es decir, va a lo largo del **eje del tornillo**. No hay materia
+apuntando en esa dirección, y sin embargo es la única dirección que describe el giro sin ambigüedad:
+todo lo demás está girando, y el eje es lo único que se queda quieto. El sentido, dado por la mano
+derecha, es el que distingue apretar de aflojar.
+
+<Nota tipo="info">
+
+El torque es el lugar donde el producto vectorial se vuelve indispensable, y por eso sirve para
+entenderlo. Pero hay que decirlo con claridad: **el torque no aparece en el programa oficial de las
+16 semanas** de este curso —la semana 8 es fricción, planos inclinados y segunda ley aplicada al
+movimiento circular—, y tampoco está en la presentación de vectores. Aquí funciona como motivación
+física, no como tema evaluable. Lo más cercano en todo el programa es "Potencia y máquinas simples",
+en la semana 14: una palanca podría meter el torque por la puerta de atrás, pero eso es conjetura y
+no está escrito en ninguna parte. Está anotado arriba como pregunta para la docente.
+
+</Nota>
+
+<Ejercicio titulo="Aflojar la tuerca, con números">
+
+Estás girando una tuerca con una llave. Pon el origen en el centro de la tuerca, con el plano $xy$
+sobre la cara de la tuerca y el eje $z$ saliendo hacia ti. El punto donde agarras la llave está en
+
+$$
+\vec{r} = (0{,}20\,\hat{i} + 0{,}15\,\hat{j})\ \mathrm{m}
+$$
+
+y aplicas una fuerza
+
+$$
+\vec{F} = (-80\,\hat{i} + 60\,\hat{j})\ \mathrm{N}
+$$
+
+1. Calcula $\vec{\tau} = \vec{r}\times\vec{F}$ con el determinante.
+2. ¿Hacia dónde apunta el resultado? Con esa fuerza, ¿estás apretando o aflojando la tuerca?
+3. Comprueba la magnitud con $\tau = rF\sin\theta$, hallando $\theta$ con el producto escalar.
+4. Con la misma llave y la misma magnitud de fuerza, ¿cuál sería el torque máximo posible y a qué
+   ángulo se consigue?
+
+<div slot="solucion">
+
+**1.** Las dos componentes en $z$ son cero, porque todo está sobre el plano de la tuerca:
+
+$$
+\vec{\tau} =
+\begin{vmatrix}
+\hat{i} & \hat{j} & \hat{k} \\
+0{,}20 & 0{,}15 & 0 \\
+-80 & 60 & 0
+\end{vmatrix}
+\ \mathrm{N\,m}
+$$
+
+Expandiendo por cofactores, los dos primeros menores tienen una columna de ceros y se anulan:
+
+$$
+\begin{aligned}
+\hat{i}: \quad & (0{,}15)(0) - (0)(60) = 0 \\[2pt]
+\hat{j}: \quad & -\left[(0{,}20)(0) - (0)(-80)\right] = 0 \\[2pt]
+\hat{k}: \quad & (0{,}20)(60) - (0{,}15)(-80) = 12 + 12 = 24
+\end{aligned}
+$$
+
+$$
+\vec{\tau} = 24\,\hat{k}\ \mathrm{N\,m}
+$$
+
+Esto es general y conviene guardarlo: **dos vectores que viven en el plano $xy$ dan siempre un
+producto cruz a lo largo del eje $z$**, porque esa es la única dirección perpendicular a los dos.
+El único caso aparte es que sean paralelos, y entonces el resultado es $\vec{0}$.
+
+**2.** Apunta en $+\hat{k}$, o sea saliendo de la tuerca hacia ti. Compruébalo con la mano derecha:
+dedos a lo largo de $\vec{r}$, ciérralos hacia $\vec{F}$ por el lado corto y el pulgar sale de la
+cara de la tuerca. Visto desde $+z$, ese es un giro en sentido antihorario, que en un tornillo de
+rosca derecha —los normales— es el sentido de **aflojar**: el tornillo avanza hacia afuera,
+justamente hacia donde apunta $\vec{\tau}$.
+
+**3.** Primero las magnitudes:
+
+$$
+r = \sqrt{(0{,}20)^2 + (0{,}15)^2} = \sqrt{0{,}0625} = 0{,}25\ \mathrm{m}
+$$
+
+$$
+F = \sqrt{(-80)^2 + (60)^2} = \sqrt{10\,000} = 100\ \mathrm{N}
+$$
+
+Luego el ángulo, con el producto escalar:
+
+$$
+\vec{r}\cdot\vec{F} = (0{,}20)(-80) + (0{,}15)(60) = -16 + 9 = -7\ \mathrm{N\,m}
+$$
+
+$$
+\cos\theta = \frac{-7\ \mathrm{N\,m}}{(0{,}25\ \mathrm{m})(100\ \mathrm{N})} = -0{,}28
+\quad\Longrightarrow\quad
+\theta = 106{,}26^\circ
+$$
+
+Ese ángulo tiene $\sin 106{,}26^\circ = 0{,}96$, de modo que
+
+$$
+\tau = rF\sin\theta = (0{,}25\ \mathrm{m})(100\ \mathrm{N})(0{,}96) = 24\ \mathrm{N\,m}
+$$
+
+Coincide con el determinante. Y fíjate en lo que pasó aquí, que es justo la advertencia de más
+arriba: el ángulo salió **obtuso** —el producto escalar es negativo—, y aun así $\sin\theta = 0{,}96$
+es positivo y el torque salió en $+\hat{k}$. El seno no habría distinguido este caso del de
+$73{,}74^\circ$; el signo del coseno sí.
+
+**4.** El máximo es con $\theta = 90^\circ$, es decir, empujando perpendicular a la llave:
+
+$$
+\tau_{\max} = rF = (0{,}25\ \mathrm{m})(100\ \mathrm{N}) = 25\ \mathrm{N\,m}
+$$
+
+Estabas en $24\ \mathrm{N\,m}$, así que solo se perdía $1\ \mathrm{N\,m}$: la fuerza ya venía casi
+perpendicular. En el otro extremo, con $\theta = 0^\circ$ —jalando a lo largo de la llave— el torque
+sería cero.
+
+Comprobación dimensional: $[\tau] = L \cdot MLT^{-2} = ML^{2}T^{-2}$, y la respuesta quedó en
+$\mathrm{N\,m} = \mathrm{kg\,m^2/s^2}$. Coherente.
+
+</div>
+
+</Ejercicio>

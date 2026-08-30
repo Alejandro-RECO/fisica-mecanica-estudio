@@ -1,0 +1,671 @@
+---
+titulo: Suma y resta gráfica de vectores
+unidad: vectores
+orden: 2
+sesiones: []
+
+pregunta_guia: >
+  Tú empujas un armario hacia el oriente con 60 N y un amigo lo empuja hacia el norte con 80 N.
+  El armario no arranca ni al oriente ni al norte, y el empujón total tampoco vale 140 N.
+  ¿Hacia dónde arranca, y cuánto vale ese empujón combinado?
+prerrequisitos:
+  - escalares-y-vectores
+conceptos_clave:
+  - Sumar vectores es encadenarlos cabeza con cola; la resultante cierra desde la cola del primero hasta la punta del último.
+  - La magnitud de la resultante depende del ángulo entre los sumandos, no solo de sus magnitudes.
+  - El método del paralelogramo y el del triángulo son la misma construcción vista de dos maneras, y de ahí sale la propiedad conmutativa.
+  - Restar es sumar el opuesto; la resta no es conmutativa porque invertir el orden invierte el sentido del resultado.
+  - Con cola común, la diagonal del paralelogramo es la suma y el segmento que une las puntas es la resta.
+errores_frecuentes:
+  - Sumar las magnitudes como si fueran escalares sueltos
+  - Encadenar los vectores cola con cola y llamar suma a lo que en realidad es la resta
+  - Invertir el orden de la resta y quedarse con el sentido contrario
+  - Dar una longitud del dibujo como respuesta sin declarar la escala
+tiempo_estudio_min: 35
+
+esencial:
+  - "Sumar es encadenar cabeza con cola. La resultante va de la cola del primero a la punta del último."
+  - "|A⃗ + B⃗| no es A + B salvo si son paralelos y del mismo sentido. Siempre |A − B| ≤ |A⃗ + B⃗| ≤ A + B."
+  - "Restar es sumar el opuesto: A⃗ − B⃗ = A⃗ + (−B⃗). Con cola común va de la punta de B⃗ a la punta de A⃗."
+  - "La suma es conmutativa; la resta no: B⃗ − A⃗ = −(A⃗ − B⃗), misma magnitud y sentido contrario."
+tiempo_repaso_min: 7
+
+fuentes:
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 9
+    fecha: 2026-08-30
+    aporta: >
+      Método del polígono para dos vectores: se traslada B⃗ hasta la punta de A⃗ y la resultante,
+      trazada en rojo, cierra desde la cola de A⃗. Escribe C⃗ = A⃗ + B⃗.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 10
+    fecha: 2026-08-30
+    aporta: >
+      Suma de más de dos vectores por el método del polígono: encadena A⃗, B⃗ y C⃗ y escribe
+      D⃗ = A⃗ + B⃗ + C⃗.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 11
+    fecha: 2026-08-30
+    aporta: >
+      Método del paralelogramo, con los lados opuestos rotulados A⃗ y B⃗ en línea punteada, y la
+      propiedad conmutativa escrita explícitamente: C⃗ = A⃗ + B⃗ = B⃗ + A⃗.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 12
+    fecha: 2026-08-30
+    aporta: >
+      Construcción gráfica de la resta. Plantea "¿A⃗ − B⃗?", dibuja −B⃗ apuntando al lado contrario
+      de B⃗, lo encadena a la punta de A⃗ y rotula el resultado C⃗ en rojo.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 1
+    fecha: 2026-08-30
+    aporta: >
+      Notación de la docente: la magnitud se escribe con la misma letra sin flecha, |A⃗| = A, y las
+      partes del vector se llaman cola (origen) y punta (cabeza).
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 8
+    fecha: 2026-08-30
+    aporta: >
+      La física del vector opuesto: define vectores antiparalelos y establece que el opuesto de un
+      vector tiene su misma magnitud y la dirección contraria. Aquí no aparece la notación: la dia. 8
+      nunca escribe el símbolo −B⃗.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 12
+    fecha: 2026-08-30
+    aporta: >
+      La notación −B⃗ para el vector opuesto. Es la primera vez en toda la presentación que ese
+      símbolo se escribe, y aparece rotulando la flecha volteada de la construcción de la resta.
+  - tipo: deduccion
+    aporta: >
+      La expresión C⃗ = A⃗ − B⃗ = A⃗ + (−B⃗). La dia. 12 solo trae el dibujo y el interrogante; nunca
+      escribe la igualdad. Se deduce de su propio dibujo más el vector opuesto de la dia. 8.
+  - tipo: deduccion
+    aporta: >
+      La resta no es conmutativa: B⃗ − A⃗ = −(A⃗ − B⃗). Se deriva de la conmutativa de la dia. 11 y
+      del vector opuesto de la dia. 8, y se comprueba en la geometría del paralelogramo de la dia. 11.
+  - tipo: deduccion
+    aporta: >
+      El atajo de cola común: A⃗ − B⃗ es el segmento que va de la punta de B⃗ a la punta de A⃗, y es
+      la otra diagonal del paralelogramo de la dia. 11.
+  - tipo: deduccion
+    aporta: >
+      Cotas de la magnitud de la resultante, |A − B| ≤ |A⃗ + B⃗| ≤ A + B, y los tres casos límite
+      (θ = 0°, θ = 180° y θ = 90°). Derivadas de la geometría del triángulo de la dia. 9.
+  - tipo: deduccion
+    aporta: >
+      El vector nulo como resultante de un polígono que se cierra sobre sí mismo. Derivado del
+      encadenamiento de la dia. 10.
+  - tipo: deduccion
+    aporta: >
+      Todos los ejemplos y ejercicios numéricos, la escala del dibujo y los ángulos, incluida la
+      estimación de cuánta fuerza representa medio milímetro de error de regla con la escala elegida.
+      En las 28 diapositivas del PDF no hay un solo cálculo resuelto ni un solo ángulo con valor
+      numérico.
+
+confianza: alta
+estado: revisado
+revision:
+  fecha: 2026-08-30
+  veredicto: coherente-con-reparos
+  chequeos: [aritmetica-exacta, coherencia-con-la-fuente, notacion, casos-limite]
+  observaciones:
+    - "La deduccion de la resta verificada midiendo los pixeles de la diapositiva 12: la construccion descrita reproduce el dibujo de la docente."
+    - "Cotas y casos limite comprobados con un barrido de 200000 pares aleatorios: cero violaciones, incluida la resta."
+    - "El sentido de la diagonal del paralelogramo confirmado literalmente contra OpenStax 2.1."
+    - "Reparo corregido: la regla del minuendo se enunciaba sin su condicion de cola comun. Como la docente dibuja el arreglo encadenado, un estudiante que la copiara habria concluido que su propio dibujo estaba mal."
+    - "Reparo corregido: error de factor diez. Medio milimetro a escala 1 cm : 20 N es 1 N, no 10 N."
+dudas_para_docente:
+  - >
+    ¿Los ángulos se trabajan en grados o en radianes? El PDF usa θ en las dia. 6, 15, 19 y 23 pero
+    nunca con un valor numérico. Aquí se usan grados, que es lo natural con transportador, pero es
+    una elección de esta lección y no algo que diga la presentación.
+  - >
+    La dia. 9 titula "método del polígono" un dibujo de solo dos vectores. ¿Espera que se distinga
+    "método del triángulo" como nombre aparte para el caso de dos, o el nombre polígono cubre los dos
+    casos en su parcial?
+  - >
+    ¿El parcial va a exigir construcción gráfica con regla y transportador, o el dibujo es solo apoyo
+    para plantear y todo el cálculo se hace por componentes?
+  - >
+    La dia. 1 introduce "línea de acción del vector", pero la suma gráfica exige tratar los vectores
+    como libres: para encadenarlos hay que trasladarlos por la hoja, y al trasladarlos se abandona la
+    línea de acción original. ¿Espera que distingamos vector libre de vector con línea de acción fija,
+    o "línea de acción" es solo vocabulario de la anatomía de la flecha? No cambia ningún resultado de
+    esta lección, pero sí importa en dinámica, donde el punto en que se aplica una fuerza decide si el
+    cuerpo gira o no.
+---
+
+import Nota from '../../../componentes/Nota.astro';
+import Ejemplo from '../../../componentes/Ejemplo.astro';
+import Paso from '../../../componentes/Paso.astro';
+import Ejercicio from '../../../componentes/Ejercicio.astro';
+
+Tú empujas un armario hacia el oriente con 60 N y un amigo lo empuja hacia el norte con 80 N. El
+armario no arranca ni al oriente ni al norte, y el empujón total tampoco vale 140 N. **¿Hacia dónde
+arranca, y cuánto vale ese empujón combinado?** Al final de la lección vas a poder responderlo con
+una regla y un transportador, y comprobarlo sin ellos.
+
+## De qué se trata
+
+Cuando dos cosas del mismo tipo actúan a la vez sobre un objeto, la física quiere una sola cantidad
+que las reemplace: un único empujón que haga exactamente lo mismo que los dos juntos. Esa cantidad
+única se llama la **resultante**, y encontrarla es lo que llamamos sumar vectores.
+
+Si los dos empujones fueran en el mismo sentido, la respuesta sería obvia: se suman los números. Si
+fueran en sentidos contrarios, se restarían. El problema aparece en el caso general, que es casi
+siempre: los dos van hacia lados distintos que no son ni el mismo ni el opuesto. Ahí sumar los
+números no significa nada, porque el resultado tiene que apuntar hacia alguna parte y dos números
+sumados no apuntan a ningún lado.
+
+La salida es dejar de operar con números y operar con los dibujos. Un vector se puede dibujar a
+escala como una flecha, y resulta que la operación de sumar tiene una traducción geométrica exacta y
+muy sencilla: **se encadenan las flechas, una detrás de la otra**. Lo que se obtiene no es una
+receta más para memorizar, sino la descripción literal de lo que pasa cuando dos desplazamientos
+ocurren uno después del otro. Y la resta, que suele contarse como una operación aparte, resulta ser
+la misma suma con una de las flechas volteada.
+
+<Nota tipo="info" titulo="La notación que vas a ver">
+
+Un vector lleva **flecha encima** siempre: $\vec{A}$, $\vec{B}$, $\vec{C}$. Su magnitud se escribe
+con la misma letra **sin** flecha, entre barras si hace falta: $|\vec{A}| = A$. La magnitud es un
+número con unidades y nunca es negativa. El vector $-\vec{B}$ es el **opuesto** de $\vec{B}$: tiene
+la misma magnitud y apunta hacia el lado contrario. A la parte de atrás de la flecha se le dice
+**cola** y a la punta, **cabeza**.
+
+</Nota>
+
+## La construcción: cabeza con cola
+
+Para deducir la regla, conviene usar el vector más concreto que hay: un **desplazamiento**.
+
+Supón que caminas 3 cuadras hacia el oriente y luego 4 cuadras hacia el norte. Para dibujar la
+segunda caminata no tienes alternativa: **tiene que empezar donde terminó la primera**. Eso, dicho en
+lenguaje de flechas, es poner la cola de la segunda sobre la cabeza de la primera. Y el resultado
+neto del viaje —dónde quedaste con respecto a dónde arrancaste— es la flecha que va del punto de
+partida al punto de llegada.
+
+Esa es toda la regla, y no es una convención que alguien eligió: es la geometría de "primero una cosa
+y después la otra".
+
+<Nota tipo="clave">
+
+Para sumar $\vec{A}$ y $\vec{B}$: traslada $\vec{B}$ sin girarlo hasta que su **cola** quede sobre la
+**cabeza** de $\vec{A}$. La resultante es la flecha que va de la cola de $\vec{A}$ a la cabeza de
+$\vec{B}$.
+
+</Nota>
+
+Trasladar el vector está permitido y esa es la razón por la que el método funciona: dos flechas con
+la misma magnitud y la misma dirección son **el mismo vector**, sin importar en qué parte de la hoja
+estén dibujadas. Mover $\vec{B}$ hasta la punta de $\vec{A}$ no lo cambia.
+
+La operación se escribe así:
+
+$$
+\vec{C} = \vec{A} + \vec{B}
+$$
+
+donde $\vec{A}$ y $\vec{B}$ son los **sumandos** y $\vec{C}$ es la **resultante**. Las tres cantidades
+tienen las mismas unidades, y esto no es un detalle: si $\vec{A}$ y $\vec{B}$ son fuerzas en
+$\mathrm{N}$, entonces $\vec{C}$ está en $\mathrm{N}$. **No existe la suma de una fuerza con una
+velocidad**, igual que no existe sumar metros con kilogramos.
+
+Cuando son solo dos vectores, la cadena tiene tres lados y forma un triángulo: por eso a esta
+construcción se le dice **método del triángulo**. La diapositiva 9 la presenta bajo el título de
+*método del polígono*, que es el nombre general; el triángulo es el caso de dos.
+
+### El dibujo necesita una escala
+
+Una flecha en el papel mide centímetros, y lo que representa son newtons, o metros, o metros por
+segundo. Para pasar de lo uno a lo otro hay que **declarar una equivalencia** antes de dibujar, por
+ejemplo $1\ \mathrm{cm} : 20\ \mathrm{N}$. Sin esa línea escrita al lado del dibujo, el dibujo no es
+una respuesta: es un garabato con la forma correcta.
+
+## El método del paralelogramo, y por qué el orden no importa
+
+Hay una segunda forma de hacer exactamente lo mismo. En vez de encadenar, dibuja $\vec{A}$ y
+$\vec{B}$ saliendo **del mismo punto**, cola con cola. Completa el paralelogramo trazando por la
+punta de cada uno una paralela al otro. La resultante es la **diagonal que sale del origen común**.
+
+Que las dos construcciones den el mismo resultado no es coincidencia, y se ve mirando el
+paralelogramo con cuidado. El lado que va desde la punta de $\vec{A}$ hasta el vértice opuesto es
+paralelo a $\vec{B}$ y mide lo mismo que $\vec{B}$: **es** $\vec{B}$ trasladado. Recorrer ese lado es
+exactamente el método del triángulo. Y el otro par de lados dice lo mismo con los papeles cambiados:
+desde la punta de $\vec{B}$ sale una copia de $\vec{A}$ que llega al mismo vértice.
+
+El paralelogramo contiene, entonces, los dos triángulos a la vez —el de $\vec{A}$ seguido de
+$\vec{B}$ y el de $\vec{B}$ seguido de $\vec{A}$— y ambos terminan en el mismo vértice. De ahí sale
+la propiedad que la diapositiva 11 escribe:
+
+$$
+\vec{C} = \vec{A} + \vec{B} = \vec{B} + \vec{A}
+$$
+
+Esta es la **propiedad conmutativa** de la suma vectorial. En lenguaje llano: caminar tres cuadras al
+oriente y luego cuatro al norte te deja en el mismo lugar que caminar cuatro al norte y luego tres al
+oriente. El camino es distinto, el punto de llegada es el mismo, y el vector suma solo describe el
+punto de llegada.
+
+## Más de dos vectores: el polígono
+
+El método se extiende sin cambiar nada. Para sumar $\vec{A}$, $\vec{B}$ y $\vec{C}$ se encadenan los
+tres, cada uno arrancando donde terminó el anterior, y la resultante cierra desde la cola del primero
+hasta la cabeza del último. La diapositiva 10 lo dibuja así y escribe:
+
+$$
+\vec{D} = \vec{A} + \vec{B} + \vec{C}
+$$
+
+Como la cadena se puede recorrer en cualquier orden y siempre se llega al mismo sitio, el orden de
+los sumandos tampoco importa aquí. Puedes agruparlos como te convenga.
+
+<Nota tipo="clave">
+
+Si al terminar de encadenar **la punta del último cae sobre la cola del primero**, el polígono se
+cerró solo y la resultante es el **vector nulo** $\vec{0}$: magnitud cero y ninguna dirección. Cuando
+los vectores son fuerzas, eso es la condición de equilibrio, y es la razón por la que este método
+gráfico reaparece en la unidad de dinámica.
+
+</Nota>
+
+## La resta: el hueco de la diapositiva 12
+
+<Nota tipo="info" titulo="Qué trae la diapositiva y qué no">
+
+La diapositiva 12 plantea **"¿$\vec{A} - \vec{B}$?"**, dibuja $-\vec{B}$ apuntando al lado contrario
+de $\vec{B}$, lo encadena a la punta de $\vec{A}$ y rotula el resultado $\vec{C}$ en rojo. Lo que
+**nunca escribe** es la igualdad. La expresión que viene a continuación está deducida de su propio
+dibujo, no copiada de la presentación, y así queda marcada en las fuentes.
+
+</Nota>
+
+La clave es que **no hace falta inventar una operación nueva**. Con los números, restar ya era sumar
+el opuesto: $a - b$ significa $a + (-b)$. Para vectores se puede hacer lo mismo, porque las dos
+piezas ya existen. El opuesto $-\vec{B}$ está definido —misma magnitud, sentido contrario— y la suma
+cabeza con cola ya sabemos hacerla. Entonces se define:
+
+$$
+\vec{A} - \vec{B} = \vec{A} + (-\vec{B})
+$$
+
+y el resultado, que en la diapositiva 12 se llama $\vec{C}$, es:
+
+$$
+\vec{C} = \vec{A} - \vec{B}
+$$
+
+El procedimiento gráfico son tres movimientos y ninguno es nuevo:
+
+1. Voltea $\vec{B}$: gíralo 180°, conservando su longitud. Ahora tienes $-\vec{B}$.
+2. Encadénalo: pon la cola de $-\vec{B}$ sobre la cabeza de $\vec{A}$.
+3. Cierra: traza la flecha desde la cola de $\vec{A}$ hasta la cabeza de $-\vec{B}$.
+
+Eso es literalmente lo que está dibujado en la diapositiva.
+
+### El atajo de cola común
+
+Voltear la flecha funciona siempre, pero hay una lectura más rápida que además explica de dónde sale
+el dibujo. Pregúntate qué es la diferencia: $\vec{A} - \vec{B}$ es **el vector que hay que sumarle a
+$\vec{B}$ para llegar a $\vec{A}$**. Se ve despejando:
+
+$$
+\vec{B} + (\vec{A} - \vec{B}) = \vec{A}
+$$
+
+Si eso es cierto, entonces al encadenar la diferencia a la punta de $\vec{B}$ tengo que terminar en
+la punta de $\vec{A}$. Y eso da la receta:
+
+<Nota tipo="clave">
+
+Dibuja $\vec{A}$ y $\vec{B}$ **cola con cola**. Entonces $\vec{A} - \vec{B}$ es la flecha que va **de
+la punta de $\vec{B}$ a la punta de $\vec{A}$**: sale del sustraendo y llega al minuendo.
+
+</Nota>
+
+De aquí sale una lectura muy útil del paralelogramo de la diapositiva 11: **una diagonal es la suma y
+la otra es la resta**. La que arranca en el origen común y va al vértice opuesto es la suma
+$\vec{A} + \vec{B}$; la que une las dos puntas es $\vec{A} - \vec{B}$ si la recorres hacia
+$\vec{A}$, y $\vec{B} - \vec{A}$ si la recorres hacia $\vec{B}$.
+
+### Por qué en la resta el orden sí importa
+
+En la suma el orden daba igual. En la resta no, y esta es la línea donde se pierde más gente en el
+parcial.
+
+La geometría lo dice de una: el segmento que une las dos puntas es **uno solo**, pero recorrerlo
+hacia $\vec{A}$ o hacia $\vec{B}$ son dos flechas distintas, con la misma longitud y sentidos
+opuestos. El álgebra confirma lo mismo. Encadena las dos diferencias:
+
+$$
+(\vec{A} - \vec{B}) + (\vec{B} - \vec{A}) = \vec{A} + (-\vec{B}) + \vec{B} + (-\vec{A})
+$$
+
+Ahora reordena la cadena, cosa que la propiedad conmutativa autoriza, de modo que cada vector quede
+al lado de su opuesto. Cada pareja se cancela y la cadena entera se cierra sobre sí misma:
+
+$$
+\vec{A} + (-\vec{A}) + \vec{B} + (-\vec{B}) = \vec{0}
+$$
+
+Dos vectores que suman cero son opuestos, así que:
+
+$$
+\vec{B} - \vec{A} = -\,(\vec{A} - \vec{B})
+$$
+
+<Nota tipo="ojo">
+
+$\vec{B} - \vec{A}$ **no es "casi"** $\vec{A} - \vec{B}$. Tiene la misma magnitud, de modo que si el
+parcial solo pidiera el número acertarías; pero apunta exactamente al revés, y un vector con el
+sentido invertido es **otro vector**. La regla que sí se sostiene, y solo **con los dos
+vectores dibujados cola con cola**: la punta de la flecha diferencia queda sobre la punta del
+**minuendo**, el que va escrito primero.
+
+Fíjate en que esa lectura es del arreglo de cola común y de ningún otro. Si construiste encadenando,
+como en la diapositiva 12 —voltear $\vec{B}$ y pegar $-\vec{B}$ a la punta de $\vec{A}$—, la
+diferencia termina sobre la punta de $-\vec{B}$, y la punta de $\vec{A}$ queda en el otro extremo del
+triángulo. Las dos construcciones dan el mismo vector; lo que cambia es dónde queda dibujado.
+
+</Nota>
+
+## Qué significa cada parte
+
+Lo que decide la magnitud de la resultante no son solo $A$ y $B$: es el **ángulo $\theta$ entre
+ellos**, medido con los dos dibujados cola con cola. Vale la pena recorrer los casos límite, porque
+son los que separan entender de repetir.
+
+**Si $\theta = 0^\circ$**, los dos apuntan al mismo lado. La cadena queda en línea recta y las
+longitudes se suman de frente:
+
+$$
+|\vec{A} + \vec{B}| = A + B
+$$
+
+Este es el **máximo posible**. Es el único caso en el que sumar los números es correcto.
+
+**Si $\theta = 180^\circ$**, son antiparalelos. La cadena se devuelve sobre sí misma y lo que queda
+es lo que le sobra al más largo:
+
+$$
+|\vec{A} + \vec{B}| = |A - B|
+$$
+
+Este es el **mínimo posible**. Y si además $A = B$, la resultante es el vector nulo: dos empujones
+iguales y contrarios se anulan.
+
+**Si $\theta$ está entre esos dos extremos**, el triángulo tiene una esquina de verdad, y un lado de
+un triángulo siempre mide menos que la suma de los otros dos y más que su diferencia. De ahí sale una
+cota que sirve para revisar cualquier respuesta antes de entregarla:
+
+$$
+|A - B| \;\le\; |\vec{A} + \vec{B}| \;\le\; A + B
+$$
+
+**Si $\theta = 90^\circ$**, el triángulo de la construcción es rectángulo y la resultante es su
+hipotenusa, así que vale el teorema de Pitágoras:
+
+$$
+|\vec{A} + \vec{B}| = \sqrt{A^{2} + B^{2}}
+$$
+
+Fíjate bien en la condición: Pitágoras aplica **porque el triángulo es rectángulo**, no porque se
+trate de vectores. Si el ángulo no es recto, esa raíz da un número equivocado.
+
+Las mismas cotas valen para la resta, y la razón es que restar es sumar el opuesto y el opuesto tiene
+la misma magnitud:
+
+$$
+|A - B| \;\le\; |\vec{A} - \vec{B}| \;\le\; A + B
+$$
+
+Lo que se voltea es cuándo se alcanza cada extremo. La **suma** es máxima cuando los vectores van al
+mismo lado; la **resta** es mínima justo ahí, y se anula por completo cuando los dos vectores son
+iguales. Tiene sentido: la diferencia mide en qué se distinguen dos vectores, y dos vectores idénticos
+no se distinguen en nada.
+
+<Nota tipo="clave">
+
+Dos fuerzas de $10\ \mathrm{N}$ cada una pueden dar una resultante de cualquier valor entre
+$0\ \mathrm{N}$ y $20\ \mathrm{N}$. El dato que falta para saber cuál es el **ángulo**. Si un
+enunciado te da dos magnitudes y ninguna dirección, el problema está incompleto.
+
+</Nota>
+
+## Hasta dónde llega el método gráfico
+
+El método gráfico es conceptualmente exacto: la flecha que trazas **es** la respuesta. Lo que no es
+exacto es tu regla. Con una escala de $1\ \mathrm{cm} : 20\ \mathrm{N}$, medio milímetro de error al
+medir ya es $1\ \mathrm{N}$ de error en la respuesta, y ese medio milímetro se te va en cada flecha
+que trazas y en cada ángulo que marcas con el transportador; con tres o cuatro vectores en ángulos
+cualquiera el dibujo se vuelve impracticable.
+
+Por eso el dibujo se usa para **entender la situación y plantearla**, y el cálculo fino se hace
+descomponiendo cada vector en componentes y sumando número con número. Ese es el tema de la lección
+**componentes y suma analítica**, que retoma exactamente esta construcción. El gráfico no se abandona
+al llegar allá: sigue siendo lo que te dice si el resultado numérico tiene sentido o si te comiste un
+signo.
+
+<Ejemplo titulo="El armario de la pregunta guía: dos empujones perpendiculares">
+
+Tú empujas el armario hacia el oriente con $\vec{A}$, de magnitud $A = 60\ \mathrm{N}$. Tu amigo lo
+empuja hacia el norte con $\vec{B}$, de magnitud $B = 80\ \mathrm{N}$. Encuentra la resultante
+$\vec{C} = \vec{A} + \vec{B}$: magnitud y dirección.
+
+<Paso n="1" razon="Antes de dibujar hay que fijar la equivalencia, porque el papel mide centímetros y la física está en newtons. Sin escala declarada el dibujo no significa nada.">
+
+Escala elegida:
+
+$$
+1\ \mathrm{cm} : 20\ \mathrm{N}
+$$
+
+Con ella, $\vec{A}$ se dibuja de $3{,}0\ \mathrm{cm}$ y $\vec{B}$ de $4{,}0\ \mathrm{cm}$.
+
+</Paso>
+
+<Paso n="2" razon="Método del triángulo: la cola del segundo va sobre la cabeza del primero. Es la geometría de aplicar un empujón y luego el otro.">
+
+Traza $\vec{A}$ horizontal hacia la derecha, $3{,}0\ \mathrm{cm}$. Desde su punta traza $\vec{B}$
+hacia arriba, $4{,}0\ \mathrm{cm}$. Como el oriente y el norte son perpendiculares, el ángulo entre
+los dos vectores es $\theta = 90^\circ$ y la esquina del triángulo es recta.
+
+</Paso>
+
+<Paso n="3" razon="La resultante siempre cierra desde la cola del primero hasta la cabeza del último. Medir el dibujo es leer la respuesta.">
+
+Traza la flecha desde la cola de $\vec{A}$ hasta la cabeza de $\vec{B}$. Al medirla con la regla da
+$5{,}0\ \mathrm{cm}$, y devolviendo la escala:
+
+$$
+C = 5{,}0\ \mathrm{cm} \times \frac{20\ \mathrm{N}}{1\ \mathrm{cm}} = 100\ \mathrm{N}
+$$
+
+</Paso>
+
+<Paso n="4" razon="Una medición con regla hay que confirmarla. El ángulo es recto, así que el triángulo es rectángulo y la resultante es su hipotenusa.">
+
+$$
+C = \sqrt{A^{2} + B^{2}} = \sqrt{(60\ \mathrm{N})^{2} + (80\ \mathrm{N})^{2}}
+$$
+
+$$
+C = \sqrt{3600\ \mathrm{N^{2}} + 6400\ \mathrm{N^{2}}} = \sqrt{10\,000\ \mathrm{N^{2}}} = 100\ \mathrm{N}
+$$
+
+El dibujo y el cálculo coinciden. Nota bien que la resultante de $100\ \mathrm{N}$ **no** es la suma
+de los dos números, que habría dado $140\ \mathrm{N}$.
+
+</Paso>
+
+<Paso n="5" razon="Una magnitud sin dirección no describe un vector. La respuesta está incompleta hasta que se diga hacia dónde apunta, y respecto a qué referencia se mide el ángulo.">
+
+En el triángulo rectángulo, el cateto opuesto al ángulo que forma la resultante con el oriente es
+$\vec{B}$ y el adyacente es $\vec{A}$:
+
+$$
+\tan\theta = \frac{B}{A} = \frac{80\ \mathrm{N}}{60\ \mathrm{N}} = 1{,}33
+$$
+
+$$
+\theta = \arctan(1{,}33) = 53{,}1^\circ
+$$
+
+El armario arranca en una dirección de $53{,}1^\circ$ **al norte del oriente**, con un empujón
+equivalente de $100\ \mathrm{N}$. Midiendo con transportador sobre el dibujo se obtiene lo mismo
+dentro del error de la regla.
+
+</Paso>
+
+<Paso n="6" razon="La cota del triángulo es una revisión gratis: si el resultado se sale de ella, hay un error de construcción sin necesidad de rehacer nada.">
+
+$$
+|A - B| = 20\ \mathrm{N} \;\le\; 100\ \mathrm{N} \;\le\; A + B = 140\ \mathrm{N}
+$$
+
+La resultante cae dentro del intervalo permitido. Además está estrictamente adentro, como debe pasar
+siempre que el ángulo no sea $0^\circ$ ni $180^\circ$.
+
+</Paso>
+
+<Paso n="7" razon="Comprobación dimensional. En un método gráfico hay que verificar además que los centímetros del papel no se hayan colado en la respuesta física.">
+
+Todos los sumandos son fuerzas, $[F] = MLT^{-2}$, y la resultante también: en ningún paso se sumó un
+newton con un metro. Los centímetros no son la cantidad física sino su representación, y la escala
+—que es un factor de conversión de $\mathrm{N/cm}$— los devuelve a newtons:
+$\mathrm{cm} \times \mathrm{N/cm} = \mathrm{N}$. Correcto.
+
+El ángulo salió de un cociente de dos fuerzas, $\mathrm{N}/\mathrm{N}$, que es **adimensional**, como
+tiene que ser: un ángulo no puede quedar en newtons. Si $\tan\theta$ te hubiera quedado con unidades,
+el error estaría antes, no en la calculadora.
+
+</Paso>
+
+</Ejemplo>
+
+## La respuesta a la pregunta guía
+
+El armario arranca hacia el **nororiente**, en una dirección a $53{,}1^\circ$ del oriente hacia el
+norte, empujado por una resultante de $100\ \mathrm{N}$. No son $140\ \mathrm{N}$ porque los dos
+empujones no colaboran de frente: cada uno aporta todo lo suyo en su propia dirección, y esa
+"desalineación" es la que se paga. El único caso en que se habrían sumado los números es el de dos
+empujones exactamente paralelos y del mismo sentido, y ahí el ángulo habría sido $0^\circ$.
+
+## Qué se malinterpreta
+
+**Primer error: sumar las magnitudes.** Escribir $60\ \mathrm{N} + 80\ \mathrm{N} = 140\ \mathrm{N}$
+y seguir adelante. Nace de arrastrar el hábito de los escalares, donde dos números solo se pueden
+sumar de una manera y nunca hubo un ángulo que preguntar. El correctivo es un reflejo: antes de
+sumar dos vectores, la
+primera pregunta es **cuál es el ángulo entre ellos**. Si la respuesta no es $0^\circ$, las
+magnitudes no se suman.
+
+**Segundo error: mezclar los dos métodos a mitad de camino.** Dibujar $\vec{A}$ y $\vec{B}$ saliendo
+del mismo punto —que es el arreglo del paralelogramo— y luego trazar la resultante uniendo las dos
+puntas, que es el arreglo del triángulo. Ese segmento existe y significa algo, pero **no es la suma:
+es la resta**. La suma con cola común es la diagonal del paralelogramo. La regla que evita el
+desastre: o los dos vectores arrancan del mismo punto y usas el paralelogramo, o los encadenas cabeza
+con cola y usas el triángulo, pero nunca medio de cada uno.
+
+**Tercer error: invertir el orden de la resta.** Calcular $\vec{B} - \vec{A}$ cuando pedían
+$\vec{A} - \vec{B}$. Nace de que en la suma el orden no importaba y uno generaliza sin pensarlo. El
+resultado tiene la magnitud correcta, así que en un examen numérico parece medio bien, pero apunta al
+revés: es el vector opuesto. Amarra la regla al dibujo y no al orden de las letras, pero amárrala con
+su condición puesta: **si dibujaste los dos vectores cola con cola**, la flecha diferencia termina en
+la punta del minuendo. Si en cambio construiste encadenando, como en la diapositiva 12, esa lectura
+no aplica: allí la diferencia termina en la punta de $-\vec{B}$ y no en la de $\vec{A}$.
+
+**Cuarto error: entregar centímetros.** Responder "la resultante mide $5{,}0\ \mathrm{cm}$". Esa es
+la longitud del dibujo, no la fuerza. La respuesta física exige devolver la escala, y la escala exige
+haberla declarado antes de empezar.
+
+<Ejercicio titulo="Un recorrido en bicicleta, con las dos operaciones">
+
+Un ciclista sale de la Plaza de Bolívar y hace tres tramos rectos:
+
+- $\vec{A}$: $4{,}0\ \mathrm{km}$ hacia el **oriente**.
+- $\vec{B}$: $3{,}0\ \mathrm{km}$ hacia el **norte**.
+- $\vec{C}$: $4{,}0\ \mathrm{km}$ hacia el **occidente**.
+
+Trabaja con escala $1\ \mathrm{cm} : 1\ \mathrm{km}$ y responde:
+
+1. Usando el método del polígono, encuentra el desplazamiento resultante $\vec{R} = \vec{A} + \vec{B} + \vec{C}$. Compara su magnitud con la distancia total recorrida.
+2. Encuentra $\vec{A} - \vec{C}$. Piénsalo antes de dibujarlo.
+3. Encuentra $\vec{A} - \vec{B}$ y también $\vec{B} - \vec{A}$, cada uno con su magnitud y su dirección. Verifica la relación que hay entre los dos.
+
+<div slot="solucion">
+
+**1.** Encadenando los tres: $4{,}0\ \mathrm{km}$ al oriente, luego $3{,}0\ \mathrm{km}$ al norte,
+luego $4{,}0\ \mathrm{km}$ al occidente. El primero y el tercero tienen la misma magnitud y sentidos
+contrarios, así que $\vec{C} = -\vec{A}$ y su suma es el vector nulo. Queda:
+
+$$
+\vec{R} = \vec{A} + \vec{B} + \vec{C} = \vec{B}
+$$
+
+Es decir, $R = 3{,}0\ \mathrm{km}$ hacia el **norte**. En el dibujo, la punta del tercer tramo queda
+justo encima de la cola del primero, a $3{,}0\ \mathrm{cm}$.
+
+La distancia recorrida, en cambio, es la suma de las tres longitudes:
+
+$$
+d = 4{,}0\ \mathrm{km} + 3{,}0\ \mathrm{km} + 4{,}0\ \mathrm{km} = 11{,}0\ \mathrm{km}
+$$
+
+Casi cuatro veces la magnitud del desplazamiento. El desplazamiento solo mira el punto de partida y
+el de llegada; no le importa el camino.
+
+**2.** Aquí está la trampa. Como $\vec{C} = -\vec{A}$, entonces $-\vec{C} = \vec{A}$, y:
+
+$$
+\vec{A} - \vec{C} = \vec{A} + (-\vec{C}) = \vec{A} + \vec{A} = 2\vec{A}
+$$
+
+Resultado: $8{,}0\ \mathrm{km}$ hacia el **oriente**. La respuesta equivocada más común es
+$0\ \mathrm{km}$, por hacer $4{,}0\ \mathrm{km} - 4{,}0\ \mathrm{km}$ con las magnitudes. Los dos
+vectores apuntan en sentidos
+contrarios, así que al voltear $\vec{C}$ queda apuntando al oriente igual que $\vec{A}$ y las
+longitudes se **suman**.
+
+**3.** Para $\vec{A} - \vec{B}$: voltea $\vec{B}$, que queda $3{,}0\ \mathrm{km}$ hacia el **sur**, y
+encadénalo a la punta de $\vec{A}$. Como oriente y sur son perpendiculares, el triángulo es
+rectángulo:
+
+$$
+|\vec{A} - \vec{B}| = \sqrt{(4{,}0\ \mathrm{km})^{2} + (3{,}0\ \mathrm{km})^{2}} = 5{,}0\ \mathrm{km}
+$$
+
+$$
+\tan\theta = \frac{3{,}0\ \mathrm{km}}{4{,}0\ \mathrm{km}} = 0{,}75
+\quad\Longrightarrow\quad
+\theta = 36{,}9^\circ
+$$
+
+Entonces $\vec{A} - \vec{B}$ mide $5{,}0\ \mathrm{km}$ y apunta $36{,}9^\circ$ **al sur del oriente**.
+
+Para $\vec{B} - \vec{A}$: voltea $\vec{A}$, que queda $4{,}0\ \mathrm{km}$ hacia el **occidente**, y
+encadénalo a la punta de $\vec{B}$. El triángulo es el mismo, así que la magnitud también:
+$5{,}0\ \mathrm{km}$. Pero ahora apunta $36{,}9^\circ$ **al norte del occidente**, que es exactamente
+la dirección contraria de la anterior. Se cumple lo previsto:
+
+$$
+\vec{B} - \vec{A} = -\,(\vec{A} - \vec{B})
+$$
+
+Comprobación con la cota, válida para los dos:
+
+$$
+|A - B| = 1{,}0\ \mathrm{km} \;\le\; 5{,}0\ \mathrm{km} \;\le\; A + B = 7{,}0\ \mathrm{km}
+$$
+
+Y la comprobación dimensional: todos los términos son longitudes, $[L]$, y el ángulo salió de un
+cociente $\mathrm{km}/\mathrm{km}$, adimensional.
+
+</div>
+
+</Ejercicio>

@@ -1,0 +1,520 @@
+---
+titulo: Vectores unitarios
+unidad: vectores
+orden: 3
+sesiones: []
+
+pregunta_guia: >
+  Un taxi baja por la Séptima hacia el sur: primero a 40 km/h y unas cuadras después a 25 km/h.
+  La rapidez cambió, el rumbo no. ¿Cómo se escribe aparte, con un solo símbolo, esa parte que
+  no cambió?
+prerrequisitos:
+  - escalares-y-vectores
+  - suma-y-resta-grafica
+conceptos_clave:
+  - Un vector unitario tiene magnitud exactamente 1 y no tiene unidades; su único aporte es la dirección.
+  - El unitario de un vector se obtiene dividiéndolo entre su propia magnitud, que es un escalar.
+  - Todo vector se puede separar en magnitud por dirección, A⃗ = |A⃗| û.
+  - î, ĵ y k̂ son los unitarios de los ejes x, y, z, y de ahí sale A⃗ = Aₓî + A_yĵ.
+  - El vector nulo no tiene unitario porque no tiene dirección.
+errores_frecuentes:
+  - Ponerle unidades al vector unitario, como si midiera 1 metro
+  - Dividir el vector entre el vector, en vez de entre su magnitud
+  - Creer que las componentes de un unitario deben sumar 1, cuando lo que suma 1 es la suma de sus cuadrados
+  - Confundir la componente escalar Aₓ con la componente vectorial Aₓî
+tiempo_estudio_min: 26
+
+esencial:
+  - "Un unitario es un vector de magnitud exactamente 1 y sin unidades: solo dice hacia dónde."
+  - "û = A⃗ / |A⃗|. Se divide entre la magnitud, que es un escalar; un vector nunca se divide entre otro vector."
+  - "Al revés, A⃗ = |A⃗| û separa cuánto de hacia dónde, y de ahí sale A⃗ = Aₓî + A_yĵ."
+  - "El vector nulo no tiene unitario: no apunta a ninguna parte y el denominador daría cero."
+tiempo_repaso_min: 5
+
+fuentes:
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 13
+    fecha: 2026-08-30
+    aporta: >
+      Definición literal: "Un vector unitario es un vector sin dimensiones que tiene una magnitud de
+      exactamente 1. Los vectores unitarios se usan para especificar una dirección conocida y no
+      tienen otro significado físico. Son útiles exclusivamente como una convención para describir
+      una dirección en el espacio."
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 13
+    fecha: 2026-08-30
+    aporta: >
+      Figura de los ejes cartesianos x, y, z con los tres unitarios rotulados î, ĵ y k̂, uno sobre
+      cada eje. De ahí sale el nombre y la orientación de la base cartesiana.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 13
+    fecha: 2026-08-30
+    aporta: >
+      Dos figuras más, una rotulada "Cilíndricas" con ρ̂, φ̂ y k̂, y otra sin rótulo con r̂, θ̂ y φ̂.
+      No traen ni una fórmula ni explicación, y el PDF no las vuelve a usar. Es un hueco declarado.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 14
+    fecha: 2026-08-30
+    aporta: >
+      Representación de un vector con unitarios, A⃗ = Aₓî + A_yĵ, con la figura del vector en el
+      plano y sus dos componentes dibujadas sobre los ejes.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 15
+    fecha: 2026-08-30
+    aporta: >
+      La descomposición vectorial A⃗ = A⃗ₓ + A⃗_y, escrita con flecha sobre A⃗ₓ y A⃗_y, junto con la
+      figura del rectángulo de descomposición sobre los ejes.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 15
+    fecha: 2026-08-30
+    aporta: >
+      La magnitud en función de las componentes, A = √(Aₓ² + A_y²). Aquí solo se usa como
+      herramienta para calcular el denominador del unitario; se desarrolla en la lección 04.
+  - tipo: deduccion
+    aporta: >
+      Obtención de û = A⃗/|A⃗| exigiéndole magnitud 1 a un múltiplo escalar positivo de A⃗, y la
+      identidad inversa A⃗ = |A⃗| û. La presentación da la definición pero nunca la fórmula.
+  - tipo: deduccion
+    aporta: >
+      El carácter adimensional del unitario visto como cancelación de unidades entre numerador y
+      denominador. La diapositiva 13 afirma "sin dimensiones" sin justificarlo.
+  - tipo: deduccion
+    aporta: >
+      El paso intermedio A⃗ₓ = Aₓî, A⃗_y = A_yĵ, que conecta la descomposición de la dia. 15 con la
+      representación de la dia. 14. Las dos expresiones están en la presentación, pero el paso que
+      las une, escribir cada componente vectorial como escalar por el unitario de su eje, no.
+  - tipo: deduccion
+    aporta: >
+      Extensión a tres dimensiones, A⃗ = Aₓî + A_yĵ + A_zk̂. La figura de la dia. 13 tiene los tres
+      ejes, pero el PDF solo usa esa expresión mucho después, en el producto vectorial.
+  - tipo: deduccion
+    aporta: >
+      La lectura de las figuras cilíndrica y esférica de la dia. 13 como "existen otras bases de
+      unitarios además de î, ĵ, k̂", y el nombre "esféricas" para la figura de la derecha, que no
+      lleva rótulo. La diapositiva no lo dice con palabras.
+  - tipo: deduccion
+    aporta: >
+      Todos los números del ejemplo y del ejercicio. Las 28 diapositivas del PDF no resuelven un
+      solo cálculo.
+
+confianza: alta
+estado: revisado
+revision:
+  fecha: 2026-08-30
+  veredicto: coherente-con-reparos
+  chequeos: [aritmetica-exacta, coherencia-con-la-fuente, notacion, casos-limite]
+  observaciones:
+    - "Los seis numeros recalculados: exactos, incluido que el unitario obtenido tiene magnitud 1."
+    - "El argumento de adimensionalidad coincide palabra por palabra con LibreTexts."
+    - "La figura sin rotulo de la diapositiva 13 se verifico en la imagen: efectivamente no lleva rotulo, y nombrarla esferica esta declarado como deduccion."
+    - "Reparo corregido: escribia el corchete de dimension con unidades dentro (N/N), justo el error que la unidad anterior ensena a evitar, y se contradecia consigo misma 183 lineas despues."
+    - "Reparo corregido: dos formulas de la diapositiva 15 estaban archivadas como deduccion propia mientras la leccion 04 las citaba como fuente. La unidad se contradecia sobre la procedencia de la misma ecuacion."
+dudas_para_docente:
+  - "¿Las coordenadas cilíndricas y esféricas de la dia. 13 entran en el parcial? Aparecen como dos figuras sin una sola fórmula y el PDF no las vuelve a usar en las quince diapositivas siguientes."
+  - "El PDF nunca escribe el unitario de un vector cualquiera: solo î, ĵ y k̂. La notación û de esta lección es del proyecto. ¿Cómo lo escribe ella en el tablero, û o Â?"
+  - "No hay ni un ejemplo numérico en las 28 diapositivas, así que no se sabe con qué nivel de dificultad plantea un problema de vectores."
+  - "¿El corchete [·] lo usa ella para la dimensión ([F] = MLT⁻²) o para la unidad ([F] = N)? En este proyecto ya quedó fijado en 'dimensión', siguiendo la dia. 23 de la presentación de la semana 1, pero conviene confirmarlo antes del parcial porque de eso depende cómo se califica un desarrollo dimensional."
+---
+
+import Nota from '../../../componentes/Nota.astro';
+import Ejemplo from '../../../componentes/Ejemplo.astro';
+import Paso from '../../../componentes/Paso.astro';
+import Ejercicio from '../../../componentes/Ejercicio.astro';
+
+## De qué se trata
+
+El taxi de la pregunta lleva dos informaciones pegadas en un mismo dato: **cuánto** avanza por unidad
+de tiempo y **hacia dónde** lo hace. Cuando frena de 40 a 25, una de las dos cambia y la otra queda
+intacta. El problema es que si escribes la velocidad como un solo objeto, esas dos informaciones
+vienen mezcladas y no puedes tocar una sin tocar la otra.
+
+Un vector unitario es la herramienta que las separa. Es un vector cuya única función es apuntar: se
+le quitó todo el tamaño, y lo que queda es la pura dirección. Para que no aporte tamaño, su magnitud
+tiene que ser exactamente 1, y para que no aporte ninguna cantidad física, no lleva unidades. No mide
+un metro ni un newton; mide 1, a secas. Por eso la presentación lo define como "un vector sin
+dimensiones que tiene una magnitud de exactamente 1", y agrega que los unitarios "se usan para
+especificar una dirección conocida y no tienen otro significado físico".
+
+Esa aparente pobreza es justamente su valor. Si tienes guardada la dirección en un símbolo aparte,
+puedes prestársela a cualquier magnitud: la misma dirección multiplicada por 40 da una velocidad, y
+multiplicada por 25 da otra. Y al revés, cualquier vector se puede desarmar en dos piezas
+independientes, un número con unidades y una flecha de tamaño 1. Esa es la idea de la que sale toda
+la maquinaria de componentes que viene después.
+
+## Cómo se construye el unitario de un vector
+
+Queremos, dado un vector $\vec{A}$ cualquiera, fabricar un vector $\hat{u}$ que apunte hacia el mismo
+lado y que mida 1. El sombrero, y no la flecha, es la señal de que ese vector ya está normalizado:
+así lo escribe la presentación para $\hat{i}$, $\hat{j}$ y $\hat{k}$.
+
+Empecemos por lo que significa "apuntar hacia el mismo lado". Multiplicar un vector por un escalar
+positivo lo estira o lo encoge, pero no lo gira: la flecha resultante queda sobre la misma recta y
+con el mismo sentido. Entonces todo vector con la dirección de $\vec{A}$ es de la forma
+
+$$
+\hat{u} = c\,\vec{A}, \qquad c \gt 0
+$$
+
+donde $c$ es un escalar por determinar. Falta imponerle la otra condición, la de la magnitud. Como
+estirar por $c$ multiplica la longitud por $c$, se tiene $|\hat{u}| = c\,|\vec{A}|$, y le exigimos que
+valga 1:
+
+$$
+c\,|\vec{A}| = 1
+\quad\Longrightarrow\quad
+c = \frac{1}{|\vec{A}|}
+$$
+
+Ese despeje solo es legal si $|\vec{A}| \neq 0$, detalle que más abajo resulta tener sentido físico.
+Reemplazando $c$ en la primera expresión queda la fórmula que vas a usar siempre:
+
+$$
+\hat{u} = \frac{\vec{A}}{|\vec{A}|}
+$$
+
+donde $\vec{A}$ es el vector original, en las unidades que tenga, y $|\vec{A}| = A$ es su magnitud, un
+**escalar positivo** en esas mismas unidades. La operación es "vector dividido entre escalar", que ya
+conoces: se divide cada componente por el mismo número.
+
+Ahora se ve por qué el unitario no tiene unidades. Supón que $\vec{A}$ es una fuerza: arriba hay
+newton y abajo hay newton también, porque la magnitud de una fuerza se mide en las mismas unidades
+que la fuerza. Al dividir, los newton del numerador se cancelan contra los del denominador y no
+sobrevive ninguna unidad; lo que queda es un número puro con dirección. Escrito en dimensiones, el
+resultado es
+
+$$
+[\hat{u}] = 1
+$$
+
+que se lee "el unitario es adimensional". Cuidado con ese corchete: $[\;\cdot\;]$ denota **la
+dimensión** de una cantidad, no su unidad, y por eso adentro van $M$, $L$ y $T$, nunca newton ni
+metros. La cancelación de newton entre newton es un argumento **de unidades**; lo que ese argumento
+demuestra es que la dimensión del unitario es 1, la del número puro. Y como la cancelación ocurre
+igual con cualquier par de unidades iguales —libras entre libras, metros entre metros—, la conclusión
+no depende de en qué estuvieras midiendo.
+
+Y si multiplicas los dos lados de la fórmula por $|\vec{A}|$, obtienes la identidad que de verdad
+importa:
+
+$$
+\vec{A} = |\vec{A}|\;\hat{u} = A\,\hat{u}
+$$
+
+Léela en voz alta: **todo vector es su magnitud multiplicada por su dirección**. El primer factor
+carga las unidades y responde "cuánto"; el segundo es adimensional y responde "hacia dónde". Eso es
+exactamente lo que le faltaba al taxi.
+
+<Nota tipo="ojo" titulo="Notación">
+
+La presentación **nunca escribe el unitario de un vector cualquiera**: solo aparecen $\hat{i}$,
+$\hat{j}$ y $\hat{k}$. El símbolo $\hat{u}$ de esta lección es una convención del proyecto, no de la
+docente, y está preguntado en la lista de dudas. Lo que sí es de ella, y es consistente en las 28
+diapositivas, es que **el vector lleva flecha** ($\vec{A}$), **la magnitud es la misma letra sin
+flecha** ($|\vec{A}| = A$) y **el unitario lleva sombrero**.
+
+</Nota>
+
+## Los unitarios de los ejes: î, ĵ y k̂
+
+Hasta aquí, cada vector tiene su propio unitario y hay infinitos. Pero si eliges de una vez tres
+direcciones fijas y les das nombre, ya no tienes que inventar uno nuevo cada vez. Eso es lo que hace
+la diapositiva 13 con la figura de los ejes: llama
+
+- $\hat{i}$ al unitario que apunta en el sentido positivo del eje $x$,
+- $\hat{j}$ al que apunta en el sentido positivo del eje $y$,
+- $\hat{k}$ al que apunta en el sentido positivo del eje $z$.
+
+Los tres cumplen $|\hat{i}| = |\hat{j}| = |\hat{k}| = 1$, los tres son adimensionales y los tres son
+perpendiculares entre sí, porque los ejes lo son. A ese trío se le llama la **base cartesiana**: no
+tiene nada de especial salvo que es cómoda y que todo el mundo la usa igual.
+
+Con ellos aparece la representación de la diapositiva 14, y el punto de partida es la diapositiva 15,
+donde ella escribe que un vector $\vec{A}$ del plano es la suma de dos vectores, uno acostado sobre
+el eje $x$ y otro parado sobre el eje $y$, que son justamente los lados del rectángulo punteado de la
+figura:
+
+$$
+\vec{A} = \vec{A}_x + \vec{A}_y
+$$
+
+Fíjate en que $\vec{A}_x$ y $\vec{A}_y$ **llevan flecha**: son vectores. Pero cada uno vive sobre un
+eje, así que cada uno es un múltiplo escalar del unitario de ese eje. Llamando $A_x$ y $A_y$ a esos
+escalares:
+
+$$
+\vec{A}_x = A_x\,\hat{i}, \qquad \vec{A}_y = A_y\,\hat{j}
+$$
+
+Ese renglón es el puente entre las dos expresiones de ella: la presentación trae la descomposición de
+la diapositiva 15 y el resultado de la diapositiva 14, pero no el paso que las conecta. Sustituyendo
+en la suma se obtiene, en efecto, la expresión que ella escribe en la diapositiva 14:
+
+$$
+\vec{A} = A_x\,\hat{i} + A_y\,\hat{j}
+$$
+
+Aquí $A_x$ y $A_y$ son escalares **con signo y con las unidades del vector**: si $\vec{A}$ es una
+fuerza, $A_x$ está en newton. El signo indica el sentido sobre el eje, y el sombrero se encarga de la
+dirección. En tres dimensiones el mismo argumento agrega un término:
+
+$$
+\vec{A} = A_x\,\hat{i} + A_y\,\hat{j} + A_z\,\hat{k}
+$$
+
+<Nota tipo="clave">
+
+$A_x$ (sin flecha) es un **número**: la componente escalar. $A_x\hat{i}$ es un **vector**: la
+componente vectorial, que ella escribe $\vec{A}_x$. No son lo mismo y la diferencia es el sombrero.
+Cómo se calculan $A_x$ y $A_y$ a partir de la magnitud y del ángulo es el tema de la lección 04; esta
+lección solo te entrega la herramienta con la que se escriben.
+
+</Nota>
+
+<div class="amplia">
+
+## Otros sistemas de coordenadas: lo que la diapositiva no desarrolla
+
+La diapositiva 13 no muestra solo los ejes cartesianos. A la derecha hay dos figuras más: una
+rotulada **Cilíndricas**, con los unitarios $\hat{\rho}$, $\hat{\varphi}$ y $\hat{k}$, y otra sin
+rótulo, dibujada sobre una esfera, con $\hat{r}$, $\hat{\theta}$ y $\hat{\varphi}$, que corresponde a
+coordenadas esféricas. Lo único que puedes concluir de ellas es que la idea de "magnitud por
+dirección" no obliga a usar los ejes $x$, $y$, $z$: se puede armar una base de unitarios acomodada a
+la geometría del problema, y para un cilindro o una esfera esa base es más cómoda.
+
+Hasta ahí llega lo que la presentación sostiene. **No hay una sola fórmula asociada a esas figuras,
+ni una línea de explicación, y en las quince diapositivas siguientes no se vuelven a usar.** En este
+curso todo el trabajo se hace en coordenadas cartesianas, con $\hat{i}$, $\hat{j}$ y $\hat{k}$. Este
+es un hueco declarado, no un tema que se esté escondiendo: está anotado arriba como pregunta para la
+docente y no se rellena con lo que suene razonable.
+
+</div>
+
+## Qué significa cada parte
+
+La fórmula tiene un numerador vectorial y un denominador escalar. Forzar los extremos es lo que
+muestra si la entendiste:
+
+| Si cambias esto | Le pasa esto a $\hat{u}$ | Por qué |
+|---|---|---|
+| $\vec{A}$ se vuelve el doble de largo | Nada, queda idéntico | El tamaño se duplica arriba y abajo, y se cancela |
+| $\vec{A}$ se reemplaza por $-\vec{A}$ | Se invierte: queda $-\hat{u}$ | Misma recta de acción, sentido contrario |
+| $\vec{A}$ ya medía 1 | $\hat{u} = \vec{A}$ | Dividir entre 1 no cambia nada; ya era su propio unitario |
+| Cambias las unidades de $\vec{A}$ | Nada | Numerador y denominador cambian igual |
+| $\vec{A} = \vec{0}$ | **No existe** | El denominador es cero |
+
+El último renglón no es un accidente algebraico. El vector nulo no tiene dirección: no apunta a
+ninguna parte, y por eso no hay ninguna flecha de tamaño 1 que lo represente. La matemática se
+niega a dividir entre cero y la física se niega por la misma razón. Cuando en un problema te dé
+$|\vec{A}| = 0$, la respuesta no es "el unitario es cero", es **"no está definido"**.
+
+El primer renglón, en cambio, es todo el propósito del concepto: $\hat{u}$ **no sabe nada del tamaño
+de $\vec{A}$**. Dos velocidades distintas sobre la misma calle tienen el mismo unitario, y eso es lo
+que lo hace útil para separar lo que cambia de lo que no.
+
+## Un caso con números
+
+<Ejemplo titulo="Prestarle la dirección de una fuerza a otra fuerza">
+
+Dos personas empujan un carro varado. La primera aplica $\vec{F}_1 = (60\,\hat{i} + 80\,\hat{j})\ \mathrm{N}$.
+La segunda quiere empujar con $250\ \mathrm{N}$ **en esa misma dirección y sentido**. ¿Cómo se escribe
+su fuerza en componentes?
+
+<Paso n="1" razon="Antes de poner un signo hay que decir hacia dónde apunta cada eje. Sin marco declarado, las componentes no significan nada.">
+
+Tomamos el eje $x$ positivo hacia el oriente y el eje $y$ positivo hacia el norte. Con eso, las
+componentes escalares de la primera fuerza son
+
+$$
+F_{1x} = 60\ \mathrm{N}, \qquad F_{1y} = 80\ \mathrm{N}
+$$
+
+</Paso>
+
+<Paso n="2" razon="El unitario se divide entre la magnitud, así que primero hay que tener la magnitud. Las componentes son perpendiculares, así que forman los catetos de un triángulo rectángulo y aplica Pitágoras.">
+
+$$
+|\vec{F}_1| = \sqrt{F_{1x}^{2} + F_{1y}^{2}}
+= \sqrt{(60\ \mathrm{N})^{2} + (80\ \mathrm{N})^{2}}
+= \sqrt{10\,000\ \mathrm{N^2}}
+= 100\ \mathrm{N}
+$$
+
+</Paso>
+
+<Paso n="3" razon="Dividir un vector entre un escalar es dividir cada componente por ese mismo número. Los newton se cancelan arriba y abajo: por eso el resultado sale sin unidades.">
+
+$$
+\hat{u} = \frac{\vec{F}_1}{|\vec{F}_1|}
+= \frac{(60\,\hat{i} + 80\,\hat{j})\ \mathrm{N}}{100\ \mathrm{N}}
+= 0{,}6\,\hat{i} + 0{,}8\,\hat{j}
+$$
+
+</Paso>
+
+<Paso n="4" razon="Comprobar que la magnitud da exactamente 1 cuesta diez segundos y atrapa cualquier error de cuenta anterior. Si no da 1, no es un unitario.">
+
+$$
+|\hat{u}| = \sqrt{(0{,}6)^{2} + (0{,}8)^{2}} = \sqrt{0{,}36 + 0{,}64} = \sqrt{1} = 1
+$$
+
+</Paso>
+
+<Paso n="5" razon="Aquí se ve para qué sirve el concepto: el unitario guardó la dirección y ahora se la presta a una magnitud completamente distinta.">
+
+$$
+\vec{F}_2 = 250\ \mathrm{N}\;\hat{u}
+= 250\ \mathrm{N}\,(0{,}6\,\hat{i} + 0{,}8\,\hat{j})
+= (150\,\hat{i} + 200\,\hat{j})\ \mathrm{N}
+$$
+
+</Paso>
+
+<Paso n="6" razon="Comprobación dimensional y de coherencia. Toda respuesta se revisa contra lo que pedía el enunciado antes de entregarla.">
+
+El unitario salió de dividir newton entre newton, así que es adimensional: $[\hat{u}] = 1$.
+Multiplicarlo por $250\ \mathrm{N}$ devuelve newton, que es lo que debe ser una fuerza,
+
+$$
+[F_2] = MLT^{-2} \cdot 1 = MLT^{-2}
+$$
+
+y la magnitud del resultado tiene que ser la que se pidió:
+
+$$
+|\vec{F}_2| = \sqrt{(150\ \mathrm{N})^{2} + (200\ \mathrm{N})^{2}} = \sqrt{62\,500\ \mathrm{N^2}} = 250\ \mathrm{N}
+$$
+
+Coincide. La operación cambió el tamaño y respetó la dirección, que era el encargo.
+
+</Paso>
+
+</Ejemplo>
+
+## Qué se malinterpreta
+
+**"El unitario mide 1 metro."** Es el error más común y nace de una costumbre sana: en física todo
+número lleva unidades, así que la mente le pega una a ese 1. Pero el unitario salió de un cociente
+entre dos cantidades de las mismas unidades, y ahí no queda ninguna. No mide 1 metro ni 1 newton;
+mide 1. Si en un examen escribes $\hat{u} = 0{,}6\,\hat{i} + 0{,}8\,\hat{j}\ \mathrm{N}$, esos newton
+sobran y son un error de física.
+
+**"Se divide el vector entre el vector."** La expresión es $\vec{A}/|\vec{A}|$, con barras. Abajo va
+la **magnitud**, que es un escalar, no el vector. Y la razón no es de notación: **la división entre
+vectores no está definida**. No existe ninguna operación en este curso que divida un vector entre
+otro vector. Si en tu desarrollo aparece una, hay algo mal antes.
+
+**"Los unitarios son $\hat{i}$, $\hat{j}$ y $\hat{k}$."** Esos son los unitarios **de los ejes
+cartesianos**, que son los que más vas a usar, pero no los únicos: cualquier dirección del espacio
+tiene el suyo, y el ejemplo de arriba fabricó uno que no coincide con ningún eje. En la diapositiva
+13, además de los ejes cartesianos, aparecen otras dos figuras con unitarios de nombres distintos;
+lo único que puedes concluir de ellas es que la base cartesiana no es la única posible.
+
+**Confundir $A_x$ con $A_x\hat{i}$.** El primero es un número con signo y unidades; el segundo es un
+vector. Escribir $\vec{A} = A_x + A_y$ suma dos números y borra la información de dirección, que era
+todo el punto. La flecha no se puede recuperar después.
+
+## Volvamos al taxi
+
+Ya hay con qué responder la pregunta del principio. Tomemos el eje $x$ hacia el oriente y el eje $y$
+hacia el norte, de modo que "hacia el sur" es el sentido negativo de $y$. Las dos velocidades son
+
+$$
+\vec{v}_1 = -40\,\hat{j}\ \mathrm{km/h},
+\qquad
+\vec{v}_2 = -25\,\hat{j}\ \mathrm{km/h}
+$$
+
+y sus magnitudes, $40\ \mathrm{km/h}$ y $25\ \mathrm{km/h}$. Sacando el unitario de cada una:
+
+$$
+\hat{u}_1 = \frac{-40\,\hat{j}\ \mathrm{km/h}}{40\ \mathrm{km/h}} = -\hat{j},
+\qquad
+\hat{u}_2 = \frac{-25\,\hat{j}\ \mathrm{km/h}}{25\ \mathrm{km/h}} = -\hat{j}
+$$
+
+**El símbolo que no cambió es $-\hat{j}$**, y no cambió porque el unitario es ciego al tamaño. La
+velocidad completa se escribe entonces como magnitud por dirección, $\vec{v} = v\,(-\hat{j})$, donde
+lo único que se movió al frenar fue el escalar $v$, de $40$ a $25\ \mathrm{km/h}$.
+
+Y ni siquiera depende del sistema de unidades. Como $40\ \mathrm{km/h} = 11{,}1\ \mathrm{m/s}$, la
+misma cuenta en unidades del SI da
+
+$$
+\hat{u}_1 = \frac{-11{,}1\,\hat{j}\ \mathrm{m/s}}{11{,}1\ \mathrm{m/s}} = -\hat{j}
+$$
+
+el mismo símbolo. La dirección no tiene unidades y por eso no se entera de en qué las estabas
+midiendo.
+
+<Ejercicio titulo="Tres preguntas sobre el mismo viento">
+
+En un punto de la sabana el viento sopla con $\vec{v} = (-9\,\hat{i} + 12\,\hat{j})\ \mathrm{m/s}$,
+con el eje $x$ hacia el oriente y el eje $y$ hacia el norte.
+
+1. Encuentra el vector unitario de $\vec{v}$ y comprueba que su magnitud es 1.
+2. Escribe un vector de $45\ \mathrm{m/s}$ con esa misma dirección y sentido.
+3. ¿Es $\vec{w} = 0{,}6\,\hat{i} + 0{,}4\,\hat{j}$ un vector unitario? Si no lo es, corrígelo.
+
+<div slot="solucion">
+
+**1.** Primero la magnitud, por Pitágoras sobre las componentes:
+
+$$
+|\vec{v}| = \sqrt{(-9\ \mathrm{m/s})^{2} + (12\ \mathrm{m/s})^{2}} = \sqrt{225\ \mathrm{m^2/s^2}} = 15\ \mathrm{m/s}
+$$
+
+Sale positiva, como debe ser toda magnitud, aunque una componente sea negativa. Ahora la división:
+
+$$
+\hat{u} = \frac{(-9\,\hat{i} + 12\,\hat{j})\ \mathrm{m/s}}{15\ \mathrm{m/s}} = -0{,}6\,\hat{i} + 0{,}8\,\hat{j}
+$$
+
+Comprobación: $\sqrt{0{,}36 + 0{,}64} = 1$. El signo menos sobrevivió a la división, y tiene que
+sobrevivir: el viento va hacia el noroccidente y el unitario también.
+
+**2.** Magnitud por dirección, que es la identidad $\vec{A} = A\,\hat{u}$:
+
+$$
+\vec{V} = 45\ \mathrm{m/s}\,(-0{,}6\,\hat{i} + 0{,}8\,\hat{j}) = (-27\,\hat{i} + 36\,\hat{j})\ \mathrm{m/s}
+$$
+
+Verificación: $\sqrt{27^{2} + 36^{2}} = \sqrt{2025} = 45$, y las unidades quedaron en
+$\mathrm{m/s}$ porque el unitario no aportó ninguna.
+
+**3.** No lo es:
+
+$$
+|\vec{w}| = \sqrt{(0{,}6)^{2} + (0{,}4)^{2}} = \sqrt{0{,}36 + 0{,}16} = \sqrt{0{,}52} \approx 0{,}721 \neq 1
+$$
+
+El error nace de creer que **las componentes deben sumar 1**. Aquí suman 1 exactamente, porque
+$0{,}6 + 0{,}4 = 1$, y aun así el vector mide $0{,}721$. Lo que debe valer 1 es la suma de los
+**cuadrados**, porque la magnitud viene de Pitágoras y no de una suma simple. Se corrige como se
+corrige cualquier vector: dividiéndolo entre su propia magnitud.
+
+$$
+\hat{w} = \frac{0{,}6\,\hat{i} + 0{,}4\,\hat{j}}{0{,}721} \approx 0{,}832\,\hat{i} + 0{,}555\,\hat{j}
+$$
+
+Ahora sí lleva sombrero, porque ahora sí está normalizado. Como $0{,}6$ y $0{,}4$ están en razón
+$3:2$, el resultado exacto es $\hat{w} = (3\hat{i} + 2\hat{j})/\sqrt{13}$, y con él la comprobación
+sale sin decimales:
+
+$$
+|\hat{w}|^{2} = \left(\frac{3}{\sqrt{13}}\right)^{2} + \left(\frac{2}{\sqrt{13}}\right)^{2}
+= \frac{9}{13} + \frac{4}{13} = 1
+$$
+
+Mira el contraste, que es el punto del ejercicio: en $\vec{w}$ sumaban 1 las **componentes** y no era
+unitario; en $\hat{w}$ suman 1 los **cuadrados**, y por eso sí lo es. La dirección no se movió en
+ningún momento: $\hat{w}$ apunta exactamente hacia donde apuntaba $\vec{w}$, solo que ahora mide 1.
+
+</div>
+
+</Ejercicio>
