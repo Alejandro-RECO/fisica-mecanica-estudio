@@ -30,7 +30,7 @@ const corto = (ref?: string) =>
   !ref ? null : ref.startsWith('http') ? new URL(ref).hostname.replace(/^www\./, '') : ref.split('/').pop();
 ---
 
-<aside class="procedencia ancho amplia" aria-labelledby="procedencia-titulo">
+<aside class="procedencia amplia" aria-labelledby="procedencia-titulo">
   <p class="procedencia-titulo" id="procedencia-titulo">De dónde salió cada cosa</p>
 
   <div class="procedencia-grid">

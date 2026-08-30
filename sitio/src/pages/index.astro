@@ -14,6 +14,7 @@ const conDudas = lecciones.filter((l) => l.data.estado === 'con-dudas').length;
   descripcion="Guía de estudio de Física Mecánica construida a partir del material real de cada clase."
 >
   <main class="contenido">
+    <div class="columna columna-ancha">
     <h1 class="portada-titular">Lo que se vio en clase, entendido.</h1>
     <p class="portada-bajada">
       Cada lección se arma con las diapositivas de la docente, las fotos del tablero y los apuntes de
@@ -62,5 +63,6 @@ const conDudas = lecciones.filter((l) => l.data.estado === 'con-dudas').length;
         </p>
       )
     }
+    </div>
   </main>
 </Base>

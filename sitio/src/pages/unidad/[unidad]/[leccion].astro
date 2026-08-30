@@ -23,6 +23,7 @@ const secciones = headings.filter((h) => h.depth === 2);
 
 <Base titulo={d.titulo} descripcion={d.pregunta_guia}>
   <main class="contenido leccion" data-pagefind-body>
+    <div class="columna">
     <header class="ficha ancho">
       <p class="eyebrow">
         <a href="/">Estudio</a> — <a href={`/unidad/${d.unidad}/`}>{unidad?.data.titulo ?? d.unidad}</a>
@@ -62,20 +63,6 @@ const secciones = headings.filter((h) => h.depth === 2);
       </dl>
     </header>
 
-    {
-      secciones.length > 1 && (
-        <nav class="eje ancho no-print" aria-label="Secciones de la lección">
-          <ol>
-            {secciones.map((s) => (
-              <li>
-                <a href={`#${s.slug}`}>{s.text}</a>
-              </li>
-            ))}
-          </ol>
-        </nav>
-      )
-    }
-
     <Disputa contradicciones={d.contradicciones} dudas={d.dudas_para_docente} />
 
     <section class="esencial ancho">
@@ -99,8 +86,26 @@ const secciones = headings.filter((h) => h.depth === 2);
         </section>
       )
     }
+    </div>
 
-    <Procedencia fuentes={d.fuentes} />
+    <aside class="margen no-print" aria-label="Índice y procedencia">
+      {
+        secciones.length > 1 && (
+          <nav class="eje" aria-label="Secciones de la lección">
+            <p class="eje-titulo">En esta lección</p>
+            <ol>
+              {secciones.map((s) => (
+                <li>
+                  <a href={`#${s.slug}`}>{s.text}</a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        )
+      }
+
+      <Procedencia fuentes={d.fuentes} />
+    </aside>
   </main>
 
   <script is:inline>

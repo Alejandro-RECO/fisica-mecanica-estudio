@@ -54,8 +54,8 @@
 
   --radio: 3px;
   --nav-ancho: 264px;
-  --texto: 68ch;      /* carril de lectura */
-  --respiro: 200px;   /* carril lateral para desbordes */
+  --texto: 68ch;    /* carril de lectura */
+  --margen: 236px;  /* riel de margen: eje de secciones y procedencia */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -257,24 +257,42 @@ a:hover { color: var(--vector); }
    borde a borde. Asi la pagina tiene ritmo sin dejar de ser legible.
    ============================================================ */
 
-/* Los nombres de linea llevan el sufijo -start/-end a proposito: solo asi
-   funciona el atajo `grid-column: texto`. Con nombres arbitrarios el atajo
-   es invalido, cada hijo cae en auto-colocacion y la pagina se desarma. */
+/* Flex, no grid con lineas nombradas: la columna de lectura y el riel de
+   margen tienen ancho propio y no compiten. Plegar el menu no puede
+   aplastar el texto porque ninguna pista depende del espacio sobrante. */
 .contenido {
   grid-column: 2;
-  display: grid;
-  grid-template-columns:
-    [full-start] var(--e7)
-    [texto-start ancho-start] minmax(0, var(--texto))
-    [texto-end] minmax(var(--e5), var(--respiro))
-    [ancho-end] minmax(var(--e5), 1fr)
-    [full-end];
-  align-content: start;
-  padding: var(--e7) 0 var(--e8);
+  display: flex;
+  gap: var(--e7);
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--e7) var(--e6) var(--e8);
 }
-.contenido > * { grid-column: texto; min-width: 0; }
-.contenido > .ancho { grid-column: ancho; }
-.contenido > .completo { grid-column: full; }
+
+.columna {
+  flex: 1 1 var(--texto);
+  max-width: var(--texto);
+  min-width: 0;
+}
+/* Portada e indices no llevan riel: la rejilla de tarjetas usa el ancho. */
+.columna-ancha { flex-basis: 1060px; max-width: 1060px; }
+
+/* Los paneles se salen un poco del carril de lectura para dar ritmo. */
+.columna > .ancho {
+  margin-inline: calc(var(--e5) * -1);
+  width: calc(100% + var(--e5) * 2);
+}
+
+/* ---------- riel de margen ---------- */
+.margen {
+  flex: 0 0 var(--margen);
+  position: sticky;
+  top: var(--e4);
+  max-height: calc(100vh - var(--e6));
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+.solo-esencial .margen { display: none; }
 
 /* ============================================================
    Ficha de la leccion — la cabecera como panel de instrumentos
@@ -323,8 +341,8 @@ h1 {
 /* fila de instrumentos: confianza, estado, tiempos, fuentes */
 .instrumentos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
-  gap: var(--e1) var(--e5);
+  grid-template-columns: repeat(auto-fit, minmax(78px, 1fr));
+  gap: var(--e4) var(--e4);
   padding-top: var(--e4);
   border-top: 1px solid var(--linea);
   margin: 0;
@@ -351,46 +369,49 @@ h1 {
    aqui marca por donde va la lectura.
    ============================================================ */
 
-.eje {
-  position: sticky;
-  top: 0;
-  z-index: 15;
-  background: color-mix(in srgb, var(--papel) 92%, transparent);
-  backdrop-filter: blur(6px);
+.eje { margin-bottom: var(--e6); }
+.eje-titulo {
+  font-family: var(--dato);
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--grafito-3);
+  margin: 0 0 var(--e3);
+  padding-bottom: var(--e2);
   border-bottom: 1px solid var(--linea);
-  margin-bottom: var(--e6);
-  padding: var(--e2) 0;
-  overflow-x: auto;
-  scrollbar-width: none;
 }
-.eje::-webkit-scrollbar { display: none; }
 .eje ol {
-  display: flex;
-  gap: var(--e5);
   list-style: none;
   margin: 0;
   padding: 0;
-  white-space: nowrap;
+  /* el eje: una recta vertical con las secciones como marcas */
+  border-left: 1px solid var(--linea);
 }
+.eje li { margin: 0; }
 .eje a {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--e2);
+  display: block;
+  position: relative;
   font-family: var(--dato);
   font-size: 10.5px;
-  letter-spacing: 0.08em;
+  line-height: 1.45;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--grafito-3);
   text-decoration: none;
-  padding: var(--e1) 0;
+  padding: var(--e2) 0 var(--e2) var(--e4);
 }
 .eje a::before {
   content: '';
+  position: absolute;
+  left: -4px;
+  top: 15px;
   width: 6px; height: 6px;
-  border: 1px solid currentColor;
+  background: var(--papel);
+  border: 1px solid var(--linea);
   transform: rotate(45deg);
 }
 .eje a:hover { color: var(--grafito); }
+.eje a:hover::before { border-color: var(--grafito-3); }
 .eje a[aria-current='true'] { color: var(--vector); }
 .eje a[aria-current='true']::before { background: var(--vector); border-color: var(--vector); }
 
@@ -600,26 +621,23 @@ code {
    Todo lo que se afirma salio de algun lado, y ese lado se ve.
    ============================================================ */
 
-.procedencia { padding: var(--e5) var(--e6); margin-top: var(--e8); }
+/* En el riel no lleva caja: seria una caja dentro de otra. */
+.procedencia { background: none; border: none; padding: 0; margin: 0; }
 .procedencia-titulo {
   font-family: var(--dato);
-  font-size: 10.5px;
+  font-size: 9.5px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--grafito-3);
-  padding-bottom: var(--e3);
+  padding-bottom: var(--e2);
   border-bottom: 1px solid var(--linea);
-  margin: 0 0 var(--e4);
+  margin: 0 0 var(--e3);
 }
-.procedencia-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: var(--e4);
-}
+.procedencia-grid { display: grid; gap: var(--e3); }
 .fuente {
   border-left: 2px solid var(--anotacion);
   padding-left: var(--e3);
-  font-size: 14px;
+  font-size: 12.5px;
   line-height: 1.5;
 }
 .fuente.es-deduccion { border-left-color: var(--grafito-3); }
@@ -740,7 +758,9 @@ tr:last-child td { border-bottom: none; }
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  /* auto-fill, no auto-fit: con una sola unidad la tarjeta conserva su
+     tamano en vez de estirarse a todo el ancho. */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: var(--e4);
 }
 .unidad-fila {
@@ -798,17 +818,42 @@ tr:last-child td { border-bottom: none; }
    Responsive
    ============================================================ */
 
-@media (max-width: 1100px) {
+/* Pantalla grande: el carril de lectura y el riel crecen un poco en vez de
+   dejar el ancho sin usar. El texto no pasa de 74ch: mas alla, la linea se
+   vuelve dificil de seguir y se pierde el renglon al volver. */
+@media (min-width: 1560px) {
+  :root { --texto: 74ch; --margen: 290px; }
+  .contenido { gap: var(--e8); }
+  .columna-ancha { flex-basis: 1180px; max-width: 1180px; }
+  .fuente { font-size: 13px; }
+}
+
+/* Sin sitio para el riel: pasa a ser un bloque al pie de la lectura. */
+@media (max-width: 1180px) {
   .contenido {
-    grid-template-columns:
-      [full-start] var(--e5)
-      [texto-start ancho-start] minmax(0, 1fr)
-      [texto-end ancho-end] var(--e5)
-      [full-end];
-    padding: var(--e6) 0 var(--e8);
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--e6);
+    padding: var(--e6) var(--e5) var(--e8);
   }
+  .columna, .columna-ancha { flex: none; max-width: none; margin-inline: auto; width: 100%; }
+  .columna { max-width: var(--texto); }
+  .columna-ancha { max-width: 1060px; }
+  .margen {
+    position: static;
+    flex: none;
+    max-height: none;
+    overflow: visible;
+    max-width: var(--texto);
+    margin-inline: auto;
+    width: 100%;
+    padding-top: var(--e5);
+    border-top: 1px solid var(--linea);
+  }
+  .eje { display: none; }
+  .procedencia-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
   .ficha { padding: var(--e5); }
-  .ejemplo, .ejercicio, .procedencia { padding: var(--e4); }
+  .ejemplo, .ejercicio { padding: var(--e4); }
 }
 
 @media (max-width: 860px) {
@@ -829,8 +874,8 @@ tr:last-child td { border-bottom: none; }
   }
   .nav-oculta .nav { display: block; transform: translateX(-101%); }
 
-  .contenido { grid-column: 1; grid-row: 1; padding-top: 58px; }
-  .eje { top: 0; }
+  .contenido { grid-column: 1; grid-row: 1; padding: 58px var(--e4) var(--e7); }
+  .columna > .ancho { margin-inline: 0; width: 100%; }
   h2 { margin-top: var(--e7); }
   .modo { right: var(--e3); bottom: var(--e3); }
 }

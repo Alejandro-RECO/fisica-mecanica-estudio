@@ -92,19 +92,27 @@ for (const tema of ['light', 'dark']) {
             `columna de ${angosto}px · ${vista.nombre}/${pantalla.nombre}/${menu} — texto aplastado`,
           );
 
-        // Alineacion: todo bloque de la rejilla arranca en el mismo borde
-        // izquierdo. Si uno se sale, la colocacion en la rejilla fallo.
+        // Alineacion dentro del carril de lectura: los bloques normales
+        // comparten borde izquierdo y los .ancho comparten el suyo, que esta
+        // desplazado a proposito. Si alguno se sale, la colocacion fallo.
         const desalineados = await pagina.evaluate(() => {
-          const hijos = [...document.querySelectorAll('.contenido > *')].filter(
-            (e) => e.getBoundingClientRect().width > 0,
-          );
-          if (hijos.length < 2) return [];
-          const izq = hijos.map((e) => Math.round(e.getBoundingClientRect().left));
-          const base = izq.sort((a, b) => a - b)[Math.floor(izq.length / 2)];
-          return hijos
-            .filter((e) => Math.abs(Math.round(e.getBoundingClientRect().left) - base) > 2)
-            .map((e) => `${e.tagName.toLowerCase()}.${e.className.split(' ')[0] || '-'}`)
-            .slice(0, 4);
+          const salida = [];
+          for (const [sel, etiqueta] of [
+            ['.columna > *:not(.ancho)', 'texto'],
+            ['.columna > .ancho', 'panel'],
+          ]) {
+            const hijos = [...document.querySelectorAll(sel)].filter(
+              (e) => e.getBoundingClientRect().width > 0,
+            );
+            if (hijos.length < 2) continue;
+            const izq = hijos.map((e) => Math.round(e.getBoundingClientRect().left));
+            const base = [...izq].sort((a, b) => a - b)[Math.floor(izq.length / 2)];
+            for (const e of hijos) {
+              if (Math.abs(Math.round(e.getBoundingClientRect().left) - base) > 2)
+                salida.push(`${etiqueta}: ${e.tagName.toLowerCase()}.${e.className.split(' ')[0] || '-'}`);
+            }
+          }
+          return salida.slice(0, 4);
         });
         for (const d of desalineados)
           problemas.push(`desalineado ${d} · ${vista.nombre}/${pantalla.nombre}/${menu}`);

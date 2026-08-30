@@ -21,6 +21,7 @@ const repaso = lecciones.reduce((t, l) => t + l.data.tiempo_repaso_min, 0);
 
 <Base titulo={unidad.data.titulo} descripcion={unidad.data.resumen}>
   <main class="contenido">
+    <div class="columna columna-ancha">
     <header class="leccion-cabecera">
       <p class="eyebrow"><a href="/">Estudio</a> — Unidad</p>
       <h1>{unidad.data.titulo}</h1>
@@ -64,5 +65,6 @@ const repaso = lecciones.reduce((t, l) => t + l.data.tiempo_repaso_min, 0);
         </ul>
       )
     }
+    </div>
   </main>
 </Base>
