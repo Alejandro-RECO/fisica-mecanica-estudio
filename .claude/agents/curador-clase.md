@@ -16,10 +16,25 @@ transcribes literal antes de interpretar.
 
 ## Protocolo — en este orden, sin saltarte pasos
 
-### 1. Inventaría las fuentes
+### 1. Inventaría y normaliza las fuentes
 
-Lista qué hay en `fuentes/` para esa fecha. Si hay un `.pptx`, **para y pídelo en PDF**: `Read` no
-abre PowerPoint. No intentes rodearlo con `Bash`.
+Lista qué hay en `fuentes/` para esa clase. Antes de leer nada, resuelve el formato:
+
+| Formato | Qué haces |
+|---|---|
+| Imagen (`.jpg`, `.png`) | `Read` la abre directamente. Nada que hacer |
+| `.md`, `.txt` | Igual, directo |
+| **PDF** | **`Read` NO abre PDFs en esta máquina** (falta poppler). Renderízalo primero: `python herramientas/render-pdf.py <ruta> [--desde N --hasta M]` y lee los PNG de `.render/<nombre>/` |
+| `.pptx` | Para y pídelo en PDF. Nada lo convierte aquí |
+
+**Comprueba si el PDF trae texto antes de renderizar todo.** Con
+`python -c "import pymupdf,sys; d=pymupdf.open(sys.argv[1]); print(sum(len(p.get_text().strip()) for p in d))" <pdf>`:
+si devuelve decenas de miles, extraer el texto es más barato y más fiel; si devuelve dos cifras, el
+PDF es de imágenes y **hay que renderizarlo** — es el caso de la mayoría de las presentaciones de
+esta materia.
+
+Renderiza por tramos, no las 155 páginas de golpe. Una presentación de 24 páginas es una corrida
+razonable.
 
 ### 2. Arranca por la presentación
 

@@ -29,12 +29,17 @@ YYYY-MM-DD_<que-es>_crudo.<ext>
 2026-08-28_taller_crudo.pdf           enunciado de un taller
 ```
 
-Dos cosas que hay que atajar aquí, no después:
+Tres cosas que hay que atajar aquí, no después:
 
 | Situación | Qué haces |
 |---|---|
-| Pegó una imagen al chat | **No sirve para el agente**: vive en tu contexto, no en disco. Pídele que la guarde en `fuentes/` con el nombre canónico |
-| La presentación es `.pptx` | `Read` no abre PowerPoint. Pídele que la exporte a PDF antes de seguir |
+| Pegó una imagen al chat | **No sirve para el agente**: vive en tu contexto, no en disco. Pídele que la guarde en `fuentes/` |
+| La fuente es un **PDF** | `Read` no abre PDFs aquí. Se renderiza con `python herramientas/render-pdf.py <ruta>` y se leen los PNG de `.render/` |
+| La presentación es `.pptx` | Nada la convierte en esta máquina. Pídela exportada a PDF |
+
+El nombre canónico es lo deseable, pero **no bloquees por eso**: si el archivo ya está en `fuentes/`
+con otro nombre, se ficha igual y la ruta real queda en `fuentes[].ref`. Lo que importa es que la
+lección pueda señalar de dónde salió cada afirmación.
 
 ### 3. Lanza `curador-clase`
 

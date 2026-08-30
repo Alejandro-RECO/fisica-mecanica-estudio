@@ -18,3 +18,8 @@ No entra el razonamiento que llevó a la decisión, solo la decisión.
   `revision.fecha` para permitir `validado`, así que una lección no revisada rompe el build.
 - **2026-08-30** — La presentación de la docente es autoridad de nivel 1a; el tablero, 1b. Un
   conflicto entre ambos no se cierra sin preguntarle a ella.
+- **2026-08-30** — `Read` no abre PDFs en esta máquina (falta poppler) y cuatro de las siete
+  presentaciones son PDF de imágenes. Se renderizan con `herramientas/render-pdf.py`, que usa
+  PyMuPDF (ya instalado). No se instala poppler: no hace falta.
+- **2026-08-30** — La unidad piloto es `cinematica-1d`. Es el núcleo de la materia, es lo más
+  reciente dictado, y con `graficas-cinematica` forma un bloque de 33 páginas.

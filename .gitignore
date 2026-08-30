@@ -3,6 +3,10 @@ sitio/node_modules/
 sitio/dist/
 sitio/.astro/
 
+# paginas de PDF renderizadas por herramientas/render-pdf.py.
+# Son derivadas y se regeneran en segundos; el original vive en fuentes/.
+.render/
+
 # fuentes/ SI se versiona: una leccion que cita una foto borrada pierde el
 # sentido. La trazabilidad no sirve a medias.
 
