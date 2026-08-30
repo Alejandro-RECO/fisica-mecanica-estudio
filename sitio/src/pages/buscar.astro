@@ -1,5 +1,10 @@
 ---
 import Base from '../diseno/Base.astro';
+
+// Pagefind indexa el HTML ya construido, asi que su bundle solo existe
+// despues de npm run build. En dev no se carga: pedirlo daria 404 y llenaria
+// la consola de errores que no son errores.
+const construido = import.meta.env.PROD;
 ---
 
 <Base titulo="Buscar" descripcion="Buscar un concepto en todas las lecciones.">
@@ -13,7 +18,21 @@ import Base from '../diseno/Base.astro';
       </p>
     </header>
 
-    <div id="buscador"></div>
+    {
+      construido ? (
+        <div id="buscador" />
+      ) : (
+        <div class="vacio">
+          <p>
+            <strong>El índice de búsqueda todavía no existe.</strong>
+          </p>
+          <p>
+            Pagefind indexa el sitio ya construido. Corre <code>npm run build</code> y luego{' '}
+            <code>npm run preview</code> para probarlo.
+          </p>
+        </div>
+      )
+    }
 
     <noscript>
       <div class="vacio">
@@ -22,22 +41,26 @@ import Base from '../diseno/Base.astro';
     </noscript>
   </main>
 
-  <!-- Pagefind indexa el HTML ya construido, asi que solo existe despues de
-       npm run build. En npm run dev el contenedor queda vacio: es lo esperado. -->
-  <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
-  <script is:inline src="/pagefind/pagefind-ui.js"></script>
-  <script is:inline>
-    window.addEventListener('DOMContentLoaded', () => {
-      if (typeof PagefindUI === 'undefined') return;
-      new PagefindUI({
-        element: '#buscador',
-        showSubResults: true,
-        showImages: false,
-        translations: {
-          placeholder: 'Buscar en las lecciones',
-          zero_results: 'Nada para [SEARCH_TERM]',
-        },
-      });
-    });
-  </script>
+  {
+    construido && (
+      <>
+        <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
+        <script is:inline src="/pagefind/pagefind-ui.js" />
+        <script is:inline>
+          {`window.addEventListener('DOMContentLoaded', () => {
+            if (typeof PagefindUI === 'undefined') return;
+            new PagefindUI({
+              element: '#buscador',
+              showSubResults: true,
+              showImages: false,
+              translations: {
+                placeholder: 'Buscar en las lecciones',
+                zero_results: 'Nada para [SEARCH_TERM]',
+              },
+            });
+          });`}
+        </script>
+      </>
+    )
+  }
 </Base>

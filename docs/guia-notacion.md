@@ -17,24 +17,49 @@ escriben. Sin excepción.
 
 ## KaTeX
 
-Se renderiza con `remark-math` + `rehype-katex`. Dos formas:
+Se renderiza con `remark-math` + `rehype-katex`. La matemática va entre dólares, **no en
+componentes**, y por eso el LaTeX lleva **una sola barra**: `\frac`, no `\\frac`.
 
 ```mdx
-<F>{'v = \\frac{\\Delta x}{\\Delta t}'}</F>       inline
-<FB>{'x = x_0 + v_0 t + \\tfrac{1}{2} a t^{2}'}</FB>   en bloque
+en línea:  la velocidad $v = \frac{\Delta x}{\Delta t}$ crece cuando...
+
+en bloque:
+$$
+x = x_0 + v_0 t + \tfrac{1}{2} a t^{2}
+$$
 ```
 
-Tres reglas que causan el 90 % de los fallos de build:
+### La regla que más duele: el bloque va SIEMPRE en tres líneas
 
-1. **Barras dobles siempre**: `\\frac`, `\\mathrm`, `\\Delta`, `\\times`, `\\qquad`, `\\le`.
-   Una sola barra rompe la compilación.
-2. **Unidades dentro de `\\mathrm{}`**: `8{,}2 \\times 10^{-5}\\ \\mathrm{s}`. Sin eso, KaTeX las
+El `$$` de apertura, el contenido y el `$$` de cierre, cada uno en su renglón. **Nunca
+`$$...$$` en una sola línea.**
+
+Dentro de un componente (`<Paso>`, `<Ejemplo>`, `<Nota>`, `<Ejercicio>`) el `$$` de una sola línea
+**se renderiza como matemática en línea**, y entonces las fracciones se montan sobre el texto de
+arriba y abajo. No falla el build: sale mal en pantalla, que es peor. Comprobado.
+
+Además, dentro de un componente el contenido necesita **una línea en blanco** después de la etiqueta
+de apertura y otra antes de la de cierre, o el markdown no se parsea como bloque:
+
+```mdx
+<Paso n="2" razon="...">
+
+$$
+t_1 = \frac{30\ \mathrm{km}}{15\ \mathrm{km/h}} = 2\ \mathrm{h}
+$$
+
+</Paso>
+```
+
+### Las otras tres reglas
+
+1. **Unidades dentro de `\mathrm{}`**: `8{,}2 \times 10^{-5}\ \mathrm{s}`. Sin eso, KaTeX las
    renderiza en cursiva como si fueran variables.
-3. **Coma decimal como `{,}`**: `0{,}0254`, no `0,0254`. Sin las llaves, KaTeX le mete espacio de
-   puntuación y queda `0, 0254`.
-
-Los símbolos `<` y `>` sueltos en texto MDX también rompen el build. Dentro de una fórmula usa
-`\\lt` y `\\gt`.
+2. **Coma decimal como `{,}`**: `0{,}0254`, no `0,0254`. Sin las llaves, KaTeX le mete espacio de
+   puntuación y queda `0, 0254`. Verificado: las llaves sobreviven a MDX sin que las interprete como
+   expresión JSX.
+3. **Nada de `<` ni `>` sueltos** en el texto MDX: rompen el build. Dentro de una fórmula, `\lt` y
+   `\gt`.
 
 ## Dónde NO va KaTeX
 

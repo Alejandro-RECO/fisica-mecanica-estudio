@@ -43,9 +43,11 @@ import Ejemplo from '../../../componentes/Ejemplo.astro';
 import Ejercicio from '../../../componentes/Ejercicio.astro';
 
 <Nota tipo="ojo" titulo="Ficha de prueba">
+
 Esta lección **no salió de una clase real**. Existe para verificar que el pipeline funciona de punta
 a punta y para que se vea el diseño del sitio. Cuando fiches tu primera clase con `/capturar-clase`,
 reemplázala.
+
 </Nota>
 
 ## De qué se trata
@@ -64,22 +66,28 @@ instante y no en otro. Toda la lección vive en la tensión entre esas dos ideas
 
 La velocidad media es el desplazamiento dividido entre el tiempo que tomó:
 
-$$\bar{v} = \frac{\Delta x}{\Delta t} = \frac{x_f - x_i}{t_f - t_i}$$
+$$
+\bar{v} = \frac{\Delta x}{\Delta t} = \frac{x_f - x_i}{t_f - t_i}
+$$
 
 donde $\Delta x$ es el **desplazamiento** en metros y $\Delta t$ el intervalo en segundos. La unidad
 resultante es $\mathrm{m/s}$, y dimensionalmente $[\bar{v}] = LT^{-1}$.
 
 <Nota tipo="ojo">
+
 En el numerador va el **desplazamiento**, no la distancia recorrida. Si el bus hubiera ido a Villeta
 y vuelto a Bogotá en esas 2 h, su desplazamiento sería $0\ \mathrm{km}$ y su velocidad media
 $0\ \mathrm{km/h}$ — aunque no haya estado quieto ni un segundo.
+
 </Nota>
 
 Ahora el tránsito hacia la instantánea. Tomemos intervalos cada vez más cortos alrededor de un mismo
 instante $t$. Cada uno da una velocidad media distinta, pero a medida que $\Delta t$ se encoge, esos
 valores se van pareciendo entre sí. La velocidad instantánea es el valor al que tienden:
 
-$$v(t) = \lim_{\Delta t \to 0} \frac{\Delta x}{\Delta t} = \frac{dx}{dt}$$
+$$
+v(t) = \lim_{\Delta t \to 0} \frac{\Delta x}{\Delta t} = \frac{dx}{dt}
+$$
 
 <div class="amplia">
 
@@ -107,22 +115,36 @@ debajo y momentos por encima — y como la velocidad cambia de forma continua, *
 
 <Ejemplo titulo="Cuándo sí se pueden promediar dos velocidades">
 
-Un ciclista recorre 30 km a 15 km/h y luego 30 km a 30 km/h. ¿Cuál es su velocidad media?
+Un ciclista recorre 30 km a 15 km/h y luego otros 30 km a 30 km/h. ¿Cuál es su velocidad media?
 
 <Paso n="1" razon="El promedio de las velocidades solo vale si los dos tramos duraron lo mismo, y aquí no es el caso.">
+
 La respuesta intuitiva sería $(15 + 30)/2 = 22{,}5\ \mathrm{km/h}$. Es incorrecta.
+
 </Paso>
 
 <Paso n="2" razon="La definición pide desplazamiento total sobre tiempo total, así que hay que calcular el tiempo de cada tramo.">
-$$t_1 = \frac{30\ \mathrm{km}}{15\ \mathrm{km/h}} = 2\ \mathrm{h}, \qquad t_2 = \frac{30\ \mathrm{km}}{30\ \mathrm{km/h}} = 1\ \mathrm{h}$$
+
+$$
+t_1 = \frac{30\ \mathrm{km}}{15\ \mathrm{km/h}} = 2\ \mathrm{h},
+\qquad
+t_2 = \frac{30\ \mathrm{km}}{30\ \mathrm{km/h}} = 1\ \mathrm{h}
+$$
+
 </Paso>
 
 <Paso n="3" razon="Ahora sí se aplica la definición sobre el viaje completo.">
-$$\bar{v} = \frac{60\ \mathrm{km}}{3\ \mathrm{h}} = 20\ \mathrm{km/h}$$
+
+$$
+\bar{v} = \frac{60\ \mathrm{km}}{3\ \mathrm{h}} = 20\ \mathrm{km/h}
+$$
+
 </Paso>
 
 <Paso n="4" razon="Comprobación: el resultado tiene unidades de velocidad y queda entre las dos velocidades, más cerca de la lenta porque en ella pasó el doble de tiempo. Tiene sentido.">
+
 $[\bar v] = LT^{-1}$. El valor $20\ \mathrm{km/h}$ está entre 15 y 30, y sesgado hacia 15.
+
 </Paso>
 
 </Ejemplo>
@@ -151,7 +173,9 @@ Antes de calcular: ¿por qué la respuesta **no** puede ser $50\ \mathrm{km/h}$?
 Llama $d$ a la mitad del trayecto. Los tiempos son $t_1 = d/60$ y $t_2 = d/40$, así que el tiempo
 total es $t = d/60 + d/40 = d/24$.
 
-$$\bar{v} = \frac{2d}{d/24} = 48\ \mathrm{km/h}$$
+$$
+\bar{v} = \frac{2d}{d/24} = 48\ \mathrm{km/h}
+$$
 
 Es menor que 50 porque en el tramo lento se pasa más tiempo, y el tiempo es lo que pesa en el
 promedio. Fíjate en que $d$ se cancela: el resultado no depende de qué tan largo sea el trayecto.

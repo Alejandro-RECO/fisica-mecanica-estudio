@@ -3,16 +3,22 @@
    Direccion visual: papel milimetrado y grafito.
 
    La mecanica se aprende sobre cuadricula: graficas x-t, vectores
-   descompuestos sobre ejes, diagramas de cuerpo libre. De ahi sale
-   todo lo de abajo. El acento es el rojo de una flecha de vector y
-   se usa poco; el azul es el de un boligrafo que anota al margen,
-   y solo aparece en la traza de procedencia.
+   sobre ejes, diagramas de cuerpo libre. De ahi sale la reticula del
+   fondo, el rojo de flecha de vector como acento escaso, y el azul de
+   boligrafo que solo aparece en la procedencia.
+
+   Estructura: dos columnas (menu + contenido). El contenido es una
+   rejilla con carril central y carriles de respiro, de modo que un
+   panel puede desbordarse a lo ancho y romper la linealidad de la
+   lectura. Nunca tres columnas de primer nivel: al plegar el menu, el
+   riel lateral aplastaba la columna de texto.
    ============================================================ */
 
 :root {
   /* --- papel y grafito --- */
   --papel: #f7f8fa;
   --superficie: #ffffff;
+  --superficie-2: #f1f4f8;
   --rejilla: #e3e8f0;
   --grafito: #1a2230;
   --grafito-2: #5a6577;
@@ -47,15 +53,17 @@
   --e8: 72px;
 
   --radio: 3px;
-  --nav-ancho: 268px;
-  --traza-ancho: 232px;
+  --nav-ancho: 264px;
+  --texto: 68ch;      /* carril de lectura */
+  --respiro: 200px;   /* carril lateral para desbordes */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --papel: #12161d;
     --superficie: #191e27;
-    --rejilla: #222834;
+    --superficie-2: #1f2530;
+    --rejilla: #212734;
     --grafito: #e4e8ef;
     --grafito-2: #99a3b3;
     --grafito-3: #6d7889;
@@ -78,13 +86,15 @@
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 body {
   margin: 0;
   background-color: var(--papel);
-  /* La reticula: 4 mm de papel milimetrado, apenas visible. */
   background-image:
     linear-gradient(to right, var(--rejilla) 1px, transparent 1px),
     linear-gradient(to bottom, var(--rejilla) 1px, transparent 1px);
@@ -96,7 +106,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Foco visible siempre. No se negocia. */
 :focus-visible {
   outline: 2px solid var(--vector);
   outline-offset: 2px;
@@ -106,33 +115,67 @@ body {
 a { color: var(--anotacion); text-underline-offset: 2px; }
 a:hover { color: var(--vector); }
 
+.visualmente-oculto {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ============================================================
-   Armazon: nav · contenido · traza
+   Armazon: SOLO dos columnas de primer nivel
    ============================================================ */
 
 .armazon {
   display: grid;
-  grid-template-columns: var(--nav-ancho) minmax(0, 1fr) var(--traza-ancho);
-  align-items: start;
+  grid-template-columns: var(--nav-ancho) minmax(0, 1fr);
   min-height: 100vh;
-  max-width: 1400px;
-  margin: 0 auto;
 }
+.nav-oculta .armazon { grid-template-columns: 0 minmax(0, 1fr); }
+
+/* ---------- boton de plegado ---------- */
+.nav-toggle {
+  position: fixed;
+  top: var(--e3);
+  left: var(--e3);
+  z-index: 40;
+  width: 34px; height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: var(--superficie);
+  color: var(--grafito-2);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  cursor: pointer;
+}
+.nav-toggle:hover { color: var(--vector); border-color: var(--vector); }
+.nav-toggle svg { display: block; }
+.nav-toggle .icono-desplegar { display: none; }
+.nav-oculta .nav-toggle .icono-desplegar { display: block; }
+.nav-oculta .nav-toggle .icono-plegar { display: none; }
 
 /* ---------- navegacion ---------- */
 .nav {
+  grid-column: 1;
   position: sticky;
   top: 0;
   height: 100vh;
   overflow-y: auto;
-  padding: var(--e5) var(--e4);
+  overflow-x: hidden;
+  padding: 54px var(--e4) var(--e5);
   background: var(--superficie);
   border-right: 1px solid var(--linea);
 }
+.nav-oculta .nav { display: none; }
 
 .nav-marca {
   font-family: var(--display);
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -155,17 +198,19 @@ a:hover { color: var(--vector); }
 .nav-grupo { margin-bottom: var(--e5); }
 
 .nav-unidad {
-  display: flex;
-  align-items: baseline;
+  display: grid;
+  grid-template-columns: 22px 1fr;
   gap: var(--e2);
+  align-items: baseline;
   font-family: var(--dato);
-  font-size: 11px;
-  letter-spacing: 0.1em;
+  font-size: 10.5px;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--grafito-2);
   text-decoration: none;
   padding: var(--e1) 0;
   margin-bottom: var(--e2);
+  line-height: 1.4;
 }
 .nav-unidad:hover { color: var(--vector); }
 .nav-unidad .nav-n { color: var(--vector); font-weight: 600; }
@@ -174,14 +219,14 @@ a:hover { color: var(--vector); }
 
 .nav-leccion {
   display: grid;
-  grid-template-columns: 20px 1fr;
+  grid-template-columns: 18px 1fr;
   gap: var(--e2);
   align-items: baseline;
   padding: var(--e2) var(--e2) var(--e2) var(--e1);
   border-left: 2px solid var(--linea);
   color: var(--grafito-2);
   text-decoration: none;
-  font-size: 14.5px;
+  font-size: 14px;
   line-height: 1.35;
 }
 .nav-leccion:hover { border-left-color: var(--grafito-3); color: var(--grafito); }
@@ -190,7 +235,8 @@ a:hover { color: var(--vector); }
   color: var(--grafito);
   font-weight: 600;
 }
-.nav-leccion .nav-n { font-family: var(--dato); font-size: 11px; color: var(--grafito-3); }
+.nav-leccion .nav-n { font-family: var(--dato); font-size: 10.5px; color: var(--grafito-3); }
+.nav-leccion .chip { grid-column: 2; margin-top: 3px; }
 
 .nav-pie {
   margin-top: var(--e6);
@@ -198,60 +244,189 @@ a:hover { color: var(--vector); }
   border-top: 1px solid var(--linea);
   font-family: var(--dato);
   font-size: 11px;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 .nav-pie a { display: block; color: var(--grafito-2); text-decoration: none; }
 .nav-pie a:hover { color: var(--vector); }
 
-/* ---------- contenido ---------- */
-.contenido {
-  padding: var(--e7) var(--e7) var(--e8);
-  max-width: 72ch;
-}
+/* ============================================================
+   Contenido: rejilla con carril de lectura y desbordes
+   ------------------------------------------------------------
+   Todo cae en [texto] por defecto. Un elemento con .ancho ocupa
+   tambien el carril de respiro derecho; uno con .completo ocupa de
+   borde a borde. Asi la pagina tiene ritmo sin dejar de ser legible.
+   ============================================================ */
 
-.leccion-cabecera { margin-bottom: var(--e6); }
+/* Los nombres de linea llevan el sufijo -start/-end a proposito: solo asi
+   funciona el atajo `grid-column: texto`. Con nombres arbitrarios el atajo
+   es invalido, cada hijo cae en auto-colocacion y la pagina se desarma. */
+.contenido {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns:
+    [full-start] var(--e7)
+    [texto-start ancho-start] minmax(0, var(--texto))
+    [texto-end] minmax(var(--e5), var(--respiro))
+    [ancho-end] minmax(var(--e5), 1fr)
+    [full-end];
+  align-content: start;
+  padding: var(--e7) 0 var(--e8);
+}
+.contenido > * { grid-column: texto; min-width: 0; }
+.contenido > .ancho { grid-column: ancho; }
+.contenido > .completo { grid-column: full; }
+
+/* ============================================================
+   Ficha de la leccion — la cabecera como panel de instrumentos
+   ============================================================ */
+
+.ficha {
+  background: var(--superficie);
+  border: 1px solid var(--linea);
+  border-left: 3px solid var(--vector);
+  border-radius: 0 var(--radio) var(--radio) 0;
+  padding: var(--e5) var(--e6);
+  margin-bottom: var(--e7);
+}
 
 .eyebrow {
   font-family: var(--dato);
-  font-size: 11px;
+  font-size: 10.5px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--grafito-3);
   margin: 0 0 var(--e3);
 }
 .eyebrow a { color: var(--anotacion); text-decoration: none; }
+.eyebrow a:hover { color: var(--vector); }
 
 h1 {
   font-family: var(--display);
-  font-size: clamp(30px, 4vw, 40px);
+  font-size: clamp(28px, 3.4vw, 38px);
   font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.08;
   margin: 0 0 var(--e4);
+  text-wrap: balance;
 }
+
+.ficha-pregunta {
+  font-family: var(--display);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.38;
+  color: var(--grafito);
+  margin: 0 0 var(--e5);
+  text-wrap: pretty;
+}
+
+/* fila de instrumentos: confianza, estado, tiempos, fuentes */
+.instrumentos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+  gap: var(--e1) var(--e5);
+  padding-top: var(--e4);
+  border-top: 1px solid var(--linea);
+  margin: 0;
+}
+.instrumentos div { min-width: 0; }
+.instrumentos dt {
+  font-family: var(--dato);
+  font-size: 9.5px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--grafito-3);
+  margin-bottom: var(--e1);
+}
+.instrumentos dd {
+  margin: 0;
+  font-family: var(--dato);
+  font-size: 13px;
+  color: var(--grafito);
+}
+
+/* ============================================================
+   Eje de la leccion — navegacion por secciones
+   El eje x es el instrumento con el que se lee todo movimiento;
+   aqui marca por donde va la lectura.
+   ============================================================ */
+
+.eje {
+  position: sticky;
+  top: 0;
+  z-index: 15;
+  background: color-mix(in srgb, var(--papel) 92%, transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--linea);
+  margin-bottom: var(--e6);
+  padding: var(--e2) 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.eje::-webkit-scrollbar { display: none; }
+.eje ol {
+  display: flex;
+  gap: var(--e5);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+.eje a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e2);
+  font-family: var(--dato);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grafito-3);
+  text-decoration: none;
+  padding: var(--e1) 0;
+}
+.eje a::before {
+  content: '';
+  width: 6px; height: 6px;
+  border: 1px solid currentColor;
+  transform: rotate(45deg);
+}
+.eje a:hover { color: var(--grafito); }
+.eje a[aria-current='true'] { color: var(--vector); }
+.eje a[aria-current='true']::before { background: var(--vector); border-color: var(--vector); }
+
+/* ============================================================
+   Prosa
+   ============================================================ */
 
 h2 {
   font-family: var(--display);
-  font-size: 23px;
+  font-size: 22px;
   font-weight: 600;
   letter-spacing: -0.015em;
   line-height: 1.2;
-  margin: var(--e7) 0 var(--e3);
-  padding-bottom: var(--e2);
-  border-bottom: 1px solid var(--linea);
+  margin: var(--e8) 0 var(--e4);
+  scroll-margin-top: 64px;
 }
+h2::before {
+  content: '';
+  display: block;
+  width: 34px;
+  height: 2px;
+  background: var(--vector);
+  margin-bottom: var(--e3);
+}
+.contenido > h2:first-of-type { margin-top: 0; }
 
 h3 {
   font-family: var(--display);
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
-  margin: var(--e5) 0 var(--e2);
+  margin: var(--e6) 0 var(--e2);
 }
 
 p { margin: 0 0 var(--e4); }
 ul, ol { margin: 0 0 var(--e4); padding-left: var(--e5); }
 li { margin-bottom: var(--e2); }
-
 strong { font-weight: 600; }
 
 code {
@@ -263,114 +438,55 @@ code {
   border-radius: var(--radio);
 }
 
-/* La pregunta guia abre la leccion. Es la promesa de la pagina. */
-.pregunta-guia {
-  font-family: var(--display);
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.35;
-  color: var(--grafito);
-  border-left: 3px solid var(--vector);
-  padding: var(--e2) 0 var(--e2) var(--e4);
-  margin: 0 0 var(--e6);
-}
-
 /* ============================================================
-   La traza de procedencia — el elemento de firma
-   De donde salio cada afirmacion, anotado al margen como en un
-   cuaderno de laboratorio.
+   Lo esencial — rejilla de fichas, no una lista vertical
    ============================================================ */
 
-.traza {
-  position: sticky;
-  top: 0;
-  padding: var(--e7) var(--e4) var(--e6) 0;
-  font-family: var(--dato);
-  font-size: 11.5px;
-  line-height: 1.55;
-  color: var(--grafito-2);
-}
-
-.traza-titulo {
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--grafito-3);
-  padding-bottom: var(--e2);
-  border-bottom: 1px solid var(--linea);
-  margin-bottom: var(--e3);
-}
-
-.traza-item {
+.esencial { margin-bottom: var(--e7); }
+.esencial-grid {
   display: grid;
-  grid-template-columns: 10px 1fr;
-  gap: var(--e2);
-  margin-bottom: var(--e3);
-  padding-left: 0;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--e3);
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
-/* La marca de cada fuente: un trazo de boligrafo. */
-.traza-item::before {
-  content: '';
-  width: 2px;
-  height: 100%;
-  min-height: 14px;
-  background: var(--anotacion);
-  border-radius: 1px;
-  margin-top: 3px;
+.esencial-grid li {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: var(--e3);
+  align-items: start;
+  margin: 0;
+  padding: var(--e4);
+  background: var(--superficie);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  font-size: 15.5px;
+  line-height: 1.45;
 }
-.traza-item.es-deduccion::before { background: var(--grafito-3); }
-.traza-item.es-abierta::before { background: var(--firme); }
-
-.traza-tipo { color: var(--anotacion); text-transform: uppercase; letter-spacing: 0.06em; font-size: 10px; }
-.traza-item.es-deduccion .traza-tipo { color: var(--grafito-3); }
-.traza-item.es-abierta .traza-tipo { color: var(--firme); }
-.traza-aporta { color: var(--grafito-2); display: block; margin-top: 1px; }
-
-.traza-meta {
-  margin-top: var(--e5);
-  padding-top: var(--e3);
-  border-top: 1px solid var(--linea);
-  font-size: 10.5px;
-  color: var(--grafito-3);
-}
-.traza-meta dt { text-transform: uppercase; letter-spacing: 0.08em; font-size: 9.5px; margin-top: var(--e2); }
-.traza-meta dd { margin: 0; color: var(--grafito-2); }
-
-/* ---------- chips de estado ---------- */
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
+.esencial-grid li::before {
+  content: counter(esencial, decimal-leading-zero);
+  counter-increment: esencial;
   font-family: var(--dato);
   font-size: 10.5px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 2px 7px;
-  border-radius: var(--radio);
-  border: 1px solid var(--linea);
-  color: var(--grafito-2);
-  white-space: nowrap;
+  color: var(--vector);
+  padding-top: 3px;
 }
-.chip-alta { background: var(--firme-suave); color: var(--firme); border-color: transparent; }
-.chip-media { background: transparent; color: var(--grafito-2); }
-.chip-baja,
-.chip-con-dudas { background: var(--disputa-suave); color: var(--disputa); border-color: transparent; }
-.chip-borrador { background: var(--vector-suave); color: var(--vector); border-color: transparent; }
-
-.nav-leccion .chip { grid-column: 2; margin-top: 3px; font-size: 9.5px; padding: 1px 5px; }
+.esencial-grid { counter-reset: esencial; }
 
 /* ============================================================
-   Bloques semanticos
+   Paneles — rompen el carril de texto a proposito
    ============================================================ */
 
-.nota {
-  border: 1px solid var(--linea);
-  border-left-width: 3px;
-  border-radius: 0 var(--radio) var(--radio) 0;
+.nota, .ejemplo, .ejercicio, .disputa, .procedencia {
   background: var(--superficie);
-  padding: var(--e3) var(--e4);
-  margin: var(--e5) 0;
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  margin: var(--e6) 0;
 }
+
+.nota { border-left-width: 3px; padding: var(--e4) var(--e5); }
+.nota > :last-child { margin-bottom: 0; }
 .nota-titulo {
   font-family: var(--dato);
   font-size: 10.5px;
@@ -378,8 +494,6 @@ code {
   text-transform: uppercase;
   margin: 0 0 var(--e2);
 }
-.nota > :last-child { margin-bottom: 0; }
-
 .nota-info { border-left-color: var(--grafito-3); }
 .nota-info .nota-titulo { color: var(--grafito-2); }
 .nota-ojo { border-left-color: var(--disputa); background: var(--disputa-suave); }
@@ -387,61 +501,29 @@ code {
 .nota-clave { border-left-color: var(--firme); background: var(--firme-suave); }
 .nota-clave .nota-titulo { color: var(--firme); }
 
-/* La duda abierta se muestra, no se esconde. */
-.disputa {
-  border: 1px solid var(--disputa);
-  border-radius: var(--radio);
-  background: var(--disputa-suave);
-  padding: var(--e4);
-  margin: var(--e5) 0;
-}
-.disputa-titulo {
-  font-family: var(--dato);
-  font-size: 10.5px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--disputa);
-  margin: 0 0 var(--e3);
-}
-.disputa-par { display: grid; gap: var(--e2); margin-bottom: var(--e3); }
-.disputa-lado {
-  display: grid;
-  grid-template-columns: 74px 1fr;
-  gap: var(--e3);
-  font-size: 15px;
-}
-.disputa-lado dt { font-family: var(--dato); font-size: 10.5px; text-transform: uppercase; color: var(--disputa); padding-top: 3px; }
-.disputa-lado dd { margin: 0; }
-.disputa-lectura { font-size: 15px; margin: 0; padding-top: var(--e3); border-top: 1px solid var(--disputa); }
-
-/* ---------- pasos de un ejemplo ---------- */
-.ejemplo, .ejercicio {
-  border: 1px solid var(--linea);
-  border-radius: var(--radio);
-  background: var(--superficie);
-  padding: var(--e4) var(--e5);
-  margin: var(--e5) 0;
-}
+.ejemplo, .ejercicio { padding: var(--e5) var(--e6); }
 .ejemplo-cabecera, .ejercicio-cabecera {
   display: flex;
   align-items: baseline;
   gap: var(--e3);
+  flex-wrap: wrap;
   font-family: var(--dato);
   font-size: 10.5px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--vector);
-  padding-bottom: var(--e2);
+  padding-bottom: var(--e3);
   border-bottom: 1px solid var(--linea);
   margin-bottom: var(--e4);
 }
 .ejemplo-titulo, .ejercicio-titulo { color: var(--grafito-2); letter-spacing: 0.04em; }
 
+/* ---------- pasos ---------- */
 .paso {
   display: grid;
-  grid-template-columns: 26px 1fr;
+  grid-template-columns: 26px minmax(0, 1fr);
   gap: var(--e1) var(--e3);
-  padding: var(--e3) 0;
+  padding: var(--e4) 0;
   border-bottom: 1px dashed var(--linea);
 }
 .paso:last-child { border-bottom: none; padding-bottom: 0; }
@@ -461,14 +543,14 @@ code {
   font-style: italic;
   border-left: 2px solid var(--linea);
   padding-left: var(--e3);
-  margin-top: var(--e1);
+  margin: var(--e1) 0 0;
 }
 
 /* ---------- solucion escondida ---------- */
 .spoiler { margin-top: var(--e4); }
 .spoiler > summary {
   font-family: var(--dato);
-  font-size: 11px;
+  font-size: 10.5px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--grafito-2);
@@ -480,33 +562,117 @@ code {
 }
 .spoiler > summary::-webkit-details-marker { display: none; }
 .spoiler > summary::before { content: '→ '; color: var(--vector); }
-.spoiler[open] > summary { color: var(--vector); border-style: solid; margin-bottom: var(--e3); }
+.spoiler[open] > summary { color: var(--vector); border-style: solid; margin-bottom: var(--e4); }
 .spoiler[open] > summary::before { content: '↓ '; }
 .spoiler > summary:hover { border-color: var(--vector); color: var(--vector); }
 
-/* ---------- termino con definicion ---------- */
-.termino {
-  border-bottom: 1px dotted var(--anotacion);
-  cursor: help;
-  text-decoration: none;
-  color: inherit;
+/* ---------- disputa entre fuentes ---------- */
+.disputa { border-color: var(--disputa); background: var(--disputa-suave); padding: var(--e5); }
+.disputa-titulo {
+  font-family: var(--dato);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--disputa);
+  margin: 0 0 var(--e4);
 }
-.termino:hover { background: var(--anotacion-suave); }
+.disputa-par {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--e4);
+  margin-bottom: var(--e4);
+}
+.disputa-lado { margin: 0; }
+.disputa-lado dt {
+  font-family: var(--dato);
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--disputa);
+  margin-bottom: var(--e1);
+}
+.disputa-lado dd { margin: 0; font-size: 15.5px; }
+.disputa-lectura { font-size: 15.5px; margin: 0; padding-top: var(--e4); border-top: 1px solid var(--disputa); }
+.disputa ul { margin: 0; }
+
+/* ============================================================
+   Procedencia — el elemento de firma, ahora al pie y en rejilla
+   Todo lo que se afirma salio de algun lado, y ese lado se ve.
+   ============================================================ */
+
+.procedencia { padding: var(--e5) var(--e6); margin-top: var(--e8); }
+.procedencia-titulo {
+  font-family: var(--dato);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--grafito-3);
+  padding-bottom: var(--e3);
+  border-bottom: 1px solid var(--linea);
+  margin: 0 0 var(--e4);
+}
+.procedencia-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: var(--e4);
+}
+.fuente {
+  border-left: 2px solid var(--anotacion);
+  padding-left: var(--e3);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.fuente.es-deduccion { border-left-color: var(--grafito-3); }
+.fuente.es-abierta { border-left-color: var(--firme); }
+.fuente-tipo {
+  display: block;
+  font-family: var(--dato);
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--anotacion);
+  margin-bottom: var(--e1);
+}
+.fuente.es-deduccion .fuente-tipo { color: var(--grafito-3); }
+.fuente.es-abierta .fuente-tipo { color: var(--firme); }
+.fuente-aporta { color: var(--grafito-2); }
+.fuente-ref {
+  display: block;
+  font-family: var(--dato);
+  font-size: 11px;
+  color: var(--grafito-3);
+  margin-top: var(--e1);
+  overflow-wrap: anywhere;
+}
+
+/* ---------- chips ---------- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--dato);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: var(--radio);
+  border: 1px solid var(--linea);
+  color: var(--grafito-2);
+  white-space: nowrap;
+}
+.chip-alta { background: var(--firme-suave); color: var(--firme); border-color: transparent; }
+.chip-media { background: transparent; color: var(--grafito-2); }
+.chip-baja, .chip-con-dudas { background: var(--disputa-suave); color: var(--disputa); border-color: transparent; }
+.chip-borrador { background: var(--vector-suave); color: var(--vector); border-color: transparent; }
 
 /* ---------- matematica ---------- */
-.katex-display {
-  margin: var(--e4) 0;
-  padding: var(--e3) 0;
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-.katex { font-size: 1.04em; }
+.katex-display { margin: var(--e5) 0; overflow-x: auto; overflow-y: hidden; padding: var(--e1) 0; }
+.katex { font-size: 1.02em; }
 
 /* ---------- tablas ---------- */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: var(--e4) 0;
+  margin: var(--e5) 0;
   font-size: 15px;
   background: var(--superficie);
   border: 1px solid var(--linea);
@@ -514,18 +680,16 @@ table {
 th, td { text-align: left; padding: var(--e2) var(--e3); border-bottom: 1px solid var(--linea); }
 th {
   font-family: var(--dato);
-  font-size: 10.5px;
+  font-size: 10px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--grafito-2);
-  background: var(--papel);
+  background: var(--superficie-2);
 }
 tr:last-child td { border-bottom: none; }
 
 /* ============================================================
    Los dos modos: estudio y repaso
-   Una sola fuente de contenido, dos densidades. El toggle solo
-   pone una clase; no hay segunda ruta que se desactualice.
    ============================================================ */
 
 .modo {
@@ -537,7 +701,7 @@ tr:last-child td { border-bottom: none; }
   align-items: center;
   gap: var(--e2);
   font-family: var(--dato);
-  font-size: 11px;
+  font-size: 10.5px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   background: var(--superficie);
@@ -546,38 +710,15 @@ tr:last-child td { border-bottom: none; }
   border-radius: var(--radio);
   padding: var(--e2) var(--e3);
   cursor: pointer;
-  box-shadow: 0 1px 3px rgb(26 34 48 / 0.09);
+  box-shadow: 0 1px 4px rgb(26 34 48 / 0.12);
 }
 .modo:hover { border-color: var(--vector); color: var(--vector); }
 .modo-punto { width: 7px; height: 7px; border-radius: 50%; background: var(--grafito-3); }
 .solo-esencial .modo-punto { background: var(--vector); }
 
 .solo-esencial .amplia { display: none; }
-.solo-esencial .traza { display: none; }
-.solo-esencial .contenido { max-width: 66ch; }
-
-.esencial-lista {
-  list-style: none;
-  padding: 0;
-  margin: var(--e4) 0;
-  border-top: 1px solid var(--linea);
-}
-.esencial-lista li {
-  display: grid;
-  grid-template-columns: 18px 1fr;
-  gap: var(--e3);
-  padding: var(--e3) 0;
-  border-bottom: 1px solid var(--linea);
-  margin: 0;
-}
-.esencial-lista li::before {
-  content: '';
-  width: 7px;
-  height: 7px;
-  margin-top: 9px;
-  background: var(--vector);
-  transform: rotate(45deg);
-}
+.solo-esencial .procedencia { display: none; }
+.solo-esencial .eje { display: none; }
 
 /* ============================================================
    Portada e indices
@@ -585,31 +726,49 @@ tr:last-child td { border-bottom: none; }
 
 .portada-titular {
   font-family: var(--display);
-  font-size: clamp(38px, 6vw, 62px);
+  font-size: clamp(34px, 5vw, 56px);
   font-weight: 700;
   letter-spacing: -0.035em;
-  line-height: 1.02;
+  line-height: 1.03;
   margin: 0 0 var(--e4);
+  text-wrap: balance;
 }
-.portada-bajada { font-size: 19px; color: var(--grafito-2); max-width: 54ch; margin: 0 0 var(--e7); }
+.portada-bajada { font-size: 18px; color: var(--grafito-2); margin: 0 0 var(--e7); text-wrap: pretty; }
 
-.lista-unidades { list-style: none; padding: 0; margin: 0; }
-.lista-unidades > li { border-top: 1px solid var(--linea); }
-.lista-unidades > li:last-child { border-bottom: 1px solid var(--linea); }
-
+.lista-unidades {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--e4);
+}
 .unidad-fila {
   display: grid;
-  grid-template-columns: 42px 1fr auto;
-  gap: var(--e4);
-  align-items: baseline;
-  padding: var(--e5) 0;
+  grid-template-rows: auto 1fr auto;
+  gap: var(--e2);
+  height: 100%;
+  padding: var(--e5);
+  background: var(--superficie);
+  border: 1px solid var(--linea);
+  border-top: 2px solid var(--linea);
+  border-radius: var(--radio);
   text-decoration: none;
   color: inherit;
 }
+.unidad-fila:hover { border-top-color: var(--vector); }
 .unidad-fila:hover .unidad-nombre { color: var(--vector); }
-.unidad-n { font-family: var(--dato); font-size: 12px; color: var(--vector); }
-.unidad-nombre { font-family: var(--display); font-size: 22px; font-weight: 600; letter-spacing: -0.015em; }
-.unidad-resumen { font-size: 15px; color: var(--grafito-2); margin: var(--e1) 0 0; }
+.unidad-n { font-family: var(--dato); font-size: 11px; color: var(--vector); letter-spacing: 0.1em; }
+.unidad-nombre {
+  display: block;
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+.unidad-resumen { display: block; font-size: 14.5px; color: var(--grafito-2); margin-top: var(--e2); }
+.unidad-pie { display: flex; gap: var(--e2); align-items: center; padding-top: var(--e3); }
 
 .vacio {
   border: 1px dashed var(--linea);
@@ -617,18 +776,19 @@ tr:last-child td { border-bottom: none; }
   padding: var(--e6);
   text-align: center;
   color: var(--grafito-2);
+  background: var(--superficie);
 }
-.vacio code { font-size: 13px; }
+.vacio > :last-child { margin-bottom: 0; }
 
 /* ---------- buscador ---------- */
 #buscador { margin-top: var(--e5); }
 :root {
-  --pagefind-ui-scale: 0.86;
+  --pagefind-ui-scale: 0.85;
   --pagefind-ui-primary: var(--grafito);
   --pagefind-ui-text: var(--grafito);
   --pagefind-ui-background: var(--superficie);
   --pagefind-ui-border: var(--linea);
-  --pagefind-ui-tag: var(--papel);
+  --pagefind-ui-tag: var(--superficie-2);
   --pagefind-ui-border-width: 1px;
   --pagefind-ui-border-radius: var(--radio);
   --pagefind-ui-font: var(--cuerpo);
@@ -638,35 +798,40 @@ tr:last-child td { border-bottom: none; }
    Responsive
    ============================================================ */
 
-@media (max-width: 1180px) {
-  .armazon { grid-template-columns: var(--nav-ancho) minmax(0, 1fr); }
-  .contenido { padding: var(--e6) var(--e6) var(--e8); }
-  /* La traza deja de ser riel y se vuelve una ficha al final. */
-  .traza {
-    grid-column: 2;
-    position: static;
-    height: auto;
-    padding: 0 var(--e6) var(--e8);
-    max-width: 72ch;
+@media (max-width: 1100px) {
+  .contenido {
+    grid-template-columns:
+      [full-start] var(--e5)
+      [texto-start ancho-start] minmax(0, 1fr)
+      [texto-end ancho-end] var(--e5)
+      [full-end];
+    padding: var(--e6) 0 var(--e8);
   }
-  .traza-item { grid-template-columns: 10px 1fr; }
+  .ficha { padding: var(--e5); }
+  .ejemplo, .ejercicio, .procedencia { padding: var(--e4); }
 }
 
 @media (max-width: 860px) {
   body { background-size: 18px 18px; }
-  .armazon { grid-template-columns: minmax(0, 1fr); }
+  .armazon, .nav-oculta .armazon { grid-template-columns: minmax(0, 1fr); }
+
+  /* En movil el menu entra por la izquierda: una lista larga apilada
+     arriba empujaria el contenido fuera de la pantalla. */
   .nav {
-    position: static;
-    height: auto;
-    border-right: none;
-    border-bottom: 1px solid var(--linea);
-    padding: var(--e4);
+    grid-column: 1;
+    grid-row: 1;
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    width: min(290px, 84vw);
+    z-index: 30;
+    transform: translateX(0);
+    transition: transform 0.18s ease;
   }
-  .nav-marca { margin-bottom: var(--e4); }
-  .nav-grupo { margin-bottom: var(--e4); }
-  .contenido { padding: var(--e5) var(--e4) var(--e7); }
-  .traza { padding: 0 var(--e4) var(--e7); }
-  .disputa-lado { grid-template-columns: 1fr; gap: var(--e1); }
+  .nav-oculta .nav { display: block; transform: translateX(-101%); }
+
+  .contenido { grid-column: 1; grid-row: 1; padding-top: 58px; }
+  .eje { top: 0; }
+  h2 { margin-top: var(--e7); }
   .modo { right: var(--e3); bottom: var(--e3); }
 }
 
@@ -675,39 +840,28 @@ tr:last-child td { border-bottom: none; }
    ============================================================ */
 
 @media print {
-  /* Paleta clara forzada: en modo oscuro saldria texto claro sobre blanco. */
   :root {
-    --papel: #fff;
-    --superficie: #fff;
+    --papel: #fff; --superficie: #fff; --superficie-2: #fff;
     --rejilla: transparent;
-    --grafito: #000;
-    --grafito-2: #333;
-    --grafito-3: #666;
-    --linea: #bbb;
-    --vector: #000;
-    --anotacion: #000;
-    --vector-suave: #eee;
-    --anotacion-suave: #eee;
-    --firme-suave: #f2f2f2;
-    --disputa-suave: #f2f2f2;
+    --grafito: #000; --grafito-2: #333; --grafito-3: #666;
+    --linea: #bbb; --vector: #000; --anotacion: #000;
+    --vector-suave: #eee; --anotacion-suave: #eee;
+    --firme-suave: #f2f2f2; --disputa-suave: #f2f2f2;
   }
-
   @page { margin: 12mm; size: A4 portrait; }
 
   body { background-image: none; font-size: 10pt; line-height: 1.4; }
-  .armazon { display: block; max-width: none; }
-  .nav, .modo, .no-print { display: none !important; }
-  .traza { display: none; }
-  .contenido { padding: 0; max-width: none; }
-
-  /* Al imprimir siempre se imprime lo esencial: es la chuleta. */
+  .armazon { display: block; }
+  .nav, .modo, .nav-toggle, .eje, .no-print { display: none !important; }
+  .procedencia { display: none; }
+  .contenido { display: block; padding: 0; }
   .amplia { display: none; }
 
   h1 { font-size: 17pt; }
   h2 { font-size: 12pt; margin-top: 14pt; }
   h3 { font-size: 10.5pt; }
-  .pregunta-guia { font-size: 11pt; }
-  .ejemplo, .ejercicio, .nota, .disputa { break-inside: avoid; }
+  .ficha-pregunta { font-size: 11pt; }
+  .esencial-grid { grid-template-columns: 1fr 1fr; }
+  .ejemplo, .ejercicio, .nota, .disputa, .esencial-grid li { break-inside: avoid; }
   .spoiler > summary { display: none; }
-  .spoiler[open] > .spoiler-cuerpo { display: block; }
 }

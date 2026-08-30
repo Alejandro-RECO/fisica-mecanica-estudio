@@ -1,8 +1,9 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../../diseno/Base.astro';
-import Traza from '../../../componentes/Traza.astro';
+import Procedencia from '../../../componentes/Procedencia.astro';
 import Disputa from '../../../componentes/Disputa.astro';
+import Chip from '../../../componentes/Chip.astro';
 
 export async function getStaticPaths() {
   const lecciones = await getCollection('lecciones');
@@ -13,28 +14,73 @@ export async function getStaticPaths() {
 }
 
 const { leccion } = Astro.props;
-const { Content } = await render(leccion);
+const { Content, headings } = await render(leccion);
 const d = leccion.data;
 
 const unidad = (await getCollection('unidades')).find((u) => u.id === d.unidad);
+const secciones = headings.filter((h) => h.depth === 2);
 ---
 
 <Base titulo={d.titulo} descripcion={d.pregunta_guia}>
   <main class="contenido leccion" data-pagefind-body>
-    <header class="leccion-cabecera">
+    <header class="ficha ancho">
       <p class="eyebrow">
         <a href="/">Estudio</a> — <a href={`/unidad/${d.unidad}/`}>{unidad?.data.titulo ?? d.unidad}</a>
       </p>
       <h1>{d.titulo}</h1>
+      <p class="ficha-pregunta">{d.pregunta_guia}</p>
+
+      <dl class="instrumentos">
+        <div>
+          <dt>Confianza</dt>
+          <dd><Chip valor={d.confianza} /></dd>
+        </div>
+        <div>
+          <dt>Estado</dt>
+          <dd><Chip valor={d.estado} /></dd>
+        </div>
+        <div>
+          <dt>Estudio</dt>
+          <dd>{d.tiempo_estudio_min} min</dd>
+        </div>
+        <div>
+          <dt>Repaso</dt>
+          <dd>{d.tiempo_repaso_min} min</dd>
+        </div>
+        {
+          d.sesiones.length > 0 && (
+            <div>
+              <dt>Sesión</dt>
+              <dd>{d.sesiones.join(' · ')}</dd>
+            </div>
+          )
+        }
+        <div>
+          <dt>Fuentes</dt>
+          <dd>{d.fuentes.length}</dd>
+        </div>
+      </dl>
     </header>
 
-    <p class="pregunta-guia">{d.pregunta_guia}</p>
+    {
+      secciones.length > 1 && (
+        <nav class="eje ancho no-print" aria-label="Secciones de la lección">
+          <ol>
+            {secciones.map((s) => (
+              <li>
+                <a href={`#${s.slug}`}>{s.text}</a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      )
+    }
 
     <Disputa contradicciones={d.contradicciones} dudas={d.dudas_para_docente} />
 
-    <section class="esencial">
-      <h2>Si solo te queda tiempo para esto</h2>
-      <ul class="esencial-lista">
+    <section class="esencial ancho">
+      <h2 id="lo-esencial">Si solo te queda tiempo para esto</h2>
+      <ul class="esencial-grid">
         {d.esencial.map((e) => <li><span>{e}</span></li>)}
       </ul>
     </section>
@@ -44,23 +90,51 @@ const unidad = (await getCollection('unidades')).find((u) => u.id === d.unidad);
     {
       d.errores_frecuentes.length > 0 && (
         <section class="amplia">
-          <h2>Donde se cae la gente</h2>
+          <h2 id="donde-se-cae-la-gente">Dónde se cae la gente</h2>
           <ul>
             {d.errores_frecuentes.map((e) => (
-              <li>{e.replace(/-/g, ' ')}</li>
+              <li>{e}</li>
             ))}
           </ul>
         </section>
       )
     }
+
+    <Procedencia fuentes={d.fuentes} />
   </main>
 
-  <Traza
-    fuentes={d.fuentes}
-    confianza={d.confianza}
-    estado={d.estado}
-    sesiones={d.sesiones}
-    tiempoEstudio={d.tiempo_estudio_min}
-    tiempoRepaso={d.tiempo_repaso_min}
-  />
+  <script is:inline>
+    // Marca en el eje la seccion que se esta leyendo. Sin libreria: el
+    // observador nativo alcanza y no agrega bundle a la ruta critica.
+    (() => {
+      const eje = document.querySelector('.eje');
+      if (!eje) return;
+      const enlaces = new Map(
+        [...eje.querySelectorAll('a')].map((a) => [a.getAttribute('href').slice(1), a]),
+      );
+      const titulos = [...document.querySelectorAll('.contenido h2[id]')].filter((h) =>
+        enlaces.has(h.id),
+      );
+      if (!titulos.length) return;
+
+      let activo = null;
+      const marcar = (id) => {
+        if (activo === id) return;
+        enlaces.forEach((a) => a.removeAttribute('aria-current'));
+        enlaces.get(id)?.setAttribute('aria-current', 'true');
+        activo = id;
+      };
+
+      const obs = new IntersectionObserver(
+        (entradas) => {
+          const visible = entradas
+            .filter((e) => e.isIntersecting)
+            .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+          if (visible) marcar(visible.target.id);
+        },
+        { rootMargin: '-64px 0px -70% 0px' },
+      );
+      titulos.forEach((t) => obs.observe(t));
+    })();
+  </script>
 </Base>

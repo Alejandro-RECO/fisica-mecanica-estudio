@@ -19,7 +19,7 @@ const { contradicciones, dudas = [] } = Astro.props;
 
 {
   contradicciones.map((c) => (
-    <div class="disputa">
+    <div class="disputa ancho">
       <p class="disputa-titulo">Las fuentes no coinciden — {c.afirmacion}</p>
       <div class="disputa-par">
         <dl class="disputa-lado">
@@ -40,7 +40,7 @@ const { contradicciones, dudas = [] } = Astro.props;
 
 {
   dudas.length > 0 && (
-    <div class="disputa">
+    <div class="disputa ancho">
       <p class="disputa-titulo">Preguntarle a la docente</p>
       <ul>
         {dudas.map((d) => (

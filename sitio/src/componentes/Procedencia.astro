@@ -1,0 +1,57 @@
+---
+// La procedencia — el elemento de firma del sitio.
+//
+// Todo lo que se afirma aqui salio de algun lado, y ese lado se ve. Sin
+// esto el sitio seria un resumen mas; con esto se puede auditar cada
+// afirmacion contra la clase real.
+interface Fuente {
+  tipo: string;
+  ref?: string;
+  diapositiva?: number;
+  fecha?: Date;
+  aporta: string;
+}
+interface Props {
+  fuentes: Fuente[];
+}
+const { fuentes } = Astro.props;
+
+const rotulos: Record<string, string> = {
+  diapositivas: 'Diapositiva',
+  tablero: 'Tablero',
+  apuntes: 'Apuntes',
+  taller: 'Taller',
+  abierta: 'Fuente abierta',
+  deduccion: 'Deducido aquí',
+};
+
+// Solo el nombre del archivo o el dominio: la ruta completa no aporta al leer.
+const corto = (ref?: string) =>
+  !ref ? null : ref.startsWith('http') ? new URL(ref).hostname.replace(/^www\./, '') : ref.split('/').pop();
+---
+
+<aside class="procedencia ancho amplia" aria-labelledby="procedencia-titulo">
+  <p class="procedencia-titulo" id="procedencia-titulo">De dónde salió cada cosa</p>
+
+  <div class="procedencia-grid">
+    {
+      fuentes.map((f) => (
+        <div class={`fuente es-${f.tipo}`}>
+          <span class="fuente-tipo">
+            {rotulos[f.tipo] ?? f.tipo}
+            {f.diapositiva ? ` ${f.diapositiva}` : ''}
+          </span>
+          <span class="fuente-aporta">{f.aporta}</span>
+          {f.ref &&
+            (f.tipo === 'abierta' ? (
+              <a class="fuente-ref" href={f.ref} rel="noopener noreferrer" target="_blank">
+                {corto(f.ref)}
+              </a>
+            ) : (
+              <span class="fuente-ref">{corto(f.ref)}</span>
+            ))}
+        </div>
+      ))
+    }
+  </div>
+</aside>

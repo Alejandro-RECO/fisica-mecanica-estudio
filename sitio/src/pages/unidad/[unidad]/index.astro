@@ -45,7 +45,7 @@ const repaso = lecciones.reduce((t, l) => t + l.data.tiempo_repaso_min, 0);
           </p>
         </div>
       ) : (
-        <ul class="lista-unidades">
+        <ul class="lista-unidades ancho">
           {lecciones.map((l) => (
             <li>
               <a class="unidad-fila" href={`/unidad/${unidad.id}/${l.id.split('/').pop()}/`}>
@@ -54,7 +54,10 @@ const repaso = lecciones.reduce((t, l) => t + l.data.tiempo_repaso_min, 0);
                   <span class="unidad-nombre">{l.data.titulo}</span>
                   <span class="unidad-resumen">{l.data.pregunta_guia}</span>
                 </span>
-                <Chip valor={l.data.estado === 'con-dudas' ? 'con-dudas' : l.data.confianza} />
+                <span class="unidad-pie">
+                  <Chip valor={l.data.estado === 'con-dudas' ? 'con-dudas' : l.data.confianza} />
+                  <span class="chip">{l.data.tiempo_estudio_min} min</span>
+                </span>
               </a>
             </li>
           ))}

@@ -11,7 +11,7 @@ const { tipo = 'info', titulo } = Astro.props;
 const rotulo = titulo ?? { info: 'Contexto', ojo: 'Ojo con esto', clave: 'Lo clave' }[tipo];
 ---
 
-<aside class={`nota nota-${tipo}`}>
+<aside class={`nota nota-${tipo} ancho`}>
   <p class="nota-titulo">{rotulo}</p>
   <slot />
 </aside>

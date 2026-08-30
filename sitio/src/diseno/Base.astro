@@ -26,14 +26,33 @@ const { titulo, descripcion } = Astro.props;
     />
 
     <script is:inline>
-      // Se aplica antes de pintar para que el modo no parpadee al cargar.
-      if (localStorage.getItem('modo') === 'repaso') {
-        document.documentElement.classList.add('solo-esencial');
+      // Se aplica antes de pintar para que ni el modo ni el menu parpadeen.
+      try {
+        const r = document.documentElement;
+        if (localStorage.getItem('modo') === 'repaso') r.classList.add('solo-esencial');
+        const nav = localStorage.getItem('nav');
+        // En movil el menu arranca plegado: ahi es un panel que tapa la
+        // lectura. En escritorio arranca visible. La preferencia manda.
+        const plegado = nav === null ? window.matchMedia('(max-width: 860px)').matches : nav === 'oculta';
+        if (plegado) r.classList.add('nav-oculta');
+      } catch (e) {
+        /* navegacion privada o cookies bloqueadas: se usa el estado por defecto */
       }
     </script>
   </head>
 
   <body>
+    <button class="nav-toggle no-print" type="button" id="nav-toggle" aria-controls="nav" aria-expanded="true">
+      <span class="visualmente-oculto" id="nav-toggle-texto">Ocultar el menú</span>
+      <svg class="icono-plegar" width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+        <path d="M1.5 1.5v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M13 7.5H5m0 0 3-3m-3 3 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <svg class="icono-desplegar" width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+        <path d="M1.5 3h12M1.5 7.5h12M1.5 12h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+
     <div class="armazon">
       <Nav />
       <slot />
@@ -45,23 +64,47 @@ const { titulo, descripcion } = Astro.props;
     </button>
 
     <script is:inline>
-      const boton = document.getElementById('modo');
-      const texto = document.getElementById('modo-texto');
-      const raiz = document.documentElement;
+      (() => {
+        const raiz = document.documentElement;
+        const guardar = (k, v) => {
+          try {
+            localStorage.setItem(k, v);
+          } catch (e) {
+            /* si no se puede guardar, el cambio vale para esta pagina y ya */
+          }
+        };
 
-      const pintar = () => {
-        const repaso = raiz.classList.contains('solo-esencial');
-        texto.textContent = repaso ? 'Modo repaso' : 'Modo estudio';
-        boton.setAttribute('aria-pressed', String(repaso));
-      };
+        // --- modo estudio / repaso ---
+        const boton = document.getElementById('modo');
+        const texto = document.getElementById('modo-texto');
+        const pintarModo = () => {
+          const repaso = raiz.classList.contains('solo-esencial');
+          texto.textContent = repaso ? 'Modo repaso' : 'Modo estudio';
+          boton.setAttribute('aria-pressed', String(repaso));
+        };
+        boton.addEventListener('click', () => {
+          const repaso = raiz.classList.toggle('solo-esencial');
+          guardar('modo', repaso ? 'repaso' : 'estudio');
+          pintarModo();
+        });
+        pintarModo();
 
-      boton.addEventListener('click', () => {
-        const repaso = raiz.classList.toggle('solo-esencial');
-        localStorage.setItem('modo', repaso ? 'repaso' : 'estudio');
-        pintar();
-      });
-
-      pintar();
+        // --- menu plegable ---
+        const alternar = document.getElementById('nav-toggle');
+        const rotulo = document.getElementById('nav-toggle-texto');
+        const pintarNav = () => {
+          const oculta = raiz.classList.contains('nav-oculta');
+          alternar.setAttribute('aria-expanded', String(!oculta));
+          rotulo.textContent = oculta ? 'Mostrar el menú' : 'Ocultar el menú';
+          alternar.title = rotulo.textContent;
+        };
+        alternar.addEventListener('click', () => {
+          const oculta = raiz.classList.toggle('nav-oculta');
+          guardar('nav', oculta ? 'oculta' : 'visible');
+          pintarNav();
+        });
+        pintarNav();
+      })();
     </script>
   </body>
 </html>

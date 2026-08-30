@@ -41,8 +41,14 @@ preferible repetir a obligar a saltar entre páginas.
 - Español de Colombia, académico pero directo. Tuteas. **Frases completas**: el estudiante ve el tema
   por primera vez y necesita las palabras de enlace para seguir el razonamiento.
 - Coma decimal (`0{,}0254`), nunca punto. Notación científica `4,5×10⁻⁶`, jamás `4.5e-6`.
-- Fórmulas en KaTeX: `<F>{'...'}</F>` inline, `<FB>{'...'}</FB>` en bloque. Barras dobles (`\\frac`,
-  `\\mathrm`), unidades dentro de `\\mathrm{}`, coma decimal como `{,}`.
+- Matemática entre dólares, **con una sola barra**: `$v = \frac{\Delta x}{\Delta t}$`. Unidades
+  dentro de `\mathrm{}`, coma decimal como `{,}`.
+- **El bloque `$$` va siempre en tres renglones** — apertura, contenido, cierre. Un `$$...$$` en una
+  sola línea dentro de un componente se renderiza en línea y las fracciones se montan sobre el texto.
+  No rompe el build: sale mal en pantalla, que es peor.
+- Dentro de un componente (`<Paso>`, `<Ejemplo>`, `<Nota>`, `<Ejercicio>`) deja **una línea en blanco**
+  después de la etiqueta de apertura y otra antes del cierre, o el markdown no se parsea como bloque.
+  Ver `docs/guia-notacion.md`.
 - **Unidades en todo número que las tenga.** Un número desnudo es un error de física, no de estilo.
 - Términos técnicos: envuelve la primera aparición con `<T id="...">palabra</T>`.
 - Nada de emojis. Negrita solo donde el estudiante debe frenar.
@@ -96,6 +102,8 @@ Listo para:                   revisor-conceptual
 
 ## Verificación antes de terminar
 
+- `cd sitio && npm run build` pasa, y **`node herramientas/revisar-ui.mjs`** no reporta problemas.
+  El build en verde no garantiza que la página se vea bien: la matemática mal anidada compila.
 - El frontmatter dice `estado: borrador`. Sin excepción.
 - `esencial[]` tiene entre tres y cuatro frases, y cada una se sostiene sola.
 - La pregunta guía quedó respondida en el cuerpo.
