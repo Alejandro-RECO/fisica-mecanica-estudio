@@ -683,7 +683,17 @@ code {
 .chip-borrador { background: var(--vector-suave); color: var(--vector); border-color: transparent; }
 
 /* ---------- matematica ---------- */
-.katex-display { margin: var(--e5) 0; overflow-x: auto; overflow-y: hidden; padding: var(--e1) 0; }
+/* Un bloque \begin{aligned} puede ser mas ancho que un movil. Se desborda
+   dentro de su propia caja -nunca empuja el layout- pero necesita una pista
+   de que hay mas a los lados: mismo patron que .margen. */
+.katex-display {
+  margin: var(--e5) 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: var(--e1) 0;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
 .katex { font-size: 1.02em; }
 
 /* ---------- tablas ---------- */

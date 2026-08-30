@@ -1,28 +1,26 @@
 # Estado
 
-Tope duro: 25 líneas. Este archivo se **reescribe** al cerrar sesión, nunca se le agrega.
+Tope duro: 25 líneas. Se **reescribe** al cerrar sesión, nunca se le agrega.
 
-**Unidad activa:** `magnitudes-y-medicion` — 2 de 5 lecciones escritas
-**Última sesión cerrada:** 2026-08-30
-**Parcial 1: 31 de agosto al 4 de septiembre.** Cubre semanas 1–3 aprox.
+**Unidad activa:** `magnitudes-y-medicion` — **5 de 5 lecciones publicadas** (`en-curso`)
+**Cerrada:** 2026-08-30 · **Parcial 1: 31 ago – 4 sep**, cubre semanas 1–3 aprox.
 
-Los agentes y skills de `.claude/` se crearon en la sesión anterior, así que
-**hasta ahora no se habían podido invocar**. Desde esta sesión ya cargan: usa
-`/capturar-clase` y `/unidad`, no hagas el trabajo en el contexto principal.
+`semana1.pdf` queda agotado: sus 26 diapositivas están en las cinco lecciones. La 03 nace
+`con-dudas` por el separador decimal; las otras cuatro, `revisado`. Build verde, UI sin problemas.
 
 ## Pendientes (máximo 3)
 
-1. Terminar `magnitudes-y-medicion`: faltan `03-notacion-cientifica-y-prefijos`
-   (nace `con-dudas` por el separador decimal), `04-conversion-de-unidades` y
-   `05-analisis-dimensional`. La ficha con el reparto está en
-   `memoria/sesiones/2026-08-30-semana1.md`
-2. Fichar `cinematica1.pdf` + `graficas de cinematica1.pdf` (33 p, imágenes)
-3. Borrar la lección de prueba `cinematica-1d/03-velocidad-media-e-instantanea.mdx`
+1. Fichar `incertidumbre_practica1.pdf` (15 p). **Es de esta misma unidad**: la semana 1 incluye
+   medición y cifras significativas, y por eso quedó `en-curso` y no `completa`.
+2. Fichar `cinematica1.pdf` + `graficas de cinematica1.pdf` (33 p). Desbloquea la duda de cómo
+   escribe ella `v² = v₀² + 2a(x − x₀)`.
+3. Borrar `cinematica-1d/03-velocidad-media-e-instantanea.mdx`, la lección de prueba.
+   `revisar-ui.mjs` ya no la usa: apunta a `magnitudes-y-medicion`.
 
 ## Errores vivos (máximo 3)
 
-Ninguno registrado todavía.
+Ninguno. Los tres desvíos de esta sesión fueron de agente, no de estudio.
 
 ## Siguiente paso
 
-`/unidad magnitudes-y-medicion` para cerrar las tres lecciones que faltan.
+`/capturar-clase` con `incertidumbre_practica1.pdf`, para cerrar la unidad antes del parcial.

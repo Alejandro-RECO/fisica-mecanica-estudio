@@ -179,12 +179,31 @@ Un `.pptx` no se puede leer: hay que pedirlo exportado a PDF.
 
 ```bash
 cd sitio && npm run build       # Zod, LaTeX, rutas
+
+# revisar-ui NO levanta el servidor: exige un preview vivo en el 4321.
+cd sitio && npx astro preview --port 4321 &
+curl -s --retry 20 --retry-delay 1 --retry-connrefused -o /dev/null http://localhost:4321/
 node herramientas/revisar-ui.mjs  # que ademas se VEA bien
 ```
 
 El build en verde no garantiza que la página se vea bien: la matemática mal anidada compila. El
 segundo comando abre el sitio en Chromium y comprueba desborde horizontal, columnas aplastadas,
 bloques desalineados y errores de consola, en tres anchos, dos temas y con el menú abierto y plegado.
+
+**Dos trampas del verificador, las dos ya cobradas:**
+
+1. **Sin preview levantado revienta con `ERR_CONNECTION_REFUSED`**, y como sale por excepción no
+   imprime la sección `--- problemas ---`. Un `problemas: ninguno` que no aparece **no es un pase**:
+   si no ves esa línea, no se verificó nada.
+2. **Al terminar hay que matar el preview.** Un `astro preview` olvidado de una sesión anterior
+   sigue sirviendo el `dist/` viejo, y entonces el verificador valida un sitio que ya no existe:
+   da 404 en rutas nuevas y desbordes fantasma. Si ves fallos que no cuadran con el código, esa es
+   la primera sospecha.
+
+```bash
+# matar el preview al terminar (PowerShell)
+Get-NetTCPConnection -LocalPort 4321 -State Listen | Select-Object -ExpandProperty OwningProcess -Unique | ForEach-Object { Stop-Process -Id $_ -Force }
+```
 
 ## Estado
 

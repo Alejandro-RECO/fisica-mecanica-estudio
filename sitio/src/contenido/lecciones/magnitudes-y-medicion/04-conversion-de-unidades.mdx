@@ -1,0 +1,701 @@
+---
+titulo: Conversión de unidades
+unidad: magnitudes-y-medicion
+orden: 4
+sesiones: [S01]
+
+pregunta_guia: >
+  El manual de un motor dice que tiene 350 pulgadas cúbicas y el concesionario lo anuncia como
+  5,7 litros. Si una pulgada son 2,54 cm, ¿por qué el número no sale multiplicando por 2,54?
+prerrequisitos:
+  - unidades-y-dimensiones
+  - notacion-cientifica-y-prefijos
+conceptos_clave:
+  - Convertir es multiplicar por un cociente que vale exactamente uno, así que la cantidad física no cambia.
+  - Cada igualdad entre unidades produce dos factores inversos entre sí; se elige el que cancela la unidad vieja.
+  - "Las unidades se manejan como factores algebraicos: se multiplican, se dividen y se cancelan."
+  - Si la unidad va elevada a una potencia, el factor de conversión va elevado a esa misma potencia.
+  - Una igualdad exacta no limita las cifras significativas; una redondeada sí.
+  - "El factor invertido conserva la dimensión, así que la comprobación dimensional no lo detecta: lo delata que la unidad final no sea la pedida."
+errores_frecuentes:
+  - Convertir un volumen o un área multiplicando por el factor sin elevarlo a la potencia
+  - Invertir el factor y multiplicar cuando había que dividir
+  - Confiar en la comprobación dimensional para detectar un factor invertido, cuando lo único que lo delata es la unidad
+  - Escribir el resultado sin unidad dando por hecho que ya se sabe a qué se convirtió
+  - Arrastrar más cifras significativas de las que permite el dato original
+tiempo_estudio_min: 32
+
+esencial:
+  - "Convertir es multiplicar por un cociente que vale 1, montado para que la unidad vieja se cancele."
+  - "Cada igualdad da dos factores, uno inverso del otro: se usa el que deja arriba la unidad que quieres."
+  - "Unidad elevada, factor elevado: de in³ a cm³ el factor es 2,54³ = 16,387, no 2,54."
+  - "Exactas por definición y sin costo en cifras: 1 in = 2,54 cm y 1 ft = 30,48 cm. Redondeadas a cuatro cifras, y por eso limitantes: 1 mi = 1609 m, 1 m = 39,37 in y 1 m = 3,281 ft."
+tiempo_repaso_min: 7
+
+fuentes:
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/semana1.pdf
+    diapositiva: 19
+    fecha: 2026-08-30
+    aporta: "Tabla de igualdades entre unidades de longitud del SI y las usuales estadounidenses (milla, pulgada, pie), la equivalencia 1 h = 60 min = 3600 s, y la marca de exactitud sobre 1 in = 0,0254 m."
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/semana1.pdf
+    diapositiva: 20
+    fecha: 2026-08-30
+    aporta: "Los dos ejercicios propuestos: convertir 15 in a cm y 1,84 in³ a cm³. La diapositiva plantea los enunciados y no muestra la solución."
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/semana1.pdf
+    diapositiva: 18
+    fecha: 2026-08-30
+    aporta: "El método tal como ella lo escribe: multiplicar la cantidad por un cociente de unidades montado de modo que la unidad vieja se cancele contra la del denominador."
+  - tipo: abierta
+    ref: https://www.nist.gov/pml/owm/si-units-length
+    fecha: 2026-08-30
+    aporta: "La pulgada es exacta por definición y no por medición: «exactly equivalent to 25.4 mm», vigente desde el 1 de julio de 1959. Sostiene que 1 in = 2,54 cm no limita las cifras significativas de ningún cálculo."
+  - tipo: abierta
+    ref: https://www.nist.gov/pml/us-surveyfoot/revised-unit-conversion-factors
+    fecha: 2026-08-30
+    aporta: "1 ft = 0,3048 m exacto, y 1 mi = 1609,344 m exacto = 5280 ft exactos. Sostiene que el pie de la diapositiva 19 también es exacto aunque ella no lo marque, y que el hueco entre los 5278,87 ft que da la tabla y los 5280 ft reales es redondeo de la milla."
+  - tipo: abierta
+    ref: https://www.nist.gov/pml/owm/si-units-volume
+    fecha: 2026-08-30
+    aporta: "1 L = 1 dm³ = 1000 cm³, la equivalencia que falta para responder la pregunta guía en litros. La presentación no menciona el litro."
+  - tipo: abierta
+    ref: https://openstax.org/books/university-physics-volume-1/pages/1-3-unit-conversion
+    fecha: 2026-08-30
+    aporta: "La regla de la potencia, con estas palabras: «cm³ = cm × cm × cm, so we have to use the second conversion factor three times (that is, we need to cube it)»."
+  - tipo: abierta
+    ref: https://openstax.org/books/university-physics-volume-1/pages/b-conversion-factors
+    fecha: 2026-08-30
+    aporta: "Tabla de factores de conversión con los mismos valores de la diapositiva 19, lo que confirma que el «1.609 km» de la diapositiva se lee uno coma seiscientos nueve y no mil seiscientos nueve."
+  - tipo: deduccion
+    aporta: "La solución paso a paso de los dos ejercicios de la diapositiva 20: 15 in = 38,1 cm y 1,84 in³ = 30,2 cm³."
+  - tipo: deduccion
+    aporta: "Forma general del factor unitario a partir de una igualdad 1 A = k B, y el paso algebraico que muestra por qué elevar la igualdad a la potencia n eleva el factor a n. La regla en sí está en OpenStax; la derivación es propia."
+  - tipo: deduccion
+    aporta: "1 ft = 12 in exactamente, obtenido dividiendo 30,48 cm entre 2,54 cm, ambos de la misma diapositiva 19. Se usa como comprobación de que la tabla es coherente consigo misma."
+  - tipo: deduccion
+    aporta: "Que el factor invertido devuelve el resultado numérico correcto con una unidad inservible, y por tanto que la comprobación dimensional no lo detecta: 15 in · (1 in / 2,54 cm) = 5,91 in²/cm = 38,1 cm, y 1,84 in³ · 2,54 = 4,6736 in²·cm = 30,152 cm³. Ambas unidades tienen la dimensión correcta."
+  - tipo: deduccion
+    aporta: "El déficit de 1,13 ft entre 5278,87 ft y los 5280 ft exactos viene íntegramente del redondeo de la milla: (1609,344 − 1609) m ÷ 0,3048 m/ft = 1,13 ft. Y la discrepancia de 0,26 ft entre los dos caminos del ejercicio 2 viene del redondeo de 3,281 ft/m."
+  - tipo: deduccion
+    aporta: "1 km/h = 1/3,6 m/s, encadenando 1 h = 3600 s de la diapositiva 19 con el prefijo kilo."
+  - tipo: deduccion
+    aporta: "La respuesta a la pregunta guía: 350 in³ = 5735,47 cm³, que a tres cifras significativas es 5,74×10³ cm³ = 5,74 L. El aviso comercial de 5,7 L es ese valor recortado a dos cifras."
+  - tipo: abierta
+    ref: https://openstax.org/books/university-physics-volume-1/pages/14-1-fluids-density-and-pressure
+    fecha: 2026-08-30
+    aporta: "Densidad del aluminio, 2,70×10³ kg/m³ = 2,70 g/cm³, en la tabla de densidades. Sostiene el dato del ejercicio 3, que la presentación no trae."
+  - tipo: deduccion
+    aporta: "El ejercicio 3 es de elaboración propia: la presentación no lo plantea. El dato de densidad sí está verificado contra OpenStax; lo propio es el enunciado y su solución."
+
+dudas_para_docente:
+  - "En el parcial, ¿se usan los valores redondeados de la diapositiva 19 (1 mi = 1609 m) o los exactos (1609,344 m)? La diferencia aparece a partir de la cuarta cifra significativa."
+  - "¿Exige ver escrito el factor unitario con la cancelación de unidades, como en la diapositiva 18, o basta con el resultado correcto?"
+  - "¿El pie cuenta como exacto en sus problemas? 1 ft = 30,48 cm lo es por definición, pero la diapositiva 19 solo marca la pulgada con la palabra «exactamente», y de eso depende cuántas cifras significativas se pueden reportar."
+  - "¿Cuántas cifras significativas espera cuando el enunciado da un entero como 350 in³? Decide si 5735 cm³ se acepta o si exige 5,74×10³ cm³."
+
+confianza: alta
+estado: revisado
+revision:
+  fecha: 2026-08-30
+  veredicto: coherente-con-reparos
+  chequeos: [aritmetica-exacta, dimensional, cifras-significativas, coherencia-con-la-fuente, notacion]
+  observaciones:
+    - "Los 16 resultados numéricos recalculados con decimales exactos: todos correctos, sin excepción."
+    - "La regla de la potencia está derivada, no solo enunciada: se eleva la igualdad al cubo y se muestra que sube número y unidad."
+    - "Reparo corregido, el más grave: decía que 5,91 in²/cm no es una longitud. Sí lo es —L²/L = L— y además equivale a 38,10 cm exactos. El factor invertido conserva la dimensión, así que el chequeo dimensional NO lo detecta; lo delata la unidad final. Se corrigió aquí y se añadió como error frecuente para que la lección 05 no lo herede."
+    - "Reparo corregido: afirmaba que solo la pulgada es exacta. El pie también lo es (1 ft = 12 in), y eso sostiene el argumento del hueco 5278,87 ↔ 5280 ft."
+    - "Reparo corregido: 5735 cm³ violaba su propia regla de cifras significativas. Ahora es valor intermedio y el resultado es 5,74×10³ cm³."
+    - "Cinco fuentes abiertas de NIST y OpenStax leídas el 2026-08-30 sostienen lo que antes era deducción propia. La densidad del aluminio quedó verificada contra la tabla de OpenStax."
+---
+
+import Nota from '../../../componentes/Nota.astro';
+import Ejemplo from '../../../componentes/Ejemplo.astro';
+import Paso from '../../../componentes/Paso.astro';
+import Ejercicio from '../../../componentes/Ejercicio.astro';
+
+## De qué se trata
+
+Un motor no cambia de tamaño porque lo describas en pulgadas cúbicas o en litros. La cantidad
+física es la misma; lo único que cambia es contra qué patrón la estás comparando y, por lo tanto,
+cuántas veces cabe ese patrón. Convertir unidades es exactamente eso: **reexpresar la misma
+cantidad contra otro estándar**, sin tocar la cantidad.
+
+Eso deja el problema en una forma muy concreta. Necesitas cambiar el número y la etiqueta, pero
+tienes prohibido cambiar la magnitud. Y hay una sola operación que cambia cómo se ve algo sin
+cambiar lo que vale: **multiplicar por uno**. Toda la conversión de unidades es ese truco, y nada
+más que ese truco.
+
+La gracia está en fabricar un "uno" que sirva. Si una pulgada y 2,54 centímetros son la misma
+longitud, entonces dividir la una entre la otra da uno, igual que dividir cualquier cosa entre sí
+misma. Ese cociente tiene unidades arriba y unidades abajo, así que al multiplicar por él las
+unidades viejas se cancelan y quedan las nuevas. El número cambia, la etiqueta cambia, la longitud
+no.
+
+## Las igualdades que da la clase
+
+Antes del método hace falta la materia prima: las igualdades. Estas son las que ella da en la
+diapositiva 19, y son las que puedes dar por conocidas en el parcial.
+
+| Igualdad | Equivalencias |
+|---|---|
+| Milla | $1\ \mathrm{mi} = 1609\ \mathrm{m} = 1{,}609\ \mathrm{km}$ |
+| Metro | $1\ \mathrm{m} = 39{,}37\ \mathrm{in} = 3{,}281\ \mathrm{ft}$ |
+| Pie | $1\ \mathrm{ft} = 0{,}3048\ \mathrm{m} = 30{,}48\ \mathrm{cm}$ |
+| Pulgada | $1\ \mathrm{in} = 0{,}0254\ \mathrm{m} = 2{,}54\ \mathrm{cm}$ (exactamente) |
+| Tiempo | $1\ \mathrm{h} = 60\ \mathrm{min} = 3600\ \mathrm{s}$ |
+
+<Nota tipo="ojo">
+
+En la diapositiva la milla aparece escrita como `1.609 km` con punto. Es **un coma seiscientos nueve
+kilómetros**, no mil seiscientos nueve: una milla es poco más de un kilómetro y medio, y la propia
+tabla lo confirma en la casilla de al lado al dar $1\ \mathrm{mi} = 1609\ \mathrm{m}$. El punto ahí
+es separador decimal a la anglosajona, no separador de miles.
+
+Aquí los decimales van con coma **por convención de este material**, no porque la diapositiva zanje
+el asunto. Ella usa las dos formas en la misma presentación, y cuál espera ver en el parcial es una
+pregunta todavía abierta para la docente. La evidencia completa y la duda están en
+`03-notacion-cientifica-y-prefijos`; esta lección solo se acoge a la convención.
+
+</Nota>
+
+<Nota tipo="info">
+
+Ella tampoco es uniforme con la abreviatura de la pulgada: en la misma diapositiva 19 escribe
+`39.37 pulg` en una línea y `1 in` en otra. En esta lección todo va como $\mathrm{in}$ por
+consistencia interna, pero **las dos abreviaturas son suyas y las dos valen**. Como el parcial es a
+mano, lo que importa es que la que escojas se entienda y que no cambie a mitad de un despeje.
+
+</Nota>
+
+Fíjate en que la tabla es coherente consigo misma, y eso te da una herramienta de verificación
+gratis. Si divides el pie entre la pulgada usando los valores en centímetros de la misma
+diapositiva:
+
+$$
+\frac{30{,}48\ \mathrm{cm}}{2{,}54\ \mathrm{cm}} = 12
+$$
+
+Sale doce exacto, sin decimales colgando. Es decir, $1\ \mathrm{ft} = 12\ \mathrm{in}$, que es la
+definición del pie. Cuando dos datos de una tabla se combinan y sale un número redondo, es señal de
+que la tabla está bien copiada. Si te da 11,97 es que transcribiste mal algo.
+
+## Multiplicar por uno: de dónde sale el factor
+
+Aquí se deduce la herramienta. Arranca de una igualdad cualquiera entre unidades, por ejemplo la de
+la pulgada:
+
+$$
+1\ \mathrm{in} = 2{,}54\ \mathrm{cm}
+$$
+
+Una igualdad se puede dividir por lo mismo a ambos lados sin dejar de ser cierta. Divide todo entre
+$1\ \mathrm{in}$:
+
+$$
+\frac{1\ \mathrm{in}}{1\ \mathrm{in}} = \frac{2{,}54\ \mathrm{cm}}{1\ \mathrm{in}}
+\quad\Longrightarrow\quad
+1 = \frac{2{,}54\ \mathrm{cm}}{1\ \mathrm{in}}
+$$
+
+Ese cociente **vale uno**. No vale 2,54: vale uno, porque arriba y abajo hay la misma longitud
+escrita de dos maneras. Y si en vez de dividir entre $1\ \mathrm{in}$ divides entre
+$2{,}54\ \mathrm{cm}$, obtienes el otro:
+
+$$
+\frac{1\ \mathrm{in}}{2{,}54\ \mathrm{cm}} = 1
+$$
+
+<Nota tipo="clave">
+
+Cada igualdad entre unidades produce **dos factores unitarios**, inversos entre sí, y los dos valen
+uno. La única decisión que tomas al convertir es cuál de los dos usar, y la decisión no se toma por
+intuición: se toma mirando cuál deja la unidad vieja en el denominador para que se cancele.
+
+</Nota>
+
+En general, si tienes una igualdad de la forma $1\ \mathrm{A} = k\ \mathrm{B}$, donde $k$ es el
+número de unidades $\mathrm{B}$ que caben en una $\mathrm{A}$:
+
+$$
+\frac{k\ \mathrm{B}}{1\ \mathrm{A}} = 1
+\qquad\text{y}\qquad
+\frac{1\ \mathrm{A}}{k\ \mathrm{B}} = 1
+$$
+
+Y convertir una cantidad $x$ expresada en $\mathrm{A}$ es multiplicarla por el primero:
+
+$$
+x\ \mathrm{A}
+= x\ \mathrm{A}\cdot\frac{k\ \mathrm{B}}{1\ \mathrm{A}}
+= x\cdot k\cdot\frac{\mathrm{A}\cdot\mathrm{B}}{\mathrm{A}}
+= (x\,k)\ \mathrm{B}
+$$
+
+Lo que hace funcionar el paso del medio es que **las unidades se tratan como factores algebraicos**.
+Una $\mathrm{A}$ arriba y una $\mathrm{A}$ abajo se cancelan igual que se cancelaría una $x$ arriba
+y una $x$ abajo. Ese es el permiso que hace legal todo el procedimiento, y es lo que en el cuaderno
+se ve como tachar la unidad de arriba contra la de abajo.
+
+Es el mismo montaje que ella escribe en la diapositiva 18 para pasar gramos a miligramos, y vale la
+pena verlo en su forma literal, porque no lo escribe con el factor redondo sino con la potencia de
+diez del prefijo en el denominador:
+
+$$
+250\ \mathrm{g} = 250\ \mathrm{g}\cdot\frac{1\ \mathrm{mg}}{1\times 10^{-3}\ \mathrm{g}}
+= 2{,}50\times 10^{5}\ \mathrm{mg}
+$$
+
+Es exactamente la regla de arriba con $\mathrm{A} = \mathrm{g}$ y $\mathrm{B} = \mathrm{mg}$: unidad
+vieja abajo, unidad nueva arriba. Que escriba $1\times 10^{-3}\ \mathrm{g}$ en el denominador en vez
+de subir el 1000 al numerador es cuestión de forma, y las dos versiones son el mismo número, porque
+$1\ \mathrm{mg}/(1\times 10^{-3}\ \mathrm{g})$ y $1000\ \mathrm{mg}/1\ \mathrm{g}$ valen igual. La
+ventaja de su forma es que el prefijo entra tal como aparece en la tabla, sin invertirlo mentalmente
+antes de escribirlo. Si quieres reproducir su montaje en el parcial, ese es el que ella deja escrito.
+
+Aquí van los símbolos con sus unidades, para que no queden sueltos:
+
+- $x$: el valor numérico de la cantidad en la unidad vieja, adimensional.
+- $\mathrm{A}$: la unidad vieja, la que quieres eliminar.
+- $\mathrm{B}$: la unidad nueva, la que quieres que quede.
+- $k$: cuántas $\mathrm{B}$ hay en una $\mathrm{A}$. Es un número puro, sin unidades, porque sale de
+  dividir dos cantidades de la misma dimensión.
+
+<Ejemplo titulo="Convertir 15 in a cm — diapositiva 20">
+
+<Paso n="1" razon="Se identifica la unidad que sobra y la que se quiere. Sin esto no se puede elegir el factor.">
+
+La cantidad es $15\ \mathrm{in}$. La unidad vieja es $\mathrm{in}$ y hay que eliminarla; la nueva es
+$\mathrm{cm}$ y tiene que quedar arriba.
+
+</Paso>
+
+<Paso n="2" razon="De los dos factores posibles se elige el que tiene la unidad vieja abajo. Ese, y no el otro, es el que cancela.">
+
+De $1\ \mathrm{in} = 2{,}54\ \mathrm{cm}$ salen dos factores. El que sirve es:
+
+$$
+\frac{2{,}54\ \mathrm{cm}}{1\ \mathrm{in}}
+$$
+
+porque tiene $\mathrm{in}$ en el denominador, justo donde hace falta para cancelar la $\mathrm{in}$
+de la cantidad.
+
+</Paso>
+
+<Paso n="3" razon="Multiplicar por un factor que vale uno no cambia la cantidad; solo la reescribe.">
+
+$$
+15\ \mathrm{in}\cdot\frac{2{,}54\ \mathrm{cm}}{1\ \mathrm{in}}
+= 15\cdot 2{,}54\cdot\frac{\mathrm{in}\cdot\mathrm{cm}}{\mathrm{in}}
+= 38{,}1\ \mathrm{cm}
+$$
+
+La $\mathrm{in}$ de arriba y la de abajo se cancelan y sobrevive el centímetro.
+
+</Paso>
+
+<Paso n="4" razon="Comprobación de sentido: se pasó a una unidad más pequeña, así que el número tiene que crecer.">
+
+El centímetro es menor que la pulgada, de modo que hacen falta más centímetros para cubrir la misma
+longitud. Y en efecto $38{,}1 \gt 15$. Si te hubiera dado un número menor que 15, el factor estaba
+al revés.
+
+</Paso>
+
+<Paso n="5" razon="Comprobación dimensional: el factor es adimensional, así que la dimensión de entrada debe ser la de salida.">
+
+El factor tiene longitud arriba y longitud abajo, así que su dimensión es
+
+$$
+\left[\frac{2{,}54\ \mathrm{cm}}{1\ \mathrm{in}}\right] = \frac{L}{L} = 1
+$$
+
+Es adimensional. Por eso la entrada tenía dimensión $L$ y la salida también tiene dimensión $L$:
+$[15\ \mathrm{in}] = L$ y $[38{,}1\ \mathrm{cm}] = L$. Multiplicar por un factor unitario nunca cambia
+la dimensión de una cantidad.
+
+Ahora, ten claro qué **no** prueba este chequeo, porque es una confusión cara. El factor invertido,
+$1\ \mathrm{in}/2{,}54\ \mathrm{cm}$, también es adimensional; usarlo también deja una salida de
+dimensión $L$ y la comprobación dimensional lo deja pasar sin protestar. Lo que atrapa el factor al
+revés no es la dimensión sino la **unidad**: que en la línea final no aparezca la unidad que te
+pidieron. En la sección siguiente se ve el caso completo.
+
+</Paso>
+
+</Ejemplo>
+
+<Nota tipo="info">
+
+Sobre las cifras: el 2,54 es exacto y no limita nada, así que la precisión del resultado la fija el
+dato de entrada. Si los $15\ \mathrm{in}$ vienen de una regla con dos cifras significativas, lo
+honesto es reportar $38\ \mathrm{cm}$; si los 15 son un valor de definición o del enunciado, se
+escribe $38{,}1\ \mathrm{cm}$. Aquí se deja $38{,}1\ \mathrm{cm}$ porque el enunciado da el dato sin
+incertidumbre.
+
+</Nota>
+
+## Qué te dice el factor antes de calcular
+
+El factor no es un número que se aplica a ciegas: se puede leer, y leerlo te ahorra errores.
+
+**Si $k$ es mayor que uno, el número crece.** Eso pasa cuando la unidad nueva es más pequeña que la
+vieja, como al pasar de pulgadas a centímetros. Necesitas más pedacitos para cubrir lo mismo.
+
+**Si $k$ es menor que uno, el número se encoge.** Al pasar de metros a millas, $k$ vale
+$1/1609$ y un número grande de metros se convierte en un número pequeño de millas.
+
+**Si el factor queda invertido, te delata la unidad.** Míralo: si por descuido multiplicas
+$15\ \mathrm{in}$ por el factor equivocado obtienes
+
+$$
+15\ \mathrm{in}\cdot\frac{1\ \mathrm{in}}{2{,}54\ \mathrm{cm}}
+= 5{,}91\ \frac{\mathrm{in^{2}}}{\mathrm{cm}}
+$$
+
+Y aquí hay que hilar fino, porque lo que pasa es más sutil de lo que parece. Esa cosa **sí es una
+longitud**: un área dividida entre una longitud da una longitud, y la comprobación dimensional lo
+confirma sin inmutarse, $[\mathrm{in^{2}}/\mathrm{cm}] = L^{2}/L = L$. Es más: si te tomas el trabajo
+de convertir esa $\mathrm{in^{2}}$ a $\mathrm{cm^{2}}$, te llevas una sorpresa desagradable.
+
+$$
+\frac{15}{2{,}54}\ \frac{\mathrm{in^{2}}}{\mathrm{cm}}\cdot
+\left(\frac{2{,}54\ \mathrm{cm}}{1\ \mathrm{in}}\right)^{2}
+= \frac{15}{2{,}54}\cdot 2{,}54^{2}\ \frac{\mathrm{cm^{2}}}{\mathrm{cm}}
+= 15\cdot 2{,}54\ \mathrm{cm}
+= 38{,}1\ \mathrm{cm}
+$$
+
+Los $2{,}54$ se cancelan y queda **la respuesta correcta**, la misma de arriba, vestida con una
+unidad inservible. Invertir el factor no produjo un disparate: produjo el resultado de siempre
+disfrazado. Por eso hay que decir con precisión cuál es el detector y cuál no.
+
+**La dimensión no detecta el factor invertido**, porque los dos factores posibles son adimensionales
+y ambos conservan la dimensión de entrada. Lo que sí lo detecta es que **la unidad final no sea la
+que te pidieron**. Si el enunciado pedía centímetros y en tu última línea dice $\mathrm{in^{2}/cm}$,
+no revises la aritmética: revisa el montaje.
+
+El otro chequeo que sí sirve es el del paso 4, el de sentido común: el número 5,91 es *menor* que 15,
+y habías razonado que al pasar a una unidad más pequeña tenía que crecer. Entre los dos —la unidad
+que no es la pedida y el número que va en la dirección contraria— el error queda atrapado. El que
+falla, y por eso hay que insistir, es el dimensional. Quien no mire ninguno de los dos escribe 5,91 y
+lo entrega como si fueran centímetros, y ahí el error se vuelve caro.
+
+**Si $k$ vale uno, el factor es uno y no pasa nada.** Es el caso límite trivial, y sirve de
+recordatorio de qué estás haciendo realmente: multiplicando por uno, siempre.
+
+## Cuando la unidad va elevada, el factor también se eleva
+
+Este es el punto donde se cae la mayoría, y es exactamente el segundo ejercicio de la
+diapositiva 20. Un volumen no se convierte con el mismo factor que una longitud.
+
+La razón se ve en una línea. Si dos longitudes son iguales, sus cubos también lo son, porque elevar
+al cubo a ambos lados de una igualdad la mantiene cierta:
+
+$$
+1\ \mathrm{in} = 2{,}54\ \mathrm{cm}
+\quad\Longrightarrow\quad
+(1\ \mathrm{in})^{3} = (2{,}54\ \mathrm{cm})^{3}
+$$
+
+Y al elevar un producto se elevan todos sus factores, el número **y la unidad**:
+
+$$
+1\ \mathrm{in^{3}} = 2{,}54^{3}\ \mathrm{cm^{3}} = 16{,}387064\ \mathrm{cm^{3}}
+$$
+
+Dicho como factor unitario, que es la forma que se usa al operar:
+
+$$
+\left(\frac{2{,}54\ \mathrm{cm}}{1\ \mathrm{in}}\right)^{3}
+= \frac{2{,}54^{3}\ \mathrm{cm^{3}}}{1^{3}\ \mathrm{in^{3}}}
+= 16{,}387064\ \frac{\mathrm{cm^{3}}}{\mathrm{in^{3}}}
+$$
+
+La regla general, para cualquier potencia $n$:
+
+$$
+1\ \mathrm{A} = k\ \mathrm{B}
+\quad\Longrightarrow\quad
+1\ \mathrm{A}^{n} = k^{n}\ \mathrm{B}^{n}
+$$
+
+Hay una forma equivalente de entenderlo que a veces se recuerda mejor: un volumen en $\mathrm{in^3}$
+es un producto de **tres** longitudes en pulgadas, y a cada una de las tres hay que aplicarle el
+factor. Aplicarlo una sola vez sería convertir el largo y dejar el ancho y el alto en pulgadas, que
+es un disparate.
+
+<Nota tipo="ojo">
+
+Para áreas el factor va al cuadrado y para volúmenes al cubo. Con la pulgada la diferencia es
+enorme: $2{,}54$ para longitud, $6{,}4516$ para área y $16{,}387$ para volumen. Si usas el factor sin
+elevar en un volumen, el número que escribes queda **6,45 veces más pequeño** de lo que debería si lo
+vas a leer en $\mathrm{cm^{3}}$ —justo el factor $2{,}54^{2}$ que te faltó—, y es exactamente lo que
+un parcial busca cuando pone el enunciado en $\mathrm{in^3}$.
+
+</Nota>
+
+<Ejemplo titulo="Convertir 1,84 in³ a cm³ — diapositiva 20">
+
+<Paso n="1" razon="Primero se reconoce la dimensión del dato: es un volumen, no una longitud. De ahí sale la potencia del factor.">
+
+La cantidad es $1{,}84\ \mathrm{in^{3}}$ y su dimensión es $[V] = L^{3}$. Como la unidad va elevada
+al cubo, el factor tiene que ir elevado al cubo.
+
+</Paso>
+
+<Paso n="2" razon="Se construye el factor cúbico elevando el factor lineal completo, número y unidad.">
+
+$$
+\left(\frac{2{,}54\ \mathrm{cm}}{1\ \mathrm{in}}\right)^{3}
+= 16{,}387064\ \frac{\mathrm{cm^{3}}}{\mathrm{in^{3}}}
+$$
+
+</Paso>
+
+<Paso n="3" razon="Se multiplica y se cancela. La in³ de arriba desaparece contra la in³ de abajo, igual que antes.">
+
+$$
+1{,}84\ \mathrm{in^{3}}\cdot 16{,}387064\ \frac{\mathrm{cm^{3}}}{\mathrm{in^{3}}}
+= 30{,}152\ \mathrm{cm^{3}}
+$$
+
+</Paso>
+
+<Paso n="4" razon="Se ajustan las cifras significativas: el dato trae tres y el factor es exacto, así que el resultado lleva tres.">
+
+$$
+1{,}84\ \mathrm{in^{3}} = 30{,}2\ \mathrm{cm^{3}}
+$$
+
+</Paso>
+
+<Paso n="5" razon="Comprobación de orden de magnitud: hay que poder estimar el resultado sin la calculadora.">
+
+Una pulgada cúbica es un cubito de dos centímetros y medio de lado. Su volumen ronda
+$2{,}5\times 2{,}5\times 2{,}5 \approx 16\ \mathrm{cm^{3}}$, y como tenemos casi dos pulgadas
+cúbicas, esperábamos algo cercano a $32\ \mathrm{cm^{3}}$. Los $30{,}2\ \mathrm{cm^{3}}$ encajan.
+
+</Paso>
+
+<Paso n="6" razon="Comprobación dimensional: el factor cúbico también es adimensional, así que la dimensión no puede haber cambiado.">
+
+$$
+\left[\left(\frac{\mathrm{cm}}{\mathrm{in}}\right)^{3}\right] = \frac{L^{3}}{L^{3}} = 1
+$$
+
+Entra $L^{3}$ y sale $L^{3}$: sigue siendo un volumen. Y conviene mirar de cerca el error típico,
+porque es traicionero. Si hubieras multiplicado por $2{,}54$ sin elevar, el factor habría sido
+$\mathrm{cm}/\mathrm{in}$ y el resultado
+$1{,}84 \cdot 2{,}54 = 4{,}6736\ \mathrm{in^{2}\,cm}$. Esa unidad **también tiene dimensión
+$L^{3}$**, así que la comprobación dimensional la deja pasar sin decir nada; peor todavía, si la
+conviertes da $4{,}6736 \cdot 6{,}4516 = 30{,}152\ \mathrm{cm^{3}}$, otra vez el resultado correcto.
+Igual que en el caso de la longitud, lo que denuncia el error no es la dimensión sino la **unidad**:
+te pidieron $\mathrm{cm^{3}}$ y en el papel quedó $\mathrm{in^{2}\,cm}$. Quien no mire la unidad
+escribe 4,67 y lo entrega como centímetros cúbicos, y ese —no el álgebra— es el error de verdad.
+
+</Paso>
+
+</Ejemplo>
+
+## Cuando la unidad es compuesta
+
+Una velocidad tiene dos unidades, una arriba y otra abajo, y hay que convertir las dos. No es un
+caso nuevo: son dos factores unitarios encadenados, y cada uno se monta con el mismo criterio de
+siempre.
+
+Toma $1\ \mathrm{km/h}$ y conviértelo a $\mathrm{m/s}$. El kilómetro sube a metros con el prefijo
+kilo, y la hora baja a segundos con $1\ \mathrm{h} = 3600\ \mathrm{s}$ de la diapositiva 19:
+
+$$
+1\ \frac{\mathrm{km}}{\mathrm{h}}
+= \frac{1\ \mathrm{km}}{1\ \mathrm{h}}\cdot\frac{1000\ \mathrm{m}}{1\ \mathrm{km}}\cdot
+  \frac{1\ \mathrm{h}}{3600\ \mathrm{s}}
+= \frac{1000}{3600}\ \frac{\mathrm{m}}{\mathrm{s}}
+= \frac{1}{3{,}6}\ \frac{\mathrm{m}}{\mathrm{s}}
+$$
+
+Fíjate en el segundo factor: la hora estaba **abajo** en la cantidad original, así que para
+cancelarla el factor la lleva **arriba**. Esa es la única sutileza de las unidades compuestas, y se
+resuelve sola si escribes las unidades en vez de confiar en la memoria.
+
+De ahí sale el famoso 3,6 que mucha gente usa sin saber de dónde viene: **de $\mathrm{km/h}$ a
+$\mathrm{m/s}$ se divide entre 3,6, y de $\mathrm{m/s}$ a $\mathrm{km/h}$ se multiplica por 3,6.**
+Ahora ya sabes de dónde sale, que es lo que te permite reconstruirlo si en el parcial te falla la
+memoria.
+
+## Exacto y redondeado no son lo mismo
+
+La diapositiva 19 marca una sola de sus igualdades con la palabra *exactamente*, y esa palabra hace
+un trabajo real:
+
+$$
+1\ \mathrm{in} = 0{,}0254\ \mathrm{m} = 2{,}54\ \mathrm{cm} \quad \text{(exactamente)}
+$$
+
+La pulgada **está definida** a partir del metro como 25,4 milímetros justos, y así lo publica el NIST
+desde el 1 de julio de 1959. No es el resultado de medir una pulgada con una regla muy buena: es una
+definición, igual que decir que en un metro hay cien centímetros. Por eso no tiene incertidumbre y
+**no limita las cifras significativas** de ningún cálculo. Puedes usar 2,54 o 2,540000 y da lo mismo.
+
+Ahora bien, la diapositiva marca solo la pulgada, pero **el pie también es exacto**. Como
+$1\ \mathrm{ft} = 12\ \mathrm{in}$ por definición y la pulgada es exacta, el pie hereda la
+exactitud: $1\ \mathrm{ft} = 30{,}48\ \mathrm{cm} = 0{,}3048\ \mathrm{m}$ justos, sin redondeo
+escondido. Eso es justamente lo que hacía salir un 12 pelado en la división de más arriba: dos
+valores exactos dan un cociente exacto, y por eso ese chequeo funcionaba.
+
+Las que sí están redondeadas son las otras tres, todas recortadas a cuatro cifras significativas:
+$1\ \mathrm{mi} = 1609\ \mathrm{m}$ —con su $1{,}609\ \mathrm{km}$—, $1\ \mathrm{m} = 39{,}37\ \mathrm{in}$
+y $1\ \mathrm{m} = 3{,}281\ \mathrm{ft}$. La milla, por ejemplo, vale $1609{,}344\ \mathrm{m}$
+exactos. El recorte se nota usando la propia tabla: si divides la milla entre el pie te salen
+$5278{,}87\ \mathrm{ft}$, y una milla son $5280\ \mathrm{ft}$ exactos. Esos $1{,}13\ \mathrm{ft}$ de
+diferencia no son un error tuyo, y tampoco son culpa del pie: son el redondeo del 1609
+propagándose, como se comprueba con números al final de la lección.
+
+<Nota tipo="ojo">
+
+Los valores $1609{,}344\ \mathrm{m}$ y $5280\ \mathrm{ft}$ **no están en la presentación**: vienen
+del NIST y están declarados en las fuentes de esta lección. En el parcial usa los números de la
+diapositiva: si ella da $1\ \mathrm{mi} = 1609\ \mathrm{m}$, ese es el dato del problema. La moraleja
+práctica es otra y sí te sirve: **un resultado no puede tener más cifras significativas que el dato
+más pobre que entró en él**, y en una conversión el dato más pobre suele ser el propio factor
+redondeado.
+
+</Nota>
+
+## Qué se malinterpreta
+
+**El error del factor sin elevar.** Es el número uno, y nace de una confusión razonable: como la
+igualdad se aprendió en la forma "una pulgada son 2,54 centímetros", la mano escribe 2,54 sin mirar
+que la unidad del enunciado dice $\mathrm{in^3}$. El antídoto no es memorizar el 16,387: es
+acostumbrarte a mirar la unidad del dato antes de escribir el factor. Si dice al cubo, el factor va
+al cubo.
+
+**Elegir el factor por intuición y no por cancelación.** Mucha gente decide si multiplica o divide
+preguntándose si el resultado "debería dar más grande o más chiquito". Eso funciona hasta que el
+problema tiene dos conversiones encadenadas y la intuición se pierde. El método del factor unitario
+no requiere intuición: pones la unidad vieja abajo y ya. La intuición se usa después, para
+verificar.
+
+**Creer que el chequeo dimensional atrapa el factor invertido.** Este es el más fino de todos, y por
+eso el más peligroso: te da una falsa sensación de haber verificado. La comprobación dimensional es
+una red excelente para otras cosas —detecta que sumaste una longitud con un tiempo, o que elevaste
+mal una potencia—, pero **no puede ver un factor al revés**, porque los dos factores de una misma
+igualdad son adimensionales y los dos preservan la dimensión. Ya lo viste dos veces:
+$\mathrm{in^{2}/cm}$ tiene dimensión $L$ y $\mathrm{in^{2}\,cm}$ tiene dimensión $L^{3}$, las dos
+correctas, y las dos escondiendo el número correcto bajo una unidad que nadie pidió. Para el factor
+invertido los detectores son otros: **que la unidad final no sea la pedida** y que el número vaya en
+la dirección contraria a la esperada. Guárdate esta distinción, porque en análisis dimensional vas a
+usar la homogeneidad como herramienta central y conviene saber desde ya qué es lo que no cubre.
+
+**Creer que el factor cambia la cantidad.** Escribir $15\ \mathrm{in} = 38{,}1\ \mathrm{cm}$ y
+pensar que "creció" es no haber entendido el asunto. No creció nada: es la misma longitud contada
+con una regla de marcas más finas. El signo igual está ahí en serio.
+
+**Dejar el resultado sin unidad.** Después de tanto cuidado con las unidades durante el
+procedimiento, escribir "38,1" en la línea final es tirar el trabajo a la basura. Un número desnudo
+no es una respuesta.
+
+## La respuesta a la pregunta del principio
+
+El motor de 350 pulgadas cúbicas. El número no sale multiplicando por 2,54 porque **la cilindrada es
+un volumen**, no una longitud: hay que multiplicar por $2{,}54^{3}$.
+
+$$
+350\ \mathrm{in^{3}}\cdot 16{,}387064\ \frac{\mathrm{cm^{3}}}{\mathrm{in^{3}}}
+= 5735{,}47\ \mathrm{cm^{3}}
+$$
+
+Ese $5735{,}47$ es un **valor intermedio**: se carga con todas sus cifras para no arrastrar error de
+redondeo hacia el paso siguiente, pero no es todavía la respuesta. El dato de entrada trae tres
+cifras significativas y el factor es exacto, así que al final hay que recortar a tres:
+$5{,}74\times 10^{3}\ \mathrm{cm^{3}}$.
+
+Y para llegar a litros hace falta una equivalencia más, que **no está en la diapositiva** y viene
+declarada en las fuentes: el litro es el volumen de un decímetro cúbico. Como
+$1\ \mathrm{dm} = 10\ \mathrm{cm}$, al elevar al cubo —otra vez la misma regla—
+$1\ \mathrm{L} = 1\ \mathrm{dm^{3}} = 10^{3}\ \mathrm{cm^{3}} = 1000\ \mathrm{cm^{3}}$. Entonces:
+
+$$
+5735{,}47\ \mathrm{cm^{3}}\cdot\frac{1\ \mathrm{L}}{1000\ \mathrm{cm^{3}}} = 5{,}74\ \mathrm{L}
+$$
+
+Los 5,74 litros que salen del cálculo son los 5,7 litros del aviso: el concesionario redondea a dos
+cifras para el anuncio, y por eso el número que ves en el vidrio del carro es el mismo motor de las
+350 pulgadas cúbicas del manual, contado con otro patrón.
+
+Quien multiplique por 2,54 sin elevar obtiene $889\ \mathrm{in^{2}\,cm}$. Esa unidad tiene dimensión
+$L^{3}$ —sigue siendo un volumen— y, convertida, vuelve a dar los mismos $5735{,}47\ \mathrm{cm^{3}}$; el
+problema es que nadie la lee así. Quien vea el 889 y lo tome por centímetros cúbicos termina
+anunciando un motor de $0{,}889\ \mathrm{L}$, menos de un litro, que es el tamaño de una moto.
+
+<Ejercicio titulo="Tres conversiones de examen">
+
+Usa solamente las igualdades de la diapositiva 19 y los prefijos del SI. En cada una escribe el
+factor unitario completo, con sus unidades, antes de operar.
+
+1. Un carro va a $90\ \mathrm{km/h}$ y otro a $30\ \mathrm{m/s}$. ¿Cuál va más rápido?
+2. ¿Cuántos pies tiene una milla, según los datos de la tabla?
+3. Un enunciado te da la densidad del aluminio como $2{,}7\ \mathrm{g/cm^{3}}$. Exprésala en
+   $\mathrm{kg/m^{3}}$. (Ese valor va aquí como dato del problema: no sale de la presentación.)
+
+<div slot="solucion">
+
+**1.** Se lleva todo a la misma unidad, por ejemplo $\mathrm{m/s}$:
+
+$$
+90\ \frac{\mathrm{km}}{\mathrm{h}}\cdot\frac{1000\ \mathrm{m}}{1\ \mathrm{km}}\cdot
+\frac{1\ \mathrm{h}}{3600\ \mathrm{s}}
+= \frac{90\,000}{3600}\ \frac{\mathrm{m}}{\mathrm{s}}
+= 25\ \frac{\mathrm{m}}{\mathrm{s}}
+$$
+
+Va más rápido el segundo: $30\ \mathrm{m/s} \gt 25\ \mathrm{m/s}$. Comparar los números 90 y 30 sin
+convertir habría dado la respuesta contraria, y ese es todo el punto del ejercicio.
+
+**2.** Se combina $1\ \mathrm{mi} = 1609\ \mathrm{m}$ con $1\ \mathrm{ft} = 0{,}3048\ \mathrm{m}$,
+poniendo el metro abajo para que se cancele:
+
+$$
+1609\ \mathrm{m}\cdot\frac{1\ \mathrm{ft}}{0{,}3048\ \mathrm{m}} = 5278{,}87\ \mathrm{ft}
+$$
+
+Por el otro camino, con $1\ \mathrm{m} = 3{,}281\ \mathrm{ft}$:
+
+$$
+1609\ \mathrm{m}\cdot\frac{3{,}281\ \mathrm{ft}}{1\ \mathrm{m}} = 5279{,}13\ \mathrm{ft}
+$$
+
+Sin redondear, los dos caminos **no dan lo mismo**: se separan en $0{,}26\ \mathrm{ft}$. No es que uno
+esté mal; es la propagación del redondeo de la sección anterior, ahora en vivo. El segundo camino usó
+el $3{,}281$, que es un valor recortado a cuatro cifras significativas, así que su resultado no
+merece más de cuatro. Y a cuatro cifras los dos caminos dicen $5279\ \mathrm{ft}$. **Ahí sí
+coinciden**, y esa coincidencia a la precisión que corresponde —no en todos los decimales— es la
+comprobación.
+
+El valor exacto de la definición es $5280\ \mathrm{ft}$. La diferencia con los
+$5278{,}87\ \mathrm{ft}$ del primer camino es de $1{,}13\ \mathrm{ft}$, y viene entera del redondeo
+de $1609{,}344\ \mathrm{m}$ a $1609\ \mathrm{m}$: los $0{,}344\ \mathrm{m}$ que se perdieron valen,
+divididos entre los $0{,}3048\ \mathrm{m}$ que mide un pie, exactamente esos $1{,}13\ \mathrm{ft}$.
+El pie no aporta nada al hueco, precisamente porque el pie es exacto.
+
+**3.** Hay dos conversiones y una de ellas va al cubo, además de estar en el denominador:
+
+$$
+2{,}7\ \frac{\mathrm{g}}{\mathrm{cm^{3}}}\cdot\frac{1\ \mathrm{kg}}{1000\ \mathrm{g}}\cdot
+\left(\frac{100\ \mathrm{cm}}{1\ \mathrm{m}}\right)^{3}
+= 2{,}7\cdot\frac{10^{6}}{10^{3}}\ \frac{\mathrm{kg}}{\mathrm{m^{3}}}
+= 2{,}7\times 10^{3}\ \frac{\mathrm{kg}}{\mathrm{m^{3}}}
+$$
+
+El factor del centímetro va **al cubo y al derecho**: como el $\mathrm{cm^{3}}$ estaba en el
+denominador de la densidad, el factor lo lleva en el numerador para cancelarlo. Comprobación
+dimensional: $[\rho] = ML^{-3}$ antes y después, porque los dos factores son adimensionales.
+
+Vale la pena quedarse con el resultado: **pasar de $\mathrm{g/cm^3}$ a $\mathrm{kg/m^3}$ es
+multiplicar por 1000**, y aparece en todo problema de densidad del curso.
+
+</div>
+
+</Ejercicio>

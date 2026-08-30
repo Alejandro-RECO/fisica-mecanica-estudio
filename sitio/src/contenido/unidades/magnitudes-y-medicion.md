@@ -3,7 +3,7 @@ titulo: Magnitudes, unidades y medición
 orden: 1
 resumen: >
   Qué es una magnitud física, cómo se mide y cómo se escribe el resultado sin mentir sobre lo que se sabe.
-estado: sin-material
+estado: en-curso
 ---
 
 Antes de describir ningún movimiento hay que poder decir **cuánto** de algo hay, y decirlo de una

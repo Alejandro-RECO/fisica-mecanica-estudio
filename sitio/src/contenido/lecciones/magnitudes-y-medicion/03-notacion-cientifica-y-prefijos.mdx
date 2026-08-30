@@ -1,0 +1,529 @@
+---
+titulo: Notación científica y prefijos del SI
+unidad: magnitudes-y-medicion
+orden: 3
+sesiones: [S01]
+
+pregunta_guia: >
+  El frasco de un medicamento dice 250 g y la dosis está escrita en miligramos. ¿Cuántos
+  miligramos hay ahí, y por qué son exactamente tres ceros más, ni dos ni cuatro?
+prerrequisitos:
+  - que-es-medir
+  - unidades-y-dimensiones
+conceptos_clave:
+  - Todo número positivo se escribe como a por diez elevado a n, con a entre 1 y 10.
+  - El exponente n cuenta cuántas posiciones se desplaza la coma decimal, y su signo dice hacia dónde.
+  - Un prefijo del SI es una potencia de diez pegada a la unidad, no un número aparte.
+  - Convertir entre prefijos es multiplicar por un cociente que vale 1 y cancelar la unidad vieja.
+errores_frecuentes:
+  - Leer un exponente negativo como si el número fuera negativo
+  - Dar por buena una respuesta como 45×10⁴, que no cumple la condición de la mantisa
+  - Al pasar a una unidad más pequeña, achicar el número en vez de agrandarlo
+  - Confundir M de mega con m de mili
+tiempo_estudio_min: 26
+
+esencial:
+  - "Notación científica: N = a × 10ⁿ, con a entre 1 y 10 (nunca 10) y n entero."
+  - "n es cuántas posiciones se corrió la coma: hacia la izquierda n positivo, hacia la derecha n negativo."
+  - "Un prefijo es una potencia de diez pegada a la unidad: 1 mg = 1×10⁻³ g, 1 km = 1×10³ m."
+  - "Se convierte multiplicando por un cociente que vale 1: 250 g · (1 mg / 1×10⁻³ g) = 2,50×10⁵ mg."
+tiempo_repaso_min: 5
+
+fuentes:
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/semana1.pdf
+    diapositiva: 14
+    fecha: 2026-08-30
+    aporta: "Definición de notación científica, la condición sobre a, el papel de n y los tres ejemplos numéricos."
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/semana1.pdf
+    diapositiva: 15
+    fecha: 2026-08-30
+    aporta: "Enunciado del ejercicio propuesto, transcrito con el separador que ella usa en la diapositiva: 32, 320, 3200, 3.2, 0.32 y 0.0032 — con punto. La fuente no trae solución."
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/semana1.pdf
+    diapositiva: 16
+    fecha: 2026-08-30
+    aporta: "Tabla completa de prefijos de yocto a yotta y la razón de usar múltiplos y submúltiplos."
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/semana1.pdf
+    diapositiva: 17
+    fecha: 2026-08-30
+    aporta: "Enunciado del ejemplo resuelto: expresar 250 g en mg."
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/semana1.pdf
+    diapositiva: 18
+    fecha: 2026-08-30
+    aporta: "Desarrollo completo por cociente unitario, la equivalencia 1 mg = 1×10⁻³ g y el resultado 2,50×10⁵ mg."
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/semana1.pdf
+    diapositiva: 19
+    fecha: 2026-08-30
+    aporta: "Factores de conversión escritos con punto decimal (1.609 km, 0.0254 m): la otra mitad de la disputa del separador."
+  - tipo: deduccion
+    aporta: "Por qué siempre existe un único a entre 1 y 10: se muestra dividiendo 450000 entre 10 repetidamente."
+  - tipo: deduccion
+    aporta: "Regla del signo de n a partir del tamaño del número, y los casos límite n = 0 y a = 1."
+  - tipo: deduccion
+    aporta: "Producto y cociente de potencias de diez, que hace falta para dividir entre 10⁻³ en el ejemplo de la docente."
+  - tipo: deduccion
+    aporta: "Solución del ejercicio de la diapositiva 15: la fuente lo propone y no lo resuelve."
+  - tipo: deduccion
+    aporta: "Los prefijos se cuentan desde el gramo, no desde el kilogramo: 1 mg = 1×10⁻⁶ kg."
+  - tipo: abierta
+    ref: "https://www.nist.gov/pml/owm/metric-si-prefixes"
+    fecha: 2026-08-30
+    aporta: "La tabla oficial del SI tiene 24 prefijos e incluye deca o deka (da, 10¹) y hecto (h, 10²), que son los dos que la tabla de la diapositiva 16 omite al saltar de 10⁻¹ a 10³."
+  - tipo: abierta
+    ref: "https://www.nist.gov/pml/owm/metric-si-prefixes"
+    fecha: 2026-08-30
+    aporta: "Los cuatro prefijos añadidos al SI en 2022 —ronna (R, 10²⁷), quetta (Q, 10³⁰), ronto (r, 10⁻²⁷) y quecto (q, 10⁻³⁰)—, que la tabla de la docente no trae porque se detiene en yotta y yocto."
+  - tipo: deduccion
+    aporta: "Segunda parte del ejercicio propuesto (0,000045 m a μm y a mm), para practicar el patrón de la diapositiva 18."
+
+contradicciones:
+  - afirmacion: "Separador decimal en notación científica y en resultados numéricos"
+    dice_a: "Punto decimal en las diapositivas 14, 15 y 19: 4.5 × 10^5 y 3.2 × 10^-7 (dia. 14); 0.0032 (dia. 15); 1.609 km y 0.0254 m (dia. 19)"
+    dice_b: "Diapositiva 18: coma decimal — 250 g = 2,50 × 10^5 mg"
+    lectura_provisional: "coma decimal"
+    por_que: >
+      La diapositiva 18 es el único lugar donde la docente escribe el resultado de un ejercicio
+      resuelto por ella, que es justo lo que hay que reproducir a mano en el parcial; las otras
+      son datos de tabla. Además el texto de la diapositiva 14 dice con palabras "cuántas
+      posiciones se desplaza la coma decimal", y la coma es la convención de Colombia.
+
+dudas_para_docente:
+  - "¿Coma o punto decimal en el parcial?"
+  - "¿Se exige la forma normalizada (mantisa entre 1 y 10) o se acepta una respuesta como 45×10⁴?"
+  - "¿Entran en el parcial deca y hecto? No aparecen en la tabla de la diapositiva 16, que salta de 10⁻¹ a 10³."
+  - "En 2,50×10⁵ mg usted conserva tres cifras significativas. ¿Se califica la cantidad de cifras significativas del resultado o basta con el valor?"
+
+confianza: media
+estado: con-dudas
+revision:
+  fecha: 2026-08-30
+  veredicto: coherente-con-reparos
+  chequeos: [aritmetica-exacta, coherencia-con-la-fuente, katex-renderizado, casos-limite]
+  observaciones:
+    - "Las seis conversiones de la diapositiva 15 recalculadas con decimales exactos: correctas, y las seis mantisas cumplen 1 ≤ a < 10."
+    - "Las 18 filas de prefijos contrastadas contra la diapositiva 16 renderizada: ninguna fila inventada; micro, mili y mega con el símbolo correcto."
+    - "Los 20 bloques y 79 expresiones en línea pasados por el KaTeX del proyecto: 0 errores y 0 avisos. \\begin{aligned} con \\\\[2pt] verificado como válido."
+    - "Reparo corregido: decía que correr la coma un lugar es un error del 1000 %; un factor de diez es 900 % hacia arriba y 90 % hacia abajo. Se quitó el porcentaje."
+    - "Reparo corregido: el frontmatter atribuía 0.0032 a las diapositivas 14 y 19, y está en la 15."
+    - "Confianza media, no alta, únicamente porque la disputa del separador sigue abierta. La física y la aritmética dan para alta."
+---
+
+import Nota from '../../../componentes/Nota.astro';
+import Ejemplo from '../../../componentes/Ejemplo.astro';
+import Paso from '../../../componentes/Paso.astro';
+import Ejercicio from '../../../componentes/Ejercicio.astro';
+
+## De qué se trata
+
+La física trabaja con cantidades de tamaños absurdamente distintos. La masa de un electrón y la masa
+del Sol son las dos masas, tienen la misma dimensión y se miden en la misma unidad, pero entre una y
+otra hay una cantidad de ceros que ningún ojo humano cuenta bien. Escribir esos ceros a mano no es
+solo incómodo: es la forma más rápida de perder uno y equivocarse por un factor de diez sin darse
+cuenta.
+
+La notación científica resuelve eso separando dos informaciones que en la escritura corriente van
+pegadas. Por un lado, **cuáles son las cifras que de verdad medimos**; por el otro, **de qué tamaño
+es la cosa**. Cuando escribes cuatrocientos cincuenta mil como cuatro coma cinco por diez a la
+quinta, el "cuatro coma cinco" es lo que mediste y el "diez a la quinta" es la escala. Comparar dos
+cantidades se vuelve entonces comparar dos exponentes, que es una operación que sí se hace de un
+vistazo.
+
+Los prefijos del SI —kilo, mili, micro, nano— hacen exactamente lo mismo, pero en vez de escribir la
+potencia de diez le ponen un nombre y se la pegan a la unidad. Decir un milímetro y decir una
+milésima de metro es decir lo mismo con menos tinta. Por eso los dos temas van juntos: son la misma
+idea escrita de dos maneras, y el examen te va a pedir pasar de una a la otra.
+
+## Cómo se construye la notación científica
+
+No hay que aceptar la fórmula: se puede construir. Toma un número grande, por ejemplo $450000$, y
+hazle una operación que no lo cambie: divídelo entre diez y multiplícalo por diez al mismo tiempo.
+Repítelo.
+
+$$
+\begin{aligned}
+450000 &= 45000 \times 10 = 4500 \times 10^{2} \\[2pt]
+&= 450 \times 10^{3} = 45 \times 10^{4} = 4{,}5 \times 10^{5}
+\end{aligned}
+$$
+
+Cada paso corre la coma decimal un lugar a la izquierda y sube el exponente en uno. **El proceso se
+detiene solo cuando el factor de la izquierda queda entre 1 y 10**, porque un paso más lo dejaría por
+debajo de 1 y uno menos lo dejaría en 10 o más. Ese punto de parada es único, y por eso la escritura
+es única.
+
+Con un número pequeño el razonamiento es el mismo al revés. Aquí hay que recordar qué significa un
+exponente negativo, que es simplemente el inverso:
+
+$$
+10^{-n} = \frac{1}{10^{n}}
+$$
+
+Entonces:
+
+$$
+0{,}00000032 = 3{,}2 \times 0{,}0000001 = 3{,}2 \times \frac{1}{10^{7}} = 3{,}2 \times 10^{-7}
+$$
+
+Ahora la coma se corrió siete lugares a la **derecha** y el exponente salió negativo. Generalizando
+las dos cuentas anteriores, queda la forma que da la docente:
+
+$$
+N = a \times 10^{n}
+\qquad\text{con}\qquad
+1 \le a \lt 10
+\qquad\text{y}\qquad
+n \in \mathbb{Z}
+$$
+
+| Símbolo | Qué es | Unidades |
+|---|---|---|
+| $N$ | La cantidad completa, tal como se quiere escribir | Las que tenga: m, kg, s, mg… |
+| $a$ | La **mantisa**: el número mayor o igual que 1 y menor que 10 | Ninguna, es un número puro |
+| $n$ | El exponente: cuántas posiciones se desplaza la coma decimal | Ninguna, es un entero |
+
+Fíjate en que la unidad viaja con $N$, no con $a$: se escribe $4{,}5 \times 10^{5}\ \mathrm{mg}$, y la
+potencia de diez multiplica al número, no a la unidad.
+
+Los tres ejemplos de la diapositiva 14, ya con la construcción hecha:
+
+$$
+\begin{aligned}
+450000 &= 4{,}5 \times 10^{5} \\[2pt]
+0{,}00000032 &= 3{,}2 \times 10^{-7} \\[2pt]
+7200000000 &= 7{,}2 \times 10^{9}
+\end{aligned}
+$$
+
+## Qué significa cada parte
+
+La mantisa $a$ carga la información que mediste. El exponente $n$ carga el tamaño. Forzar los casos
+extremos es lo que separa entender de repetir:
+
+| Si pasa esto | Entonces |
+|---|---|
+| $n = 0$ | El número ya estaba entre 1 y 10. $3{,}2 = 3{,}2 \times 10^{0}$, y la notación no aporta nada |
+| $a = 1$ | El número es una potencia exacta de diez: $1000 = 1 \times 10^{3}$ |
+| $n$ sube en 1 | El número se multiplica por 10. Correr la coma un lugar de más deja el resultado diez veces más grande, y un lugar de menos lo deja diez veces más pequeño |
+| $n \lt 0$ | El número es **menor que 1**, pero sigue siendo positivo |
+| $a \ge 10$ | Está mal escrito, aunque valga lo correcto: $45 \times 10^{4}$ no es notación científica |
+
+Esa última fila es la que más se cobra. $45 \times 10^{4}$ y $4{,}5 \times 10^{5}$ son el mismo
+número, pero solo el segundo cumple la condición sobre la mantisa. Es un error de notación, no de
+aritmética, y en un tema que se llama justamente "notación" cuesta puntos.
+
+<div class="amplia">
+
+Para operar con estos números hace falta una regla más, que sale de la definición de potencia: al
+multiplicar potencias de la misma base los exponentes se suman, y al dividir se restan.
+
+$$
+\begin{aligned}
+(a \times 10^{m}) \cdot (b \times 10^{n}) &= (a \cdot b) \times 10^{m+n} \\[6pt]
+\frac{a \times 10^{m}}{b \times 10^{n}} &= \frac{a}{b} \times 10^{m-n}
+\end{aligned}
+$$
+
+De ahí sale un caso que vas a usar en un minuto: dividir entre $10^{-3}$ es lo mismo que multiplicar
+por $10^{3}$, porque $10^{0} / 10^{-3} = 10^{0-(-3)} = 10^{3}$.
+
+</div>
+
+## Los prefijos son la misma potencia, con nombre
+
+Muchas veces conviene usar unidades que son múltiplos o fracciones de la unidad básica: medir el
+grosor de una hoja en metros obliga a arrastrar ceros que no dicen nada. Para eso el SI define un
+conjunto de prefijos, y **cada prefijo no es más que una potencia de diez con nombre propio**. Estos
+son los mismos prefijos de la diapositiva 16, con las mismas potencias y en el mismo orden, partidos
+aquí en dos bloques para que quepan. La tercera columna la titula ella "Abreviatura"; aquí se llama
+"Símbolo", que es el término que usa el SI para lo mismo.
+
+**Submúltiplos**
+
+| Potencia | Prefijo | Símbolo |
+|---|---|---|
+| $10^{-24}$ | yocto | y |
+| $10^{-21}$ | zepto | z |
+| $10^{-18}$ | atto | a |
+| $10^{-15}$ | femto | f |
+| $10^{-12}$ | pico | p |
+| $10^{-9}$ | nano | n |
+| $10^{-6}$ | micro | μ |
+| $10^{-3}$ | mili | m |
+| $10^{-2}$ | centi | c |
+| $10^{-1}$ | deci | d |
+
+**Múltiplos**
+
+| Potencia | Prefijo | Símbolo |
+|---|---|---|
+| $10^{3}$ | kilo | k |
+| $10^{6}$ | mega | M |
+| $10^{9}$ | giga | G |
+| $10^{12}$ | tera | T |
+| $10^{15}$ | peta | P |
+| $10^{18}$ | exa | E |
+| $10^{21}$ | zetta | Z |
+| $10^{24}$ | yotta | Y |
+
+<Nota tipo="ojo">
+
+**La mayúscula no es decorativa.** En esta misma tabla aparecen **M** para mega, que es $10^{6}$, y
+**m** para mili, que es $10^{-3}$. Entre las dos hay un factor de $10^{9}$. Escribir $5\ \mathrm{Mg}$
+cuando querías decir $5\ \mathrm{mg}$ no es un error de caligrafía: son mil millones de veces más
+masa.
+
+</Nota>
+
+<Nota tipo="info">
+
+La tabla de la docente **salta de $10^{-1}$ a $10^{3}$**: se quedan por fuera los dos prefijos
+intermedios, **deca** (da, $10^{1}$) y **hecto** (h, $10^{2}$). Los dos son oficiales del SI, aunque
+en física casi no se usen: así los lista el NIST en su tabla de prefijos métricos. Estudia la tabla
+como está aquí, que es como ella la dio, pero si te aparece deca o hecto en un enunciado ya sabes
+cuánto valen.
+
+</Nota>
+
+<Nota tipo="info" titulo="Contexto: la tabla oficial es más larga">
+
+El SI tiene hoy **24 prefijos**: los dieciocho de la tabla de arriba, más deca y hecto, más cuatro
+que se añadieron en 2022 y que amplían los dos extremos. Por arriba, **ronna** (R, $10^{27}$) y
+**quetta** (Q, $10^{30}$); por abajo, **ronto** (r, $10^{-27}$) y **quecto** (q, $10^{-30}$). **La
+tabla que se estudia para el parcial es la de la docente**, que se detiene en yotta y en yocto: esto
+es solo contexto, para que no te sorprenda encontrarlo en otro lado.
+
+</Nota>
+
+## Un prefijo escrito como igualdad
+
+Aquí está el tránsito que hace todo lo demás posible. Si "mili" significa $10^{-3}$, entonces poner
+la m delante del gramo significa multiplicar el gramo por $10^{-3}$. Eso se escribe como una
+**igualdad entre dos cantidades**:
+
+$$
+\begin{aligned}
+1\ \mathrm{mg} &= 1 \times 10^{-3}\ \mathrm{g} \\[2pt]
+1\ \mathrm{km} &= 1 \times 10^{3}\ \mathrm{m} \\[2pt]
+1\ \mathrm{\mu m} &= 1 \times 10^{-6}\ \mathrm{m}
+\end{aligned}
+$$
+
+Y como los dos lados son la misma cantidad física escrita con nombres distintos, al dividir uno entre
+el otro el resultado es exactamente 1:
+
+$$
+\frac{1\ \mathrm{mg}}{1 \times 10^{-3}\ \mathrm{g}} = 1
+$$
+
+Ese cociente que vale 1 es la herramienta completa. Multiplicar por él no cambia la cantidad —solo
+cambia el nombre con que se escribe— y de paso cancela la unidad vieja. Es el **método del factor
+unitario**, que se desarrolla en general en la lección de conversión de unidades; aquí lo usamos solo
+en su caso más simple, que es pasar entre prefijos de una misma unidad.
+
+<Ejemplo titulo="Expresar 250 g en mg, con el desarrollo de la docente">
+
+<Paso n="1" razon="Antes de convertir hay que traducir el prefijo. La tabla dice mili = 10⁻³, y eso se escribe como una igualdad entre cantidades, no como una nota al margen.">
+
+$$
+1\ \mathrm{mg} = 1 \times 10^{-3}\ \mathrm{g}
+$$
+
+</Paso>
+
+<Paso n="2" razon="Toda igualdad entre dos cantidades se puede volver un cociente que vale 1. Se pone el gramo abajo porque es la unidad que queremos que se cancele.">
+
+$$
+\frac{1\ \mathrm{mg}}{1 \times 10^{-3}\ \mathrm{g}} = 1
+$$
+
+</Paso>
+
+<Paso n="3" razon="Multiplicar por 1 nunca cambia una cantidad. Esta es literalmente la línea que ella escribe en la diapositiva 18, y es la que el corrector espera ver.">
+
+$$
+250\ \mathrm{g} = 250\ \mathrm{g} \cdot \frac{1\ \mathrm{mg}}{1 \times 10^{-3}\ \mathrm{g}}
+$$
+
+</Paso>
+
+<Paso n="4" razon="El gramo aparece arriba y abajo, así que se cancela y solo queda la división numérica. Dividir entre 10⁻³ es multiplicar por 10³.">
+
+$$
+\begin{aligned}
+250\ \mathrm{g} \cdot \frac{1\ \mathrm{mg}}{1 \times 10^{-3}\ \mathrm{g}}
+&= \frac{250}{1 \times 10^{-3}}\ \mathrm{mg} \\[6pt]
+&= 250 \times 10^{3}\ \mathrm{mg} = 250000\ \mathrm{mg}
+\end{aligned}
+$$
+
+</Paso>
+
+<Paso n="5" razon="El resultado se pasa a notación científica corriendo la coma cinco lugares a la izquierda, así que n = 5. Ella escribe la mantisa con tres cifras significativas; cuántas trae el dato 250 depende de si ese cero es significativo o solo marca la posición, y el enunciado no lo dice.">
+
+$$
+250\ \mathrm{g} = 2{,}50 \times 10^{5}\ \mathrm{mg}
+$$
+
+</Paso>
+
+<Paso n="6" razon="Comprobación dimensional: si el resultado tuviera otra dimensión que el dato, la conversión estaría mal por construcción.">
+
+Los dos lados son masas, y el factor por el que multiplicamos era adimensional porque valía 1:
+
+$$
+[250\ \mathrm{g}] = M
+\qquad
+[2{,}50 \times 10^{5}\ \mathrm{mg}] = M
+$$
+
+Y la comprobación de orden de magnitud, que es igual de barata: el miligramo es mil veces más pequeño
+que el gramo, así que hacen falta mil veces más miligramos para armar la misma masa. Y en efecto
+$250 \times 1000 = 250000$. Si el número te hubiera salido más pequeño que 250, la conversión estaba
+al revés.
+
+</Paso>
+
+</Ejemplo>
+
+## Volviendo al frasco de 250 g
+
+La pregunta del principio ya tiene respuesta completa. En $250\ \mathrm{g}$ hay
+$2{,}50 \times 10^{5}\ \mathrm{mg}$, es decir $250000\ \mathrm{mg}$. Y son **exactamente tres ceros
+más**, ni dos ni cuatro, porque el prefijo mili vale $10^{-3}$: por definición hay mil miligramos en
+cada gramo. El número de ceros no es un dato que se memorice, es el exponente que aparece en la tabla
+de prefijos.
+
+Ese es el punto de fondo del tema: la cantidad de ceros nunca es información nueva. Siempre es la
+potencia de diez que ya estaba escondida en el nombre de la unidad.
+
+## Qué se malinterpreta
+
+**"El exponente negativo hace negativo al número."** Es el error más común del tema, y nace de
+confundir dos signos que no tienen nada que ver. $3{,}2 \times 10^{-7}$ es un número **positivo y
+pequeñísimo**. El signo del exponente habla de la escala; el signo del número sería el que va delante
+de la mantisa. Un número negativo y grande se escribe $-3{,}2 \times 10^{7}$.
+
+**"Que $45 \times 10^{4}$ ya está en notación científica."** No lo está, aunque el valor sea correcto.
+La condición $1 \le a \lt 10$ es parte de la definición, no un adorno. Si la mantisa te queda en 10 o
+más, córrela un lugar a la izquierda y súbele uno al exponente.
+
+**"A unidad más pequeña, número más pequeño."** Es al revés, y es puro sentido común disfrazado de
+regla: si mides la misma masa con una unidad más pequeña, necesitas más unidades. De gramos a
+miligramos el número **crece**; de gramos a kilogramos el número **decrece**. Antes de escribir el
+resultado, pregúntate si creció o decreció y compara con lo que te dio.
+
+**"Como el kilogramo es la unidad base, los prefijos se cuentan desde el kilogramo."** No. Los
+prefijos se pegan al **gramo**, aunque la unidad fundamental del SI sea el kilogramo, como viste en
+la lección de unidades fundamentales. Por eso $1\ \mathrm{mg} = 1 \times 10^{-3}\ \mathrm{g}$ pero
+$1\ \mathrm{mg} = 1 \times 10^{-6}\ \mathrm{kg}$. Esto es una deducción a partir de la tabla, no algo
+que la presentación diga: el kilogramo es la única unidad base cuyo nombre ya trae prefijo, y esa
+rareza histórica es la que produce la confusión.
+
+<Nota tipo="ojo" titulo="Coma o punto: la presentación usa las dos">
+
+En esta lección todo va con **coma**, que es la lectura provisional mientras ella responde. Esta es
+la evidencia, escrita como aparece en cada diapositiva:
+
+| Dónde | Qué escribe ella |
+|---|---|
+| Diapositiva 14 | $4.5 \times 10^{5}$, $3.2 \times 10^{-7}$ — **punto** |
+| Diapositiva 19 | $1.609\ \mathrm{km}$, $0.0254\ \mathrm{m}$ — **punto** |
+| Diapositiva 18 | $250\ \mathrm{g} = 2{,}50 \times 10^{5}\ \mathrm{mg}$ — **coma** |
+
+Como el parcial es a mano, esto importa. Mientras ella responde: el valor bien calculado es lo que no
+se discute, así que asegúrate primero de que el número esté correcto y después usa el mismo separador
+en toda la hoja. Escribir $4{,}5$ en un renglón y $4.5$ en el siguiente es lo único que seguro se ve
+mal.
+
+</Nota>
+
+<Ejercicio titulo="Escribir en notación científica (diapositiva 15)">
+
+**Parte A — el enunciado de la docente.** Escribe en notación científica las siguientes cantidades:
+
+$$
+32
+\qquad
+320
+\qquad
+3200
+\qquad
+3{,}2
+\qquad
+0{,}32
+\qquad
+0{,}0032
+$$
+
+**Parte B — añadida aquí, para practicar el patrón de la diapositiva 18.** Toma la longitud
+$0{,}000045\ \mathrm{m}$, escríbela en notación científica y después exprésala en micrómetros y en
+milímetros usando el cociente que vale 1.
+
+<div slot="solucion">
+
+**Parte A.** En los seis casos la mantisa es la misma, $3{,}2$; lo único que cambia es cuántos
+lugares hubo que correr la coma y hacia dónde:
+
+$$
+32 = 3{,}2 \times 10^{1}
+\qquad
+320 = 3{,}2 \times 10^{2}
+\qquad
+3200 = 3{,}2 \times 10^{3}
+$$
+
+$$
+3{,}2 = 3{,}2 \times 10^{0}
+\qquad
+0{,}32 = 3{,}2 \times 10^{-1}
+\qquad
+0{,}0032 = 3{,}2 \times 10^{-3}
+$$
+
+Eso es exactamente lo que la notación separa: las cifras que mediste van todas en el $3{,}2$, y lo
+único que distingue a los seis números es la escala. Fíjate también en el cuarto: como $3{,}2$ ya
+estaba entre 1 y 10, el exponente es cero y la notación no cambia nada. Está bien dejarlo como
+$3{,}2$.
+
+**Parte B.** Primero la notación científica, corriendo la coma cinco lugares a la derecha:
+
+$$
+0{,}000045\ \mathrm{m} = 4{,}5 \times 10^{-5}\ \mathrm{m}
+$$
+
+A micrómetros, con $1\ \mathrm{\mu m} = 1 \times 10^{-6}\ \mathrm{m}$:
+
+$$
+\begin{aligned}
+4{,}5 \times 10^{-5}\ \mathrm{m} \cdot \frac{1\ \mathrm{\mu m}}{1 \times 10^{-6}\ \mathrm{m}}
+&= 4{,}5 \times 10^{-5+6}\ \mathrm{\mu m} \\[6pt]
+&= 4{,}5 \times 10^{1}\ \mathrm{\mu m} = 45\ \mathrm{\mu m}
+\end{aligned}
+$$
+
+A milímetros, con $1\ \mathrm{mm} = 1 \times 10^{-3}\ \mathrm{m}$:
+
+$$
+\begin{aligned}
+4{,}5 \times 10^{-5}\ \mathrm{m} \cdot \frac{1\ \mathrm{mm}}{1 \times 10^{-3}\ \mathrm{m}}
+&= 4{,}5 \times 10^{-5+3}\ \mathrm{mm} \\[6pt]
+&= 4{,}5 \times 10^{-2}\ \mathrm{mm} = 0{,}045\ \mathrm{mm}
+\end{aligned}
+$$
+
+Comprobación: las tres escrituras tienen la misma dimensión, que es longitud $L$, porque los dos
+cocientes por los que multiplicamos valían 1 y no traían dimensión propia. Y el sentido de
+cada cambio es el que debe ser: el micrómetro es más pequeño que el metro, así que el número creció
+de $4{,}5 \times 10^{-5}$ a $45$; el milímetro también es más pequeño que el metro, pero mucho menos,
+así que el número creció menos y quedó en $0{,}045$.
+
+Esta parte B no está en la diapositiva 15: se agregó aquí y su solución es una deducción.
+
+</div>
+
+</Ejercicio>

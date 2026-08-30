@@ -1,0 +1,626 @@
+---
+titulo: Análisis dimensional
+unidad: magnitudes-y-medicion
+orden: 5
+sesiones: [S01]
+
+pregunta_guia: >
+  Un bus toma una curva. Si entra a la misma curva al doble de rapidez, ¿la aceleración que
+  sientes es el doble? ¿Se puede responder sin haber visto todavía movimiento circular?
+prerrequisitos:
+  - unidades-y-dimensiones
+conceptos_clave:
+  - Toda ecuación de la física es dimensionalmente homogénea, término por término.
+  - Sumar cantidades de dimensiones distintas señala un error cometido en una etapa anterior.
+  - Verificar una ecuación es traducir cada símbolo a su dimensión y comparar los dos lados.
+  - Igualar exponente por exponente permite hallar potencias desconocidas sin conocer la fórmula.
+  - El método nunca entrega las constantes adimensionales.
+errores_frecuentes:
+  - Creer que una ecuación dimensionalmente homogénea ya es correcta; la condición es necesaria, no suficiente
+  - Verificar solo dos términos de la ecuación y no cada sumando por separado
+  - Esperar que el análisis dimensional entregue la fórmula completa, con constante numérica incluida
+  - Meter una cantidad con dimensiones dentro de un seno, un logaritmo o un exponente
+tiempo_estudio_min: 35
+
+esencial:
+  - "Homogeneidad: cada término de una ecuación tiene la misma dimensión que los demás. Si uno no cuadra, el error está antes."
+  - "Verificar es traducir cada símbolo y comparar: [v] ?= [a][t] → LT⁻¹ = LT⁻¹."
+  - "Para hallar exponentes: escribe Q = k·Aⁿ·Bᵐ, pasa a dimensiones e iguala exponente por exponente. De a ∝ rⁿvᵐ sale a = k·v²/r."
+  - "Pasar la prueba no vuelve correcta la ecuación: el método no ve constantes, ni el ½, ni el signo."
+tiempo_repaso_min: 7
+
+fuentes:
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/semana1.pdf
+    diapositiva: 22
+    fecha: 2026-08-30
+    aporta: "Homogeneidad dimensional: todos los términos de una ecuación deben tener las mismas dimensiones y la misma unidad, y sumar unidades distintas indica error en una etapa anterior."
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/semana1.pdf
+    diapositiva: 23
+    fecha: 2026-08-30
+    aporta: "Dimensión es la naturaleza física de la cantidad; unidad es la manera de asignarle un número."
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/semana1.pdf
+    diapositiva: 24
+    fecha: 2026-08-30
+    aporta: "Notación de corchetes para la dimensión: [d] = L y [v] = L/T = LT⁻¹."
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/semana1.pdf
+    diapositiva: 25
+    fecha: 2026-08-30
+    aporta: "Ejemplo resuelto por la docente: verificación de v = at, con su desarrollo y su notación del interrogante sobre el igual."
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/semana1.pdf
+    diapositiva: 26
+    fecha: 2026-08-30
+    aporta: "Enunciado del problema a ∝ rⁿvᵐ: determinar n y m y escribir la forma más simple. La diapositiva no muestra la solución."
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/semana1.pdf
+    diapositiva: 12
+    fecha: 2026-08-30
+    aporta: "Tabla de las siete unidades fundamentales del SI con su dimensión: de ahí salen los nombres de las cuatro que no aparecen en mecánica —temperatura Θ, corriente I, intensidad luminosa J y cantidad de sustancia N."
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/Introduccion.pdf
+    diapositiva: 7
+    fecha: 2026-08-30
+    aporta: "Tabla del programa oficial de 16 semanas, que empieza en esta diapositiva y continúa en la 8: la aceleración centrípeta se cubre en la semana 6, fuera de esta unidad, y la semana 8 es «Fricción y planos inclinados. Segunda ley aplicada a movimiento circular»."
+  - tipo: abierta
+    ref: "https://openstax.org/books/university-physics-volume-1/pages/1-4-dimensional-analysis"
+    fecha: 2026-08-30
+    aporta: "Confirma la regla de homogeneidad dimensional término por término, que el método no determina los factores adimensionales y que los argumentos de las funciones trigonométricas, logarítmicas y exponenciales deben ser adimensionales. No trae la justificación por serie de potencias, que aquí va aparte como deducción."
+  - tipo: abierta
+    ref: "https://openstax.org/books/university-physics-volume-1/pages/15-4-pendulums"
+    fecha: 2026-08-30
+    aporta: "Confirma el resultado del ejercicio del péndulo, T = 2π√(L/g): el periodo es completamente independiente de otros factores como la masa, y solo es casi independiente de la amplitud, en particular si el ángulo es menor que unos 15°. Es también la referencia de que el periodo se escribe T y no τ."
+  - tipo: abierta
+    ref: "https://hyperphysics.gsu.edu/hbase/cf.html"
+    fecha: 2026-08-30
+    aporta: "Confirma que la aceleración centrípeta es a = v²/r sin constante numérica delante, es decir que en este caso k = 1 resulta ser el valor correcto. No sostiene que el análisis dimensional lo demuestre: ese valor sale de la deducción del movimiento circular, en la semana 6."
+  - tipo: deduccion
+    aporta: "Solución completa de la diapositiva 26: m = 2, n = −1 y a = k·v²/r. La diapositiva solo plantea el enunciado."
+  - tipo: deduccion
+    aporta: "Por qué la homogeneidad se deduce y no se decreta: la suma solo está definida entre cantidades de la misma dimensión y el igual afirma identidad de cantidad física."
+  - tipo: deduccion
+    aporta: "Por qué se pueden igualar los exponentes uno a uno: M, L y T son independientes, así que dos productos de potencias coinciden solo si coincide cada exponente."
+  - tipo: deduccion
+    aporta: "Límites del método: no fija constantes adimensionales, es ciego al signo, no distingue cantidades de igual dimensión y no reclama variables omitidas."
+  - tipo: deduccion
+    aporta: "Los argumentos de seno, coseno, exponencial y logaritmo son adimensionales, y eso se sigue de la propia homogeneidad al desarrollar la función en serie de potencias."
+  - tipo: deduccion
+    aporta: "Respuesta a la pregunta guía y uso del método como control de despejes durante el parcial."
+  - tipo: deduccion
+    aporta: "Ejercicio propuesto y su solución: homogeneidad de dos ecuaciones de cinemática y exponentes del periodo de un péndulo."
+  - tipo: deduccion
+    aporta: "Que la ecuación de referencia del punto 2 es v² = v₀² + 2a(x − x₀) y no v² = v₀² + 2ax: con x₀ definida como una posición inicial cualquiera, lo que multiplica a 2a tiene que ser la diferencia de posiciones. La forma exacta que usa la docente está pendiente de fichar cinematica1.pdf y la duda queda abierta; el diagnóstico dimensional del ejercicio no depende de cuál se elija, porque las tres formas dan L²T⁻²."
+  - tipo: deduccion
+    aporta: "Que la dimensión y la unidad son dos chequeos separados: dentro del SI, por ser coherente, coinciden, pero km/h y m/s comparten LT⁻¹ sin ser la misma unidad, y por eso la diapositiva 22 los pide aparte."
+  - tipo: deduccion
+    aporta: "Advertencia de notación sobre τ: renombrar el periodo es una decisión local de esta lección para no chocar con la dimensión T. Que la letra τ se reserve habitualmente para el torque es convención general y no está en ninguna fuente fichada del curso; queda declarado como tal."
+
+dudas_para_docente:
+  - "La diapositiva 26 pide la forma más simple de la ecuación. ¿Espera la respuesta con la constante escrita, a = k·v²/r, o tomando k = 1?"
+  - "¿En el parcial exige la comprobación dimensional escrita como paso del desarrollo, o solo el resultado final?"
+  - "¿Cómo escribe la tercera ecuación de cinemática: v² = v₀² + 2a(x − x₀), v² = v₀² + 2aΔx, o v² = v₀² + 2ax dando por hecho x₀ = 0? Aquí se usó la primera forma, que es la general. No se puede cerrar hasta fichar cinematica1.pdf."
+  - "¿Escribe las funciones trigonométricas como sen o como sin? La respuesta fija el precedente de notación trigonométrica para todo el sitio; por ahora se escribe sen, que es la forma del español."
+
+confianza: alta
+estado: revisado
+revision:
+  fecha: 2026-08-30
+  veredicto: coherente-con-reparos
+  chequeos: [dimensional, algebra-simbolica, casos-limite, coherencia-con-la-fuente, katex-renderizado]
+  observaciones:
+    - "El problema de la diapositiva 26 verificado con álgebra simbólica: el sistema {n+m=1, −m=−2} da m = 2 y n = −1, solución única. El péndulo da α = 1/2, β = −1/2 y γ = 0, y el cero sale del sistema, no por analogía."
+    - "Casos límite comprobados: r → ∞ da a → 0; v → 0 da a → 0; g → ∞ da τ → 0. El planteamiento no es degenerado."
+    - "Las 27 fórmulas en bloque y 91 en línea pasadas por el KaTeX del proyecto en modo estricto: 0 fallas."
+    - "Reparo corregido: escribía v² = v₀² + 2ax como «la ecuación correcta», inconsistente con su propio ejercicio, que define x₀ ≠ 0. Ahora es 2a(x − x₀), con la duda de qué forma usa la docente abierta hasta fichar cinematica1.pdf."
+    - "Reparo corregido: un signo de implicación afirmaba que de a = k·v²/r se sigue a = v²/r. El análisis dimensional no da la constante adimensional; se separó en dos pasos y se dice explícitamente que tomar k = 1 no es una consecuencia lógica."
+    - "El ejemplo de la diapositiva 25 reproduce el método y la notación de la docente, incluido el interrogante sobre el igual."
+---
+
+import Nota from '../../../componentes/Nota.astro';
+import Ejemplo from '../../../componentes/Ejemplo.astro';
+import Paso from '../../../componentes/Paso.astro';
+import Ejercicio from '../../../componentes/Ejercicio.astro';
+
+## De qué se trata
+
+En la lección **Unidades fundamentales y derivadas** quedó establecido que cada cantidad física tiene
+una dimensión —longitud, masa, tiempo o una combinación de ellas— y que eso es distinto de la unidad
+en que se mida. Hasta ahí es clasificación. Lo que sigue convierte esa clasificación en una
+herramienta de trabajo, y arranca de algo que sabes desde la primaria y que nadie te presentó como
+física: sumar solo tiene sentido entre cosas de la misma naturaleza. Tres metros más dos metros son
+cinco metros; tres metros más dos kilogramos no son nada, porque no hay número que responda esa
+pregunta.
+
+Tomada en serio, esa obviedad obliga a toda ecuación de la física a cumplir una condición muy fuerte,
+y de ahí salen dos poderes distintos. El primero es **verificar**: mirar una ecuación ya escrita y
+decidir en veinte segundos si puede ser cierta, sin calculadora, sin datos y sin acordarte de dónde
+salió. El segundo es más sorprendente, y es justo el que la docente deja planteado sin resolver:
+**construir** la forma de una ecuación que no conoces, sabiendo únicamente de qué cantidades depende.
+En la curva del bus vas a llegar a la respuesta sin haber visto una sola clase de movimiento circular.
+
+Falta la advertencia, y va desde ahora para que no te tome por sorpresa más adelante: el método
+descarta ecuaciones malas, pero no certifica las buenas. Es un filtro, no un sello de aprobación.
+
+## La regla: toda ecuación es dimensionalmente homogénea
+
+<Nota tipo="clave">
+
+En ingeniería, **todas las ecuaciones deben ser dimensionalmente homogéneas**: todos los términos de
+una ecuación tienen las mismas dimensiones y la misma unidad. Si en alguna etapa de un análisis hay
+que sumar dos cantidades cuyas unidades son diferentes, es una clara indicación de que se cometió un
+error en una de las primeras etapas.
+
+</Nota>
+
+Eso es lo que dice la diapositiva 22, y no es una convención que alguien decidió: se deduce de qué
+significan las operaciones. Conviene recordar antes la notación, que ya viste: la dimensión de una
+cantidad se escribe entre corchetes.
+
+$$
+[d] = L
+\qquad
+[v] = \frac{L}{T} = LT^{-1}
+$$
+
+La deducción tiene tres piezas. **La suma exige la misma dimensión**, porque sumar es contar cuántas
+veces cabe un mismo patrón en dos cantidades y juntar las cuentas; si los patrones son distintos, no
+hay cuenta que juntar. **El igual también la exige**, porque una ecuación afirma que el lado
+izquierdo y el derecho son la misma cantidad física escrita de dos maneras, y una cantidad no puede
+ser longitud y tiempo a la vez. **La multiplicación, en cambio, no exige nada**: $L \cdot L = L^{2}$
+y $LT^{-2} \cdot T = LT^{-1}$ son operaciones perfectamente legales, y de hecho son las que crean
+todas las dimensiones derivadas.
+
+Juntando las tres piezas, para cualquier ecuación con varios términos:
+
+$$
+\underbrace{A_1 + A_2 + \cdots}_{\text{lado izquierdo}}
+=
+\underbrace{B_1 + B_2 + \cdots}_{\text{lado derecho}}
+\quad\Longrightarrow\quad
+[A_1] = [A_2] = \cdots = [B_1] = [B_2] = \cdots
+$$
+
+Fíjate en la forma de la condición: es sobre **cada término por separado**, no sobre la ecuación
+tomada en bloque. Esa distinción es la que se olvida en el parcial.
+
+## Cómo se lee el resultado de la prueba
+
+La regla es corta, pero interpretar lo que devuelve tiene cuatro casos, y cada uno dice algo
+distinto.
+
+**Si algún término no cuadra**, la ecuación está mal, y con eso terminaste: no hay que seguir hacia
+los números. Ahora bien, el error no está necesariamente en el término que no cuadra. La prueba
+detecta que hay un error, no dónde está; por eso la diapositiva dice que la falla ocurrió *en una de
+las primeras etapas*.
+
+**Si todos los términos cuadran**, no concluyes que la ecuación sea correcta. Concluyes que
+sobrevivió a la prueba, que es bastante menos.
+
+**Si un factor es adimensional**, todos sus exponentes valen cero y se escribe $[k] = 1$. Son
+adimensionales el número $\pi$, una constante de proporcionalidad pura, un coeficiente de fricción o
+el cociente de dos cantidades de la misma dimensión. Multiplicar por algo adimensional no altera la
+dimensión del término, y ese es exactamente el hueco por donde el método pierde información.
+
+**Si cambias un signo o un número**, la prueba no se entera. Escribir $-\tfrac{1}{2}at^{2}$ o
+$+3at^{2}$ da lo mismo: los dos términos tienen dimensión $L$.
+
+## Verificar una ecuación que ya tienes
+
+Este es el ejemplo que la docente resolvió en la diapositiva 25, con su método y su notación. El
+signo de interrogación sobre el igual importa más de lo que parece: mientras la comprobación no
+termine no puedes escribir un igual normal, porque todavía no sabes si lo es.
+
+<Ejemplo titulo="Verificar que v = at es dimensionalmente correcta">
+
+<Paso n="1" razon="Antes de operar, cada símbolo se traduce a su dimensión por separado; así un error de traducción no se arrastra al resto del desarrollo.">
+
+Aquí $v$ es una rapidez, medida en $\mathrm{m/s}$; $a$ es una aceleración, en $\mathrm{m/s^2}$; y
+$t$ es un instante de tiempo, en $\mathrm{s}$.
+
+$$
+[v] = \frac{L}{T}
+\qquad
+[a] = \frac{L}{T^{2}}
+\qquad
+[t] = T
+$$
+
+</Paso>
+
+<Paso n="2" razon="La comprobación se plantea como pregunta, no como afirmación: el interrogante sobre el igual recuerda que todavía no está probado.">
+
+$$
+[v] \stackrel{?}{=} [a]\,[t]
+$$
+
+</Paso>
+
+<Paso n="3" razon="Las dimensiones se operan como potencias: los exponentes de una misma base se suman, y aquí −2 + 1 = −1.">
+
+$$
+[a]\,[t] = \frac{L}{T^{2}} \cdot T = L\,T^{-2}\,T^{1} = L\,T^{-1} = \frac{L}{T}
+$$
+
+</Paso>
+
+<Paso n="4" razon="Los dos lados coincidieron, así que el interrogante se puede quitar.">
+
+$$
+\frac{L}{T} = \frac{L}{T}
+$$
+
+La expresión es **dimensionalmente correcta**.
+
+</Paso>
+
+<Paso n="5" razon="Comprobación de cierre. La diapositiva 22 exige la misma dimensión y la misma unidad, y son dos chequeos distintos: km/h y m/s comparten la dimensión LT⁻¹ y no son la misma unidad.">
+
+$$
+\left(\frac{\mathrm{m}}{\mathrm{s^{2}}}\right)(\mathrm{s}) = \frac{\mathrm{m}}{\mathrm{s}}
+$$
+
+Los dos lados quedan en $\mathrm{m/s}$, no hubo ninguna suma de términos de distinta dimensión y no
+quedó ningún símbolo sin traducir.
+
+Vale la pena preguntarse por qué la diapositiva 22 escribe *«las mismas dimensiones (y la misma
+unidad)»*, si parecen la misma exigencia. Mientras todo esté escrito en el SI, coinciden: el SI es un
+sistema **coherente**, de modo que al operar metros y segundos vuelven a salir metros y segundos sin
+factores de conversión sueltos. Pero fuera de esa condición la dimensión sola no basta:
+$\mathrm{km/h}$ y $\mathrm{m/s}$ tienen las dos dimensión $LT^{-1}$, y aun así
+$90\ \mathrm{km/h} + 5\ \mathrm{m/s}$ es una suma que no puedes hacer tal como está. Pasa la prueba
+dimensional y sigue exigiendo un paso previo de conversión, que es exactamente el tema de la lección
+**Conversión de unidades**. Por eso el chequeo de unidades se hace aparte y no se da por incluido en
+el de dimensiones.
+
+Lo que se probó aquí es que $v = at$ **no está descartada**, no que sea la ecuación correcta para
+cualquier situación.
+
+</Paso>
+
+</Ejemplo>
+
+## Encontrar una ecuación que no tienes
+
+Este es el uso fuerte del método. Supón que sabes de qué cantidades depende algo, pero no cómo. La
+dependencia se escribe como un producto de potencias con una constante adimensional al frente:
+
+$$
+Q = k\,A^{n}B^{m}, \qquad [k] = 1
+$$
+
+Al pasar a dimensiones, el lado derecho se convierte en un producto de potencias de $M$, $L$ y $T$.
+Son tres porque en mecánica solo aparecen tres de las siete dimensiones fundamentales del SI: las
+otras cuatro —temperatura $\Theta$, corriente eléctrica $I$, intensidad luminosa $J$ y cantidad de
+sustancia $N$— entran en otras ramas de la física, y el método funciona igual con las que haga falta.
+Y aquí entra lo que hace que todo funcione: esas dimensiones son **independientes** entre sí. No hay
+manera de compensar un exceso de longitud con un defecto de tiempo, porque no existe ninguna relación
+que convierta metros en segundos. Por lo tanto:
+
+$$
+M^{a_1}L^{b_1}T^{c_1} = M^{a_2}L^{b_2}T^{c_2}
+\quad\Longleftrightarrow\quad
+a_1 = a_2, \quad b_1 = b_2, \quad c_1 = c_2
+$$
+
+Una sola igualdad entre dimensiones se rompe en tantas ecuaciones como dimensiones fundamentales
+aparezcan. Eso es un sistema de ecuaciones y los exponentes desconocidos son las incógnitas: el
+problema de física se volvió un problema de álgebra.
+
+<Nota tipo="info">
+
+La diapositiva 26 plantea el problema que sigue y **no muestra la solución**. Lo que viene está
+deducido aquí, y va marcado como deducción en la procedencia.
+
+</Nota>
+
+<Ejemplo titulo="Aceleración en una curva: hallar n y m en a ∝ rⁿ vᵐ">
+
+Una partícula se mueve con rapidez uniforme $v$ en un círculo de radio $r$. Se supone que su
+aceleración $a$ es proporcional a alguna potencia de $r$, digamos $r^{n}$, y a alguna potencia de
+$v$, digamos $v^{m}$. Determina $n$ y $m$ y escribe la forma más simple de una ecuación para la
+aceleración.
+
+<Paso n="1" razon="Una proporcionalidad no se puede operar dimensionalmente; primero se convierte en igualdad introduciendo una constante adimensional.">
+
+$$
+a \propto r^{n}v^{m}
+\quad\Longrightarrow\quad
+a = k\,r^{n}v^{m}, \qquad [k] = 1
+$$
+
+</Paso>
+
+<Paso n="2" razon="Cada cantidad del enunciado se traduce a dimensiones antes de tocar los exponentes.">
+
+El radio es una longitud, $v$ es una rapidez y $a$ una aceleración:
+
+$$
+[a] = LT^{-2}
+\qquad
+[r] = L
+\qquad
+[v] = LT^{-1}
+$$
+
+</Paso>
+
+<Paso n="3" razon="Se aplican dimensiones a los dos lados. La potencia de un producto se distribuye, así que (LT⁻¹)^m queda como L^m T^(−m).">
+
+$$
+LT^{-2} = L^{n}\left(LT^{-1}\right)^{m} = L^{n}L^{m}T^{-m} = L^{\,n+m}\,T^{-m}
+$$
+
+</Paso>
+
+<Paso n="4" razon="Como L y T son independientes, la igualdad se rompe en una ecuación por cada dimensión que aparece.">
+
+Exponente de $T$: $\;-2 = -m$.
+
+Exponente de $L$: $\;1 = n + m$.
+
+</Paso>
+
+<Paso n="5" razon="El sistema se resuelve empezando por la ecuación que tiene una sola incógnita.">
+
+$$
+m = 2
+\qquad\Longrightarrow\qquad
+n = 1 - m = 1 - 2 = -1
+$$
+
+</Paso>
+
+<Paso n="6" razon="Con los exponentes ya hallados se reescribe la relación. Hasta aquí llega el método: la k no se despeja, se arrastra. Escribirla igual a uno es una elección de escritura, no un resultado del análisis.">
+
+$$
+a = k\,r^{-1}v^{2} = k\,\frac{v^{2}}{r}
+$$
+
+Esto es todo lo que el análisis dimensional puede afirmar. Tomando ahora $k = 1$, que es la forma
+más simple que pide el enunciado, la relación se escribe
+
+$$
+a = \frac{v^{2}}{r}
+$$
+
+pero ese paso no es una consecuencia lógica del anterior: es una decisión de escritura, y por eso no
+lleva un signo de implicación.
+
+</Paso>
+
+<Paso n="7" razon="Comprobación dimensional: el resultado tiene que devolver la dimensión de la aceleración, y las unidades tienen que salir en m/s².">
+
+$$
+\left[\frac{v^{2}}{r}\right] = \frac{\left(LT^{-1}\right)^{2}}{L} = \frac{L^{2}T^{-2}}{L} = LT^{-2} = [a]
+$$
+
+$$
+\frac{(\mathrm{m/s})^{2}}{\mathrm{m}} = \frac{\mathrm{m^{2}/s^{2}}}{\mathrm{m}} = \frac{\mathrm{m}}{\mathrm{s^{2}}}
+$$
+
+</Paso>
+
+</Ejemplo>
+
+<Nota tipo="ojo">
+
+El análisis dimensional te dio los exponentes; **no te dio $k$**. Si la constante valiera $3$ o
+$\tfrac{1}{2}$, la comprobación de arriba saldría idéntica, porque un número puro no tiene
+dimensiones y no deja rastro. Tomar $k = 1$ es escribir *la forma más simple*, que es lo que pide el
+enunciado — no es haber demostrado que $k$ valga uno. Ese valor tiene que salir por otra vía: un
+experimento o la deducción completa del movimiento circular, que en el programa aparece en la
+semana 6, fuera de esta unidad.
+
+Vale la pena adelantar cómo termina la historia, con la precaución de no confundir las dos cosas: en
+este caso concreto **la constante sí vale uno**, y la aceleración centrípeta de un movimiento
+circular uniforme es $a = v^{2}/r$ sin ningún factor numérico delante. Pero eso no lo demostró el
+análisis dimensional; lo dice la deducción del movimiento circular, que harás en la semana 6, y aquí
+solo se está anticipando el resultado. Que la forma más simple coincida con la correcta fue suerte, y
+no siempre pasa: en el ejercicio del péndulo, al final de esta lección, la constante resulta ser
+$2\pi$.
+
+</Nota>
+
+## Lo que el método no puede darte
+
+Conviene tener los huecos claros, porque son justo el lugar donde una respuesta segura se vuelve una
+respuesta falsa.
+
+1. **Las constantes adimensionales.** El $\tfrac{1}{2}$ de $\tfrac{1}{2}at^{2}$, el $2\pi$ de un
+   periodo, el $k$ de la curva. Las ecuaciones $v = at$ y $v = 7at$ pasan exactamente la misma prueba.
+2. **El signo.** Toma un eje $x$ horizontal con el sentido positivo hacia la derecha y una rapidez
+   inicial $v_0 \gt 0$. Con esa convención, $x = x_0 + v_0 t$ describe un móvil que avanza hacia la
+   derecha y $x = x_0 - v_0 t$ uno que avanza hacia la izquierda. Las dos son igual de homogéneas, así
+   que el método no distingue dos movimientos opuestos. Y fíjate en que la frase anterior no significa
+   nada mientras no digas hacia dónde apunta el eje positivo: sin marco de referencia declarado, un
+   signo no tiene lectura física.
+3. **La diferencia entre cantidades de la misma dimensión.** El trabajo y la energía comparten
+   $ML^{2}T^{-2}$; una ecuación puede ser homogénea y estar confundiendo dos cosas distintas que
+   resultan medirse igual.
+4. **Las variables que no incluiste.** Si se te olvidó una cantidad de la que el fenómeno sí depende,
+   el método no la reclama: te devuelve una respuesta coherente y equivocada.
+
+Y hay una regla que parece aparte y no lo es: **lo que va dentro de un seno, un coseno, un logaritmo
+o una exponencial es siempre adimensional**, y lo que sale también. Se sigue de la propia
+homogeneidad. La exponencial se puede escribir como una suma de potencias,
+
+$$
+e^{x} = 1 + x + \frac{x^{2}}{2} + \frac{x^{3}}{6} + \cdots
+$$
+
+y ahí se están sumando $x$, $x^{2}$ y $x^{3}$ en el mismo renglón. Si $x$ tuviera dimensión de
+tiempo, estarías sumando $T + T^{2} + T^{3}$, que es exactamente lo prohibido. La única salida es que
+$x$ sea adimensional. Por eso, cuando más adelante aparezca algo como
+$\operatorname{sen}(\omega t)$, puedes deducir de inmediato que $[\omega] = T^{-1}$: el producto
+$\omega t$ está obligado a no tener dimensiones, y la única manera de conseguirlo es que $\omega$
+tenga dimensión de uno sobre tiempo.
+
+## El error que cuesta puntos
+
+<Nota tipo="ojo">
+
+**El error del sello de aprobación**: creer que una ecuación dimensionalmente correcta ya es
+correcta. Nace de cómo se usa el método, siempre como verificación, y de confundir *no falló la
+prueba* con *pasó la prueba*. La homogeneidad es una condición **necesaria pero no suficiente**: es
+como que un texto no tenga errores de ortografía. Es obligatorio, y no lo vuelve verdadero.
+
+</Nota>
+
+Hay un segundo error, más silencioso y más caro en un parcial: **verificar solo dos términos de la
+ecuación**. En $x = x_0 + v_0 t + \tfrac{1}{2}at^{2}$ es fácil comprobar que $x$ y
+$\tfrac{1}{2}at^{2}$ dan longitud, cantar victoria y no mirar $v_0 t$. La condición es sobre cada
+término, uno por uno, incluidos los que parecen obvios.
+
+Y para usarlo a tu favor el día del parcial: cuando despejes una variable y el resultado no tenga las
+dimensiones que debería tener, **no sigas hacia el número**. El error está antes, en el despeje o en
+la fórmula de partida. Treinta segundos revisando ahí salen más baratos que llegar a un resultado
+en unidades equivocadas, y es literalmente lo que dice la diapositiva: unidades que no cuadran son
+una clara indicación de que hubo un error en una de las primeras etapas.
+
+## La respuesta a la curva del bus
+
+La pregunta era si al tomar la misma curva al doble de rapidez la aceleración se duplica. Ya tienes
+con qué responder. El radio no cambia, la rapidez pasa de $v$ a $2v$:
+
+$$
+a' = k\,\frac{(2v)^{2}}{r} = k\,\frac{4v^{2}}{r} = 4\,k\,\frac{v^{2}}{r} = 4a
+$$
+
+No es el doble: es **cuatro veces**. Y fíjate en un detalle que salva la respuesta: la constante $k$
+se cancela al comparar las dos situaciones, así que no hace falta conocerla. Aunque el análisis
+dimensional no te haya dado su valor, sí te dio cómo escala la aceleración con la rapidez, y eso
+alcanza.
+
+Físicamente el resultado dice dos cosas. La aceleración crece con el **cuadrado** de la rapidez, así
+que los aumentos de velocidad se pagan carísimo en una curva; y disminuye cuando el radio crece, así
+que una curva cerrada exige más que una abierta a la misma rapidez. Todo eso salió de dos dimensiones
+y un sistema de dos ecuaciones, sin haber visto todavía movimiento circular.
+
+<Ejercicio titulo="Tres usos del mismo método">
+
+**1.** Verifica, término por término, si esta ecuación de cinemática es dimensionalmente homogénea.
+Aquí $x$ y $x_0$ son posiciones, $v_0$ una rapidez, $a$ una aceleración y $t$ un tiempo.
+
+$$
+x = x_0 + v_0 t + \tfrac{1}{2}at^{2}
+$$
+
+**2.** Esta otra está mal escrita a propósito. Encuentra el término que no cuadra y di qué dimensión
+tendría que tener el factor que acompaña a la aceleración para que la ecuación fuera homogénea.
+
+$$
+v^{2} = v_0^{2} + 2at
+$$
+
+**3.** El periodo de un péndulo —el tiempo que tarda una oscilación completa— depende de su longitud
+$\ell$, de la aceleración de la gravedad $g$ y quizá de la masa $m$ que cuelga. Suponiendo la forma
+
+$$
+\tau = k\,\ell^{\,\alpha}g^{\,\beta}m^{\,\gamma}, \qquad [k] = 1
+$$
+
+halla $\alpha$, $\beta$ y $\gamma$. Al periodo se le dice $\tau$ y no $T$ para no chocar con la $T$
+de la dimensión tiempo. ¿Qué te dice el valor que obtengas para $\gamma$?
+
+**Advertencia de notación, porque este cambio de letra es local a esta lección.** La docente y los
+libros del curso escriben el periodo como $T$ —OpenStax, por ejemplo, presenta el resultado del
+péndulo como $T = 2\pi\sqrt{\ell/g}$—, así que en el parcial espera ver $T$ y no $\tau$. Aquí se
+renombró únicamente para que en el mismo renglón no aparezca la misma letra significando dos cosas.
+Además, conviene saberlo desde ya: más adelante, en la semana 8 del programa —segunda ley de Newton
+aplicada al movimiento circular—, la letra $\tau$ es la que la convención general reserva para el
+torque. Ninguna de las dos letras es tuya para elegir en un examen: usa la de ella.
+
+<div slot="solucion">
+
+**1.** Se traduce cada término por separado:
+
+$$
+[x] = L
+\qquad
+[x_0] = L
+\qquad
+[v_0 t] = LT^{-1}\cdot T = L
+\qquad
+\left[\tfrac{1}{2}at^{2}\right] = LT^{-2}\cdot T^{2} = L
+$$
+
+Los cuatro dan $L$, así que la ecuación **es homogénea**. El $\tfrac{1}{2}$ es adimensional y no
+aporta nada a la dimensión del término, que es justamente por lo que el método nunca habría podido
+descubrirlo.
+
+**2.** Ahora los términos no coinciden:
+
+$$
+[v^{2}] = \left(LT^{-1}\right)^{2} = L^{2}T^{-2}
+\qquad
+[v_0^{2}] = L^{2}T^{-2}
+\qquad
+[2at] = LT^{-2}\cdot T = LT^{-1}
+$$
+
+El tercero es el que no cuadra. Para que valiera $L^{2}T^{-2}$, el factor que acompaña a la
+aceleración tendría que cumplir
+
+$$
+[X] = \frac{L^{2}T^{-2}}{LT^{-2}} = L
+$$
+
+es decir, tendría que ser **una longitud y no un tiempo**. La ecuación correcta es
+
+$$
+v^{2} = v_0^{2} + 2a\left(x - x_0\right)
+$$
+
+y esa diferencia de posiciones es el desplazamiento, que también se escribe $2a\,\Delta x$. Fíjate en
+que lo que falta no es la posición $x$ sola: como en el punto 1 la posición inicial $x_0$ es una
+posición cualquiera, no necesariamente cero, lo que multiplica a $2a$ es la **diferencia** entre las
+dos posiciones. Escribir $2ax$ solo es correcto en el caso particular en que se toma $x_0 = 0$.
+Y hay algo que aprender de esto: las tres formas —$2a(x - x_0)$, $2a\,\Delta x$ y $2ax$— tienen
+exactamente la misma dimensión $L^{2}T^{-2}$, así que el análisis dimensional te dijo qué dimensión
+le falta al término, pero no cuál de esas cantidades va ahí. Otra vez el mismo límite del método.
+
+**3.** Las dimensiones de lo que entra son $[\tau] = T$, $[\ell] = L$, $[g] = LT^{-2}$ y $[m] = M$.
+Aplicando dimensiones a los dos lados y agrupando por base:
+
+$$
+[\tau] = L^{\alpha}\left(LT^{-2}\right)^{\beta}M^{\gamma} = M^{\gamma}\,L^{\,\alpha+\beta}\,T^{-2\beta}
+$$
+
+El lado izquierdo es $[\tau] = T$, que escrito con las tres bases completas es $M^{0}L^{0}T^{1}$.
+Igualando exponente por exponente:
+
+$$
+M:\;\gamma = 0
+\qquad
+T:\;-2\beta = 1 \;\Rightarrow\; \beta = -\tfrac{1}{2}
+\qquad
+L:\;\alpha + \beta = 0 \;\Rightarrow\; \alpha = \tfrac{1}{2}
+$$
+
+$$
+\tau = k\,\ell^{1/2}g^{-1/2} = k\sqrt{\frac{\ell}{g}}
+$$
+
+Comprobación dimensional: $\sqrt{L/(LT^{-2})} = \sqrt{T^{2}} = T$, que es la dimensión de un tiempo.
+
+Lo interesante es $\gamma = 0$: dentro de esta suposición **la masa no entra en el periodo**. El
+método no solo halla exponentes, también descarta variables, y ese es un resultado que no era obvio
+antes de empezar. Y como siempre, $k$ queda sin determinar; peor aún, si el periodo dependiera de
+alguna cantidad adimensional —el ángulo de la amplitud, por ejemplo— esa dependencia podría estar
+escondida dentro de $k$ y el método ni se enteraría.
+
+Todo esto se puede contrastar con la física del péndulo, que no verás en esta unidad. El resultado
+conocido es $\tau = 2\pi\sqrt{\ell/g}$, y contra él se pueden medir las conclusiones de arriba. La
+dependencia con $\sqrt{\ell/g}$ es la que hallaste, así que los exponentes estaban bien. La constante
+vale $2\pi$, un número que el análisis dimensional jamás habría podido entregarte. Y la
+independencia de la masa es real, no un artefacto de la suposición. Lo más fino es la última
+sospecha: el periodo es solo *casi* independiente de la amplitud, y la fórmula se usa mientras el
+ángulo se mantenga por debajo de unos $15^{\circ}$. Es decir, la dependencia con la amplitud existe y
+estaba escondida donde temías, dentro de $k$, exactamente como el método advertía sin poder verla.
+
+</div>
+
+</Ejercicio>

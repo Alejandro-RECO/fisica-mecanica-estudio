@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.nist.gov)",
+      "WebFetch(domain:openstax.org)",
+      "WebFetch(domain:www.bipm.org)"
+    ]
+  }
+}

@@ -25,8 +25,9 @@ const BASE = 'http://localhost:4321';
 
 const VISTAS = [
   { nombre: 'portada', url: '/' },
-  { nombre: 'unidad', url: '/unidad/cinematica-1d/' },
-  { nombre: 'leccion', url: '/unidad/cinematica-1d/03-velocidad-media-e-instantanea/' },
+  { nombre: 'unidad', url: '/unidad/magnitudes-y-medicion/' },
+  // La leccion mas exigente: tiene disputa, tablas anchas y \begin{aligned}.
+  { nombre: 'leccion', url: '/unidad/magnitudes-y-medicion/03-notacion-cientifica-y-prefijos/' },
   { nombre: 'buscar', url: '/buscar/' },
 ];
 
@@ -127,7 +128,7 @@ for (const tema of ['light', 'dark']) {
 // solapan, la altura de la caja es menor que la suma de sus partes.
 const ctx = await navegador.newContext({ viewport: { width: 1280, height: 900 } });
 const pagina = await ctx.newPage();
-await pagina.goto(BASE + '/unidad/cinematica-1d/03-velocidad-media-e-instantanea/', {
+await pagina.goto(BASE + '/unidad/magnitudes-y-medicion/03-notacion-cientifica-y-prefijos/', {
   waitUntil: 'networkidle',
 });
 await pagina.evaluate(() => document.fonts.ready);

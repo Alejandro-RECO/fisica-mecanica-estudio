@@ -33,3 +33,13 @@ No entra el razonamiento que llevó a la decisión, solo la decisión.
 - **2026-08-30** — Bibliografía del curso: Tipler, Young & Freedman, Serway, Fishbane. No se tienen
   los libros, así que **no se citan páginas**; se usan para saber qué convención esperar. Ver
   `docs/bibliografia.md`.
+- **2026-08-30** — Trigonometría en español: se escribe `sen`, no `sin`. KaTeX no trae `\sen`, así
+  que va como `\operatorname{sen}`. Fijado al aparecer la primera función trigonométrica del sitio,
+  en `05-analisis-dimensional`.
+- **2026-08-30** — Una contradicción entre fuentes se declara en **una sola** lección, la que la
+  origina, y las demás remiten a ella. `[leccion].astro` renderiza `<Disputa>` automáticamente desde
+  el frontmatter, así que declararla en varias la repite en pantalla. La del separador decimal vive
+  en `03-notacion-cientifica-y-prefijos`.
+- **2026-08-30** — Lo verificado contra una URL leída en la sesión sube de `tipo: deduccion` a
+  `tipo: abierta` con `ref` y `fecha`. Dominios ya usados: `nist.gov` y `openstax.org`, permitidos en
+  `.claude/settings.json` para que no haya que reaprobarlos.
