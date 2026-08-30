@@ -1,0 +1,186 @@
+---
+titulo: Qué significa medir
+unidad: magnitudes-y-medicion
+orden: 1
+sesiones: [S01]
+
+pregunta_guia: >
+  Si te digo que una mesa mide 3, no sabes nada. ¿Qué exactamente le falta a ese número
+  para que sea una medida de verdad?
+prerrequisitos: []
+conceptos_clave:
+  - Una cantidad física es un número que describe cuantitativamente un fenómeno.
+  - Medir es comparar contra un estándar acordado; el estándar define la unidad.
+  - Un estándar sirve solo si es accesible, reproducible y no cambia con el tiempo.
+  - Las leyes describen los fenómenos; las teorías los explican.
+errores_frecuentes:
+  - Escribir un número sin unidad y creer que ya es una medida
+  - Confundir ley con teoría
+tiempo_estudio_min: 22
+
+esencial:
+  - "Una medida es número + unidad. Un número solo no mide nada."
+  - "Medir es comparar contra un estándar; ese estándar es la unidad."
+  - "Un estándar debe ser accesible, reproducible y estable en el tiempo."
+  - "Ley describe el fenómeno; teoría lo explica. No son sinónimos."
+tiempo_repaso_min: 4
+
+fuentes:
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/semana1.pdf
+    diapositiva: 8
+    fecha: 2026-08-30
+    aporta: "Definición de medir como proceso de obtener valores cuantitativos atribuibles a una propiedad."
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/semana1.pdf
+    diapositiva: 10
+    fecha: 2026-08-30
+    aporta: "Cantidad física, estándar de referencia y los tres requisitos de un buen estándar."
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/semana1.pdf
+    diapositiva: 6
+    fecha: 2026-08-30
+    aporta: "La distinción entre leyes que describen y teorías que explican."
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/semana1.pdf
+    diapositiva: 9
+    fecha: 2026-08-30
+    aporta: "Definición de metrología."
+  - tipo: deduccion
+    aporta: "El ejemplo de la mesa y el del metro patrón, para hacer concreta la idea de estándar."
+
+confianza: alta
+estado: revisado
+revision:
+  fecha: 2026-08-30
+  veredicto: coherente
+  chequeos: [coherencia-con-la-fuente, caso-limite]
+  observaciones:
+    - "Sin ecuaciones: no aplica chequeo dimensional ni de orden de magnitud."
+---
+
+import Nota from '../../../componentes/Nota.astro';
+import Ejercicio from '../../../componentes/Ejercicio.astro';
+
+## De qué se trata
+
+La física se ocupa de los principios que rigen el Universo, y lo hace de una forma muy concreta:
+**observando y midiendo**. No hay ley física que no se apoye en mediciones que alguien más pueda
+repetir.
+
+Eso obliga a resolver un problema aparentemente tonto antes de resolver cualquier otro: ¿qué quiere
+decir "medir"? La respuesta de la docente es precisa:
+
+<Nota tipo="clave" titulo="Medir">
+
+Es el proceso de obtener experimentalmente valores cuantitativos que puedan ser razonablemente
+atribuidos a una propiedad de un cuerpo o sustancia.
+
+</Nota>
+
+Fíjate en las dos condiciones que esconde esa frase. **Experimentalmente**: no se deduce de pensar,
+se obtiene interactuando con el mundo. Y **atribuidos a una propiedad**: se mide una característica
+concreta, no el objeto entero. No mides "la mesa": mides su longitud, o su masa, o su temperatura.
+
+## Por qué un número solo no mide nada
+
+Volvamos a la pregunta de arriba. "La mesa mide 3" no dice nada porque falta contra qué se comparó.
+¿Tres metros? ¿Tres pies? ¿Tres veces el largo de tu brazo?
+
+Ahí está el corazón del asunto: **medir es comparar contra un estándar**, y ese estándar es lo que
+llamamos unidad.
+
+<Nota tipo="clave">
+
+Un número empleado para describir cuantitativamente un fenómeno físico es una **cantidad física**.
+Al medir, siempre la comparamos con un **estándar de referencia**, y ese estándar define la
+**unidad**.
+
+</Nota>
+
+Por eso un número desnudo es un error de física, no un descuido de estilo. `3` no es una medida;
+`3 m` sí lo es.
+
+## Qué le exigimos a un estándar
+
+No cualquier cosa sirve como referencia. La docente pide tres condiciones, y cada una responde a una
+forma distinta en que un estándar puede fallar:
+
+| Condición | Qué evita |
+|---|---|
+| **Accesible** | Que solo unos pocos puedan comparar contra él |
+| **Medible de forma confiable** | Que dos personas cuidadosas obtengan resultados distintos |
+| **Que no cambie con el tiempo** | Que la misma medida signifique cosas distintas en años distintos |
+
+Y una condición que las resume: *los estándares que aplican personas distintas en lugares distintos
+del Universo deben producir el mismo resultado.*
+
+<Nota tipo="ojo">
+
+Esta exigencia no es teórica. El kilogramo estuvo definido hasta 2019 por un cilindro metálico
+guardado en Francia, y el problema era exactamente ese: **el patrón perdía masa con el tiempo**. Un
+estándar que cambia arrastra consigo todas las medidas hechas con él. Hoy el kilogramo se define a
+partir de una constante fundamental, que por definición no se desgasta.
+
+Esto es una ampliación: no está en las diapositivas.
+
+</Nota>
+
+## Ley y teoría no son lo mismo
+
+La diapositiva 6 hace una distinción que en el lenguaje corriente se pierde, y que en un parcial
+puede aparecer como pregunta:
+
+| | Qué hace |
+|---|---|
+| **Ley científica** | **Describe** el fenómeno natural |
+| **Teoría científica** | Lo **explica** |
+
+Una ley te dice *qué pasa*; una teoría te dice *por qué*. La ley de gravitación describe con qué
+fuerza se atraen dos masas: es una fórmula que predice el número. La explicación de por qué existe
+esa atracción es trabajo de una teoría.
+
+Y hay una consecuencia importante en cómo avanza la física: **cuando la predicción de una teoría no
+coincide con el experimento, se modifica la teoría, no el experimento.** El puente entre ambos lado
+es la matemática.
+
+<Nota tipo="info" titulo="Metrología">
+
+La ciencia que estudia todo esto —las propiedades medibles, las escalas, los sistemas de unidades y
+la calidad de las mediciones— se llama **metrología**.
+
+La diapositiva 9 pregunta quién se encarga de la metrología científica e industrial en Colombia y no
+lo responde: es una pregunta para clase. La respuesta es el **INM** (Instituto Nacional de
+Metrología), pero eso no está en la presentación — confírmalo antes de darlo por hecho.
+
+</Nota>
+
+## Qué se malinterpreta
+
+**"Es que ya se entiende que son metros."** No en un parcial. Si el enunciado mezcla centímetros y
+metros, el corrector no puede saber si omitiste la unidad porque la tenías clara o porque no la
+miraste. La unidad se escribe siempre.
+
+**Confundir precisión con exactitud del estándar.** Que un instrumento dé muchos decimales no lo
+hace confiable: lo hace preciso. La confiabilidad viene de estar comparado contra un buen estándar.
+
+<Ejercicio titulo="Cuál de estos sirve como estándar">
+
+Evalúa cada candidato a estándar de longitud contra las tres condiciones —accesible, medible de
+forma confiable, estable en el tiempo— y di cuál falla y por qué:
+
+1. La distancia entre tu casa y la universidad.
+2. El largo del pie del rey.
+3. La distancia que recorre la luz en el vacío en un intervalo de tiempo fijo.
+
+<div slot="solucion">
+
+1. **Falla en accesible y en estable.** Solo tú puedes compararte con ella, y cambia si te mudas.
+2. **Falla en estable**, que es el defecto histórico de este patrón real: cambia con cada rey. Y
+   falla en accesible, porque hay que ir donde el rey.
+3. **Cumple las tres.** Es reproducible en cualquier laboratorio, la velocidad de la luz en el vacío
+   es la misma en todo el Universo, y no se desgasta. Por eso es la definición actual del metro.
+
+</div>
+
+</Ejercicio>

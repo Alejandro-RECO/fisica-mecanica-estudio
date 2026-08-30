@@ -1,0 +1,222 @@
+---
+titulo: Unidades fundamentales y derivadas
+unidad: magnitudes-y-medicion
+orden: 2
+sesiones: [S01]
+
+pregunta_guia: >
+  El SI tiene siete unidades fundamentales y todas las demás salen de ellas. ¿Por qué siete
+  y no una sola, o cincuenta?
+prerrequisitos:
+  - que-es-medir
+conceptos_clave:
+  - Las unidades fundamentales son independientes entre sí; ninguna se define usando otra.
+  - Toda unidad derivada se expresa como producto de potencias de las fundamentales.
+  - La dimensión es la naturaleza física de la cantidad; la unidad es cómo se le asigna un número.
+  - Una cantidad tiene una sola dimensión pero puede medirse en muchas unidades.
+errores_frecuentes:
+  - Confundir dimensión con unidad
+  - Creer que kilogramo es fundamental por llevar el prefijo kilo
+tiempo_estudio_min: 28
+
+esencial:
+  - "Siete fundamentales: L, M, T, Θ, I, J, N — metro, kilogramo, segundo, kelvin, ampere, candela, mol."
+  - "Derivada = producto de potencias de fundamentales. [v] = LT⁻¹, [a] = LT⁻², [F] = MLT⁻²."
+  - "Dimensión es qué tipo de cosa es; unidad es en qué se mide. La dimensión no cambia al cambiar de unidad."
+  - "El kilogramo es fundamental, aunque suene a múltiplo del gramo."
+tiempo_repaso_min: 6
+
+fuentes:
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/semana1.pdf
+    diapositiva: 12
+    fecha: 2026-08-30
+    aporta: "Tabla completa de las siete unidades fundamentales con dimensión, unidad y símbolo."
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/semana1.pdf
+    diapositiva: 13
+    fecha: 2026-08-30
+    aporta: "Unidades derivadas: área, volumen, velocidad y aceleración con sus dimensiones."
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/semana1.pdf
+    diapositiva: 11
+    fecha: 2026-08-30
+    aporta: "El sistema métrico se llama oficialmente Sistema Internacional desde 1960."
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/semana1.pdf
+    diapositiva: 23
+    fecha: 2026-08-30
+    aporta: "Distinción entre dimensión (naturaleza física) y unidad (asignación de un número)."
+  - tipo: deduccion
+    aporta: "Densidad, fuerza y energía: la diapositiva 13 las deja en blanco y aquí se deducen."
+
+confianza: alta
+estado: revisado
+revision:
+  fecha: 2026-08-30
+  veredicto: coherente
+  chequeos: [dimensional, coherencia-con-la-fuente]
+  observaciones:
+    - "Verificadas [F] = MLT⁻², [E] = ML²T⁻² y [ρ] = ML⁻³ contra sus definiciones."
+---
+
+import Nota from '../../../componentes/Nota.astro';
+import Ejemplo from '../../../componentes/Ejemplo.astro';
+import Paso from '../../../componentes/Paso.astro';
+import Ejercicio from '../../../componentes/Ejercicio.astro';
+
+## De qué se trata
+
+Si medir es comparar contra un estándar, alguien tiene que decidir **cuáles** estándares. Y aquí
+aparece una decisión de diseño elegante: no hace falta un estándar por cada cosa medible.
+
+Basta con elegir unas pocas cantidades que no se puedan expresar unas en términos de otras, y
+construir todas las demás combinándolas. El Sistema Internacional —que se llama así oficialmente
+desde 1960, aunque todos le digan sistema métrico— eligió **siete**.
+
+## Las siete fundamentales
+
+Se llaman fundamentales precisamente porque son **independientes**: ninguna se define usando otra.
+Y no varían con el tiempo, la presión ni la temperatura.
+
+| Cantidad | Dimensión | Unidad | Símbolo |
+|---|---|---|---|
+| Longitud | $L$ | metro | m |
+| Masa | $M$ | kilogramo | kg |
+| Tiempo | $T$ | segundo | s |
+| Temperatura | $\Theta$ | kelvin | K |
+| Corriente eléctrica | $I$ | ampere | A |
+| Intensidad luminosa | $J$ | candela | cd |
+| Cantidad de sustancia | $N$ | mol | mol |
+
+<Nota tipo="ojo">
+
+**El kilogramo es fundamental, no derivado**, aunque el nombre empiece por un prefijo. Es la única
+unidad base del SI cuyo nombre lleva prefijo, por razones históricas. Si en un parcial te preguntan
+cuáles son las siete, la respuesta incluye el kilogramo — no el gramo.
+
+</Nota>
+
+En mecánica solo se usan las tres primeras. Todo este curso vive en $L$, $M$ y $T$.
+
+## Las derivadas salen de las otras
+
+Una unidad derivada se expresa en términos de las fundamentales. La diapositiva 13 da estas:
+
+| Cantidad | Dimensión | Unidad |
+|---|---|---|
+| Área | $L^2$ | $\mathrm{m^2}$ |
+| Volumen | $L^3$ | $\mathrm{m^3}$ |
+| Velocidad | $LT^{-1}$ | $\mathrm{m/s}$ |
+| Aceleración | $LT^{-2}$ | $\mathrm{m/s^2}$ |
+
+<Nota tipo="info">
+
+La diapositiva deja **densidad, fuerza y energía en blanco**: son el ejercicio de clase. Abajo se
+deducen, y va marcado como deducción, no como algo que estuviera en la presentación.
+
+</Nota>
+
+Deducirlas no requiere memoria, solo la definición:
+
+<Ejemplo titulo="Deducir las tres que quedaron en blanco">
+
+<Paso n="1" razon="Densidad es masa por unidad de volumen. La definición ya dice la operación.">
+
+$$
+\rho = \frac{m}{V}
+\quad\Longrightarrow\quad
+[\rho] = \frac{M}{L^{3}} = ML^{-3}
+$$
+
+La unidad es $\mathrm{kg/m^3}$.
+
+</Paso>
+
+<Paso n="2" razon="Fuerza sale de la segunda ley de Newton, que se verá en la semana 7. Aquí solo se usa la relación.">
+
+$$
+F = ma
+\quad\Longrightarrow\quad
+[F] = M \cdot LT^{-2} = MLT^{-2}
+$$
+
+La unidad es $\mathrm{kg\,m/s^2}$, que recibe nombre propio: el **newton**, $\mathrm{N}$.
+
+</Paso>
+
+<Paso n="3" razon="Energía es fuerza por distancia, así que basta multiplicar por una longitud más.">
+
+$$
+E = F \cdot d
+\quad\Longrightarrow\quad
+[E] = MLT^{-2} \cdot L = ML^{2}T^{-2}
+$$
+
+La unidad es $\mathrm{kg\,m^2/s^2}$, llamada **joule**, $\mathrm{J}$.
+
+</Paso>
+
+<Paso n="4" razon="Comprobación: toda dimensión derivada quedó como producto de potencias de M, L y T, sin sumas. Así debe ser.">
+
+$[\rho] = ML^{-3}$, $[F] = MLT^{-2}$, $[E] = ML^{2}T^{-2}$. Ninguna mezcla dimensiones sumando:
+las dimensiones solo se multiplican y se elevan a potencias.
+
+</Paso>
+
+</Ejemplo>
+
+## Dimensión no es lo mismo que unidad
+
+Esta distinción parece un tecnicismo y es justo lo que separa una respuesta correcta de una a medias.
+
+<Nota tipo="clave">
+
+**Dimensión** es la naturaleza física de la cantidad: qué *tipo* de cosa es.
+**Unidad** es la manera de asignarle un número a esa dimensión.
+
+</Nota>
+
+La distancia entre dos puntos tiene dimensión de longitud. Eso es cierto la midas en metros, en
+pulgadas o en años luz. La dimensión **no cambia** al cambiar de unidad; el número sí.
+
+Existen siete dimensiones primarias, una por cada unidad fundamental. Se escriben entre corchetes:
+
+$$
+[d] = L
+\qquad
+[v] = \frac{L}{T} = LT^{-1}
+$$
+
+Se lee: *la dimensión de $d$ es longitud*, *la dimensión de $v$ es longitud sobre tiempo*.
+
+## Por qué siete y no otro número
+
+La pregunta del principio tiene respuesta. **Una sola no alcanza**: no hay forma de expresar el
+tiempo en términos de longitud sin suponer algo que relacione ambas. **Cincuenta sobran**: en cuanto
+una cantidad se puede escribir en términos de otras, ya no es independiente y deja de ser
+fundamental.
+
+Siete es el número mínimo que cubre toda la física conocida. No es un número mágico: es el resultado
+de haber ido eliminando redundancias durante dos siglos.
+
+<Ejercicio titulo="Dimensiones de lo que viene después">
+
+Encuentra la dimensión de cada una a partir de su definición, sin buscar la fórmula:
+
+1. Presión, que es fuerza por unidad de área.
+2. Cantidad de movimiento, que es masa por velocidad.
+3. Potencia, que es energía por unidad de tiempo.
+
+<div slot="solucion">
+
+1. $[p] = \dfrac{MLT^{-2}}{L^{2}} = ML^{-1}T^{-2}$. Unidad: $\mathrm{kg/(m\,s^2)}$, el **pascal**.
+2. $[p] = M \cdot LT^{-1} = MLT^{-1}$. Unidad: $\mathrm{kg\,m/s}$, sin nombre propio.
+3. $[P] = \dfrac{ML^{2}T^{-2}}{T} = ML^{2}T^{-3}$. Unidad: $\mathrm{kg\,m^2/s^3}$, el **watt**.
+
+Fíjate en que presión y cantidad de movimiento se escriben las dos con la letra $p$ y tienen
+dimensiones distintas. El símbolo no determina la dimensión: la determina la definición.
+
+</div>
+
+</Ejercicio>

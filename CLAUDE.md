@@ -18,9 +18,13 @@ te deja resolver un problema nuevo falló.
 
 ```
 fuentes/                  material crudo. SOLO LECTURA: nunca se edita ni se corrige
+herramientas/
+  render-pdf.py           PDF -> imagenes de pagina. Read NO abre PDFs en esta maquina
+  revisar-ui.mjs          abre el sitio en Chromium y comprueba que no se vea mal
 docs/
-  mapa-unidades.md        las unidades del curso, su orden y sus dependencias
-  plan-sesiones.md        calendario del semestre
+  mapa-unidades.md        las ocho unidades, del programa oficial de 16 semanas
+  plan-sesiones.md        cortes, fechas de parcial, pesos y reglas de entrega
+  bibliografia.md         los libros del curso y por que no se citan sus paginas
   guia-notacion.md        KaTeX, coma decimal, unidades: la ley de escritura
 memoria/
   estado.md               LO ÚNICO que se lee siempre. Tope duro: 25 líneas
@@ -110,10 +114,18 @@ Cuando dos fuentes se contradicen, este orden decide. No se salta y no se resuel
 
 - Español de Colombia, académico pero directo. Tuteas. **Frases completas**: estás viendo el tema por
   primera vez y necesitas las palabras de enlace para seguir el razonamiento. Nada de estilo telegrama.
-- Coma decimal (`9,81 m/s²`), nunca punto. Notación científica `4,5×10⁻⁶`, jamás `4.5e-6` ni `^`.
 - **Unidades en todo número que las tenga.** Un número desnudo es un error de física, no de estilo.
-- Fórmulas en KaTeX: `<F>` inline, `<FB>` en bloque. Barras dobles (`\\frac`, `\\mathrm`), unidades
-  dentro de `\\mathrm{}`, coma decimal como `{,}`. Ver `docs/guia-notacion.md`.
+- Matemática entre dólares y con **una sola barra**: `$v = \frac{\Delta x}{\Delta t}$`. No hay
+  componentes `<F>` ni `<FB>`: se renderiza con `remark-math` + `rehype-katex`.
+- **El bloque `$$` va siempre en tres renglones** — apertura, contenido, cierre. Un `$$...$$` en una
+  sola línea dentro de un componente se renderiza en línea y las fracciones se montan sobre el texto.
+  No rompe el build: sale mal en pantalla, que es peor.
+- Dentro de un componente (`<Paso>`, `<Ejemplo>`, `<Nota>`, `<Ejercicio>`) deja **una línea en blanco**
+  después de la etiqueta de apertura y otra antes del cierre, o el markdown no se parsea como bloque.
+- Unidades dentro de `\mathrm{}`, coma decimal como `{,}`. Ver `docs/guia-notacion.md`.
+- **Separador decimal: coma, pero está en disputa.** La docente usa las dos formas en la misma
+  presentación (dia. 18 coma, dia. 14 y 19 punto). Se escribe coma como lectura provisional y la duda
+  está abierta en `memoria/dudas.md`. No la cierres sin preguntarle a ella.
 - Nada de emojis. Negrita solo donde el lector debe frenar.
 - **Nombres en español sin tildes** para todo lo que escribes tú: agentes, skills, componentes,
   clases CSS, variables. **Única excepción:** lo que Astro reserva (`src/pages/`,
@@ -149,16 +161,33 @@ es el punto donde comprensión y utilidad coinciden.
 | `revisor-conceptual` | opus | Verificar la física antes de publicar. No corrige: diagnostica |
 | `constructor-sitio` | sonnet | Construir y mantener `sitio/` |
 
+## Leer una fuente
+
+`Read` abre imágenes y `.md` directamente. **No abre PDFs en esta máquina** (falta poppler), y cuatro
+de las siete presentaciones son PDF de imágenes.
+
+```bash
+# ¿tiene texto extraible?  Decenas de miles: extraelo. Dos cifras: renderiza.
+python -c "import pymupdf,sys; d=pymupdf.open(sys.argv[1]); print(sum(len(p.get_text().strip()) for p in d))" <pdf>
+
+python herramientas/render-pdf.py <pdf> --desde 7 --hasta 8 --dpi 190
+```
+
+Un `.pptx` no se puede leer: hay que pedirlo exportado a PDF.
+
 ## Verificación
 
 ```bash
-cd sitio && npm run build
+cd sitio && npm run build       # Zod, LaTeX, rutas
+node herramientas/revisar-ui.mjs  # que ademas se VEA bien
 ```
 
-Es el comando que decide si algo está bien. Falla si el frontmatter no cumple el esquema Zod, si el
-LaTeX está mal escapado, o si una lección dice `validado` sin haber sido revisada.
+El build en verde no garantiza que la página se vea bien: la matemática mal anidada compila. El
+segundo comando abre el sitio en Chromium y comprueba desborde horizontal, columnas aplastadas,
+bloques desalineados y errores de consola, en tres anchos, dos temas y con el menú abierto y plegado.
 
 ## Estado
 
-El MVP está en construcción. La unidad piloto **no está decidida**: se elige al fichar el primer
-material que se cargue en `fuentes/`, y queda registrada en `memoria/decisiones.md`.
+Ver `memoria/estado.md`, que es la fuente de verdad. En corto: la unidad piloto es
+`magnitudes-y-medicion`, el Parcial 1 es del 31 de agosto al 4 de septiembre, y hay 155 páginas de
+presentaciones en `fuentes/precentaciones/` de las que solo dos están fichadas.
