@@ -122,7 +122,7 @@ fuentes:
       19 a 27 presentan las dos operaciones seguidas pero nunca las comparan.
   - tipo: deduccion
     aporta: >
-      El torque τ⃗ = r⃗ × F⃗ como situación física donde aparece el producto cruz, usado aquí para
+      Un producto cruz entre un vector de posición y una fuerza, usado solo como contexto para
       responder la pregunta guía. No está en la presentación ni figura en el programa oficial de las
       16 semanas.
   - tipo: deduccion
@@ -141,12 +141,12 @@ revision:
     - "El ciclo de unitarios, la expansion por cofactores y las dos tablas de contraste: sin una sola fila invertida. La expansion coincide con la que ella pega al pie de la diapositiva 25."
     - "Reparo corregido: describia el pulgar como perpendicular a la palma. Un pulgar extendido esta en el plano de la palma; seguida al pie de la letra, esa instruccion daba un resultado acostado sobre el plano de los dos vectores, que es lo que la propia leccion declara imposible."
     - "Reparo corregido: el seno de 79,9 grados venia con el valor del angulo sin redondear, dentro del paso que ensena a verificar."
-    - "Verificado contra el syllabus renderizado que el torque no aparece en ninguna de las 16 semanas, asi que se presenta como motivacion y no como tema evaluable."
+    - "Podado: el torque se presentaba como tema y no aparece en ninguna de las 16 semanas del programa. El ejercicio conserva el calculo, con la notacion C de la diapositiva 22."
+    - "Podada el 2026-08-30: el torque se presentaba como tema y no aparece en ninguna de las 16 semanas del programa ni en la presentacion. Se quito la seccion que lo desarrollaba y la nota con la conjetura de la semana 14. La pregunta guia se responde ahora con AB sin theta, que si es de la dia. 22, y el ejercicio conserva el calculo con la notacion C de esa misma diapositiva."
 dudas_para_docente:
   - "¿En el parcial va a pedir el producto cruz en 3D con las tres componentes, o solo el caso plano, con los dos vectores en xy y el resultado sobre z? La dia. 25 introduce A_z k̂ sin haber explicado nunca el paso de dos a tres dimensiones —todo el bloque anterior, dia. 15 a 18, es plano— y no resuelve un solo ejemplo con números. Es la duda que más pesa para preparar el parcial, porque cambia por completo qué hay que practicar."
   - "¿Cómo quedaron llenos en el tablero los seis productos entre unitarios de la dia. 26? Aquí están deducidos, no copiados, y conviene contrastarlos con lo que ella escribió."
   - "En las 28 diapositivas no hay un solo ángulo con valor numérico, así que no se sabe si trabaja en grados o en radianes. El ejemplo y el ejercicio usan grados."
-  - "¿Entra el torque en el curso? El producto vectorial casi solo se usa allí, y el programa oficial de 16 semanas no lo lista: la semana 8 es fricción, planos inclinados y segunda ley aplicada al movimiento circular."
   - "¿Escribe sen o sin? La dia. 22, que es la de este tema, trae C = AB sin θ compuesto con su plantilla Beamer, y es el respaldo principal de que aquí se escriba sin. La duda completa, con la evidencia de la dia. 15, está declarada en la lección de componentes y en dudas.md; no se repite aquí."
 ---
 
@@ -751,43 +751,20 @@ punto. El producto cruz solo te dará el ángulo agudo equivalente.
 
 ## La llave y la tuerca: la respuesta a la pregunta del principio
 
-Vuelve a la llave. La magnitud física que describe la capacidad de una fuerza para producir giro se
-llama **torque**, y se calcula justamente con un producto cruz:
+Vuelve a la llave. Toda la respuesta está en las dos partes de la definición de la diapositiva 22,
+sin necesidad de nada más.
 
-$$
-\vec{\tau} = \vec{r}\times\vec{F}
-$$
+**Por qué rinde empujar perpendicular.** La magnitud es $AB\sin\theta$. Si empujas perpendicular al
+brazo, $\theta = 90^\circ$, el seno vale $1$ y el producto es el mayor posible. Si jalas a lo largo
+del brazo, $\theta = 0^\circ$, el seno vale $0$ y el producto es exactamente cero, por fuerte que
+jales. Y ahí ves también por qué una llave larga rinde más: la longitud del brazo multiplica.
 
-donde $\vec{r}$ es el vector que va **desde el eje de giro** —el centro de la tuerca— hasta el punto
-donde aplicas la fuerza, medido en metros, y $\vec{F}$ es la fuerza en newton. El resultado queda en
-$\mathrm{N\,m}$, y sus dimensiones son $[\tau] = L \cdot MLT^{-2} = ML^{2}T^{-2}$.
-
-Las dos mitades de la pregunta se responden solas.
-
-**Por qué rinde empujar perpendicular.** La magnitud es $\tau = rF\sin\theta$. Si empujas
-perpendicular al brazo, $\theta = 90^\circ$, el seno vale $1$ y obtienes todo el torque que esa
-fuerza puede dar: $rF$. Si jalas a lo largo del brazo, $\theta = 0^\circ$, el seno vale $0$ y el
-torque es exactamente cero, por fuerte que jales; lo único que consigues es tratar de arrancar la
-tuerca de su sitio, no de girarla. Y ahí ves también por qué una llave larga afloja mejor: $r$
-multiplica.
-
-**Por qué el giro apunta a un lado donde no hay nada.** El torque es perpendicular al plano que
-forman la llave y la fuerza, es decir, va a lo largo del **eje del tornillo**. No hay materia
-apuntando en esa dirección, y sin embargo es la única dirección que describe el giro sin ambigüedad:
-todo lo demás está girando, y el eje es lo único que se queda quieto. El sentido, dado por la mano
-derecha, es el que distingue apretar de aflojar.
-
-<Nota tipo="info">
-
-El torque es el lugar donde el producto vectorial se vuelve indispensable, y por eso sirve para
-entenderlo. Pero hay que decirlo con claridad: **el torque no aparece en el programa oficial de las
-16 semanas** de este curso —la semana 8 es fricción, planos inclinados y segunda ley aplicada al
-movimiento circular—, y tampoco está en la presentación de vectores. Aquí funciona como motivación
-física, no como tema evaluable. Lo más cercano en todo el programa es "Potencia y máquinas simples",
-en la semana 14: una palanca podría meter el torque por la puerta de atrás, pero eso es conjetura y
-no está escrito en ninguna parte. Está anotado arriba como pregunta para la docente.
-
-</Nota>
+**Por qué el resultado apunta a un lado donde no hay nada.** Porque el producto vectorial es
+perpendicular al plano de los dos vectores, y aquí ese plano es el que forman la llave y la fuerza.
+El resultado va a lo largo del eje del tornillo. No hay materia apuntando en esa dirección, y sin
+embargo es la única que describe el giro sin ambigüedad: todo lo demás está girando, y el eje es lo
+único que se queda quieto. El sentido, dado por la mano derecha, es el que distingue un giro del
+contrario.
 
 <Ejercicio titulo="Aflojar la tuerca, con números">
 
@@ -804,10 +781,10 @@ $$
 \vec{F} = (-80\,\hat{i} + 60\,\hat{j})\ \mathrm{N}
 $$
 
-1. Calcula $\vec{\tau} = \vec{r}\times\vec{F}$ con el determinante.
+1. Calcula $\vec{C} = \vec{r}\times\vec{F}$ con el determinante.
 2. ¿Hacia dónde apunta el resultado? Con esa fuerza, ¿estás apretando o aflojando la tuerca?
-3. Comprueba la magnitud con $\tau = rF\sin\theta$, hallando $\theta$ con el producto escalar.
-4. Con la misma llave y la misma magnitud de fuerza, ¿cuál sería el torque máximo posible y a qué
+3. Comprueba la magnitud con $C = rF\sin\theta$, hallando $\theta$ con el producto escalar.
+4. Con la misma llave y la misma magnitud de fuerza, ¿cuál sería la magnitud máxima posible y a qué
    ángulo se consigue?
 
 <div slot="solucion">
@@ -815,7 +792,7 @@ $$
 **1.** Las dos componentes en $z$ son cero, porque todo está sobre el plano de la tuerca:
 
 $$
-\vec{\tau} =
+\vec{C} =
 \begin{vmatrix}
 \hat{i} & \hat{j} & \hat{k} \\
 0{,}20 & 0{,}15 & 0 \\
@@ -835,7 +812,7 @@ $$
 $$
 
 $$
-\vec{\tau} = 24\,\hat{k}\ \mathrm{N\,m}
+\vec{C} = 24\,\hat{k}\ \mathrm{N\,m}
 $$
 
 Esto es general y conviene guardarlo: **dos vectores que viven en el plano $xy$ dan siempre un
@@ -846,7 +823,7 @@ El único caso aparte es que sean paralelos, y entonces el resultado es $\vec{0}
 dedos a lo largo de $\vec{r}$, ciérralos hacia $\vec{F}$ por el lado corto y el pulgar sale de la
 cara de la tuerca. Visto desde $+z$, ese es un giro en sentido antihorario, que en un tornillo de
 rosca derecha —los normales— es el sentido de **aflojar**: el tornillo avanza hacia afuera,
-justamente hacia donde apunta $\vec{\tau}$.
+justamente hacia donde apunta $\vec{C}$.
 
 **3.** Primero las magnitudes:
 
@@ -873,25 +850,25 @@ $$
 Ese ángulo tiene $\sin 106{,}26^\circ = 0{,}96$, de modo que
 
 $$
-\tau = rF\sin\theta = (0{,}25\ \mathrm{m})(100\ \mathrm{N})(0{,}96) = 24\ \mathrm{N\,m}
+C = rF\sin\theta = (0{,}25\ \mathrm{m})(100\ \mathrm{N})(0{,}96) = 24\ \mathrm{N\,m}
 $$
 
 Coincide con el determinante. Y fíjate en lo que pasó aquí, que es justo la advertencia de más
 arriba: el ángulo salió **obtuso** —el producto escalar es negativo—, y aun así $\sin\theta = 0{,}96$
-es positivo y el torque salió en $+\hat{k}$. El seno no habría distinguido este caso del de
+es positivo y el resultado salió en $+\hat{k}$. El seno no habría distinguido este caso del de
 $73{,}74^\circ$; el signo del coseno sí.
 
 **4.** El máximo es con $\theta = 90^\circ$, es decir, empujando perpendicular a la llave:
 
 $$
-\tau_{\max} = rF = (0{,}25\ \mathrm{m})(100\ \mathrm{N}) = 25\ \mathrm{N\,m}
+C_{\max} = rF = (0{,}25\ \mathrm{m})(100\ \mathrm{N}) = 25\ \mathrm{N\,m}
 $$
 
 Estabas en $24\ \mathrm{N\,m}$, así que solo se perdía $1\ \mathrm{N\,m}$: la fuerza ya venía casi
-perpendicular. En el otro extremo, con $\theta = 0^\circ$ —jalando a lo largo de la llave— el torque
+perpendicular. En el otro extremo, con $\theta = 0^\circ$ —jalando a lo largo de la llave— el producto
 sería cero.
 
-Comprobación dimensional: $[\tau] = L \cdot MLT^{-2} = ML^{2}T^{-2}$, y la respuesta quedó en
+Comprobación dimensional: $[C] = L \cdot MLT^{-2} = ML^{2}T^{-2}$, y la respuesta quedó en
 $\mathrm{N\,m} = \mathrm{kg\,m^2/s^2}$. Coherente.
 
 </div>

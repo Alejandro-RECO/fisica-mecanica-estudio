@@ -53,6 +53,14 @@ const { titulo, descripcion } = Astro.props;
       </svg>
     </button>
 
+    <button
+      class="nav-fondo no-print"
+      type="button"
+      id="nav-fondo"
+      tabindex="-1"
+      aria-hidden="true"
+    ></button>
+
     <div class="armazon">
       <Nav />
       <slot />
@@ -92,6 +100,7 @@ const { titulo, descripcion } = Astro.props;
         // --- menu plegable ---
         const alternar = document.getElementById('nav-toggle');
         const rotulo = document.getElementById('nav-toggle-texto');
+        const fondo = document.getElementById('nav-fondo');
         const pintarNav = () => {
           const oculta = raiz.classList.contains('nav-oculta');
           alternar.setAttribute('aria-expanded', String(!oculta));
@@ -101,6 +110,14 @@ const { titulo, descripcion } = Astro.props;
         alternar.addEventListener('click', () => {
           const oculta = raiz.classList.toggle('nav-oculta');
           guardar('nav', oculta ? 'oculta' : 'visible');
+          pintarNav();
+        });
+        // En movil el menu es un cajon sobre el contenido: tocar fuera de el
+        // lo cierra, como en cualquier menu de telefono. Sin esto el fondo
+        // se queda a medias visible detras del menu abierto.
+        fondo?.addEventListener('click', () => {
+          raiz.classList.add('nav-oculta');
+          guardar('nav', 'oculta');
           pintarNav();
         });
         pintarNav();

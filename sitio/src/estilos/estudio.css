@@ -159,6 +159,12 @@ a:hover { color: var(--vector); }
 .nav-oculta .nav-toggle .icono-desplegar { display: block; }
 .nav-oculta .nav-toggle .icono-plegar { display: none; }
 
+/* ---------- fondo del menu movil ---------- */
+/* Solo existe por debajo de 860px: en escritorio el menu vive en su propia
+   columna de la rejilla y nunca se monta encima del contenido, asi que aqui
+   no hace ninguna falta. */
+.nav-fondo { display: none; }
+
 /* ---------- navegacion ---------- */
 .nav {
   grid-column: 1;
@@ -633,6 +639,15 @@ code {
   border-bottom: 1px solid var(--linea);
   margin: 0 0 var(--e3);
 }
+/* Frase normal, sin mayusculas: el titulo de arriba ya marca que esto es un
+   instrumento; esta linea es la que explica para que sirve, en el tono con
+   el que se habla el resto del sitio. */
+.procedencia-ayuda {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--grafito-2);
+  margin: 0 0 var(--e4);
+}
 .procedencia-grid { display: grid; gap: var(--e3); }
 .fuente {
   border-left: 2px solid var(--anotacion);
@@ -679,8 +694,14 @@ code {
 }
 .chip-alta { background: var(--firme-suave); color: var(--firme); border-color: transparent; }
 .chip-media { background: transparent; color: var(--grafito-2); }
+/* con-dudas es la unica que debe llamar la atencion: es lo que hay que
+   preguntarle a la docente antes del parcial. Confianza baja comparte el
+   tono porque tambien pide leer con cuidado. */
 .chip-baja, .chip-con-dudas { background: var(--disputa-suave); color: var(--disputa); border-color: transparent; }
-.chip-borrador { background: var(--vector-suave); color: var(--vector); border-color: transparent; }
+/* Sin revisar todavia no es una alarma: es el estado normal de una leccion
+   recien escrita. Gritar aqui entrena al lector a ignorar el color cuando
+   de verdad importa (con-dudas). */
+.chip-borrador { background: transparent; color: var(--grafito-2); border-style: dashed; }
 
 /* ---------- matematica ---------- */
 /* Un bloque \begin{aligned} puede ser mas ancho que un movil. Se desborda
@@ -883,6 +904,26 @@ tr:last-child td { border-bottom: none; }
     transition: transform 0.18s ease;
   }
   .nav-oculta .nav { display: block; transform: translateX(-101%); }
+
+  /* El menu es un cajon que se monta ENCIMA del contenido, no al lado: por
+     eso necesita un fondo opaco propio. Sin el, la franja de contenido que
+     queda a la derecha del cajon (390px de pantalla - 290px de menu = un
+     resto angosto) se ve como texto cortado pegado al menu, que es
+     exactamente el solapamiento que se queria evitar. */
+  .nav-fondo {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 25;
+    background: rgb(10 14 21 / 0.55);
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  .nav-oculta .nav-fondo { display: none; }
+  /* Con el cajon abierto la pagina de atras no se desplaza: uno solo scrollea
+     el menu, como en cualquier menu movil. */
+  html:not(.nav-oculta) { overflow: hidden; }
 
   .contenido { grid-column: 1; grid-row: 1; padding: 58px var(--e4) var(--e7); }
   .columna > .ancho { margin-inline: 0; width: 100%; }

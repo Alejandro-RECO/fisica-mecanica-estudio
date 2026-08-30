@@ -55,3 +55,13 @@ No entra el razonamiento que llevó a la decisión, solo la decisión.
 - **2026-08-30** — Los vectores se escriben **con flecha** (`\vec{A}`), nunca en negrita, y la
   magnitud es la misma letra sin flecha. Es la notación de la docente en las 28 diapositivas.
   OpenStax usa negrita **y** flecha; gana ella. Los unitarios llevan sombrero.
+- **2026-08-30** — **Alcance: solo lo que está en la diapositiva.** Se deduce únicamente para cerrar
+  un ejercicio que ella deja en blanco, llenar una tabla vacía, dar el paso algebraico que falta o
+  poner **un** ejemplo numérico. Fuera: contexto enciclopédico, temas de semanas futuras, temas que
+  no están en el programa, segundos ejemplos. Una fuente abierta sirve para **verificar** un dato de
+  ella, no para agregar material; si confirma lo escrito sin cambiar nada, no se cita.
+- **2026-08-30** — **Presupuesto por unidad:** 7 agentes (1 curador + 6 tutores), **una** pasada de
+  revisión sobre toda la unidad, ~4 min por agente. Las correcciones de menos de 5 líneas las aplica
+  el orquestador con `Edit`. **Nadie reabre una fuente ya fichada**: la ficha del curador lleva la
+  transcripción y los tutores trabajan de ahí. Medido: la unidad `vectores` costó 18 invocaciones y
+  tres horas, y el mismo PDF se abrió doce veces.

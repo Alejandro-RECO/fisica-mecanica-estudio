@@ -18,11 +18,11 @@ const { fuentes } = Astro.props;
 
 const rotulos: Record<string, string> = {
   diapositivas: 'Diapositiva',
-  tablero: 'Tablero',
-  apuntes: 'Apuntes',
+  tablero: 'Tablero, en clase',
+  apuntes: 'Apuntes propios',
   taller: 'Taller',
-  abierta: 'Fuente abierta',
-  deduccion: 'Deducido aquí',
+  abierta: 'Fuente externa verificada',
+  deduccion: 'Lo dedujo este sitio',
 };
 
 // Solo el nombre del archivo o el dominio: la ruta completa no aporta al leer.
@@ -32,6 +32,7 @@ const corto = (ref?: string) =>
 
 <aside class="procedencia amplia" aria-labelledby="procedencia-titulo">
   <p class="procedencia-titulo" id="procedencia-titulo">De dónde salió cada cosa</p>
+  <p class="procedencia-ayuda">Para comparar contra tu clase, diapositiva por diapositiva.</p>
 
   <div class="procedencia-grid">
     {

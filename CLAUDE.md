@@ -57,6 +57,26 @@ ahí, lo buscas con `Grep` por concepto.
 **Una pregunta no lanza un agente.** Si lo que quiere es entender algo ahora, respondes en el chat.
 Lanzar `tutor-fisica` para una duda es pagar un contexto aislado para recibir un párrafo.
 
+### Presupuesto: una unidad no puede costar una tarde
+
+Medido el 2026-08-30: la unidad `vectores` costó **18 invocaciones de agente y unas tres horas**.
+Eso es un fallo de orquestación, no el precio del trabajo. Los topes:
+
+| Regla | Tope |
+|---|---|
+| Agentes por unidad | **7**: 1 `curador-clase` + 6 `tutor-fisica` |
+| Pasadas de revisión | **1**, sobre toda la unidad, no una por lección |
+| Duración de un agente | **~4 minutos**. Si necesita más, la tarea estaba mal acotada: pártela |
+| Correcciones de menos de 5 líneas | **Las aplicas tú con `Edit`.** No abras un agente para cambiar un número |
+
+**Nadie reabre una fuente ya fichada.** El PDF lo lee `curador-clase` **una vez**, y su ficha lleva
+la transcripción literal de cada diapositiva. Los tutores trabajan de la ficha; el revisor solo
+vuelve a la imagen si sospecha de una transcripción concreta. En la corrida de vectores el mismo PDF
+se abrió doce veces.
+
+**Los reparos se acumulan y se aplican juntos.** Una lección se corrige una vez, no una vez por
+reparo.
+
 ### Tu autonomía
 
 Corres la cadena completa sin pedir permiso: capturar, generar, validar, publicar. **Te detienes y
@@ -138,11 +158,38 @@ antes de tocar UI. **No hay tokens heredados de ningún otro proyecto.** Una vez
 dirección se registra en `memoria/decisiones.md` y a partir de ahí es estable: se consulta, no se
 reinventa en cada vista.
 
-## Profundidad por defecto: nivel parcial
+## Alcance: lo que está en la diapositiva, y nada más
 
-Cada lección deduce la fórmula, explica el porqué físico y llega hasta el tipo de problema que ella
-pondría en el examen. No es un resumen introductorio ni un tratado con derivación formal completa:
-es el punto donde comprensión y utilidad coinciden.
+**La regla que manda sobre todas las demás de esta sección.** Una lección cubre **los temas de las
+diapositivas que la ficha le asignó**. Explicarlos bien —el porqué físico, la deducción de la
+fórmula, el tipo de problema que ella pondría— es el trabajo. Agregar temas que ella no tocó **no**
+es profundidad: es ruido que compite por el tiempo de estudio antes de un parcial.
+
+**Se puede deducir, y solo para esto:**
+
+1. Resolver un ejercicio que ella plantea y deja sin respuesta.
+2. Llenar una tabla que ella deja en blanco.
+3. El paso algebraico que une dos cosas que ella sí escribe.
+4. **Un** ejemplo numérico por lección, del tipo que ella pondría, cuando la diapositiva no trae
+   ninguno resuelto.
+
+**No entra, aunque sea correcto y aunque tenga fuente:**
+
+- Contexto histórico o enciclopédico. Si su tabla de prefijos va de yocto a yotta, la lección va de
+  yocto a yotta: que el SI tenga cuatro prefijos más desde 2022 es cierto y es **ruido**.
+- Temas de semanas futuras. Un enlace de una línea a la semana que viene está bien; desarrollar el
+  tema, no.
+- Temas que no están en el programa de 16 semanas. Se comprueba en `docs/mapa-unidades.md` antes de
+  escribirlo, no después.
+- Segundos y terceros ejemplos, variantes, casos exóticos.
+
+**Fuente abierta: para verificar, no para agregar.** Una URL sirve para comprobar un dato que ella
+da —que la pulgada es exacta, que el pie también lo es— y ahí sí se cita con fecha. **No** sirve
+para traer material nuevo a la lección. Si la verificación confirma lo que ya estaba escrito y no
+cambia una sola palabra, no se cita: no aporta y alarga el riel de procedencia.
+
+**La prueba:** si un párrafo desapareciera y el estudiante no resolvería peor ningún problema de
+esas diapositivas, sobra.
 
 ## Comandos
 

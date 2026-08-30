@@ -19,7 +19,6 @@ errores_frecuentes:
   - Creer que una ecuación dimensionalmente homogénea ya es correcta; la condición es necesaria, no suficiente
   - Verificar solo dos términos de la ecuación y no cada sumando por separado
   - Esperar que el análisis dimensional entregue la fórmula completa, con constante numérica incluida
-  - Meter una cantidad con dimensiones dentro de un seno, un logaritmo o un exponente
 tiempo_estudio_min: 35
 
 esencial:
@@ -65,18 +64,6 @@ fuentes:
     diapositiva: 7
     fecha: 2026-08-30
     aporta: "Tabla del programa oficial de 16 semanas, que empieza en esta diapositiva y continúa en la 8: la aceleración centrípeta se cubre en la semana 6, fuera de esta unidad, y la semana 8 es «Fricción y planos inclinados. Segunda ley aplicada a movimiento circular»."
-  - tipo: abierta
-    ref: "https://openstax.org/books/university-physics-volume-1/pages/1-4-dimensional-analysis"
-    fecha: 2026-08-30
-    aporta: "Confirma la regla de homogeneidad dimensional término por término, que el método no determina los factores adimensionales y que los argumentos de las funciones trigonométricas, logarítmicas y exponenciales deben ser adimensionales. No trae la justificación por serie de potencias, que aquí va aparte como deducción."
-  - tipo: abierta
-    ref: "https://openstax.org/books/university-physics-volume-1/pages/15-4-pendulums"
-    fecha: 2026-08-30
-    aporta: "Confirma el resultado del ejercicio del péndulo, T = 2π√(L/g): el periodo es completamente independiente de otros factores como la masa, y solo es casi independiente de la amplitud, en particular si el ángulo es menor que unos 15°. Es también la referencia de que el periodo se escribe T y no τ."
-  - tipo: abierta
-    ref: "https://hyperphysics.gsu.edu/hbase/cf.html"
-    fecha: 2026-08-30
-    aporta: "Confirma que la aceleración centrípeta es a = v²/r sin constante numérica delante, es decir que en este caso k = 1 resulta ser el valor correcto. No sostiene que el análisis dimensional lo demuestre: ese valor sale de la deducción del movimiento circular, en la semana 6."
   - tipo: deduccion
     aporta: "Solución completa de la diapositiva 26: m = 2, n = −1 y a = k·v²/r. La diapositiva solo plantea el enunciado."
   - tipo: deduccion
@@ -85,8 +72,6 @@ fuentes:
     aporta: "Por qué se pueden igualar los exponentes uno a uno: M, L y T son independientes, así que dos productos de potencias coinciden solo si coincide cada exponente."
   - tipo: deduccion
     aporta: "Límites del método: no fija constantes adimensionales, es ciego al signo, no distingue cantidades de igual dimensión y no reclama variables omitidas."
-  - tipo: deduccion
-    aporta: "Los argumentos de seno, coseno, exponencial y logaritmo son adimensionales, y eso se sigue de la propia homogeneidad al desarrollar la función en serie de potencias."
   - tipo: deduccion
     aporta: "Respuesta a la pregunta guía y uso del método como control de despejes durante el parcial."
   - tipo: deduccion
@@ -102,7 +87,7 @@ dudas_para_docente:
   - "La diapositiva 26 pide la forma más simple de la ecuación. ¿Espera la respuesta con la constante escrita, a = k·v²/r, o tomando k = 1?"
   - "¿En el parcial exige la comprobación dimensional escrita como paso del desarrollo, o solo el resultado final?"
   - "¿Cómo escribe la tercera ecuación de cinemática: v² = v₀² + 2a(x − x₀), v² = v₀² + 2aΔx, o v² = v₀² + 2ax dando por hecho x₀ = 0? Aquí se usó la primera forma, que es la general. No se puede cerrar hasta fichar cinematica1.pdf."
-  - "¿Escribe las funciones trigonométricas como sen o como sin? La respuesta fija el precedente de notación trigonométrica para todo el sitio; por ahora se escribe sen, que es la forma del español."
+  - "¿Escribe las funciones trigonométricas como sen o como sin? En el sitio se escribe sin, porque así aparece en su propia plantilla en VectoresFisica.pdf (dia. 22). No se cierra: sin es también el comando por defecto de LaTeX, así que pudo no ser una elección suya."
 
 confianza: alta
 estado: revisado
@@ -118,6 +103,7 @@ revision:
     - "Reparo corregido: un signo de implicación afirmaba que de a = k·v²/r se sigue a = v²/r. El análisis dimensional no da la constante adimensional; se separó en dos pasos y se dice explícitamente que tomar k = 1 no es una consecuencia lógica."
     - "El ejemplo de la diapositiva 25 reproduce el método y la notación de la docente, incluido el interrogante sobre el igual."
     - "Editada después de revisada, con autorización: la función trigonométrica pasó de sen a sin. Al fichar VectoresFisica.pdf apareció que la docente escribe «C = AB sin θ» en su propia plantilla (dia. 22), y ella es la autoridad final. Es el único cambio posterior a la revisión y no toca ninguna física."
+    - "Podada el 2026-08-30: fuera la justificacion por serie de potencias con la exponencial y el seno de omega t, fuera el contraste con la fisica real del pendulo (constante 2 pi, umbral de 15 grados) y fuera las tres fuentes externas que solo confirmaban lo ya escrito. Nada de eso esta en las diapositivas 22 a 26. El ejercicio del pendulo se conserva porque aplica el metodo de exponentes incognita de la dia. 26."
 ---
 
 import Nota from '../../../componentes/Nota.astro';
@@ -444,21 +430,6 @@ respuesta falsa.
 4. **Las variables que no incluiste.** Si se te olvidó una cantidad de la que el fenómeno sí depende,
    el método no la reclama: te devuelve una respuesta coherente y equivocada.
 
-Y hay una regla que parece aparte y no lo es: **lo que va dentro de un seno, un coseno, un logaritmo
-o una exponencial es siempre adimensional**, y lo que sale también. Se sigue de la propia
-homogeneidad. La exponencial se puede escribir como una suma de potencias,
-
-$$
-e^{x} = 1 + x + \frac{x^{2}}{2} + \frac{x^{3}}{6} + \cdots
-$$
-
-y ahí se están sumando $x$, $x^{2}$ y $x^{3}$ en el mismo renglón. Si $x$ tuviera dimensión de
-tiempo, estarías sumando $T + T^{2} + T^{3}$, que es exactamente lo prohibido. La única salida es que
-$x$ sea adimensional. Por eso, cuando más adelante aparezca algo como
-$\sin(\omega t)$, puedes deducir de inmediato que $[\omega] = T^{-1}$: el producto
-$\omega t$ está obligado a no tener dimensiones, y la única manera de conseguirlo es que $\omega$
-tenga dimensión de uno sobre tiempo.
-
 ## El error que cuesta puntos
 
 <Nota tipo="ojo">
@@ -526,13 +497,10 @@ $$
 halla $\alpha$, $\beta$ y $\gamma$. Al periodo se le dice $\tau$ y no $T$ para no chocar con la $T$
 de la dimensión tiempo. ¿Qué te dice el valor que obtengas para $\gamma$?
 
-**Advertencia de notación, porque este cambio de letra es local a esta lección.** La docente y los
-libros del curso escriben el periodo como $T$ —OpenStax, por ejemplo, presenta el resultado del
-péndulo como $T = 2\pi\sqrt{\ell/g}$—, así que en el parcial espera ver $T$ y no $\tau$. Aquí se
-renombró únicamente para que en el mismo renglón no aparezca la misma letra significando dos cosas.
-Además, conviene saberlo desde ya: más adelante, en la semana 8 del programa —segunda ley de Newton
-aplicada al movimiento circular—, la letra $\tau$ es la que la convención general reserva para el
-torque. Ninguna de las dos letras es tuya para elegir en un examen: usa la de ella.
+**Advertencia de notación, porque este cambio de letra es local a esta lección.** El periodo se
+escribe normalmente $T$, así que en el parcial espera ver $T$ y no $\tau$. Aquí se renombró
+únicamente para que en el mismo renglón no aparezca la misma letra significando dos cosas. La letra
+no es tuya para elegir en un examen: usa la de ella.
 
 <div slot="solucion">
 
@@ -612,15 +580,6 @@ método no solo halla exponentes, también descarta variables, y ese es un resul
 antes de empezar. Y como siempre, $k$ queda sin determinar; peor aún, si el periodo dependiera de
 alguna cantidad adimensional —el ángulo de la amplitud, por ejemplo— esa dependencia podría estar
 escondida dentro de $k$ y el método ni se enteraría.
-
-Todo esto se puede contrastar con la física del péndulo, que no verás en esta unidad. El resultado
-conocido es $\tau = 2\pi\sqrt{\ell/g}$, y contra él se pueden medir las conclusiones de arriba. La
-dependencia con $\sqrt{\ell/g}$ es la que hallaste, así que los exponentes estaban bien. La constante
-vale $2\pi$, un número que el análisis dimensional jamás habría podido entregarte. Y la
-independencia de la masa es real, no un artefacto de la suposición. Lo más fino es la última
-sospecha: el periodo es solo *casi* independiente de la amplitud, y la fórmula se usa mientras el
-ángulo se mantenga por debajo de unos $15^{\circ}$. Es decir, la dependencia con la amplitud existe y
-estaba escondida donde temías, dentro de $k$, exactamente como el método advertía sin poder verla.
 
 </div>
 

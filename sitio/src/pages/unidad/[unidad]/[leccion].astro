@@ -33,11 +33,11 @@ const secciones = headings.filter((h) => h.depth === 2);
 
       <dl class="instrumentos">
         <div>
-          <dt>Confianza</dt>
+          <dt title="Qué tanto puedes apoyarte en esto para el parcial">Confianza</dt>
           <dd><Chip valor={d.confianza} /></dd>
         </div>
         <div>
-          <dt>Estado</dt>
+          <dt title="Si ya pasó por el revisor conceptual o si todavía es material nuevo">Revisión</dt>
           <dd><Chip valor={d.estado} /></dd>
         </div>
         <div>
@@ -48,14 +48,6 @@ const secciones = headings.filter((h) => h.depth === 2);
           <dt>Repaso</dt>
           <dd>{d.tiempo_repaso_min} min</dd>
         </div>
-        {
-          d.sesiones.length > 0 && (
-            <div>
-              <dt>Sesión</dt>
-              <dd>{d.sesiones.join(' · ')}</dd>
-            </div>
-          )
-        }
         <div>
           <dt>Fuentes</dt>
           <dd>{d.fuentes.length}</dd>

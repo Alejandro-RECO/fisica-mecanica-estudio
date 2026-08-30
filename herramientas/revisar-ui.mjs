@@ -71,6 +71,10 @@ for (const tema of ['light', 'dark']) {
           document.documentElement.classList.toggle('nav-oculta', m === 'plegado');
         }, menu);
         await pagina.evaluate(() => document.fonts.ready);
+        // El menu movil se desliza en 180ms (ver estudio.css). Sin esta espera
+        // la captura cae a mitad de la animacion y el menu sale a medio
+        // camino: parece solapado con el contenido sin estarlo de verdad.
+        await pagina.waitForTimeout(260);
 
         await pagina.screenshot({
           path: path.join(SALIDA, `${vista.nombre}-${pantalla.nombre}-${tema}-${menu}.png`),
@@ -117,6 +121,29 @@ for (const tema of ['light', 'dark']) {
         });
         for (const d of desalineados)
           problemas.push(`desalineado ${d} · ${vista.nombre}/${pantalla.nombre}/${menu}`);
+
+        // Solapamiento del menu sobre el contenido: en movil el menu es un
+        // cajon fijo que se monta ENCIMA de la pagina, no al lado. Si el
+        // cajon esta abierto y su caja se cruza con el titulo de la leccion,
+        // el punto de cruce tiene que pintar el menu (o su fondo) — nunca el
+        // titulo por debajo. Si pinta el titulo, se ve letra sobre letra.
+        const solapado = await pagina.evaluate(() => {
+          const nav = document.querySelector('.nav');
+          const fondo = document.querySelector('.nav-fondo');
+          const objetivo = document.querySelector('.contenido h1, .contenido .portada-titular');
+          if (!nav || !objetivo || getComputedStyle(nav).display === 'none') return false;
+          const rn = nav.getBoundingClientRect();
+          const ro = objetivo.getBoundingClientRect();
+          const ix = Math.max(rn.left, ro.left);
+          const iy = Math.max(rn.top, ro.top);
+          const ix2 = Math.min(rn.right, ro.right);
+          const iy2 = Math.min(rn.bottom, ro.bottom);
+          if (ix2 <= ix || iy2 <= iy) return false; // las cajas ni se tocan
+          const el = document.elementFromPoint((ix + ix2) / 2, (iy + iy2) / 2);
+          const cubierto = el && (nav.contains(el) || el === nav || (fondo && (fondo.contains(el) || el === fondo)));
+          return !cubierto;
+        });
+        if (solapado) problemas.push(`solapamiento menu/contenido · ${vista.nombre}/${pantalla.nombre}/${menu}`);
       }
     }
 

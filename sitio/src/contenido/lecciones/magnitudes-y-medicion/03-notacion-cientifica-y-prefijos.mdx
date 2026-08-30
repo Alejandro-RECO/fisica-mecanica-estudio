@@ -74,10 +74,6 @@ fuentes:
     ref: "https://www.nist.gov/pml/owm/metric-si-prefixes"
     fecha: 2026-08-30
     aporta: "La tabla oficial del SI tiene 24 prefijos e incluye deca o deka (da, 10¹) y hecto (h, 10²), que son los dos que la tabla de la diapositiva 16 omite al saltar de 10⁻¹ a 10³."
-  - tipo: abierta
-    ref: "https://www.nist.gov/pml/owm/metric-si-prefixes"
-    fecha: 2026-08-30
-    aporta: "Los cuatro prefijos añadidos al SI en 2022 —ronna (R, 10²⁷), quetta (Q, 10³⁰), ronto (r, 10⁻²⁷) y quecto (q, 10⁻³⁰)—, que la tabla de la docente no trae porque se detiene en yotta y yocto."
   - tipo: deduccion
     aporta: "Segunda parte del ejercicio propuesto (0,000045 m a μm y a mm), para practicar el patrón de la diapositiva 18."
 
@@ -111,6 +107,7 @@ revision:
     - "Reparo corregido: decía que correr la coma un lugar es un error del 1000 %; un factor de diez es 900 % hacia arriba y 90 % hacia abajo. Se quitó el porcentaje."
     - "Reparo corregido: el frontmatter atribuía 0.0032 a las diapositivas 14 y 19, y está en la 15."
     - "Confianza media, no alta, únicamente porque la disputa del separador sigue abierta. La física y la aritmética dan para alta."
+    - "Podada el 2026-08-30: se quito la nota con los cuatro prefijos anadidos al SI en 2022 (ronna, quetta, ronto, quecto) y su fuente. Su tabla va de yocto a yotta y eso no cambia nada en un parcial. Se conserva la mencion de deca y hecto porque son un hueco de su propia tabla y hay una duda abierta sobre si entran."
 ---
 
 import Nota from '../../../componentes/Nota.astro';
@@ -286,16 +283,6 @@ intermedios, **deca** (da, $10^{1}$) y **hecto** (h, $10^{2}$). Los dos son ofic
 en física casi no se usen: así los lista el NIST en su tabla de prefijos métricos. Estudia la tabla
 como está aquí, que es como ella la dio, pero si te aparece deca o hecto en un enunciado ya sabes
 cuánto valen.
-
-</Nota>
-
-<Nota tipo="info" titulo="Contexto: la tabla oficial es más larga">
-
-El SI tiene hoy **24 prefijos**: los dieciocho de la tabla de arriba, más deca y hecto, más cuatro
-que se añadieron en 2022 y que amplían los dos extremos. Por arriba, **ronna** (R, $10^{27}$) y
-**quetta** (Q, $10^{30}$); por abajo, **ronto** (r, $10^{-27}$) y **quecto** (q, $10^{-30}$). **La
-tabla que se estudia para el parcial es la de la docente**, que se detiene en yotta y en yocto: esto
-es solo contexto, para que no te sorprenda encontrarlo en otro lado.
 
 </Nota>
 
