@@ -1,14 +1,14 @@
 ---
-titulo: Cinemática en una dimensión
-orden: 1
+titulo: Movimiento en una dimensión
+orden: 4
 resumen: >
-  Describir el movimiento sobre una recta sin preguntarse todavía qué lo causa: posición,
-  desplazamiento, velocidad y aceleración.
-estado: en-curso
+  Describir el movimiento sobre una recta sin preguntarse todavía qué lo causa: posición, velocidad, aceleración y sus gráficas.
+estado: sin-material
 ---
 
 Esta unidad describe **cómo** se mueve algo, no **por qué**. Esa segunda pregunta es de dinámica y
-llega después.
+llega en la semana 7.
 
-Todo lo de aquí se apoya en una sola decisión que se toma antes de escribir el primer número:
-declarar el sistema de referencia. Sin eso, ningún signo significa nada.
+Entra el movimiento rectilíneo uniforme, el uniformemente acelerado y la caída libre, que es el
+mismo problema con una aceleración conocida. Y entra el análisis de gráficas, que es donde se ve si
+de verdad entendiste: la pendiente de una curva de posición contra tiempo *es* la velocidad.

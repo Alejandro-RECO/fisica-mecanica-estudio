@@ -23,3 +23,13 @@ No entra el razonamiento que llevó a la decisión, solo la decisión.
   PyMuPDF (ya instalado). No se instala poppler: no hace falta.
 - **2026-08-30** — La unidad piloto es `cinematica-1d`. Es el núcleo de la materia, es lo más
   reciente dictado, y con `graficas-cinematica` forma un bloque de 33 páginas.
+- **2026-08-30** — **Revocada la anterior**: el piloto pasa a ser `magnitudes-y-medicion`. El
+  programa la pone en la semana 1 y el Parcial 1 es del 31 ago al 4 sep. Cinemática entra después.
+- **2026-08-30** — `Introduccion.pdf` es el syllabus, no contenido de física: alimenta `docs/` y no
+  genera ninguna lección. Clasificarlo como material de estudio habría producido una "lección" sobre
+  reglas administrativas.
+- **2026-08-30** — Las unidades del sitio salen del programa oficial de 16 semanas, no de los
+  nombres de archivo de las presentaciones. Son ocho y sus ids no cambian: son rutas.
+- **2026-08-30** — Bibliografía del curso: Tipler, Young & Freedman, Serway, Fishbane. No se tienen
+  los libros, así que **no se citan páginas**; se usan para saber qué convención esperar. Ver
+  `docs/bibliografia.md`.
