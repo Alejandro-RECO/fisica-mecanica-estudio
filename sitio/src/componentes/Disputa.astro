@@ -1,0 +1,52 @@
+---
+// Una contradiccion entre fuentes que nadie resolvio todavia.
+//
+// Esto se muestra, no se esconde. Estudiar sabiendo donde esta el hueco
+// es mejor que estudiar una version inventada que suena segura.
+interface Contradiccion {
+  afirmacion: string;
+  dice_a: string;
+  dice_b: string;
+  lectura_provisional: string;
+  por_que: string;
+}
+interface Props {
+  contradicciones: Contradiccion[];
+  dudas?: string[];
+}
+const { contradicciones, dudas = [] } = Astro.props;
+---
+
+{
+  contradicciones.map((c) => (
+    <div class="disputa">
+      <p class="disputa-titulo">Las fuentes no coinciden — {c.afirmacion}</p>
+      <div class="disputa-par">
+        <dl class="disputa-lado">
+          <dt>Una dice</dt>
+          <dd>{c.dice_a}</dd>
+        </dl>
+        <dl class="disputa-lado">
+          <dt>Otra dice</dt>
+          <dd>{c.dice_b}</dd>
+        </dl>
+      </div>
+      <p class="disputa-lectura">
+        <strong>Mientras tanto se usa:</strong> {c.lectura_provisional}. {c.por_que}
+      </p>
+    </div>
+  ))
+}
+
+{
+  dudas.length > 0 && (
+    <div class="disputa">
+      <p class="disputa-titulo">Preguntarle a la docente</p>
+      <ul>
+        {dudas.map((d) => (
+          <li>{d}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}

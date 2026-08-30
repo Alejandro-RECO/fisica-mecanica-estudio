@@ -1,0 +1,66 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../../diseno/Base.astro';
+import Traza from '../../../componentes/Traza.astro';
+import Disputa from '../../../componentes/Disputa.astro';
+
+export async function getStaticPaths() {
+  const lecciones = await getCollection('lecciones');
+  return lecciones.map((l) => ({
+    params: { unidad: l.data.unidad, leccion: l.id.split('/').pop()! },
+    props: { leccion: l },
+  }));
+}
+
+const { leccion } = Astro.props;
+const { Content } = await render(leccion);
+const d = leccion.data;
+
+const unidad = (await getCollection('unidades')).find((u) => u.id === d.unidad);
+---
+
+<Base titulo={d.titulo} descripcion={d.pregunta_guia}>
+  <main class="contenido leccion" data-pagefind-body>
+    <header class="leccion-cabecera">
+      <p class="eyebrow">
+        <a href="/">Estudio</a> — <a href={`/unidad/${d.unidad}/`}>{unidad?.data.titulo ?? d.unidad}</a>
+      </p>
+      <h1>{d.titulo}</h1>
+    </header>
+
+    <p class="pregunta-guia">{d.pregunta_guia}</p>
+
+    <Disputa contradicciones={d.contradicciones} dudas={d.dudas_para_docente} />
+
+    <section class="esencial">
+      <h2>Si solo te queda tiempo para esto</h2>
+      <ul class="esencial-lista">
+        {d.esencial.map((e) => <li><span>{e}</span></li>)}
+      </ul>
+    </section>
+
+    <Content />
+
+    {
+      d.errores_frecuentes.length > 0 && (
+        <section class="amplia">
+          <h2>Donde se cae la gente</h2>
+          <ul>
+            {d.errores_frecuentes.map((e) => (
+              <li>{e.replace(/-/g, ' ')}</li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+  </main>
+
+  <Traza
+    fuentes={d.fuentes}
+    confianza={d.confianza}
+    estado={d.estado}
+    sesiones={d.sesiones}
+    tiempoEstudio={d.tiempo_estudio_min}
+    tiempoRepaso={d.tiempo_repaso_min}
+  />
+</Base>

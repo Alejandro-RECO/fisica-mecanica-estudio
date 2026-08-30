@@ -1,0 +1,43 @@
+# Glosario del curso.
+#
+# Reglas: la definicion no puede ser circular, tiene ejemplo con unidades y
+# cabe en un tooltip. Los simbolos van en unicode plano (LT⁻¹, m/s²), no en
+# KaTeX: aqui no hay renderizador.
+
+- id: sistema-de-referencia
+  termino: Sistema de referencia
+  categoria: Cinemática
+  definicion: >
+    El punto y los ejes desde los que se mide la posición. Sin declararlo, un signo no
+    significa nada: decir que la aceleración es negativa solo tiene sentido si ya se dijo
+    hacia dónde apunta el eje positivo.
+  ejemplo: >
+    Con el eje y positivo hacia arriba, un objeto en caída libre tiene a = −9,81 m/s².
+    Con el eje hacia abajo, el mismo objeto tiene a = +9,81 m/s².
+  ver:
+    - desplazamiento
+
+- id: desplazamiento
+  termino: Desplazamiento
+  categoria: Cinemática
+  definicion: >
+    El cambio de posición: la posición final menos la inicial. Tiene signo y dirección,
+    y no depende del camino recorrido.
+  ejemplo: >
+    Si sales de tu casa, caminas 300 m y vuelves, recorriste 600 m de distancia pero tu
+    desplazamiento es 0 m.
+  ver:
+    - sistema-de-referencia
+    - velocidad-media
+
+- id: velocidad-media
+  termino: Velocidad media
+  categoria: Cinemática
+  definicion: >
+    El desplazamiento dividido entre el tiempo que tomó. Describe el viaje completo como
+    si hubiera sido uniforme, y por eso no describe ningún instante en particular.
+  ejemplo: >
+    Un bus que hace 120 km en 2 h tiene velocidad media de 60 km/h, aunque nunca haya
+    marcado exactamente 60 km/h en el velocímetro.
+  ver:
+    - desplazamiento

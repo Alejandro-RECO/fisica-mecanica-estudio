@@ -1,0 +1,13 @@
+# dependencias y artefactos de build
+sitio/node_modules/
+sitio/dist/
+sitio/.astro/
+
+# fuentes/ SI se versiona: una leccion que cita una foto borrada pierde el
+# sentido. La trazabilidad no sirve a medias.
+
+# sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log

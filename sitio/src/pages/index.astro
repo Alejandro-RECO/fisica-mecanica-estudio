@@ -1,0 +1,64 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../diseno/Base.astro';
+
+const unidades = (await getCollection('unidades')).sort((a, b) => a.data.orden - b.data.orden);
+const lecciones = await getCollection('lecciones');
+
+const cuenta = (id: string) => lecciones.filter((l) => l.data.unidad === id).length;
+const conDudas = lecciones.filter((l) => l.data.estado === 'con-dudas').length;
+---
+
+<Base
+  titulo="Estudio"
+  descripcion="Guía de estudio de Física Mecánica construida a partir del material real de cada clase."
+>
+  <main class="contenido">
+    <h1 class="portada-titular">Lo que se vio en clase, entendido.</h1>
+    <p class="portada-bajada">
+      Cada lección se arma con las diapositivas de la docente, las fotos del tablero y los apuntes de
+      la sesión. Todo lo que dice esta guía muestra de dónde salió, y lo que quedó en duda aparece
+      marcado en vez de rellenarse.
+    </p>
+
+    {
+      unidades.length === 0 ? (
+        <div class="vacio">
+          <p>
+            <strong>Todavía no hay material.</strong>
+          </p>
+          <p>
+            Guarda las diapositivas o la foto del tablero en <code>fuentes/</code> con el nombre{' '}
+            <code>YYYY-MM-DD_diapositivas_crudo.pdf</code> y corre <code>/capturar-clase</code>.
+          </p>
+        </div>
+      ) : (
+        <ul class="lista-unidades">
+          {unidades.map((u, i) => (
+            <li>
+              <a class="unidad-fila" href={`/unidad/${u.id}/`}>
+                <span class="unidad-n">{String(i).padStart(2, '0')}</span>
+                <span>
+                  <span class="unidad-nombre">{u.data.titulo}</span>
+                  <span class="unidad-resumen">{u.data.resumen}</span>
+                </span>
+                <span class="chip">
+                  {cuenta(u.id) === 0 ? 'sin material' : `${cuenta(u.id)} lecciones`}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+
+    {
+      conDudas > 0 && (
+        <p class="eyebrow" style="margin-top: var(--e6)">
+          {conDudas} {conDudas === 1 ? 'lección tiene' : 'lecciones tienen'} una duda abierta para
+          preguntarle a la docente.
+        </p>
+      )
+    }
+  </main>
+</Base>

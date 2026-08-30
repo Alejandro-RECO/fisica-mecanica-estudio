@@ -1,0 +1,43 @@
+---
+import Base from '../diseno/Base.astro';
+---
+
+<Base titulo="Buscar" descripcion="Buscar un concepto en todas las lecciones.">
+  <main class="contenido">
+    <header class="leccion-cabecera">
+      <p class="eyebrow"><a href="/">Estudio</a> — Buscar</p>
+      <h1>Buscar un concepto</h1>
+      <p class="portada-bajada">
+        Busca en el texto de todas las lecciones. Útil cuando recuerdas la idea pero no en qué unidad
+        se vio.
+      </p>
+    </header>
+
+    <div id="buscador"></div>
+
+    <noscript>
+      <div class="vacio">
+        <p>El buscador necesita JavaScript. Navega por unidad desde el menú de la izquierda.</p>
+      </div>
+    </noscript>
+  </main>
+
+  <!-- Pagefind indexa el HTML ya construido, asi que solo existe despues de
+       npm run build. En npm run dev el contenedor queda vacio: es lo esperado. -->
+  <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
+  <script is:inline src="/pagefind/pagefind-ui.js"></script>
+  <script is:inline>
+    window.addEventListener('DOMContentLoaded', () => {
+      if (typeof PagefindUI === 'undefined') return;
+      new PagefindUI({
+        element: '#buscador',
+        showSubResults: true,
+        showImages: false,
+        translations: {
+          placeholder: 'Buscar en las lecciones',
+          zero_results: 'Nada para [SEARCH_TERM]',
+        },
+      });
+    });
+  </script>
+</Base>

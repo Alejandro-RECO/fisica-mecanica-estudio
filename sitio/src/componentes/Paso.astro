@@ -1,0 +1,15 @@
+---
+// Un renglon del desarrollo. La razon es lo que se transfiere al examen;
+// el que se olvida. Por eso razon no es opcional por costumbre.
+interface Props {
+  n: number | string;
+  razon?: string;
+}
+const { n, razon } = Astro.props;
+---
+
+<div class="paso">
+  <div class="paso-n">{n}</div>
+  <div class="paso-cuerpo"><slot /></div>
+  {razon && <p class="paso-razon">{razon}</p>}
+</div>

@@ -1,0 +1,63 @@
+---
+// La navegacion se deriva de las colecciones con getCollection(). Nunca se
+// escribe a mano una lista de lecciones: eso crearia una segunda verdad que
+// se desactualiza en cuanto se agregue una clase.
+import { getCollection } from 'astro:content';
+import Chip from './Chip.astro';
+
+const unidades = (await getCollection('unidades')).sort((a, b) => a.data.orden - b.data.orden);
+const lecciones = await getCollection('lecciones');
+
+const ruta = Astro.url.pathname;
+
+const porUnidad = unidades.map((u) => ({
+  ...u,
+  suyas: lecciones
+    .filter((l) => l.data.unidad === u.id)
+    .sort((a, b) => a.data.orden - b.data.orden),
+}));
+---
+
+<nav class="nav no-print" aria-label="Unidades del curso">
+  <a class="nav-marca" href="/">
+    Física Mecánica
+    <span>Estudio</span>
+  </a>
+
+  {
+    porUnidad.map((u, i) => (
+      <div class="nav-grupo">
+        <a class="nav-unidad" href={`/unidad/${u.id}/`}>
+          <span class="nav-n">{String(i).padStart(2, '0')}</span>
+          <span>{u.data.titulo}</span>
+        </a>
+
+        {u.suyas.length > 0 ? (
+          <ul>
+            {u.suyas.map((l) => {
+              const href = `/unidad/${u.id}/${l.id.split('/').pop()}/`;
+              return (
+                <li>
+                  <a
+                    class="nav-leccion"
+                    href={href}
+                    aria-current={ruta === href ? 'page' : undefined}
+                  >
+                    <span class="nav-n">{l.data.orden}</span>
+                    <span>{l.data.titulo}</span>
+                    {l.data.estado === 'con-dudas' && <Chip valor="con-dudas" />}
+                    {l.data.estado === 'borrador' && <Chip valor="borrador" />}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        ) : null}
+      </div>
+    ))
+  }
+
+  <div class="nav-pie">
+    <a href="/buscar/">Buscar</a>
+  </div>
+</nav>

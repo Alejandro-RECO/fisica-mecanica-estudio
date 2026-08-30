@@ -1,0 +1,67 @@
+---
+import Nav from '../componentes/Nav.astro';
+import '../estilos/estudio.css';
+import 'katex/dist/katex.min.css';
+
+interface Props {
+  titulo: string;
+  descripcion?: string;
+}
+const { titulo, descripcion } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titulo} · Física Mecánica</title>
+    {descripcion && <meta name="description" content={descripcion} />}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap"
+    />
+
+    <script is:inline>
+      // Se aplica antes de pintar para que el modo no parpadee al cargar.
+      if (localStorage.getItem('modo') === 'repaso') {
+        document.documentElement.classList.add('solo-esencial');
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="armazon">
+      <Nav />
+      <slot />
+    </div>
+
+    <button class="modo no-print" type="button" aria-pressed="false" id="modo">
+      <span class="modo-punto" aria-hidden="true"></span>
+      <span id="modo-texto">Modo estudio</span>
+    </button>
+
+    <script is:inline>
+      const boton = document.getElementById('modo');
+      const texto = document.getElementById('modo-texto');
+      const raiz = document.documentElement;
+
+      const pintar = () => {
+        const repaso = raiz.classList.contains('solo-esencial');
+        texto.textContent = repaso ? 'Modo repaso' : 'Modo estudio';
+        boton.setAttribute('aria-pressed', String(repaso));
+      };
+
+      boton.addEventListener('click', () => {
+        const repaso = raiz.classList.toggle('solo-esencial');
+        localStorage.setItem('modo', repaso ? 'repaso' : 'estudio');
+        pintar();
+      });
+
+      pintar();
+    </script>
+  </body>
+</html>

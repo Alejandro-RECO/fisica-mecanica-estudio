@@ -1,0 +1,16 @@
+---
+// Ejemplo resuelto paso a paso. Va marcado .amplia porque en modo repaso
+// se oculta: el dia del parcial no se releen los desarrollos completos.
+interface Props {
+  titulo: string;
+}
+const { titulo } = Astro.props;
+---
+
+<section class="ejemplo amplia">
+  <header class="ejemplo-cabecera">
+    <span>Ejemplo resuelto</span>
+    <span class="ejemplo-titulo">{titulo}</span>
+  </header>
+  <slot />
+</section>

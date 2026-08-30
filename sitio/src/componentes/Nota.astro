@@ -1,0 +1,17 @@
+---
+// Bloque semantico al margen del razonamiento.
+//   info  — contexto que ayuda pero no es central
+//   ojo   — lo que se malinterpreta, la trampa del tema
+//   clave — lo que hay que retener si solo se retiene una cosa
+interface Props {
+  tipo?: 'info' | 'ojo' | 'clave';
+  titulo?: string;
+}
+const { tipo = 'info', titulo } = Astro.props;
+const rotulo = titulo ?? { info: 'Contexto', ojo: 'Ojo con esto', clave: 'Lo clave' }[tipo];
+---
+
+<aside class={`nota nota-${tipo}`}>
+  <p class="nota-titulo">{rotulo}</p>
+  <slot />
+</aside>

@@ -1,0 +1,27 @@
+---
+// Ejercicio propuesto. La solucion va dentro del slot "solucion" y queda
+// detras de un <details>: el objetivo es aprender el proceso, no tener
+// las respuestas a la mano.
+interface Props {
+  titulo?: string;
+}
+const { titulo } = Astro.props;
+---
+
+<section class="ejercicio amplia">
+  <header class="ejercicio-cabecera">
+    <span>Te toca</span>
+    {titulo && <span class="ejercicio-titulo">{titulo}</span>}
+  </header>
+  <slot />
+  {
+    Astro.slots.has('solucion') && (
+      <details class="spoiler">
+        <summary>Ver la solucion cuando ya lo intentaste</summary>
+        <div class="spoiler-cuerpo">
+          <slot name="solucion" />
+        </div>
+      </details>
+    )
+  }
+</section>

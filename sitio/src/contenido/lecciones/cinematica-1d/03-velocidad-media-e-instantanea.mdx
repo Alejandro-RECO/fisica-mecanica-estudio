@@ -1,0 +1,161 @@
+---
+titulo: Velocidad media y velocidad instantánea
+unidad: cinematica-1d
+orden: 3
+sesiones: [S03]
+
+pregunta_guia: >
+  Un bus hace los 120 km de Bogotá a Villeta en 2 h. ¿En algún momento el velocímetro
+  marcó exactamente 60 km/h?
+prerrequisitos:
+  - sistema-de-referencia
+  - desplazamiento
+conceptos_clave:
+  - La velocidad media no describe ningún instante del recorrido.
+  - La velocidad instantánea es el límite de la media cuando el intervalo tiende a cero.
+  - Rapidez es la magnitud de la velocidad; no son sinónimos.
+errores_frecuentes:
+  - Confundir rapidez con velocidad
+  - Promediar velocidades en vez de promediar sobre el tiempo
+  - Usar la distancia recorrida donde va el desplazamiento
+tiempo_estudio_min: 35
+
+esencial:
+  - "v media = Δx / Δt, con Δx desplazamiento — no distancia recorrida."
+  - "v media = 0 no significa que el objeto estuvo quieto."
+  - "El promedio de dos velocidades solo vale si duraron lo mismo."
+  - "La instantánea es la pendiente de la recta tangente a la curva x-t."
+tiempo_repaso_min: 6
+
+fuentes:
+  - tipo: deduccion
+    aporta: >
+      Todo el contenido de esta lección. Es una ficha de prueba escrita para verificar el
+      pipeline, no material transcrito de una clase real.
+
+confianza: media
+estado: borrador
+---
+
+import Nota from '../../../componentes/Nota.astro';
+import Paso from '../../../componentes/Paso.astro';
+import Ejemplo from '../../../componentes/Ejemplo.astro';
+import Ejercicio from '../../../componentes/Ejercicio.astro';
+
+<Nota tipo="ojo" titulo="Ficha de prueba">
+Esta lección **no salió de una clase real**. Existe para verificar que el pipeline funciona de punta
+a punta y para que se vea el diseño del sitio. Cuando fiches tu primera clase con `/capturar-clase`,
+reemplázala.
+</Nota>
+
+## De qué se trata
+
+El bus salió a las 6:00 y llegó a las 8:00. Recorrió 120 km. Con eso ya se puede decir algo del
+viaje completo: en promedio avanzó 60 km cada hora.
+
+Pero fíjate en lo que ese número **no** dice. No dice si arrancó despacio saliendo de Bogotá, ni si
+se detuvo en un trancón, ni si en la bajada iba a 90 km/h. Describe el viaje entero **como si**
+hubiera sido uniforme. Es un resumen, y como todo resumen, borra lo que pasó adentro.
+
+La velocidad instantánea es lo contrario: es lo que marca el velocímetro justo ahora, en este
+instante y no en otro. Toda la lección vive en la tensión entre esas dos ideas.
+
+## La construcción formal
+
+La velocidad media es el desplazamiento dividido entre el tiempo que tomó:
+
+$$\bar{v} = \frac{\Delta x}{\Delta t} = \frac{x_f - x_i}{t_f - t_i}$$
+
+donde $\Delta x$ es el **desplazamiento** en metros y $\Delta t$ el intervalo en segundos. La unidad
+resultante es $\mathrm{m/s}$, y dimensionalmente $[\bar{v}] = LT^{-1}$.
+
+<Nota tipo="ojo">
+En el numerador va el **desplazamiento**, no la distancia recorrida. Si el bus hubiera ido a Villeta
+y vuelto a Bogotá en esas 2 h, su desplazamiento sería $0\ \mathrm{km}$ y su velocidad media
+$0\ \mathrm{km/h}$ — aunque no haya estado quieto ni un segundo.
+</Nota>
+
+Ahora el tránsito hacia la instantánea. Tomemos intervalos cada vez más cortos alrededor de un mismo
+instante $t$. Cada uno da una velocidad media distinta, pero a medida que $\Delta t$ se encoge, esos
+valores se van pareciendo entre sí. La velocidad instantánea es el valor al que tienden:
+
+$$v(t) = \lim_{\Delta t \to 0} \frac{\Delta x}{\Delta t} = \frac{dx}{dt}$$
+
+<div class="amplia">
+
+En la gráfica de posición contra tiempo esto tiene una lectura directa: la velocidad media es la
+pendiente de la **recta secante** que une dos puntos de la curva, y la instantánea es la pendiente de
+la **recta tangente** en un punto. Acercar los dos puntos hasta que se toquen es exactamente el paso
+al límite.
+
+## Qué significa cada parte
+
+Vale la pena forzar los casos extremos, porque ahí es donde se ve si entendiste:
+
+| Si pasa esto | Entonces |
+|---|---|
+| $\Delta x = 0$ con $\Delta t \neq 0$ | La velocidad media es cero: volvió al punto de partida |
+| $\Delta t \to 0$ | La media se convierte en la instantánea |
+| $\Delta x < 0$ | Se movió en sentido contrario al eje positivo |
+| La curva $x$-$t$ es una recta | Media e instantánea coinciden: el movimiento es uniforme |
+
+Ese último renglón responde la pregunta de arriba a medias. Si el bus hubiera ido a velocidad
+constante, el velocímetro habría marcado 60 km/h todo el tiempo. Como no lo hizo, hubo momentos por
+debajo y momentos por encima — y como la velocidad cambia de forma continua, **tuvo que pasar por
+60 km/h en algún instante**. No porque el promedio lo obligue, sino porque no se puede pasar de 40 a
+80 sin tocar 60.
+
+<Ejemplo titulo="Cuándo sí se pueden promediar dos velocidades">
+
+Un ciclista recorre 30 km a 15 km/h y luego 30 km a 30 km/h. ¿Cuál es su velocidad media?
+
+<Paso n="1" razon="El promedio de las velocidades solo vale si los dos tramos duraron lo mismo, y aquí no es el caso.">
+La respuesta intuitiva sería $(15 + 30)/2 = 22{,}5\ \mathrm{km/h}$. Es incorrecta.
+</Paso>
+
+<Paso n="2" razon="La definición pide desplazamiento total sobre tiempo total, así que hay que calcular el tiempo de cada tramo.">
+$$t_1 = \frac{30\ \mathrm{km}}{15\ \mathrm{km/h}} = 2\ \mathrm{h}, \qquad t_2 = \frac{30\ \mathrm{km}}{30\ \mathrm{km/h}} = 1\ \mathrm{h}$$
+</Paso>
+
+<Paso n="3" razon="Ahora sí se aplica la definición sobre el viaje completo.">
+$$\bar{v} = \frac{60\ \mathrm{km}}{3\ \mathrm{h}} = 20\ \mathrm{km/h}$$
+</Paso>
+
+<Paso n="4" razon="Comprobación: el resultado tiene unidades de velocidad y queda entre las dos velocidades, más cerca de la lenta porque en ella pasó el doble de tiempo. Tiene sentido.">
+$[\bar v] = LT^{-1}$. El valor $20\ \mathrm{km/h}$ está entre 15 y 30, y sesgado hacia 15.
+</Paso>
+
+</Ejemplo>
+
+</div>
+
+## Qué se malinterpreta
+
+**Rapidez no es velocidad.** La velocidad tiene signo y dirección; la rapidez es su magnitud, siempre
+positiva. Un carro que va a $-20\ \mathrm{m/s}$ tiene rapidez de $20\ \mathrm{m/s}$. El velocímetro
+mide rapidez, no velocidad: por eso nunca marca números negativos.
+
+**La rapidez media no es la magnitud de la velocidad media.** La rapidez media usa la distancia
+recorrida; la velocidad media usa el desplazamiento. En el ciclista que va y vuelve, la velocidad
+media es cero pero la rapidez media no.
+
+<Ejercicio titulo="Dos tramos, un promedio">
+
+Un carro recorre la primera mitad de un trayecto a $60\ \mathrm{km/h}$ y la segunda mitad a
+$40\ \mathrm{km/h}$. ¿Cuál es su velocidad media en todo el trayecto?
+
+Antes de calcular: ¿por qué la respuesta **no** puede ser $50\ \mathrm{km/h}$?
+
+<div slot="solucion">
+
+Llama $d$ a la mitad del trayecto. Los tiempos son $t_1 = d/60$ y $t_2 = d/40$, así que el tiempo
+total es $t = d/60 + d/40 = d/24$.
+
+$$\bar{v} = \frac{2d}{d/24} = 48\ \mathrm{km/h}$$
+
+Es menor que 50 porque en el tramo lento se pasa más tiempo, y el tiempo es lo que pesa en el
+promedio. Fíjate en que $d$ se cancela: el resultado no depende de qué tan largo sea el trayecto.
+
+</div>
+
+</Ejercicio>

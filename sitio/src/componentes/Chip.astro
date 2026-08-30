@@ -1,0 +1,21 @@
+---
+// Etiqueta de confianza o de estado. Se ve desde el menu a proposito:
+// saber donde pisar firme y donde preguntarle a la docente es parte de
+// estudiar, no un detalle de interfaz.
+interface Props {
+  valor: string;
+}
+const { valor } = Astro.props;
+
+const texto: Record<string, string> = {
+  alta: 'firme',
+  media: 'con reservas',
+  baja: 'flojo',
+  borrador: 'sin revisar',
+  revisado: 'revisado',
+  validado: 'validado',
+  'con-dudas': 'con dudas',
+};
+---
+
+<span class={`chip chip-${valor}`}>{texto[valor] ?? valor}</span>
