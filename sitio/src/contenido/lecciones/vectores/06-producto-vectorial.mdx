@@ -90,10 +90,9 @@ fuentes:
     aporta: >
       La forma compacta A⃗ × B⃗ = (AB sin θ) n̂, que junta en un solo renglón la magnitud de la
       dia. 22 con la dirección perpendicular de la dia. 23. Es la escritura estándar del producto
-      vectorial, pero NO aparece en ninguna de las 28 diapositivas: ella escribe la magnitud y
-      dibuja la dirección por separado y nunca las une en una igualdad. SÍMBOLO DEL PROYECTO, no
-      de ella: el nombre n̂ para el unitario perpendicular al plano no está en el PDF y no debe
-      darse por sentado que lo use en el tablero.
+      vectorial y no aparece en ninguna de las 28 diapositivas: ella escribe la magnitud y dibuja la
+      dirección por separado y nunca las une en una igualdad. El símbolo n̂ para el unitario normal
+      al plano tampoco está en el PDF.
   - tipo: deduccion
     aporta: >
       Los seis productos entre unitarios que la dia. 26 deja vacíos, con su razón: los tres iguales
@@ -144,10 +143,8 @@ revision:
     - "Podado: el torque se presentaba como tema y no aparece en ninguna de las 16 semanas del programa. El ejercicio conserva el calculo, con la notacion C de la diapositiva 22."
     - "Podada el 2026-08-30: el torque se presentaba como tema y no aparece en ninguna de las 16 semanas del programa ni en la presentacion. Se quito la seccion que lo desarrollaba y la nota con la conjetura de la semana 14. La pregunta guia se responde ahora con AB sin theta, que si es de la dia. 22, y el ejercicio conserva el calculo con la notacion C de esa misma diapositiva."
 dudas_para_docente:
-  - "¿En el parcial va a pedir el producto cruz en 3D con las tres componentes, o solo el caso plano, con los dos vectores en xy y el resultado sobre z? La dia. 25 introduce A_z k̂ sin haber explicado nunca el paso de dos a tres dimensiones —todo el bloque anterior, dia. 15 a 18, es plano— y no resuelve un solo ejemplo con números. Es la duda que más pesa para preparar el parcial, porque cambia por completo qué hay que practicar."
-  - "¿Cómo quedaron llenos en el tablero los seis productos entre unitarios de la dia. 26? Aquí están deducidos, no copiados, y conviene contrastarlos con lo que ella escribió."
-  - "En las 28 diapositivas no hay un solo ángulo con valor numérico, así que no se sabe si trabaja en grados o en radianes. El ejemplo y el ejercicio usan grados."
-  - "¿Escribe sen o sin? La dia. 22, que es la de este tema, trae C = AB sin θ compuesto con su plantilla Beamer, y es el respaldo principal de que aquí se escriba sin. La duda completa, con la evidencia de la dia. 15, está declarada en la lección de componentes y en dudas.md; no se repite aquí."
+  - "¿Exige el producto cruz por el determinante, o acepta también la ruta de distribuir los nueve productos entre unitarios? La dia. 25 escribe las dos seguidas y no resuelve ninguna con números, así que no se sabe cuál califica."
+  - "Cuando exista registro del tablero de esa clase, conviene contrastar cómo llenó los seis productos de la dia. 26 y qué respondió a la dia. 27. No porque estén en duda —salen de la regla de la mano derecha y de la anticonmutatividad—, sino para reconocer su notación en el parcial."
 ---
 
 import Nota from '../../../componentes/Nota.astro';
@@ -202,19 +199,19 @@ C = \lvert\vec{A}\times\vec{B}\rvert = A\,B\sin\theta
 $$
 
 Aquí $A = \lvert\vec{A}\rvert$ y $B = \lvert\vec{B}\rvert$ son las magnitudes de los dos vectores,
-cada una con sus propias unidades y siempre positivas; $\theta$ es el ángulo entre ellos, que no
-tiene unidades; y $C = \lvert\vec{C}\rvert$ es la magnitud del resultado, cuyas unidades son el
-**producto** de las de $\vec{A}$ y las de $\vec{B}$. Si los dos están en metros, $C$ queda en
-$\mathrm{m^2}$; si uno está en metros y el otro en newton, $C$ queda en $\mathrm{N\,m}$.
+cada una con sus propias unidades y siempre positivas; $\theta$ es el ángulo entre ellos, que se
+escribe en grados y no aporta dimensiones; y $C = \lvert\vec{C}\rvert$ es la magnitud del resultado,
+cuyas unidades son el **producto** de las de $\vec{A}$ y las de $\vec{B}$. Si los dos están en
+metros, $C$ queda en $\mathrm{m^2}$; si uno está en metros y el otro en newton, $C$ queda en
+$\mathrm{N\,m}$.
 
 Fíjate en un detalle que evita errores más adelante: como $\theta$ va de $0^\circ$ a $180^\circ$,
 el seno nunca es negativo. Por eso la fórmula entrega directamente una magnitud, sin necesidad de
 valor absoluto, y **jamás debe darte un número negativo**. Si te dio negativo, el ángulo que
 metiste no es el que va.
 
-Sobre la abreviatura: aquí se escribe $\sin$ porque así lo escribe ella en su plantilla en esta
-misma diapositiva 22, y la discusión completa de $\sin$ contra $\mathrm{sen}$ está en la lección de
-componentes y suma analítica.
+Sobre la abreviatura: se escribe $\sin$, que es el símbolo de la norma internacional de símbolos
+matemáticos y el mismo que usa la diapositiva 22.
 
 ### Lo que la magnitud significa: un área
 
@@ -270,13 +267,12 @@ donde $\hat{n}$ es el vector unitario perpendicular al plano de $\vec{A}$ y $\ve
 derecha selecciona. Recuerda que un unitario no tiene unidades: todas las unidades del resultado
 vienen del factor $AB$.
 
-Dos advertencias sobre ese renglón. La primera es que **es escritura del proyecto, no de ella**: la
-diapositiva 22 da la magnitud y la diapositiva 23 dibuja la dirección, pero en las 28 diapositivas
-nunca junta las dos cosas en una sola igualdad, y el nombre $\hat{n}$ para ese unitario no aparece
-en ninguna parte del PDF. Es la notación estándar y sirve para pensar, pero no des por hecho que la
-vas a ver en el tablero con ese símbolo. La segunda es que la igualdad no es una fórmula de
-calcular: para usarla tendrías que conocer de antemano $\hat{n}$, que es justo lo que la mano
-derecha decide a ojo. Para calcular de verdad está el determinante que viene más adelante.
+Dos advertencias sobre ese renglón. La primera es de notación: $\hat{n}$ es el símbolo estándar del
+unitario normal a un plano, y la presentación llega a lo mismo en dos piezas —la magnitud en la
+diapositiva 22 y la dirección dibujada en la 23— sin juntarlas nunca en una sola igualdad. La
+segunda es que la igualdad no es una fórmula de calcular: para usarla tendrías que conocer de
+antemano $\hat{n}$, que es justo lo que la mano derecha decide a ojo. Para calcular de verdad está
+el determinante que viene más adelante.
 
 <Nota tipo="clave" titulo="Tres precisiones donde se pierde la gente">
 
@@ -472,7 +468,10 @@ $$
 \vec{B} = B_x\hat{i} + B_y\hat{j} + B_z\hat{k}
 $$
 
-donde las seis componentes son escalares con signo, cada una con las unidades de su vector.
+donde las seis componentes son escalares con signo, cada una con las unidades de su vector. Los dos
+vectores van escritos con sus tres componentes porque **el producto vectorial está definido en el
+espacio**: el caso plano no es un tema aparte sino el particular con $A_z = B_z = 0$, y ahí el
+determinante devuelve solo, sin ninguna regla extra, un vector a lo largo del eje $z$.
 
 ### De dónde sale el resultado
 

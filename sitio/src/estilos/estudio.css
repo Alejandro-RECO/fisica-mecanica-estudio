@@ -201,25 +201,70 @@ a:hover { color: var(--vector); }
   margin-top: var(--e2);
 }
 
-.nav-grupo { margin-bottom: var(--e5); }
+/* ---------- bloques: agrupan las unidades por etapa del programa ---------- */
+.nav-bloque + .nav-bloque { margin-top: var(--e6); }
+
+.nav-bloque-titulo {
+  font-family: var(--dato);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--grafito-3);
+  margin: 0 0 var(--e3);
+}
+
+.nav-grupo { margin-bottom: var(--e2); }
+.nav-grupo:last-child { margin-bottom: 0; }
 
 .nav-unidad {
   display: grid;
   grid-template-columns: 22px 1fr;
   gap: var(--e2);
-  align-items: baseline;
+  align-items: start;
   font-family: var(--dato);
   font-size: 10.5px;
   letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--grafito-2);
   text-decoration: none;
-  padding: var(--e1) 0;
-  margin-bottom: var(--e2);
+  padding: var(--e2) 0;
   line-height: 1.4;
 }
 .nav-unidad:hover { color: var(--vector); }
-.nav-unidad .nav-n { color: var(--vector); font-weight: 600; }
+.nav-unidad .nav-n { color: var(--vector); font-weight: 600; padding-top: 1px; }
+.nav-unidad[aria-current] { color: var(--grafito); }
+.nav-unidad[aria-current] .nav-unidad-titulo { font-weight: 600; }
+
+.nav-unidad-texto { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.nav-unidad-semanas { font-size: 9px; color: var(--grafito-3); letter-spacing: 0.07em; }
+
+/* unidad sin lecciones: fila simple, sin desplegable, en tono apagado */
+.nav-unidad-vacia .nav-n { color: var(--grafito-3); }
+.nav-unidad-vacia:hover { color: var(--grafito-2); }
+
+/* ---------- unidades con lecciones: fila plegable ---------- */
+.nav-resumen {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--e1);
+  cursor: pointer;
+  list-style: none;
+}
+.nav-resumen::-webkit-details-marker { display: none; }
+.nav-resumen .nav-unidad { flex: 1 1 auto; min-width: 0; }
+
+.nav-chevron {
+  flex: 0 0 auto;
+  margin-top: 9px;
+  color: var(--grafito-3);
+  transition: transform 0.15s ease;
+  transform: rotate(-90deg);
+}
+.nav-detalle[open] > .nav-resumen .nav-chevron { transform: rotate(0deg); }
+.nav-resumen:hover .nav-chevron { color: var(--vector); }
+
+.nav-detalle > ul { margin-top: var(--e1); }
 
 .nav ul { list-style: none; margin: 0; padding: 0; }
 

@@ -1,14 +1,14 @@
 ---
 titulo: Fuerzas y leyes de Newton
 orden: 6
+bloque: Dinámica y energía
+semanas: "7–8"
 resumen: >
-  Ahora sí, por qué las cosas se mueven como se mueven: fuerzas, las tres leyes, fricción y planos inclinados.
+  Fuerzas, las tres leyes de Newton, fricción y planos inclinados.
 estado: sin-material
 ---
 
-Aquí se responde la pregunta que la cinemática dejó abierta. Las tres leyes de Newton conectan lo
-que ya sabes describir con lo que lo causa.
+Del programa oficial de 16 semanas:
 
-El trabajo real de esta unidad no es memorizar F = ma: es aprender a dibujar el diagrama de cuerpo
-libre correcto. Casi todo problema de dinámica que sale mal, sale mal en el diagrama, no en el
-álgebra.
+- **Semana 7** — Fuerzas y leyes de Newton.
+- **Semana 8** — Fricción y planos inclinados. Segunda ley aplicada a movimiento circular.

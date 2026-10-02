@@ -23,7 +23,10 @@ const repaso = lecciones.reduce((t, l) => t + l.data.tiempo_repaso_min, 0);
   <main class="contenido">
     <div class="columna columna-ancha">
     <header class="leccion-cabecera">
-      <p class="eyebrow"><a href="/">Estudio</a> — Unidad</p>
+      <p class="eyebrow">
+        <a href="/">Estudio</a> — Unidad ·{' '}
+        {unidad.data.semanas === 'transversal' ? 'Transversal' : `Semana ${unidad.data.semanas}`}
+      </p>
       <h1>{unidad.data.titulo}</h1>
       <p class="portada-bajada">{unidad.data.resumen}</p>
       {
@@ -40,10 +43,7 @@ const repaso = lecciones.reduce((t, l) => t + l.data.tiempo_repaso_min, 0);
     {
       lecciones.length === 0 ? (
         <div class="vacio">
-          <p>
-            Esta unidad todavía no tiene lecciones. Corre <code>/unidad {unidad.id}</code> cuando haya
-            material fichado.
-          </p>
+          <p>Sin lecciones todavía: la presentación de estas semanas aún no está fichada.</p>
         </div>
       ) : (
         <ul class="lista-unidades ancho">

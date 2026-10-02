@@ -15,7 +15,7 @@ conceptos_clave:
   - Cada igualdad entre unidades produce dos factores inversos entre sí; se elige el que cancela la unidad vieja.
   - "Las unidades se manejan como factores algebraicos: se multiplican, se dividen y se cancelan."
   - Si la unidad va elevada a una potencia, el factor de conversión va elevado a esa misma potencia.
-  - Una igualdad exacta no limita las cifras significativas; una redondeada sí.
+  - "Un factor exacto por definición no limita las cifras significativas: las limita el dato medido más pobre."
   - "El factor invertido conserva la dimensión, así que la comprobación dimensional no lo detecta: lo delata que la unidad final no sea la pedida."
 errores_frecuentes:
   - Convertir un volumen o un área multiplicando por el factor sin elevarlo a la potencia
@@ -29,7 +29,7 @@ esencial:
   - "Convertir es multiplicar por un cociente que vale 1, montado para que la unidad vieja se cancele."
   - "Cada igualdad da dos factores, uno inverso del otro: se usa el que deja arriba la unidad que quieres."
   - "Unidad elevada, factor elevado: de in³ a cm³ el factor es 2,54³ = 16,387, no 2,54."
-  - "Exactas por definición y sin costo en cifras: 1 in = 2,54 cm y 1 ft = 30,48 cm. Redondeadas a cuatro cifras, y por eso limitantes: 1 mi = 1609 m, 1 m = 39,37 in y 1 m = 3,281 ft."
+  - "Exactos por definición y sin costo en cifras: 1 in = 2,54 cm, 1 ft = 30,48 cm y 1 mi = 1609,344 m. Las cifras del resultado las fija el dato medido, no el factor."
 tiempo_repaso_min: 7
 
 fuentes:
@@ -88,11 +88,13 @@ fuentes:
     aporta: "Densidad del aluminio, 2,70×10³ kg/m³ = 2,70 g/cm³, en la tabla de densidades. Sostiene el dato del ejercicio 3, que la presentación no trae."
   - tipo: deduccion
     aporta: "El ejercicio 3 es de elaboración propia: la presentación no lo plantea. El dato de densidad sí está verificado contra OpenStax; lo propio es el enunciado y su solución."
+  - tipo: abierta
+    ref: "https://www.bipm.org/en/committees/cg/cgpm/22-2003/resolution-10"
+    fecha: 2026-08-30
+    aporta: "Resolución 10 de la 22.ª CGPM (2003): el marcador decimal será el punto o la coma —la resolución admite los dos y no impone ninguno— y ni uno ni otra se insertan entre los grupos de tres cifras. El criterio de elegir según el idioma está en el folleto del SI, citado en la lección 03. Sostiene que 1.609 km de la diapositiva 19 se lee con punto decimal y que aquí se escriba con coma."
 
 dudas_para_docente:
-  - "En el parcial, ¿se usan los valores redondeados de la diapositiva 19 (1 mi = 1609 m) o los exactos (1609,344 m)? La diferencia aparece a partir de la cuarta cifra significativa."
   - "¿Exige ver escrito el factor unitario con la cancelación de unidades, como en la diapositiva 18, o basta con el resultado correcto?"
-  - "¿El pie cuenta como exacto en sus problemas? 1 ft = 30,48 cm lo es por definición, pero la diapositiva 19 solo marca la pulgada con la palabra «exactamente», y de eso depende cuántas cifras significativas se pueden reportar."
   - "¿Cuántas cifras significativas espera cuando el enunciado da un entero como 350 in³? Decide si 5735 cm³ se acepta o si exige 5,74×10³ cm³."
 
 confianza: alta
@@ -103,6 +105,9 @@ revision:
   chequeos: [aritmetica-exacta, dimensional, cifras-significativas, coherencia-con-la-fuente, notacion]
   observaciones:
     - "Los 16 resultados numéricos recalculados con decimales exactos: todos correctos, sin excepción."
+    - "Reparo corregido el 2026-08-30, detectado en revision: la leccion usaba dos criterios distintos de cifras significativas. La nota del ejemplo declaraba 38,1 cm «porque el enunciado da el dato sin incertidumbre», mientras que la nota general y el ejemplo del volumen (1,84 in³ -> 30,2 cm³) cuentan el dato del enunciado como dato pobre. Unificado al criterio estricto: 15 in trae dos cifras, se reporta 38 cm, y el 38,1 de los pasos es el valor sin redondear, porque el redondeo va al final. Confirmado contra OpenStax 1.6."
+    - "Reparo corregido el 2026-08-30: en el ejercicio de la milla se atribuia el corte a cuatro cifras solo al 3,281 del segundo camino. Al primero lo limita el 1609 m de la diapositiva, que tambien trae cuatro. Se completo la frase."
+    - "Reparo corregido el 2026-08-30: la nota del separador decimal atribuia a la Resolucion 10 un mandato que no contiene. Ver la leccion 03, donde vive la fuente del folleto del SI."
     - "La regla de la potencia está derivada, no solo enunciada: se eleva la igualdad al cubo y se muestra que sube número y unidad."
     - "Reparo corregido, el más grave: decía que 5,91 in²/cm no es una longitud. Sí lo es —L²/L = L— y además equivale a 38,10 cm exactos. El factor invertido conserva la dimensión, así que el chequeo dimensional NO lo detecta; lo delata la unidad final. Se corrigió aquí y se añadió como error frecuente para que la lección 05 no lo herede."
     - "Reparo corregido: afirmaba que solo la pulgada es exacta. El pie también lo es (1 ft = 12 in), y eso sostiene el argumento del hueco 5278,87 ↔ 5280 ft."
@@ -153,10 +158,11 @@ kilómetros**, no mil seiscientos nueve: una milla es poco más de un kilómetro
 tabla lo confirma en la casilla de al lado al dar $1\ \mathrm{mi} = 1609\ \mathrm{m}$. El punto ahí
 es separador decimal a la anglosajona, no separador de miles.
 
-Aquí los decimales van con coma **por convención de este material**, no porque la diapositiva zanje
-el asunto. Ella usa las dos formas en la misma presentación, y cuál espera ver en el parcial es una
-pregunta todavía abierta para la docente. La evidencia completa y la duda están en
-`03-notacion-cientifica-y-prefijos`; esta lección solo se acoge a la convención.
+Aquí los decimales van con coma porque ese es el uso del español de Colombia, que es justamente el
+criterio que da la norma: la Resolución 10 de la 22.ª CGPM (2003) admite el punto y la coma sin
+imponer ninguno, y el folleto del SI dice que la elección depende de las circunstancias del idioma.
+Lo que sí está prohibido siempre es usar el punto o la coma para separar los miles. En la diapositiva
+ella escribe con punto, y con eso basta para reconocerlo cuando lo veas.
 
 </Nota>
 
@@ -328,11 +334,12 @@ pidieron. En la sección siguiente se ve el caso completo.
 
 <Nota tipo="info">
 
-Sobre las cifras: el 2,54 es exacto y no limita nada, así que la precisión del resultado la fija el
-dato de entrada. Si los $15\ \mathrm{in}$ vienen de una regla con dos cifras significativas, lo
-honesto es reportar $38\ \mathrm{cm}$; si los 15 son un valor de definición o del enunciado, se
-escribe $38{,}1\ \mathrm{cm}$. Aquí se deja $38{,}1\ \mathrm{cm}$ porque el enunciado da el dato sin
-incertidumbre.
+Sobre las cifras: el $2{,}54$ es exacto y no limita nada, así que la precisión del resultado la fija
+el dato de entrada. Los $15\ \mathrm{in}$ traen **dos** cifras significativas, de modo que el valor
+que se reporta es $38\ \mathrm{cm}$. El $38{,}1$ de los pasos de arriba es el número que sale de la
+multiplicación, y está bien que aparezca: **el redondeo es siempre el último paso**, se arrastra el
+valor completo hasta el final y solo ahí se corta. Si los 15 fueran un valor de definición, sin
+incertidumbre, entonces sí se reportaría $38{,}1\ \mathrm{cm}$.
 
 </Nota>
 
@@ -539,16 +546,26 @@ desde el 1 de julio de 1959. No es el resultado de medir una pulgada con una reg
 definición, igual que decir que en un metro hay cien centímetros. Por eso no tiene incertidumbre y
 **no limita las cifras significativas** de ningún cálculo. Puedes usar 2,54 o 2,540000 y da lo mismo.
 
-Ahora bien, la diapositiva marca solo la pulgada, pero **el pie también es exacto**. Como
-$1\ \mathrm{ft} = 12\ \mathrm{in}$ por definición y la pulgada es exacta, el pie hereda la
-exactitud: $1\ \mathrm{ft} = 30{,}48\ \mathrm{cm} = 0{,}3048\ \mathrm{m}$ justos, sin redondeo
-escondido. Eso es justamente lo que hacía salir un 12 pelado en la división de más arriba: dos
-valores exactos dan un cociente exacto, y por eso ese chequeo funcionaba.
+Ahora bien, la diapositiva marca solo la pulgada, pero **el pie y la milla también son exactos**, y
+esto ya no es una duda abierta: el NIST define $1\ \mathrm{ft} = 0{,}3048\ \mathrm{m}$ y
+$1\ \mathrm{mi} = 1609{,}344\ \mathrm{m}$, las dos por definición y sin incertidumbre. Se ve también
+desde la pulgada: como $1\ \mathrm{ft} = 12\ \mathrm{in}$ por definición y la pulgada es exacta, el
+pie hereda la exactitud, $30{,}48\ \mathrm{cm}$ justos y sin redondeo escondido. Eso es lo que hacía
+salir un 12 pelado en la división de más arriba: dos valores exactos dan un cociente exacto.
 
-Las que sí están redondeadas son las otras tres, todas recortadas a cuatro cifras significativas:
-$1\ \mathrm{mi} = 1609\ \mathrm{m}$ —con su $1{,}609\ \mathrm{km}$—, $1\ \mathrm{m} = 39{,}37\ \mathrm{in}$
-y $1\ \mathrm{m} = 3{,}281\ \mathrm{ft}$. La milla, por ejemplo, vale $1609{,}344\ \mathrm{m}$
-exactos. El recorte se nota usando la propia tabla: si divides la milla entre el pie te salen
+De ahí sale la consecuencia que hay que tener clara antes del parcial: **un factor exacto no limita
+las cifras significativas del resultado; las limita el dato medido**. Si el enunciado te da
+$1{,}84\ \mathrm{in^{3}}$, son esas tres cifras del dato las que mandan, por muchos decimales que
+traiga el $16{,}387064$.
+
+Las que sí vienen redondeadas son las dos igualdades que van del metro hacia el sistema inglés,
+recortadas a cuatro cifras significativas: $1\ \mathrm{m} = 39{,}37\ \mathrm{in}$ y
+$1\ \mathrm{m} = 3{,}281\ \mathrm{ft}$. Son los inversos de números exactos, y esos inversos tienen
+infinitas cifras —$1/0{,}0254 = 39{,}370078\ldots$—, así que hay que cortarlos en algún punto; ahí sí,
+el factor es el dato más pobre del cálculo. El $1\ \mathrm{mi} = 1609\ \mathrm{m}$ de la diapositiva
+es distinto: no es un valor impreciso sino el valor exacto $1609{,}344\ \mathrm{m}$ escrito
+redondeado, y ese redondeo solo se nota **a partir de la cuarta cifra significativa**. El efecto se
+ve usando la propia tabla: si divides la milla entre el pie te salen
 $5278{,}87\ \mathrm{ft}$, y una milla son $5280\ \mathrm{ft}$ exactos. Esos $1{,}13\ \mathrm{ft}$ de
 diferencia no son un error tuyo, y tampoco son culpa del pie: son el redondeo del 1609
 propagándose, como se comprueba con números al final de la lección.
@@ -559,8 +576,8 @@ Los valores $1609{,}344\ \mathrm{m}$ y $5280\ \mathrm{ft}$ **no están en la pre
 del NIST y están declarados en las fuentes de esta lección. En el parcial usa los números de la
 diapositiva: si ella da $1\ \mathrm{mi} = 1609\ \mathrm{m}$, ese es el dato del problema. La moraleja
 práctica es otra y sí te sirve: **un resultado no puede tener más cifras significativas que el dato
-más pobre que entró en él**, y en una conversión el dato más pobre suele ser el propio factor
-redondeado.
+más pobre que entró en él**. Los factores exactos —pulgada, pie, milla— no cuentan como dato pobre
+porque no tienen incertidumbre; el dato medido del enunciado y los factores escritos redondeados, sí.
 
 </Nota>
 
@@ -670,7 +687,10 @@ $$
 Sin redondear, los dos caminos **no dan lo mismo**: se separan en $0{,}26\ \mathrm{ft}$. No es que uno
 esté mal; es la propagación del redondeo de la sección anterior, ahora en vivo. El segundo camino usó
 el $3{,}281$, que es un valor recortado a cuatro cifras significativas, así que su resultado no
-merece más de cuatro. Y a cuatro cifras los dos caminos dicen $5279\ \mathrm{ft}$. **Ahí sí
+merece más de cuatro. Al primero le pasa lo mismo por otra vía: el pie es exacto y no recorta nada,
+pero el dato de partida es el $1609\ \mathrm{m}$ de la diapositiva, que también trae cuatro cifras.
+Los dos caminos quedan entonces limitados a cuatro, y a cuatro cifras los dos dicen
+$5279\ \mathrm{ft}$. **Ahí sí
 coinciden**, y esa coincidencia a la precisión que corresponde —no en todos los decimales— es la
 comprobación.
 

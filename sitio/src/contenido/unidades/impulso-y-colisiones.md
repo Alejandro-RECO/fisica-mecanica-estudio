@@ -1,12 +1,15 @@
 ---
 titulo: Impulso y colisiones
 orden: 8
+bloque: Dinámica y energía
+semanas: "15"
 resumen: >
-  Qué se conserva cuando dos cuerpos chocan, y por qué eso basta para predecir qué pasa después.
+  Impulso y colisiones en una y dos dimensiones.
 estado: sin-material
 ---
 
-Cierra el curso. La cantidad de movimiento se conserva en un choque aunque la energía cinética no,
-y esa asimetría es justo lo que distingue un choque elástico de uno que no lo es.
+Del programa oficial de 16 semanas:
 
-Se ven colisiones en una y en dos dimensiones.
+- **Semana 15** — Impulso y colisiones 1D/2D.
+
+Es el último tema del curso: la semana 16 es sustentación final y cierre.

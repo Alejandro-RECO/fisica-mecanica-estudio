@@ -98,6 +98,7 @@ cumplir: una lección con `estado: validado` y sin bloque `revision` **rompe el 
 Cuando dos fuentes se contradicen, este orden decide. No se salta y no se resuelve en silencio.
 
 ```
+0.  Norma internacional          SOLO en notación, unidades y símbolos: SI/BIPM, ISO 80000
 1a. Presentación de la docente   preparada y revisada por ella
 1b. Tablero                      en vivo; corrige o amplía la diapositiva
 1c. Apuntes propios de lo dicho  propensos a error de transcripción
@@ -105,6 +106,14 @@ Cuando dos fuentes se contradicen, este orden decide. No se salta y no se resuel
 3.  Derivación propia dimensionalmente consistente
 4.  Memoria del modelo           nunca decide sola
 ```
+
+**El nivel 0 manda sobre todo, pero su alcance es estrecho:** decide cómo se *escribe* —marcador
+decimal, separador de miles, `sin` contra `sen`, mantisa normalizada, símbolo del ángulo, radián
+contra grado, factores de conversión exactos—, y nada más. **No decide qué se enseña.** Qué temas
+entran, con qué profundidad y qué se pregunta en el parcial lo sigue fijando ella, y ahí la regla de
+alcance es la de siempre: lo que está en la diapositiva y nada más. Cuando su notación se aparta de
+la norma, el sitio escribe la norma y lo avisa en **una línea**, para que no te sorprenda su forma en
+el parcial.
 
 - **Niveles distintos** → gana el alto, se anota la resolución y sigue. Un apunte contra una
   diapositiva no es conflicto: es diferencia de nivel.
@@ -123,9 +132,11 @@ Cuando dos fuentes se contradicen, este orden decide. No se salta y no se resuel
 - **No se cita un libro que no se leyó.** "Serway 9.ª ed., sección 2.3" sin tener el libro delante es
   una alucinación con formato de rigor: da confianza falsa y es lo primero que un profesor detecta.
   Se cita **la URL que se leyó**, con fecha.
-- **La docente es la autoridad final**, aunque el libro diga otra cosa. El parcial lo pone ella. Si su
-  presentación contradice a OpenStax, gana la presentación y la discrepancia se anota en una
-  `.nota-ojo`: aprendes lo que ella pregunta y, aparte, por qué la convención estándar es otra.
+- **La norma decide la notación; la docente decide qué se pregunta.** Donde exista un estándar
+  internacional, el sitio lo sigue aunque sus diapositivas hagan otra cosa, y anota su uso en una
+  línea. Donde no lo haya —qué temas entran, qué profundidad, qué convención de marco toma— manda
+  ella, porque el parcial lo pone ella. Si su presentación contradice a OpenStax en algo que no es
+  notación, gana la presentación.
 - **El hueco se estudia, no se esconde.** Una lección `con-dudas` muestra la duda en la página.
   Estudiar sabiendo dónde está el vacío es mejor que estudiar una versión inventada que suena segura.
 - **Nada se genera sin validar.** El camino es `tutor-fisica` → `revisor-conceptual` → publicación.
@@ -143,9 +154,12 @@ Cuando dos fuentes se contradicen, este orden decide. No se salta y no se resuel
 - Dentro de un componente (`<Paso>`, `<Ejemplo>`, `<Nota>`, `<Ejercicio>`) deja **una línea en blanco**
   después de la etiqueta de apertura y otra antes del cierre, o el markdown no se parsea como bloque.
 - Unidades dentro de `\mathrm{}`, coma decimal como `{,}`. Ver `docs/guia-notacion.md`.
-- **Separador decimal: coma, pero está en disputa.** La docente usa las dos formas en la misma
-  presentación (dia. 18 coma, dia. 14 y 19 punto). Se escribe coma como lectura provisional y la duda
-  está abierta en `memoria/dudas.md`. No la cierres sin preguntarle a ella.
+- **Separador decimal: coma. Cerrado por norma**, no en disputa. La Resolución 10 de la 22.ª CGPM
+  (2003) admite punto y coma **sin imponer ninguno**, y el folleto del SI da el criterio: la elección
+  depende del idioma, y en muchos idiomas y países lo usual es la coma. Español de Colombia, coma. Lo
+  que sí prohíbe siempre es punto o coma entre los grupos de tres cifras: agrupar es opcional y, si
+  se agrupa, con **espacio**. Que sus diapositivas 14, 15 y 19 usen punto no reabre nada. **No
+  escribas que la norma "manda" la coma:** permite las dos y describe el uso.
 - Nada de emojis. Negrita solo donde el lector debe frenar.
 - **Nombres en español sin tildes** para todo lo que escribes tú: agentes, skills, componentes,
   clases CSS, variables. **Única excepción:** lo que Astro reserva (`src/pages/`,
@@ -182,6 +196,10 @@ es profundidad: es ruido que compite por el tiempo de estudio antes de un parcia
 - Temas que no están en el programa de 16 semanas. Se comprueba en `docs/mapa-unidades.md` antes de
   escribirlo, no después.
 - Segundos y terceros ejemplos, variantes, casos exóticos.
+- **Prosa propia en la ficha de una unidad cuya presentación no está fichada.** Ahí van las filas del
+  programa que le corresponden y una línea diciendo que falta el material, nada más. Contar de qué
+  trata una unidad que nadie ha leído todavía es memoria del modelo con formato de fuente, y es peor
+  que un hueco porque no se ve.
 
 **Fuente abierta: para verificar, no para agregar.** Una URL sirve para comprobar un dato que ella
 da —que la pulgada es exacta, que el pie también lo es— y ahí sí se cita con fecha. **No** sirve

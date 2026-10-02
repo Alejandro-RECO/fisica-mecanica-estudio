@@ -1,7 +1,9 @@
 ---
 // La navegacion se deriva de las colecciones con getCollection(). Nunca se
-// escribe a mano una lista de lecciones: eso crearia una segunda verdad que
-// se desactualiza en cuanto se agregue una clase.
+// escribe a mano una lista de lecciones ni de bloques: eso crearia una
+// segunda verdad que se desactualiza en cuanto se agregue una clase o una
+// unidad nueva. El orden de los bloques sale del orden minimo de las
+// unidades que contienen, no de un array fijado a mano.
 import { getCollection } from 'astro:content';
 import Chip from './Chip.astro';
 
@@ -12,47 +14,113 @@ const ruta = Astro.url.pathname;
 
 const porUnidad = unidades.map((u) => ({
   ...u,
+  href: `/unidad/${u.id}/`,
   suyas: lecciones
     .filter((l) => l.data.unidad === u.id)
     .sort((a, b) => a.data.orden - b.data.orden),
 }));
+
+// La unidad "pertenece" a la ruta actual si es su indice o cualquiera de sus
+// lecciones: /unidad/<id>/ es prefijo de ambas.
+const perteneceALaRuta = (href: string) => ruta.startsWith(href);
+
+const etiquetaSemanas = (s: string) => (s === 'transversal' ? 'transversal' : `sem. ${s}`);
+
+const grupos = [...new Set(porUnidad.map((u) => u.data.bloque))]
+  .map((bloque) => {
+    const items = porUnidad.filter((u) => u.data.bloque === bloque);
+    return { bloque, items, ordenMin: Math.min(...items.map((u) => u.data.orden)) };
+  })
+  .sort((a, b) => a.ordenMin - b.ordenMin);
 ---
 
-<nav class="nav no-print" aria-label="Unidades del curso">
+<nav class="nav no-print" id="nav" aria-label="Unidades del curso">
   <a class="nav-marca" href="/">
     Física Mecánica
     <span>Estudio</span>
   </a>
 
   {
-    porUnidad.map((u, i) => (
-      <div class="nav-grupo">
-        <a class="nav-unidad" href={`/unidad/${u.id}/`}>
-          <span class="nav-n">{String(i).padStart(2, '0')}</span>
-          <span>{u.data.titulo}</span>
-        </a>
+    grupos.map((grupo) => (
+      <div class="nav-bloque">
+        <p class="nav-bloque-titulo">{grupo.bloque}</p>
 
-        {u.suyas.length > 0 ? (
-          <ul>
-            {u.suyas.map((l) => {
-              const href = `/unidad/${u.id}/${l.id.split('/').pop()}/`;
-              return (
-                <li>
-                  <a
-                    class="nav-leccion"
-                    href={href}
-                    aria-current={ruta === href ? 'page' : undefined}
-                  >
-                    <span class="nav-n">{l.data.orden}</span>
-                    <span>{l.data.titulo}</span>
-                    {l.data.estado === 'con-dudas' && <Chip valor="con-dudas" />}
-                    {l.data.estado === 'borrador' && <Chip valor="borrador" />}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        ) : null}
+        {grupo.items.map((u) => {
+          const activa = perteneceALaRuta(u.href);
+          const enIndice = ruta === u.href;
+          const numero = String(u.data.orden).padStart(2, '0');
+          const etiqueta = etiquetaSemanas(u.data.semanas);
+
+          return (
+            <div class="nav-grupo">
+              {u.suyas.length > 0 ? (
+                <details class="nav-detalle" open={activa}>
+                  <summary class="nav-resumen">
+                    <a
+                      class="nav-unidad"
+                      href={u.href}
+                      aria-current={enIndice ? 'page' : activa ? 'true' : undefined}
+                    >
+                      <span class="nav-n">{numero}</span>
+                      <span class="nav-unidad-texto">
+                        <span class="nav-unidad-titulo">{u.data.titulo}</span>
+                        <span class="nav-unidad-semanas">{etiqueta}</span>
+                      </span>
+                    </a>
+                    <svg
+                      class="nav-chevron"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M3 4.5 6 7.5 9 4.5"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </summary>
+
+                  <ul>
+                    {u.suyas.map((l) => {
+                      const href = `/unidad/${u.id}/${l.id.split('/').pop()}/`;
+                      return (
+                        <li>
+                          <a
+                            class="nav-leccion"
+                            href={href}
+                            aria-current={ruta === href ? 'page' : undefined}
+                          >
+                            <span class="nav-n">{l.data.orden}</span>
+                            <span>{l.data.titulo}</span>
+                            {l.data.estado === 'con-dudas' && <Chip valor="con-dudas" />}
+                            {l.data.estado === 'borrador' && <Chip valor="borrador" />}
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </details>
+              ) : (
+                <a
+                  class="nav-unidad nav-unidad-vacia"
+                  href={u.href}
+                  aria-current={enIndice ? 'page' : undefined}
+                >
+                  <span class="nav-n">{numero}</span>
+                  <span class="nav-unidad-texto">
+                    <span class="nav-unidad-titulo">{u.data.titulo}</span>
+                    <span class="nav-unidad-semanas">{etiqueta}</span>
+                  </span>
+                </a>
+              )}
+            </div>
+          );
+        })}
       </div>
     ))
   }

@@ -28,6 +28,8 @@ const unidades = defineCollection({
   schema: z.object({
     titulo: z.string(),
     orden: z.number(),
+    bloque: z.string(),
+    semanas: z.string(),
     resumen: z.string(),
     estado: z.enum(['sin-material', 'en-curso', 'completa']).default('sin-material'),
   }),

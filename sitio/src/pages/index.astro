@@ -35,10 +35,10 @@ const conDudas = lecciones.filter((l) => l.data.estado === 'con-dudas').length;
         </div>
       ) : (
         <ul class="lista-unidades ancho">
-          {unidades.map((u, i) => (
+          {unidades.map((u) => (
             <li>
               <a class="unidad-fila" href={`/unidad/${u.id}/`}>
-                <span class="unidad-n">{String(i).padStart(2, '0')}</span>
+                <span class="unidad-n">{String(u.data.orden).padStart(2, '0')}</span>
                 <span>
                   <span class="unidad-nombre">{u.data.titulo}</span>
                   <span class="unidad-resumen">{u.data.resumen}</span>

@@ -2,6 +2,7 @@
 titulo: Componentes y suma analítica
 unidad: vectores
 orden: 4
+sesiones: []
 
 pregunta_guia: >
   Un dron de domicilios hace tres tramos seguidos en direcciones distintas y termina lejos de la
@@ -40,8 +41,7 @@ fuentes:
       —así, con "sen", que es literalmente como está escrito en la diapositiva—, la magnitud
       A = √(Aₓ² + A_y²), la dirección tan θ = A_y/Aₓ, la figura del triángulo de descomposición con θ
       medido desde el eje x, y la advertencia literal de que las componentes pueden ser positivas o
-      negativas. Esta diapositiva completa está fuera de su plantilla Beamer: es la única del bloque
-      15–18 sin barra de título, en Arial y con fórmulas serif de OpenOffice Math.
+      negativas.
   - tipo: diapositivas
     ref: fuentes/precentaciones/VectoresFisica.pdf
     diapositiva: 16
@@ -72,9 +72,8 @@ fuentes:
     diapositiva: 22
     fecha: 2026-08-30
     aporta: >
-      C = AB sin θ, compuesto con su plantilla Beamer. Es el único "sin" del documento que sí está
-      hecho con su plantilla, y en las 28 diapositivas no hay ni un "sen" compuesto con ella.
-      Sostiene la abreviatura trigonométrica que usa esta lección.
+      C = AB sin θ, escrito así, con "sin", en la diapositiva. Deja constancia de que en la misma
+      presentación aparecen las dos abreviaturas de la misma función.
   - tipo: deduccion
     aporta: >
       La tabla de signos por cuadrante que la diapositiva 16 deja en blanco, y el argumento de por
@@ -102,16 +101,17 @@ fuentes:
       trae nA⃗ = nAₓî + nA_yĵ.
   - tipo: deduccion
     aporta: >
-      SUPOSICIÓN DEL PROYECTO, no dato de la fuente: θ se mide desde el eje x positivo, en sentido
-      antihorario, de 0° a 360° y en grados. El PDF usa θ en las 28 diapositivas y nunca le pone un
-      valor numérico, y la figura de la dia. 15 solo dibuja el primer cuadrante, donde las
-      convenciones posibles coinciden. Toda la lección depende de esta suposición.
+      La convención angular con la que trabaja toda la lección: θ desde el eje x positivo, en sentido
+      antihorario, con 0° ≤ θ menor que 360°, y los ángulos en grados. Es la convención matemática
+      estándar y la única con la que el signo de cada componente sale del coseno y del seno. El PDF
+      usa θ en sus 28 diapositivas sin darle nunca un valor numérico, así que la convención se
+      declara aquí.
   - tipo: deduccion
     aporta: >
       Los casos límite, el ejemplo numérico del dron y el ejercicio de la caminata, con todos sus
       datos. En 28 diapositivas el PDF no resuelve un solo cálculo.
 
-confianza: media
+confianza: alta
 estado: revisado
 revision:
   fecha: 2026-08-30
@@ -122,13 +122,10 @@ revision:
     - "La tabla de signos por cuadrante y la regla del angulo de referencia verificadas en los cuatro cuadrantes, equivalentes a las de OpenStax."
     - "Reparo corregido: el frontmatter citaba la diapositiva 15 con sin cuando ella escribe sen. La fuente ahora transcribe lo que ella escribe."
     - "Reparo corregido: la tabla dejaba sin cubrir el caso A_y = 0 con A_x negativo, y el texto afirmaba que solo quedaba un caso fuera."
-    - "Confianza media, no alta: si la docente mide los angulos desde el eje mas cercano en vez de desde +x, todos los numeros del ejemplo y del ejercicio cambian. Es duda abierta."
+    - "~~Confianza media, no alta: si la docente mide los angulos desde el eje mas cercano en vez de desde +x, todos los numeros del ejemplo y del ejercicio cambian. Es duda abierta.~~ Superado el 2026-08-30: la convencion angular se cerro por norma —desde +x, antihorario, de 0 a 360 grados, que es la convencion matematica estandar— y deja de ser duda. Sube a alta."
 dudas_para_docente:
-  - "¿Los ángulos los va a dar medidos desde el eje x positivo, o desde el eje más cercano al vector? En la dia. 15 la figura mide θ desde el eje x, pero solo muestra el primer cuadrante y en las 28 diapositivas nunca aparece un ángulo con valor numérico. Todo el sitio asume, como suposición declarada y no como dato de la fuente, la convención estándar: desde el eje x positivo, en sentido antihorario, de 0° a 360°."
-  - "¿Trabaja los ángulos en grados o en radianes? El PDF no lo dice en ninguna parte. El ejemplo y el ejercicio de aquí están en grados."
-  - "¿Escribe sen o sin? El único sen del documento está en la dia. 15, y esa diapositiva completa está fuera de su plantilla: es la única del bloque 15–18 sin barra de título Beamer, en Arial y con fórmulas serif de OpenOffice Math. El único sin compuesto con su plantilla es el de la dia. 22. Es decir, no hay ni un sen hecho con su plantilla. Aquí se usa sin en todas partes, que es la lectura provisional del proyecto; el contrapeso que impide cerrar la duda es que \\sin es el comando por defecto de LaTeX y podría venir de la herramienta y no de una elección suya."
-  - "¿La diapositiva 15 es suya o prestada? Es la única del bloque 15–18 sin su plantilla Beamer, y de eso depende cuál abreviatura va a escribir en el tablero: si la lámina es prestada, el sen no es suyo y lo que ella escribe es sin."
-  - "La tabla de signos por cuadrante de la dia. 16 quedó en blanco en la presentación. ¿Lo que llenó en el tablero coincide con la tabla de esta lección?"
+  - "¿En qué formato pide la respuesta de una suma analítica: el vector escrito en componentes con î y ĵ, o su magnitud y su dirección? La presentación llega hasta C⃗ = Cₓî + C_yĵ y no resuelve ningún problema completo, así que no se sabe dónde da por terminado el ejercicio."
+  - "¿Con cuántos vectores plantea el problema de parcial? Aquí se practica con tres tramos, que es más largo que cualquier planteamiento de la presentación."
 ---
 
 import Nota from '../../../componentes/Nota.astro';
@@ -249,30 +246,24 @@ Cada símbolo, con lo que significa y en qué se mide:
 | $\theta$ | ángulo desde el eje $x$ positivo, en sentido antihorario | grados (adimensional) |
 | $\hat{i}$, $\hat{j}$ | unitarios de los ejes, de magnitud 1 | ninguna |
 
-Sobre $\theta$ hay que ser explícito, porque de ahí cuelga todo lo demás. Que se mida **desde el eje
-$x$ positivo, girando en sentido antihorario, de $0^\circ$ a $360^\circ$ y en grados** es una
-**suposición del proyecto, no un dato de la presentación**: en las 28 diapositivas ella usa $\theta$
-sin ponerle nunca un valor numérico, y la figura de la diapositiva 15 dibuja únicamente el primer
-cuadrante, que es justo donde todas las convenciones posibles coinciden y por eso no permite decidir.
-Se adopta esa convención porque es la estándar y porque es la única con la que el signo de cada
-componente sale solo de la función trigonométrica. Está anotada como duda abierta al final: si en el
-tablero ella mide el ángulo desde el eje más cercano al vector, las fórmulas siguen sirviendo, pero
-el signo deja de salir solo y toca ponerlo mirando el dibujo.
+Sobre $\theta$ hay que ser explícito, porque de ahí cuelga todo lo demás. **El ángulo se mide desde
+el eje $x$ positivo, girando en sentido antihorario, y recorre $0^\circ \le \theta \lt 360^\circ$.**
+Medir desde $+x$ y girar en antihorario es la convención estándar; el rango completo, en vez de
+ángulos negativos, es la elección de este sitio, y es la que hace que el signo de cada componente
+salga solo de la función trigonométrica, sin ponerlo a mano mirando el dibujo. Los ángulos van en
+**grados**, siempre con el símbolo $^\circ$ escrito: el radián es la unidad del Sistema Internacional
+para el ángulo plano, pero el grado es de uso aceptado junto a él y es el que se usa en enunciados y
+respuestas; el radián se vuelve obligatorio más adelante, cuando el ángulo entra en un cálculo
+diferencial. Lo único que hay que revisar antes de calcular es el modo de la calculadora: si está en
+radianes, lee el $25$ de $\cos 25^\circ$ como $25\ \mathrm{rad}$ y devuelve un número que no tiene
+nada que ver.
 
 <Nota tipo="ojo">
 
-La fórmula del seno aparece en la presentación con dos abreviaturas distintas, y **de dónde viene
-cada una es lo que decide**. El único $\mathrm{sen}$ de todo el documento está en la diapositiva 15,
-y esa diapositiva **completa está fuera de su plantilla**: es la única del bloque 15–18 sin la barra
-de título de Beamer, compuesta en Arial y con las fórmulas en la tipografía serif de OpenOffice Math.
-No es un objeto ajeno pegado dentro de una lámina suya: es una lámina entera importada. El único
-$\sin$ que sí está compuesto con su plantilla es el de la diapositiva 22, $C = AB\sin\theta$.
-
-Es **la misma función** y solo cambia la abreviatura. Aquí se escribe $\sin$ en todas partes porque
-en las 28 diapositivas no hay ni un solo $\mathrm{sen}$ hecho con su plantilla, mientras que sí hay
-un $\sin$ que lo está. Aun así, cuál de las dos espera ver en el parcial es una duda abierta y no se
-cierra en esta lección: $\sin$ también es el comando por defecto de LaTeX, así que podría venir de la
-herramienta y no de una decisión suya.
+Aquí se escribe $\sin$, que es el símbolo fijado por la norma internacional de símbolos matemáticos y
+además el que ella misma usa en su plantilla, en la diapositiva 22: $C = AB \sin\theta$. La
+diapositiva 15 escribe $\mathrm{sen}$: es **la misma función**, así que reconócela en el parcial
+escrita de cualquiera de las dos maneras.
 
 </Nota>
 

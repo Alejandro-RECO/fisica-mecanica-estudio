@@ -13,6 +13,7 @@ prerrequisitos:
 conceptos_clave:
   - Una magnitud escalar queda completamente descrita por un valor numérico y su unidad.
   - Una magnitud vectorial necesita además una dirección; sin ella no queda determinada.
+  - Un vector queda determinado por dos elementos, magnitud y dirección, y la dirección ya lleva el sentido adentro; la terna módulo, dirección y sentido dice exactamente lo mismo.
   - La magnitud de un vector se escribe sin flecha y nunca es negativa.
   - Dos vectores son iguales si coinciden en magnitud y dirección, sin importar en qué punto se dibujen.
   - El vector opuesto conserva la magnitud e invierte el sentido.
@@ -69,10 +70,10 @@ fuentes:
     fecha: 2026-08-30
     aporta: >
       Infografía de otra procedencia, en estilo visual distinto al resto del documento, que
-      caracteriza el vector con tres elementos: módulo (la longitud de la flecha), dirección (la
-      recta sobre la que actúa) y sentido (hacia dónde apunta la flecha). Rotula además punto de
-      aplicación y ángulo θ como inclinación respecto de una referencia. Es el lado B de la
-      contradicción declarada.
+      caracteriza el vector con la terna módulo (la longitud de la flecha), dirección (la recta
+      sobre la que actúa) y sentido (hacia dónde apunta la flecha). Rotula además punto de
+      aplicación y ángulo θ como inclinación respecto de una referencia. Es la formulación que se
+      enseña en el colegio en Colombia, y la lección muestra que dice lo mismo que la dia. 5.
   - tipo: diapositivas
     ref: fuentes/precentaciones/VectoresFisica.pdf
     diapositiva: 7
@@ -103,11 +104,11 @@ fuentes:
     aporta: >
       La convención completa de medida del ángulo que usa esta lección y toda la unidad: θ se mide
       desde el eje x positivo, girando en sentido antihorario, con rango completo de 0° a 360° y en
-      grados. Es una suposición del proyecto, no de la docente: en las 28 diapositivas no hay un
-      solo ángulo con valor numérico, la dia. 6 rotula θ como inclinación respecto de una
-      referencia sin decir cuál, y la dia. 15 solo dibuja el primer cuadrante. Es la convención
-      estándar y la que hace que el coseno y el seno traigan solo el signo correcto en la lección
-      04. Duda abierta con la docente.
+      grados. No sale de la presentación: en las 28 diapositivas no hay un solo ángulo con valor
+      numérico, la dia. 6 rotula θ como inclinación respecto de una referencia sin decir cuál, y la
+      dia. 15 solo dibuja el primer cuadrante. Se adopta la convención matemática estándar, que es
+      la que hace que el coseno y el seno traigan ya el signo correcto en los cuatro cuadrantes en
+      la lección 04.
   - tipo: deduccion
     aporta: >
       Que el rango completo de 0° a 360° es la premisa que sostiene el criterio del ángulo. Si θ
@@ -116,8 +117,11 @@ fuentes:
       caerían.
   - tipo: deduccion
     aporta: >
-      Que escribir las condiciones de igualdad y de oposición con el ángulo θ las vuelve
-      independientes de cuál de las dos lecturas de la palabra dirección sea la correcta.
+      Que la terna módulo, dirección y sentido de la dia. 6 y el par (A, θ) con θ de 0° a 360°
+      guardan exactamente la misma información: la recta de acción es θ tomada módulo 180° y el
+      sentido es lo que falta para completar el giro entero. De ahí que un vector quede
+      determinado por dos elementos y no por tres, y que las dos formulaciones no se contradigan.
+      Ella no lo dice: enuncia cada una en su diapositiva y no las compara.
   - tipo: deduccion
     aporta: >
       Que una misma fuerza aplicada sobre puntos distintos de un cuerpo extenso puede hacerlo girar
@@ -132,8 +136,9 @@ fuentes:
       sueltas y no dice cómo se contienen.
   - tipo: deduccion
     aporta: >
-      Que el vector no depende del punto donde se dibuje. Se lee de la figura de la dia. 7, que
-      pone A⃗ y B⃗ en puntos distintos del plano y aun así los llama iguales. Ella no lo enuncia.
+      Que el vector no depende del punto donde se dibuje, y el nombre de vector libre para esa
+      propiedad. Se lee de la figura de la dia. 7, que pone A⃗ y B⃗ en puntos distintos del plano y
+      aun así los llama iguales. Ella no lo enuncia ni usa el término.
   - tipo: deduccion
     aporta: >
       El vector nulo 0⃗ como caso límite A = 0, y la suma A⃗ + (−A⃗) = 0⃗ para vectores sobre una
@@ -144,62 +149,27 @@ fuentes:
       números. El PDF no resuelve ni un solo ejemplo numérico en sus 28 diapositivas.
   - tipo: deduccion
     aporta: >
-      Uso de grados para los ángulos (0°, 90°, 180° y 270°). El PDF nunca escribe un ángulo con
-      valor numérico, así que no dice si trabaja en grados o en radianes. Queda como duda declarada.
+      Uso de grados para los ángulos (0°, 90°, 180° y 270°), siempre con el símbolo °. El PDF nunca
+      escribe un ángulo con valor numérico, así que no dice si trabaja en grados o en radianes. Se
+      escogen los grados porque el radián es la unidad SI del ángulo plano y el grado es de uso
+      aceptado con el SI para enunciados y resultados; el radián solo se vuelve obligatorio cuando
+      el ángulo entra en un cálculo diferencial, que no ocurre en esta unidad.
 
-confianza: media
-estado: con-dudas
+confianza: alta
+estado: revisado
 revision:
   fecha: 2026-08-30
   veredicto: coherente-con-reparos
   chequeos: [aritmetica-exacta, coherencia-con-la-fuente, notacion, casos-limite]
   observaciones:
-    - "El argumento de la lectura provisional se sostiene: bajo el modelo de tres elementos, ambas expresiones de la diapositiva 8 pierden sentido y antiparalelos pasaria a ser subconjunto de paralelos, que la presentacion separa."
+    - "~~El argumento de la lectura provisional se sostiene:~~ ya no hay lectura provisional, pero el argumento sigue en pie y sostiene ahora la afirmacion: bajo el modelo de tres elementos, ambas expresiones de la diapositiva 8 pierden sentido y antiparalelos pasaria a ser subconjunto de paralelos, que la presentacion separa."
     - "La jerarquia iguales dentro de paralelos y opuestos dentro de antiparalelos, confirmada contra OpenStax 2.1."
     - "Reparo corregido: la convencion angular no estaba declarada. Se fijo para todo el sitio (theta desde +x, antihorario, de 0 a 360 grados) y se declaro como suposicion del proyecto, porque en 28 diapositivas no hay un solo angulo con valor numerico."
     - "Reparo corregido: el ejercicio media theta desde el norte mientras la leccion 04 la fija desde +x. Unificado."
-    - "Confianza media, no alta: la contradiccion sigue abierta y es fuente contra si misma, asi que la jerarquia de fuentes no la resuelve."
-contradicciones:
-  - afirmacion: cuántos elementos hacen falta para que un vector quede determinado
-    dice_a: >
-      La dia. 5, escrita con la plantilla de la docente, usa dos elementos: una cantidad vectorial
-      se especifica por completo mediante un valor numérico, con unidades apropiadas, y una
-      dirección.
-    dice_b: >
-      La dia. 6, una infografía de otra procedencia y en estilo visual distinto al resto del
-      documento, usa tres: módulo, dirección entendida como la recta sobre la que actúa, y sentido
-      entendido como hacia dónde apunta la flecha.
-    lectura_provisional: >-
-      el modelo de dos elementos, en el que la palabra dirección ya lleva el sentido adentro
-    por_que: >
-      Las dia. 7 y 8, también suyas, solo funcionan así: si dirección fuera únicamente la recta,
-      la expresión direcciones opuestas de la dia. 8 no significaría nada, y dos vectores
-      antiparalelos de igual magnitud caerían dentro de la definición de iguales de la dia. 7. Son
-      tres diapositivas suyas contra una infografía ajena. Queda abierta porque si el parcial
-      pregunta por los elementos de un vector, la respuesta esperada bien puede ser la terna
-      módulo, dirección y sentido, que es la que se enseña en el colegio en Colombia.
-dudas_para_docente:
-  - >
-    ¿Cuáles son los elementos de un vector: dos (valor numérico con unidades y dirección, dia. 5) o
-    tres (módulo, dirección y sentido, dia. 6)? Es exactamente la respuesta que habría que dar si
-    lo pregunta en el parcial.
-  - >
-    Cuando en la dia. 7 dice misma dirección, ¿está incluyendo el sentido? Es decir, dos vectores
-    que apuntan hacia lados contrarios, ¿tienen la misma dirección o direcciones distintas?
-  - >
-    ¿El punto de aplicación hace parte del vector? La dia. 6 lo rotula como un elemento, pero la
-    figura de la dia. 7 llama iguales a dos vectores dibujados en puntos distintos.
-  - >
-    ¿Desde qué eje y en qué sentido mide los ángulos: desde el eje x positivo girando en
-    antihorario, o desde el eje más cercano al vector? Y cuando el vector apunta hacia el
-    occidente, ¿escribe θ = 180° o θ = 0° con signo aparte? Ninguna diapositiva lo fija: la dia. 6
-    rotula θ como "inclinación respecto a una referencia" sin decir cuál, y la dia. 15 solo dibuja
-    el primer cuadrante. Aquí se asume desde el eje x positivo, en antihorario y de 0° a 360°, que
-    es la convención estándar. Importa en esta lección porque aquí se introduce el par (A, θ) y de
-    ese rango depende que el ángulo distinga un vector de su opuesto.
-  - >
-    ¿Los ángulos se trabajan en grados o en radianes? En las 28 diapositivas no aparece ni un
-    ángulo con valor numérico, así que el documento no lo dice.
+    - "~~Confianza media, no alta: la contradiccion sigue abierta y es fuente contra si misma, asi que la jerarquia de fuentes no la resuelve.~~ Superado el 2026-08-30. La contradiccion dia. 5 contra dia. 6 no la cerro ninguna autoridad sino la matematica: en el plano un vector queda fijado por dos numeros, (A, theta) con theta en el rango completo, y la terna modulo-direccion-sentido es ese mismo dato descompuesto. No habia dos lecturas incompatibles: habia dos formas de decir lo mismo. Fuera el bloque contradicciones; sube a alta y revisado."
+    - "Cerrada por norma el 2026-08-30 la convencion angular, que la observacion de arriba declaraba como suposicion del proyecto: theta desde +x, antihorario, de 0 a 360 grados es la convencion matematica estandar y se afirma sin disculpas. Queda un aviso de una linea por si en el tablero mide desde el eje mas cercano."
+    - "Corregida el 2026-08-30: el aparte del torque prometia que «se estudia bastante mas adelante en el curso», y el torque no aparece en ninguna de las 16 semanas del programa. Se conserva el aparte, porque separa el vector de su efecto sobre un cuerpo extenso y la dia. 6 rotula el punto de aplicacion, pero ya no anuncia una clase que no existe."
+dudas_para_docente: []
 ---
 
 import Nota from '../../../componentes/Nota.astro';
@@ -311,6 +281,12 @@ $$
 componentes que viene más adelante en la unidad: si dos números bastan, se puede escoger cuáles dos
 usar.
 
+Y esa misma cuenta responde de una vez por todas cuántos elementos tiene un vector: **dos, magnitud
+y dirección**, con el sentido incluido dentro de la dirección. No es una preferencia de estilo, es
+aritmética. Si la pareja $(A,\ \theta)$ —con $\theta$ recorriendo todo el giro— ya deja la flecha
+fijada sin ninguna ambigüedad, entonces no queda un tercer dato por dar; y si quedara, la pareja no
+alcanzaría y habría vectores distintos con el mismo par, cosa que no ocurre.
+
 Ahora bien, un ángulo suelto no dice nada mientras no se declare desde dónde se mide y hacia qué lado
 se gira. La convención que se usa en esta lección y en toda la unidad tiene **tres** partes, y hay
 que enunciarlas las tres:
@@ -318,6 +294,17 @@ que enunciarlas las tres:
 - **Desde dónde:** desde el **eje $x$ positivo**.
 - **Hacia qué lado:** girando en sentido **antihorario**, que es el sentido positivo.
 - **Hasta dónde:** con el **rango completo**, $0^{\circ} \le \theta \lt 360^{\circ}$, y en **grados**.
+
+Las dos primeras partes son la convención matemática estándar. La tercera, el rango completo en vez
+de ángulos negativos, es una elección de este sitio, y más abajo vas a ver por qué se tomó; otros
+textos, OpenStax entre ellos, escriben el mismo ángulo como negativo. En este sitio se usa esta
+convención sin excepción. Los ángulos van en
+**grados**, con el símbolo $^{\circ}$ siempre escrito: el radián es la unidad del SI para el ángulo
+plano y el grado es de uso aceptado junto a él, y el radián solo se vuelve obligatorio cuando el
+ángulo entra en un cálculo diferencial, cosa que no pasa en esta unidad. Un aviso para el parcial: en
+las 28 diapositivas no hay un solo ángulo con valor numérico y la diapositiva 15 dibuja $\theta$ desde
+el eje $x$ pero solo en el primer cuadrante, así que si en el tablero ella mide desde el eje más
+cercano al vector, reconoce la diferencia y convierte antes de operar.
 
 Con eso, los dos símbolos del par quedan declarados así:
 
@@ -335,28 +322,16 @@ apunta al occidente tiene $\theta = 180^{\circ}$, que son dos números distintos
 más abajo, cuando se escriban las condiciones de igualdad y de oposición con el ángulo, todo va a
 colgar de ella.
 
-<Nota tipo="ojo">
-
-**Esta convención la pone el proyecto, no la docente.** En las 28 diapositivas de la presentación no
-hay un solo ángulo con valor numérico; la diapositiva 6 rotula $\theta$ como "inclinación respecto a
-una referencia" sin decir cuál es la referencia, y la diapositiva 15 dibuja $\theta$ desde el eje $x$
-pero solo en el primer cuadrante. Se adoptó la convención estándar —desde $+x$, antihorario, de
-$0^{\circ}$ a $360^{\circ}$— porque es la que hace que el coseno y el seno traigan ya el signo
-correcto en los cuatro cuadrantes, que es lo que se usa en la lección de componentes. La duda está
-abierta y hay que preguntársela a ella: si en el tablero mide los ángulos desde el eje más cercano al
-vector, los signos se ponen a mano y varias cosas cambian de forma.
-
-</Nota>
-
-<Nota tipo="ojo">
-
-En esta lección la palabra **dirección incluye el sentido**, que es como la usan las diapositivas 5,
-7 y 8. Pero el asunto no está cerrado: mira el recuadro del comienzo de la página. En la práctica,
-si en el parcial te piden "los elementos de un vector", lo más seguro es nombrar los tres —módulo,
-dirección y sentido— y aclarar en un renglón que en el material del curso la dirección ya trae el
-sentido adentro.
-
-</Nota>
+En el colegio en Colombia se enseña la terna **módulo, dirección y sentido**, donde "dirección" es la
+recta sobre la que actúa la flecha y "sentido" es cuál de los dos lados de esa recta. Esa terna no es
+un modelo rival: describe el mismo dato. La **dirección de esa recta** —su inclinación, no la recta
+concreta sobre la que dibujaste la flecha— es $\theta$ tomada módulo $180^{\circ}$, y el sentido es
+exactamente lo que falta para completar el giro entero, de modo que inclinación más sentido
+reconstruyen la $\theta$ del rango completo, ni más ni menos. Es una descomposición didáctica de la
+pareja $(A,\ \theta)$, no un tercer dato independiente. En el material del curso conviven las dos
+formulaciones: la diapositiva 6 usa la terna y las diapositivas 5, 7 y 8 usan los dos elementos. Si
+en el parcial te piden los elementos de un vector, nombra la que prefieras y aclara en un renglón que
+la dirección con sentido adentro y el par recta más sentido son lo mismo.
 
 ## Qué cambia si cambia cada parte
 
@@ -376,15 +351,17 @@ sobre el carro, con $F = 400\ \mathrm{N}$ hacia el oriente:
 El último renglón es el que más cuesta y es el que la figura de la diapositiva 7 muestra sin decirlo:
 ahí $\vec{A}$ y $\vec{B}$ están dibujados en puntos distintos del plano y aun así ella los llama
 iguales. **Un vector no guarda memoria de dónde lo dibujaste.** Lo que lo define es la pareja
-magnitud y dirección, y nada más.
+magnitud y dirección, y nada más; por eso en álgebra vectorial se dice que los vectores son
+**libres** y se pueden trasladar por la hoja, que es justo lo que permite sumarlos gráficamente en la
+lección siguiente.
 
 Otra cosa distinta es el efecto físico. Una misma fuerza aplicada sobre puntos distintos de un cuerpo
 extenso puede hacerlo girar de maneras distintas —empujar una puerta junto a la chapa no es lo mismo
 que empujarla junto a la bisagra—, y por eso la infografía de la diapositiva 6 rotula el punto de
 aplicación. Pero eso es una propiedad de la fuerza sobre ese cuerpo, no un ingrediente del vector: el
-vector es el mismo. Ese efecto de giro tiene nombre, se llama torque, y se estudia bastante más
-adelante en el curso; **no aparece en ninguna de las 28 diapositivas de esta presentación** y aquí
-solo se menciona para separar dos cosas que se confunden.
+vector es el mismo. Ese efecto de giro tiene nombre —torque—, pero **no aparece en ninguna de las 28
+diapositivas de esta presentación ni en el programa de 16 semanas**; se nombra aquí solo para separar
+dos cosas que se confunden.
 
 </div>
 
@@ -432,14 +409,13 @@ que apunta al occidente apunta al oriente.
 
 <div class="amplia">
 
-Escribirlas con $\theta$ tiene una ventaja concreta: **no depende de cuál de las dos lecturas de la
-palabra "dirección" sea la correcta**, porque el ángulo distingue por sí solo el oriente
+Escribirlas con $\theta$ tiene una ventaja concreta: **no dejan ni un resquicio para discutir qué
+quiere decir la palabra "dirección"**, porque el ángulo distingue por sí solo el oriente
 ($\theta = 0^{\circ}$) del occidente ($\theta = 180^{\circ}$). Ojo con la premisa de la que esto
 cuelga: distingue **porque el rango es de $0^{\circ}$ a $360^{\circ}$**. Si $\theta$ fuera la
 inclinación de la recta, con rango hasta $180^{\circ}$, oriente y occidente compartirían ángulo y la
-condición $\theta_A = \theta_B$ no separaría $\vec{A}$ de $-\vec{A}$. Mientras la duda con la docente
-siga abierta, esta —con la convención declarada al lado— es la forma segura de escribir la condición
-en una hoja de examen.
+condición $\theta_A = \theta_B$ no separaría $\vec{A}$ de $-\vec{A}$. Con la convención declarada al
+lado, esta es la forma más segura de escribir la condición en una hoja de examen.
 
 De las cuatro definiciones sale una jerarquía que la presentación no dibuja pero que se deduce
 comparándolas:

@@ -59,7 +59,7 @@ fuentes:
     ref: fuentes/precentaciones/semana1.pdf
     diapositiva: 19
     fecha: 2026-08-30
-    aporta: "Factores de conversión escritos con punto decimal (1.609 km, 0.0254 m): la otra mitad de la disputa del separador."
+    aporta: "Factores de conversión escritos con punto decimal (1.609 km, 0.0254 m), que es la forma en que ella escribe los decimales en esa diapositiva."
   - tipo: deduccion
     aporta: "Por qué siempre existe un único a entre 1 y 10: se muestra dividiendo 450000 entre 10 repetidamente."
   - tipo: deduccion
@@ -76,26 +76,20 @@ fuentes:
     aporta: "La tabla oficial del SI tiene 24 prefijos e incluye deca o deka (da, 10¹) y hecto (h, 10²), que son los dos que la tabla de la diapositiva 16 omite al saltar de 10⁻¹ a 10³."
   - tipo: deduccion
     aporta: "Segunda parte del ejercicio propuesto (0,000045 m a μm y a mm), para practicar el patrón de la diapositiva 18."
-
-contradicciones:
-  - afirmacion: "Separador decimal en notación científica y en resultados numéricos"
-    dice_a: "Punto decimal en las diapositivas 14, 15 y 19: 4.5 × 10^5 y 3.2 × 10^-7 (dia. 14); 0.0032 (dia. 15); 1.609 km y 0.0254 m (dia. 19)"
-    dice_b: "Diapositiva 18: coma decimal — 250 g = 2,50 × 10^5 mg"
-    lectura_provisional: "coma decimal"
-    por_que: >
-      La diapositiva 18 es el único lugar donde la docente escribe el resultado de un ejercicio
-      resuelto por ella, que es justo lo que hay que reproducir a mano en el parcial; las otras
-      son datos de tabla. Además el texto de la diapositiva 14 dice con palabras "cuántas
-      posiciones se desplaza la coma decimal", y la coma es la convención de Colombia.
+  - tipo: abierta
+    ref: "https://www.bipm.org/en/committees/cg/cgpm/22-2003/resolution-10"
+    fecha: 2026-08-30
+    aporta: "Resolución 10 de la 22.ª CGPM (2003), texto resolutivo: «the symbol for the decimal marker shall be either the point on the line or the comma on the line». Reafirma además que los números pueden dividirse en grupos de tres y que ni puntos ni comas se insertan nunca entre los grupos. Ojo: la resolución NO dice cuál de los dos elegir."
+  - tipo: abierta
+    ref: "https://www.bipm.org/documents/20126/41483022/SI-Brochure-9-concise-EN.pdf/2fda4656-e236-0fcb-3867-36ca74eea4e3"
+    fecha: 2026-08-30
+    aporta: "Folleto conciso del SI, 9.ª ed. (BIPM): «the decimal marker may be either a point (i.e. a full stop) or a comma, depending on the circumstances. For documents in the English language a point is usual, but for many languages and in many countries a comma is usual»; y sobre agrupar, «this is not essential... the groups of three digits should be separated only by a space. Neither dots nor commas are ever inserted in the spaces between groups». Este es el criterio que sostiene la coma para el español de Colombia, y no la Resolución 10."
 
 dudas_para_docente:
-  - "¿Coma o punto decimal en el parcial?"
-  - "¿Se exige la forma normalizada (mantisa entre 1 y 10) o se acepta una respuesta como 45×10⁴?"
-  - "¿Entran en el parcial deca y hecto? No aparecen en la tabla de la diapositiva 16, que salta de 10⁻¹ a 10³."
   - "En 2,50×10⁵ mg usted conserva tres cifras significativas. ¿Se califica la cantidad de cifras significativas del resultado o basta con el valor?"
 
-confianza: media
-estado: con-dudas
+confianza: alta
+estado: revisado
 revision:
   fecha: 2026-08-30
   veredicto: coherente-con-reparos
@@ -106,8 +100,10 @@ revision:
     - "Los 20 bloques y 79 expresiones en línea pasados por el KaTeX del proyecto: 0 errores y 0 avisos. \\begin{aligned} con \\\\[2pt] verificado como válido."
     - "Reparo corregido: decía que correr la coma un lugar es un error del 1000 %; un factor de diez es 900 % hacia arriba y 90 % hacia abajo. Se quitó el porcentaje."
     - "Reparo corregido: el frontmatter atribuía 0.0032 a las diapositivas 14 y 19, y está en la 15."
-    - "Confianza media, no alta, únicamente porque la disputa del separador sigue abierta. La física y la aritmética dan para alta."
-    - "Podada el 2026-08-30: se quito la nota con los cuatro prefijos anadidos al SI en 2022 (ronna, quetta, ronto, quecto) y su fuente. Su tabla va de yocto a yotta y eso no cambia nada en un parcial. Se conserva la mencion de deca y hecto porque son un hueco de su propia tabla y hay una duda abierta sobre si entran."
+    - "~~Confianza media, no alta, únicamente porque la disputa del separador sigue abierta.~~ Superado el 2026-08-30: la disputa se cerró por norma (CGPM 22.ª, Res. 10) y la leccion sube a alta y revisado. La fisica y la aritmetica ya daban para alta."
+    - "Podada el 2026-08-30: se quito la nota con los cuatro prefijos anadidos al SI en 2022 (ronna, quetta, ronto, quecto) y su fuente. Su tabla va de yocto a yotta y eso no cambia nada en un parcial. Se conserva la mencion de deca y hecto porque son un hueco de su propia tabla."
+    - "Reparo corregido el 2026-08-30, detectado en revision: la nota afirmaba que la Resolucion 10 «manda usar el que sea costumbre en el idioma». La Resolucion 10 no manda eso: admite punto y coma y no impone ninguno. El criterio del idioma esta en el folleto conciso del SI, que se leyo aparte y se fich0 como segunda fuente. La conducta del sitio no cambia —coma—, su procedencia si. Ademas se unifico la escritura de los miles: agrupar no es esencial, y 1609,344 m se escribe sin agrupar, como en la leccion 04."
+    - "Cerrada por norma el 2026-08-30: el separador decimal deja de ser disputa. Fuera el bloque contradicciones y la nota con la tabla de evidencia diapositiva por diapositiva; queda una nota corta con la Resolucion 10 de la CGPM y una linea avisando que sus dia. 14, 15 y 19 usan punto. Tambien se cerraron la forma normalizada (definicion) y deca/hecto (son SI)."
 ---
 
 import Nota from '../../../componentes/Nota.astro';
@@ -411,21 +407,22 @@ $1\ \mathrm{mg} = 1 \times 10^{-6}\ \mathrm{kg}$. Esto es una deducción a parti
 que la presentación diga: el kilogramo es la única unidad base cuyo nombre ya trae prefijo, y esa
 rareza histórica es la que produce la confusión.
 
-<Nota tipo="ojo" titulo="Coma o punto: la presentación usa las dos">
+<Nota tipo="ojo" titulo="Por qué aquí el decimal es una coma">
 
-En esta lección todo va con **coma**, que es la lectura provisional mientras ella responde. Esta es
-la evidencia, escrita como aparece en cada diapositiva:
+Todo este sitio escribe los decimales con **coma**. Conviene decir con precisión qué manda la norma y
+qué no: la Resolución 10 de la 22.ª CGPM (2003) declara que el marcador decimal **será el punto o la
+coma**, y el folleto del SI agrega que cuál se use «depende de las circunstancias: en documentos en
+inglés lo usual es el punto, pero en muchos idiomas y en muchos países lo usual es la coma». O sea
+que la norma **permite las dos y no impone ninguna**; se escribe coma porque ese es el uso del
+español de Colombia.
 
-| Dónde | Qué escribe ella |
-|---|---|
-| Diapositiva 14 | $4.5 \times 10^{5}$, $3.2 \times 10^{-7}$ — **punto** |
-| Diapositiva 19 | $1.609\ \mathrm{km}$, $0.0254\ \mathrm{m}$ — **punto** |
-| Diapositiva 18 | $250\ \mathrm{g} = 2{,}50 \times 10^{5}\ \mathrm{mg}$ — **coma** |
+Lo que la norma sí cierra sin margen es el otro punto, que se confunde a menudo: agrupar las cifras
+de tres en tres **no es obligatorio** —«no es esencial», dice el folleto—, pero cuando se agrupan,
+**ni el punto ni la coma se ponen jamás entre los grupos**; solo un espacio. Por eso
+$1609{,}344\ \mathrm{m}$ está bien y $1.609{,}344\ \mathrm{m}$ está mal.
 
-Como el parcial es a mano, esto importa. Mientras ella responde: el valor bien calculado es lo que no
-se discute, así que asegúrate primero de que el número esté correcto y después usa el mismo separador
-en toda la hoja. Escribir $4{,}5$ en un renglón y $4.5$ en el siguiente es lo único que seguro se ve
-mal.
+En las diapositivas 14, 15 y 19 ella escribe los decimales con punto, a la anglosajona: reconócelo
+cuando lo veas, pero escribe tú con coma y no mezcles los dos separadores en la misma hoja.
 
 </Nota>
 

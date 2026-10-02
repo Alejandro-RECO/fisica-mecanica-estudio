@@ -1,13 +1,20 @@
 ---
 titulo: Trabajo, energía y potencia
 orden: 7
+bloque: Dinámica y energía
+semanas: "9–14"
 resumen: >
-  Otra forma de resolver los mismos problemas, que a veces no necesita conocer las fuerzas instante a instante.
+  Trabajo, energía cinética y potencial, conservación de la energía mecánica y potencia.
 estado: sin-material
 ---
 
-La energía es un atajo poderoso: hay problemas que con fuerzas exigen resolver una ecuación
-diferencial y con conservación de la energía se resuelven en dos renglones.
+Del programa oficial de 16 semanas:
 
-Es la unidad más larga del curso — seis semanas, del trabajo de una fuerza constante hasta potencia y
-máquinas simples — y la que más peso tiene en el tercer corte, que vale el 45 % de la nota.
+- **Semana 9** — Trabajo de fuerzas constantes.
+- **Semana 10** — Trabajo de fuerzas variables.
+- **Semana 11** — Energía cinética.
+- **Semana 12** — Energía potencial.
+- **Semana 13** — Conservación de la energía mecánica.
+- **Semana 14** — Potencia y máquinas simples.
+
+Seis semanas: es la unidad más larga del programa.

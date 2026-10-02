@@ -68,6 +68,14 @@ fuentes:
       partes del vector se llaman cola (origen) y punta (cabeza).
   - tipo: diapositivas
     ref: fuentes/precentaciones/VectoresFisica.pdf
+    diapositiva: 7
+    fecha: 2026-08-30
+    aporta: >
+      Vectores iguales: dos vectores son iguales si tienen la misma dirección y magnitud, y la
+      figura los dibuja en puntos distintos del plano. Es lo que autoriza a trasladar los sumandos
+      para encadenarlos.
+  - tipo: diapositivas
+    ref: fuentes/precentaciones/VectoresFisica.pdf
     diapositiva: 8
     fecha: 2026-08-30
     aporta: >
@@ -81,6 +89,13 @@ fuentes:
     aporta: >
       La notación −B⃗ para el vector opuesto. Es la primera vez en toda la presentación que ese
       símbolo se escribe, y aparece rotulando la flecha volteada de la construcción de la resta.
+  - tipo: deduccion
+    aporta: >
+      Que los vectores son libres y se pueden trasladar por la hoja, y que por eso la "línea de
+      acción" de la dia. 1 es vocabulario de la anatomía de la flecha y no una restricción sobre la
+      construcción gráfica. Se deduce de la dia. 7, que llama iguales a dos vectores dibujados en
+      puntos distintos, y de las dia. 9 a 12, que trasladan los sumandos para encadenarlos. Ella no
+      usa el término vector libre.
   - tipo: deduccion
     aporta: >
       La expresión C⃗ = A⃗ − B⃗ = A⃗ + (−B⃗). La dia. 12 solo trae el dibujo y el interrogante; nunca
@@ -122,23 +137,8 @@ revision:
     - "Reparo corregido: error de factor diez. Medio milimetro a escala 1 cm : 20 N es 1 N, no 10 N."
 dudas_para_docente:
   - >
-    ¿Los ángulos se trabajan en grados o en radianes? El PDF usa θ en las dia. 6, 15, 19 y 23 pero
-    nunca con un valor numérico. Aquí se usan grados, que es lo natural con transportador, pero es
-    una elección de esta lección y no algo que diga la presentación.
-  - >
-    La dia. 9 titula "método del polígono" un dibujo de solo dos vectores. ¿Espera que se distinga
-    "método del triángulo" como nombre aparte para el caso de dos, o el nombre polígono cubre los dos
-    casos en su parcial?
-  - >
     ¿El parcial va a exigir construcción gráfica con regla y transportador, o el dibujo es solo apoyo
     para plantear y todo el cálculo se hace por componentes?
-  - >
-    La dia. 1 introduce "línea de acción del vector", pero la suma gráfica exige tratar los vectores
-    como libres: para encadenarlos hay que trasladarlos por la hoja, y al trasladarlos se abandona la
-    línea de acción original. ¿Espera que distingamos vector libre de vector con línea de acción fija,
-    o "línea de acción" es solo vocabulario de la anatomía de la flecha? No cambia ningún resultado de
-    esta lección, pero sí importa en dinámica, donde el punto en que se aplica una fuerza decide si el
-    cuerpo gira o no.
 ---
 
 import Nota from '../../../componentes/Nota.astro';
@@ -203,7 +203,10 @@ $\vec{B}$.
 
 Trasladar el vector está permitido y esa es la razón por la que el método funciona: dos flechas con
 la misma magnitud y la misma dirección son **el mismo vector**, sin importar en qué parte de la hoja
-estén dibujadas. Mover $\vec{B}$ hasta la punta de $\vec{A}$ no lo cambia.
+estén dibujadas. Mover $\vec{B}$ hasta la punta de $\vec{A}$ no lo cambia. En álgebra vectorial los
+vectores son **libres** justamente por eso, y la "línea de acción" que nombra la diapositiva 1 es
+vocabulario de la anatomía de la flecha: pasa a importar cuando se estudia el efecto de giro de una
+fuerza sobre un cuerpo extenso, que no es tema de esta unidad.
 
 La operación se escribe así:
 
@@ -218,7 +221,9 @@ velocidad**, igual que no existe sumar metros con kilogramos.
 
 Cuando son solo dos vectores, la cadena tiene tres lados y forma un triángulo: por eso a esta
 construcción se le dice **método del triángulo**. La diapositiva 9 la presenta bajo el título de
-*método del polígono*, que es el nombre general; el triángulo es el caso de dos.
+*método del polígono*, que es el nombre general. **No son dos métodos distintos**: es la misma
+construcción, y el triángulo es apenas el caso de dos vectores. Los dos nombres son intercambiables
+y no hay nada que distinguir entre ellos.
 
 ### El dibujo necesita una escala
 

@@ -1,18 +1,18 @@
 ---
 titulo: Magnitudes escalares y vectoriales
 orden: 3
+bloque: Fundamentos
+semanas: "2"
 resumen: >
-  Por qué algunas magnitudes necesitan dirección para significar algo, y cómo se opera con ellas.
+  Magnitud escalar y vectorial: qué las distingue y cómo se opera con vectores.
 estado: en-curso
 ---
 
-La diferencia entre 60 km/h y 60 km/h hacia el norte no es un detalle de notación: cambia qué se
-puede calcular. Una magnitud escalar queda descrita por un número y su unidad; una vectorial necesita
-además una dirección.
+Una magnitud escalar queda descrita por un número y su unidad; una vectorial necesita además una
+dirección. Esa diferencia es la que sostiene toda la unidad.
 
-Si esa dirección son uno o dos datos —dirección y sentido por separado, o los dos en uno— es
-justamente lo que la presentación de la docente no deja cerrado. La lección de escalares y vectores
-muestra las dos lecturas en vez de elegir en silencio.
+Las seis lecciones salen de `VectoresFisica.pdf`, que está fichado completo: suma y resta gráfica,
+vectores unitarios, componentes y suma analítica, producto escalar y producto vectorial.
 
-Casi todos los errores de signo del curso nacen aquí, en no haber declarado el sistema de referencia
-antes de escribir el primer número.
+Queda una duda abierta con la docente sobre si «dirección» incluye o no el sentido. Está declarada en
+la lección de escalares y vectores, con las dos lecturas a la vista.

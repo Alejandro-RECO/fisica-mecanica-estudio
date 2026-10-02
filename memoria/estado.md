@@ -2,26 +2,26 @@
 
 Tope duro: 25 líneas. Se **reescribe** al cerrar sesión, nunca se le agrega.
 
-**Unidades publicadas:** `magnitudes-y-medicion` (5 lecciones) y `vectores` (6). Las dos `en-curso`.
-**Cerrada:** 2026-08-30 · **Parcial 1: 31 ago – 4 sep**, cubre semanas 1–3 aprox.
-
-`semana1.pdf` y `VectoresFisica.pdf` quedan agotados. Nacen `con-dudas`
-`magnitudes/03` (separador decimal) y `vectores/01` (dirección incluye o no el sentido).
-Build verde con 22 páginas y UI sin problemas. Remoto privado en GitHub, al día.
+**Publicadas:** `magnitudes-y-medicion` (5) y `vectores` (6), las dos `en-curso`. **Parcial 1:
+31 ago – 4 sep**, semanas 1–3 aprox. `semana1.pdf` y `VectoresFisica.pdf` agotados. Al 2026-08-30
+**ninguna lección queda `con-dudas`**: se cerraron por norma el separador decimal, `sin`, la
+convención angular, grados, la mantisa normalizada, los factores exactos, el producto cruz en 3D y
+el unitario `Â`. La contradicción de «dirección incluye el sentido» la cerró la matemática, no una
+autoridad. Quedan 8 dudas abiertas y **todas son de evaluación**: qué pregunta y cómo califica.
+El menú agrupa las ocho unidades en tres bloques; las unidades sin material solo muestran el
+programa. Build verde, 21 páginas, `problemas: ninguno`. **Falta commit.**
 
 ## Pendientes (máximo 3)
 
-1. Fichar `cinematica1.pdf` + `graficas de cinematica1.pdf` (33 p). Es la otra mitad de la
-   semana 2 y toda la 3–4, así que **entra al Parcial 1**. Es lo más urgente.
+1. Fichar `cinematica1.pdf` + `graficas de cinematica1.pdf` (33 p): la otra mitad de la semana 2
+   y toda la 3–4, así que **entra al Parcial 1**. Lo más urgente.
 2. Fichar `incertidumbre_practica1.pdf` (15 p): cierra `magnitudes-y-medicion`.
-3. Borrar `cinematica-1d/03-velocidad-media-e-instantanea.mdx`, la lección de prueba.
 
 ## Errores vivos (máximo 3)
 
-Ninguno de estudio. **Del flujo sí:** una unidad de 6 lecciones costó 18 invocaciones de
-agente (6 escribir + 6 revisar + 6 corregir) y unas 3 horas. Ver `decisiones.md`: los
-reparos de una o dos líneas los aplica el orquestador, sin abrir un agente por lección.
+**Citar de memoria una norma que no se abrió.** Se le atribuyó a la Resolución 10 de la CGPM un
+mandato que no contiene; lo atrapó `revisor-conceptual`. Al cerrar por norma, la norma se lee.
 
 ## Siguiente paso
 
-`/capturar-clase` con `cinematica1.pdf`, ya con el flujo corto.
+`/capturar-clase` con `cinematica1.pdf`.

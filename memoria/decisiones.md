@@ -60,6 +60,40 @@ No entra el razonamiento que llevó a la decisión, solo la decisión.
   poner **un** ejemplo numérico. Fuera: contexto enciclopédico, temas de semanas futuras, temas que
   no están en el programa, segundos ejemplos. Una fuente abierta sirve para **verificar** un dato de
   ella, no para agregar material; si confirma lo escrito sin cambiar nada, no se cita.
+- **2026-08-30** — **Nivel 0 de la jerarquía: la norma internacional decide la notación.** Pedido por
+  el usuario. SI/BIPM e ISO 80000 mandan sobre la docente en marcador decimal, separador de miles,
+  `sin` contra `sen`, mantisa normalizada, convención angular, radián contra grado y factores de
+  conversión exactos. **Su alcance es estrecho:** no decide qué se enseña ni con qué profundidad, que
+  lo sigue fijando ella. Donde su notación difiera, el sitio escribe la norma y lo avisa en una línea.
+- **2026-08-30** — **Corregida la atribución del separador decimal**, que en la primera pasada se le
+  colgó entera a la Resolución 10. La Res. 10 admite punto y coma y **no impone ninguno**; el criterio
+  de elegir según el idioma está en el **folleto conciso del SI**, que es un segundo documento y hubo
+  que leerlo aparte. La conducta no cambió —coma— pero su procedencia sí, y la revisión conceptual
+  atrapó el desvío: el sitio afirmaba que la norma «manda» algo que la norma no manda.
+- **2026-08-30** — **Cerradas por norma, sin preguntarle:** coma decimal y prohibición de punto o coma
+  entre grupos de miles; `sin`; θ desde +x antihorario de 0° a 360°; grados con `°` y radián en
+  cálculo; mantisa entre 1 y 10; in, ft, yd y mi exactos por definición y por tanto sin efecto sobre
+  las cifras significativas; producto cruz en 3D con el plano como caso particular; triángulo como
+  caso de dos del polígono; unitario `Â`; vector libre. `dudas.md` conserva el detalle.
+- **2026-08-30** — **Un vector tiene dos elementos: magnitud y dirección, y la dirección incluye el
+  sentido.** Cierra la contradicción de `VectoresFisica.pdf` (dia. 5 contra dia. 6) sin preguntarle,
+  porque no la decide una autoridad sino la matemática: en el plano bastan dos números, (A, θ) con θ
+  en el rango completo. La terna módulo–dirección–sentido es ese mismo dato descompuesto.
+- **2026-08-30** — **El corchete `[Q]` sigue significando dimensión, apartándose de ISO 80000-1**, que
+  lo reserva para la unidad y escribe `dim Q`. Se elige el uso de Serway, Young y Tipler porque son
+  los libros que el estudiante tiene enfrente. Es la única excepción al nivel 0 y está declarada.
+- **2026-08-30** — **La ficha de una unidad sin material fichado no lleva prosa propia.** Muestra las
+  filas del programa oficial que le tocan y una línea diciendo que falta el material. Las seis
+  unidades vacías tenían párrafos escritos de memoria del modelo: de qué trata la dinámica, cuánto
+  pesa el tercer corte, qué es lo difícil de la energía. Nada de eso salía de una diapositiva leída.
+- **2026-08-30** — **El glosario solo admite términos de una unidad ya fichada.** Tenía tres entradas
+  de cinemática (sistema de referencia, desplazamiento, velocidad media) sin un solo PDF fichado
+  detrás. Se borraron; vuelven cuando se fiche `cinematica1.pdf`.
+- **2026-08-30** — **El menú agrupa las ocho unidades en tres bloques** —`Fundamentos`, `Cinemática`,
+  `Dinámica y energía`— por el campo `bloque` del frontmatter, y muestra las `semanas` del programa.
+  El orden de los grupos **se deriva** del `orden` mínimo de sus unidades: no hay lista de bloques
+  escrita a mano, igual que no hay lista de lecciones. Las lecciones van plegadas y solo se abren en
+  la unidad en la que estás.
 - **2026-08-30** — **Presupuesto por unidad:** 7 agentes (1 curador + 6 tutores), **una** pasada de
   revisión sobre toda la unidad, ~4 min por agente. Las correcciones de menos de 5 líneas las aplica
   el orquestador con `Edit`. **Nadie reabre una fuente ya fichada**: la ficha del curador lleva la

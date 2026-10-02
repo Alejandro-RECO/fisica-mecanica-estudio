@@ -33,7 +33,7 @@ Prerrequisitos del curso: Cálculo Diferencial e Integral.
 |---|---|---|---|---|
 | `magnitudes-y-medicion` | Magnitudes, unidades y medición | 1 | `semana1.pdf` (26 p, texto) · `incertidumbre_practica1.pdf` (15 p, imágenes) | `semana1.pdf` fichado y con 5 lecciones publicadas; **falta `incertidumbre_practica1.pdf`**, que cubre la parte de medición del programa |
 | `calculo-para-fisica` | Derivadas y primitivas como herramienta | transversal | `derivadasyprimitivasprint.pdf` (35 p, texto) | sin fichar |
-| `vectores` | Magnitudes escalares y vectoriales | 2 | `VectoresFisica.pdf` (28 p, imágenes) | **fichado** (`memoria/sesiones/2026-08-30-vectores.md`): 6 lecciones propuestas. Sin lecciones escritas todavía. El PDF define todo y **no resuelve un solo ejemplo numérico** |
+| `vectores` | Magnitudes escalares y vectoriales | 2 | `VectoresFisica.pdf` (28 p, imágenes) | **fichado** (`memoria/sesiones/2026-08-30-vectores.md`) y con **6 lecciones publicadas**. El PDF queda agotado: define todo y **no resuelve un solo ejemplo numérico** |
 | `cinematica-1d` | Movimiento en una dimensión | 2–4 | `cinematica1.pdf` (24 p, imágenes) · `graficas de cinematica1.pdf` (9 p, imágenes) | sin fichar |
 | `cinematica-2d` | Movimiento en el plano | 5–6 | — | sin material |
 | `dinamica` | Fuerzas y leyes de Newton | 7–8 | — | sin material |
@@ -64,3 +64,9 @@ devuelve catorce caracteres. Hay que renderizarlas con `herramientas/render-pdf.
 - `curador-clase` clasifica cada tema contra esta tabla. Si un tema no encaja, lo reporta en vez de
   forzarlo.
 - Los ids **no cambian a la ligera**: son parte de las rutas del sitio.
+- Cada unidad lleva en su frontmatter el `bloque` con el que se agrupa en el menú —`Fundamentos`,
+  `Cinemática`, `Dinámica y energía`— y la etiqueta `semanas` de esta misma tabla. El menú deriva los
+  grupos de ahí, así que una unidad nueva se acomoda sola.
+- **La ficha de una unidad sin material fichado no lleva prosa propia:** solo las filas del programa
+  que le corresponden y una línea diciendo que falta el material. Escribir de qué trata una unidad
+  cuya presentación nadie ha leído es memoria del modelo con formato de fuente.

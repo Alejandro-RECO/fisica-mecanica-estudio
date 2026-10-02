@@ -1,13 +1,14 @@
 ---
 titulo: Movimiento en el plano
 orden: 5
+bloque: Cinemática
+semanas: "5–6"
 resumen: >
-  Tiro parabólico y movimiento circular: dos movimientos a la vez, cada uno con su propia cuenta.
+  Tiro parabólico y movimiento circular uniforme.
 estado: sin-material
 ---
 
-El salto conceptual de esta unidad es descubrir que un movimiento en el plano son **dos movimientos
-independientes** ocurriendo al mismo tiempo. En el tiro parabólico, la horizontal no sabe nada de la
-vertical: se resuelven por separado y solo comparten el reloj.
+Del programa oficial de 16 semanas:
 
-El movimiento circular agrega una idea incómoda: se puede estar acelerando sin cambiar de rapidez.
+- **Semana 5** — Movimiento en dos dimensiones, tiro parabólico.
+- **Semana 6** — Movimiento circular uniforme, velocidad y aceleración tangencial, aceleración centrípeta.

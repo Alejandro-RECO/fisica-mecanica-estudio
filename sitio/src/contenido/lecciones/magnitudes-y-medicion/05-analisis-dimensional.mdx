@@ -77,7 +77,7 @@ fuentes:
   - tipo: deduccion
     aporta: "Ejercicio propuesto y su solución: homogeneidad de dos ecuaciones de cinemática y exponentes del periodo de un péndulo."
   - tipo: deduccion
-    aporta: "Que la ecuación de referencia del punto 2 es v² = v₀² + 2a(x − x₀) y no v² = v₀² + 2ax: con x₀ definida como una posición inicial cualquiera, lo que multiplica a 2a tiene que ser la diferencia de posiciones. La forma exacta que usa la docente está pendiente de fichar cinematica1.pdf y la duda queda abierta; el diagnóstico dimensional del ejercicio no depende de cuál se elija, porque las tres formas dan L²T⁻²."
+    aporta: "Que la ecuación de referencia del punto 2 es v² = v₀² + 2a(x − x₀) y no v² = v₀² + 2ax: con x₀ definida como una posición inicial cualquiera, lo que multiplica a 2a tiene que ser la diferencia de posiciones. Esa es la forma general, y v² = v₀² + 2ax es su caso particular con x₀ = 0; el diagnóstico dimensional del ejercicio no depende de cuál se escriba, porque las tres formas dan L²T⁻²."
   - tipo: deduccion
     aporta: "Que la dimensión y la unidad son dos chequeos separados: dentro del SI, por ser coherente, coinciden, pero km/h y m/s comparten LT⁻¹ sin ser la misma unidad, y por eso la diapositiva 22 los pide aparte."
   - tipo: deduccion
@@ -86,8 +86,6 @@ fuentes:
 dudas_para_docente:
   - "La diapositiva 26 pide la forma más simple de la ecuación. ¿Espera la respuesta con la constante escrita, a = k·v²/r, o tomando k = 1?"
   - "¿En el parcial exige la comprobación dimensional escrita como paso del desarrollo, o solo el resultado final?"
-  - "¿Cómo escribe la tercera ecuación de cinemática: v² = v₀² + 2a(x − x₀), v² = v₀² + 2aΔx, o v² = v₀² + 2ax dando por hecho x₀ = 0? Aquí se usó la primera forma, que es la general. No se puede cerrar hasta fichar cinematica1.pdf."
-  - "¿Escribe las funciones trigonométricas como sen o como sin? En el sitio se escribe sin, porque así aparece en su propia plantilla en VectoresFisica.pdf (dia. 22). No se cierra: sin es también el comando por defecto de LaTeX, así que pudo no ser una elección suya."
 
 confianza: alta
 estado: revisado
@@ -104,6 +102,8 @@ revision:
     - "El ejemplo de la diapositiva 25 reproduce el método y la notación de la docente, incluido el interrogante sobre el igual."
     - "Editada después de revisada, con autorización: la función trigonométrica pasó de sen a sin. Al fichar VectoresFisica.pdf apareció que la docente escribe «C = AB sin θ» en su propia plantilla (dia. 22), y ella es la autoridad final. Es el único cambio posterior a la revisión y no toca ninguna física."
     - "Podada el 2026-08-30: fuera la justificacion por serie de potencias con la exponencial y el seno de omega t, fuera el contraste con la fisica real del pendulo (constante 2 pi, umbral de 15 grados) y fuera las tres fuentes externas que solo confirmaban lo ya escrito. Nada de eso esta en las diapositivas 22 a 26. El ejercicio del pendulo se conserva porque aplica el metodo de exponentes incognita de la dia. 26."
+    - "Cerradas por norma el 2026-08-30, y eso deja obsoletas dos observaciones de arriba: la forma de la tercera ecuacion de cinematica ya no espera a fichar cinematica1.pdf, porque v² = v₀² + 2a(x − x₀) es la forma general y 2ax es su caso particular; y el paso de sen a sin se apoya ahora en dos patas, no en una: la norma internacional de simbolos matematicos y la dia. 22, donde ella escribe C = AB sin theta en su propia plantilla. La segunda es la verificable, y por eso no se retira."
+    - "Segunda poda el 2026-08-30: fuera el parrafo que adelantaba a = v²/r como resultado ya cerrado y que anunciaba que la constante del pendulo vale 2 pi. Lo primero desarrolla un tema de la semana 6; lo segundo habia quedado huerfano al podar el contraste con el pendulo real, asi que anunciaba un dato que la leccion ya no da. Se conserva el parrafo anterior, que si es de esta leccion: el analisis dimensional no entrega la constante."
 ---
 
 import Nota from '../../../componentes/Nota.astro';
@@ -400,14 +400,6 @@ dimensiones y no deja rastro. Tomar $k = 1$ es escribir *la forma más simple*, 
 enunciado — no es haber demostrado que $k$ valga uno. Ese valor tiene que salir por otra vía: un
 experimento o la deducción completa del movimiento circular, que en el programa aparece en la
 semana 6, fuera de esta unidad.
-
-Vale la pena adelantar cómo termina la historia, con la precaución de no confundir las dos cosas: en
-este caso concreto **la constante sí vale uno**, y la aceleración centrípeta de un movimiento
-circular uniforme es $a = v^{2}/r$ sin ningún factor numérico delante. Pero eso no lo demostró el
-análisis dimensional; lo dice la deducción del movimiento circular, que harás en la semana 6, y aquí
-solo se está anticipando el resultado. Que la forma más simple coincida con la correcta fue suerte, y
-no siempre pasa: en el ejercicio del péndulo, al final de esta lección, la constante resulta ser
-$2\pi$.
 
 </Nota>
 

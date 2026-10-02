@@ -7,7 +7,8 @@
       "WebFetch(domain:hyperphysics.phy-astr.gsu.edu)",
       "WebFetch(domain:katex.org)",
       "WebFetch(domain:hyperphysics.gsu.edu)",
-      "WebFetch(domain:phys.libretexts.org)"
+      "WebFetch(domain:phys.libretexts.org)",
+      "PowerShell(try { Get-NetTCPConnection -LocalPort 4321 -State Listen -ErrorAction Stop | Select-Object -ExpandProperty OwningProcess -Unique | ForEach-Object { Stop-Process -Id $_ -Force }; \"preview matado\" } catch { \"nada escuchando en 4321\" })"
     ]
   }
 }

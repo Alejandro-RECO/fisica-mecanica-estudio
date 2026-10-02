@@ -14,7 +14,7 @@ prerrequisitos:
 conceptos_clave:
   - Un vector unitario tiene magnitud exactamente 1 y no tiene unidades; su único aporte es la dirección.
   - El unitario de un vector se obtiene dividiéndolo entre su propia magnitud, que es un escalar.
-  - Todo vector se puede separar en magnitud por dirección, A⃗ = |A⃗| û.
+  - Todo vector se puede separar en magnitud por dirección, A⃗ = |A⃗| Â.
   - î, ĵ y k̂ son los unitarios de los ejes x, y, z, y de ahí sale A⃗ = Aₓî + A_yĵ.
   - El vector nulo no tiene unitario porque no tiene dirección.
 errores_frecuentes:
@@ -26,8 +26,8 @@ tiempo_estudio_min: 26
 
 esencial:
   - "Un unitario es un vector de magnitud exactamente 1 y sin unidades: solo dice hacia dónde."
-  - "û = A⃗ / |A⃗|. Se divide entre la magnitud, que es un escalar; un vector nunca se divide entre otro vector."
-  - "Al revés, A⃗ = |A⃗| û separa cuánto de hacia dónde, y de ahí sale A⃗ = Aₓî + A_yĵ."
+  - "Â = A⃗ / |A⃗|, con el sombrero sobre la misma letra del vector. Se divide entre la magnitud, que es un escalar; un vector nunca se divide entre otro vector."
+  - "Al revés, A⃗ = |A⃗| Â separa cuánto de hacia dónde, y de ahí sale A⃗ = Aₓî + A_yĵ."
   - "El vector nulo no tiene unitario: no apunta a ninguna parte y el denominador daría cero."
 tiempo_repaso_min: 5
 
@@ -78,12 +78,16 @@ fuentes:
       herramienta para calcular el denominador del unitario; se desarrolla en la lección 04.
   - tipo: deduccion
     aporta: >
-      Obtención de û = A⃗/|A⃗| exigiéndole magnitud 1 a un múltiplo escalar positivo de A⃗, y la
-      identidad inversa A⃗ = |A⃗| û. La presentación da la definición pero nunca la fórmula.
+      Obtención de Â = A⃗/|A⃗| exigiéndole magnitud 1 a un múltiplo escalar positivo de A⃗, y la
+      identidad inversa A⃗ = |A⃗| Â. La presentación da la definición pero nunca la fórmula. La
+      notación Â, con el sombrero sobre la misma letra del vector, es la estándar y extiende la que
+      ella usa para î, ĵ y k̂; û queda para un unitario genérico que no viene de ningún vector con
+      nombre.
   - tipo: deduccion
     aporta: >
       El carácter adimensional del unitario visto como cancelación de unidades entre numerador y
-      denominador. La diapositiva 13 afirma "sin dimensiones" sin justificarlo.
+      denominador, y la escritura [Â] = 1. La diapositiva 13 afirma "sin dimensiones" sin
+      justificarlo.
   - tipo: deduccion
     aporta: >
       El paso intermedio A⃗ₓ = Aₓî, A⃗_y = A_yĵ, que conecta la descomposición de la dia. 15 con la
@@ -117,9 +121,8 @@ revision:
     - "Reparo corregido: dos formulas de la diapositiva 15 estaban archivadas como deduccion propia mientras la leccion 04 las citaba como fuente. La unidad se contradecia sobre la procedencia de la misma ecuacion."
 dudas_para_docente:
   - "¿Las coordenadas cilíndricas y esféricas de la dia. 13 entran en el parcial? Aparecen como dos figuras sin una sola fórmula y el PDF no las vuelve a usar en las quince diapositivas siguientes."
-  - "El PDF nunca escribe el unitario de un vector cualquiera: solo î, ĵ y k̂. La notación û de esta lección es del proyecto. ¿Cómo lo escribe ella en el tablero, û o Â?"
   - "No hay ni un ejemplo numérico en las 28 diapositivas, así que no se sabe con qué nivel de dificultad plantea un problema de vectores."
-  - "¿El corchete [·] lo usa ella para la dimensión ([F] = MLT⁻²) o para la unidad ([F] = N)? En este proyecto ya quedó fijado en 'dimensión', siguiendo la dia. 23 de la presentación de la semana 1, pero conviene confirmarlo antes del parcial porque de eso depende cómo se califica un desarrollo dimensional."
+  - "No es una pregunta, es una convención declarada: este sitio usa el corchete [Q] para la dimensión ([F] = MLT⁻²), que es la convención de los textos de física del curso y la que sigue la dia. 23 de la presentación de la semana 1. La norma internacional ISO 80000-1 reserva [Q] para la unidad y escribe dim Q para la dimensión. Queda anotado para que reconozcas la otra escritura si aparece, no para reabrir el punto."
 ---
 
 import Nota from '../../../componentes/Nota.astro';
@@ -149,20 +152,21 @@ la maquinaria de componentes que viene después.
 
 ## Cómo se construye el unitario de un vector
 
-Queremos, dado un vector $\vec{A}$ cualquiera, fabricar un vector $\hat{u}$ que apunte hacia el mismo
-lado y que mida 1. El sombrero, y no la flecha, es la señal de que ese vector ya está normalizado:
-así lo escribe la presentación para $\hat{i}$, $\hat{j}$ y $\hat{k}$.
+Queremos, dado un vector $\vec{A}$ cualquiera, fabricar un vector $\hat{A}$ que apunte hacia el mismo
+lado y que mida 1. El sombrero va sobre **la misma letra del vector**, y es la señal de que ese vector
+ya está normalizado: así lo escribe la presentación para $\hat{i}$, $\hat{j}$ y $\hat{k}$, y así se
+escribe aquí para cualquier vector con nombre.
 
 Empecemos por lo que significa "apuntar hacia el mismo lado". Multiplicar un vector por un escalar
 positivo lo estira o lo encoge, pero no lo gira: la flecha resultante queda sobre la misma recta y
 con el mismo sentido. Entonces todo vector con la dirección de $\vec{A}$ es de la forma
 
 $$
-\hat{u} = c\,\vec{A}, \qquad c \gt 0
+\hat{A} = c\,\vec{A}, \qquad c \gt 0
 $$
 
 donde $c$ es un escalar por determinar. Falta imponerle la otra condición, la de la magnitud. Como
-estirar por $c$ multiplica la longitud por $c$, se tiene $|\hat{u}| = c\,|\vec{A}|$, y le exigimos que
+estirar por $c$ multiplica la longitud por $c$, se tiene $|\hat{A}| = c\,|\vec{A}|$, y le exigimos que
 valga 1:
 
 $$
@@ -175,7 +179,7 @@ Ese despeje solo es legal si $|\vec{A}| \neq 0$, detalle que más abajo resulta 
 Reemplazando $c$ en la primera expresión queda la fórmula que vas a usar siempre:
 
 $$
-\hat{u} = \frac{\vec{A}}{|\vec{A}|}
+\hat{A} = \frac{\vec{A}}{|\vec{A}|}
 $$
 
 donde $\vec{A}$ es el vector original, en las unidades que tenga, y $|\vec{A}| = A$ es su magnitud, un
@@ -189,7 +193,7 @@ sobrevive ninguna unidad; lo que queda es un número puro con dirección. Escrit
 resultado es
 
 $$
-[\hat{u}] = 1
+[\hat{A}] = 1
 $$
 
 que se lee "el unitario es adimensional". Cuidado con ese corchete: $[\;\cdot\;]$ denota **la
@@ -203,7 +207,7 @@ Y si multiplicas los dos lados de la fórmula por $|\vec{A}|$, obtienes la ident
 importa:
 
 $$
-\vec{A} = |\vec{A}|\;\hat{u} = A\,\hat{u}
+\vec{A} = |\vec{A}|\;\hat{A} = A\,\hat{A}
 $$
 
 Léela en voz alta: **todo vector es su magnitud multiplicada por su dirección**. El primer factor
@@ -212,11 +216,12 @@ exactamente lo que le faltaba al taxi.
 
 <Nota tipo="ojo" titulo="Notación">
 
-La presentación **nunca escribe el unitario de un vector cualquiera**: solo aparecen $\hat{i}$,
-$\hat{j}$ y $\hat{k}$. El símbolo $\hat{u}$ de esta lección es una convención del proyecto, no de la
-docente, y está preguntado en la lista de dudas. Lo que sí es de ella, y es consistente en las 28
-diapositivas, es que **el vector lleva flecha** ($\vec{A}$), **la magnitud es la misma letra sin
-flecha** ($|\vec{A}| = A$) y **el unitario lleva sombrero**.
+Los tres símbolos de una misma letra dicen cosas distintas y hay que tenerlos separados: $\vec{A}$ es
+**el vector**, $A = |\vec{A}|$ es **su magnitud**, un número con unidades que nunca es negativo, y
+$\hat{A}$ es **su unitario**, que mide 1 y no tiene unidades. El sombrero va sobre la misma letra del
+vector; $\hat{u}$ se reserva para un unitario genérico que no viene de ningún vector con nombre. La
+presentación solo escribe $\hat{i}$, $\hat{j}$ y $\hat{k}$, así que si en el tablero ella nombra de
+otra manera el unitario de un vector cualquiera, es el mismo objeto.
 
 </Nota>
 
@@ -300,11 +305,11 @@ docente y no se rellena con lo que suene razonable.
 La fórmula tiene un numerador vectorial y un denominador escalar. Forzar los extremos es lo que
 muestra si la entendiste:
 
-| Si cambias esto | Le pasa esto a $\hat{u}$ | Por qué |
+| Si cambias esto | Le pasa esto a $\hat{A}$ | Por qué |
 |---|---|---|
 | $\vec{A}$ se vuelve el doble de largo | Nada, queda idéntico | El tamaño se duplica arriba y abajo, y se cancela |
-| $\vec{A}$ se reemplaza por $-\vec{A}$ | Se invierte: queda $-\hat{u}$ | Misma recta de acción, sentido contrario |
-| $\vec{A}$ ya medía 1 | $\hat{u} = \vec{A}$ | Dividir entre 1 no cambia nada; ya era su propio unitario |
+| $\vec{A}$ se reemplaza por $-\vec{A}$ | Se invierte: queda $-\hat{A}$ | Misma recta de acción, sentido contrario |
+| $\vec{A}$ ya medía 1 | $\hat{A} = \vec{A}$ | Dividir entre 1 no cambia nada; ya era su propio unitario |
 | Cambias las unidades de $\vec{A}$ | Nada | Numerador y denominador cambian igual |
 | $\vec{A} = \vec{0}$ | **No existe** | El denominador es cero |
 
@@ -313,7 +318,7 @@ ninguna parte, y por eso no hay ninguna flecha de tamaño 1 que lo represente. L
 niega a dividir entre cero y la física se niega por la misma razón. Cuando en un problema te dé
 $|\vec{A}| = 0$, la respuesta no es "el unitario es cero", es **"no está definido"**.
 
-El primer renglón, en cambio, es todo el propósito del concepto: $\hat{u}$ **no sabe nada del tamaño
+El primer renglón, en cambio, es todo el propósito del concepto: $\hat{A}$ **no sabe nada del tamaño
 de $\vec{A}$**. Dos velocidades distintas sobre la misma calle tienen el mismo unitario, y eso es lo
 que lo hace útil para separar lo que cambia de lo que no.
 
@@ -350,7 +355,7 @@ $$
 <Paso n="3" razon="Dividir un vector entre un escalar es dividir cada componente por ese mismo número. Los newton se cancelan arriba y abajo: por eso el resultado sale sin unidades.">
 
 $$
-\hat{u} = \frac{\vec{F}_1}{|\vec{F}_1|}
+\hat{F}_1 = \frac{\vec{F}_1}{|\vec{F}_1|}
 = \frac{(60\,\hat{i} + 80\,\hat{j})\ \mathrm{N}}{100\ \mathrm{N}}
 = 0{,}6\,\hat{i} + 0{,}8\,\hat{j}
 $$
@@ -360,7 +365,7 @@ $$
 <Paso n="4" razon="Comprobar que la magnitud da exactamente 1 cuesta diez segundos y atrapa cualquier error de cuenta anterior. Si no da 1, no es un unitario.">
 
 $$
-|\hat{u}| = \sqrt{(0{,}6)^{2} + (0{,}8)^{2}} = \sqrt{0{,}36 + 0{,}64} = \sqrt{1} = 1
+|\hat{F}_1| = \sqrt{(0{,}6)^{2} + (0{,}8)^{2}} = \sqrt{0{,}36 + 0{,}64} = \sqrt{1} = 1
 $$
 
 </Paso>
@@ -368,7 +373,7 @@ $$
 <Paso n="5" razon="Aquí se ve para qué sirve el concepto: el unitario guardó la dirección y ahora se la presta a una magnitud completamente distinta.">
 
 $$
-\vec{F}_2 = 250\ \mathrm{N}\;\hat{u}
+\vec{F}_2 = 250\ \mathrm{N}\;\hat{F}_1
 = 250\ \mathrm{N}\,(0{,}6\,\hat{i} + 0{,}8\,\hat{j})
 = (150\,\hat{i} + 200\,\hat{j})\ \mathrm{N}
 $$
@@ -377,7 +382,7 @@ $$
 
 <Paso n="6" razon="Comprobación dimensional y de coherencia. Toda respuesta se revisa contra lo que pedía el enunciado antes de entregarla.">
 
-El unitario salió de dividir newton entre newton, así que es adimensional: $[\hat{u}] = 1$.
+El unitario salió de dividir newton entre newton, así que es adimensional: $[\hat{F}_1] = 1$.
 Multiplicarlo por $250\ \mathrm{N}$ devuelve newton, que es lo que debe ser una fuerza,
 
 $$
@@ -401,7 +406,7 @@ Coincide. La operación cambió el tamaño y respetó la dirección, que era el 
 **"El unitario mide 1 metro."** Es el error más común y nace de una costumbre sana: en física todo
 número lleva unidades, así que la mente le pega una a ese 1. Pero el unitario salió de un cociente
 entre dos cantidades de las mismas unidades, y ahí no queda ninguna. No mide 1 metro ni 1 newton;
-mide 1. Si en un examen escribes $\hat{u} = 0{,}6\,\hat{i} + 0{,}8\,\hat{j}\ \mathrm{N}$, esos newton
+mide 1. Si en un examen escribes $\hat{A} = 0{,}6\,\hat{i} + 0{,}8\,\hat{j}\ \mathrm{N}$, esos newton
 sobran y son un error de física.
 
 **"Se divide el vector entre el vector."** La expresión es $\vec{A}/|\vec{A}|$, con barras. Abajo va
@@ -433,9 +438,9 @@ $$
 y sus magnitudes, $40\ \mathrm{km/h}$ y $25\ \mathrm{km/h}$. Sacando el unitario de cada una:
 
 $$
-\hat{u}_1 = \frac{-40\,\hat{j}\ \mathrm{km/h}}{40\ \mathrm{km/h}} = -\hat{j},
+\hat{v}_1 = \frac{-40\,\hat{j}\ \mathrm{km/h}}{40\ \mathrm{km/h}} = -\hat{j},
 \qquad
-\hat{u}_2 = \frac{-25\,\hat{j}\ \mathrm{km/h}}{25\ \mathrm{km/h}} = -\hat{j}
+\hat{v}_2 = \frac{-25\,\hat{j}\ \mathrm{km/h}}{25\ \mathrm{km/h}} = -\hat{j}
 $$
 
 **El símbolo que no cambió es $-\hat{j}$**, y no cambió porque el unitario es ciego al tamaño. La
@@ -446,7 +451,7 @@ Y ni siquiera depende del sistema de unidades. Como $40\ \mathrm{km/h} = 11{,}1\
 misma cuenta en unidades del SI da
 
 $$
-\hat{u}_1 = \frac{-11{,}1\,\hat{j}\ \mathrm{m/s}}{11{,}1\ \mathrm{m/s}} = -\hat{j}
+\hat{v}_1 = \frac{-11{,}1\,\hat{j}\ \mathrm{m/s}}{11{,}1\ \mathrm{m/s}} = -\hat{j}
 $$
 
 el mismo símbolo. La dirección no tiene unidades y por eso no se entera de en qué las estabas
@@ -472,13 +477,13 @@ $$
 Sale positiva, como debe ser toda magnitud, aunque una componente sea negativa. Ahora la división:
 
 $$
-\hat{u} = \frac{(-9\,\hat{i} + 12\,\hat{j})\ \mathrm{m/s}}{15\ \mathrm{m/s}} = -0{,}6\,\hat{i} + 0{,}8\,\hat{j}
+\hat{v} = \frac{(-9\,\hat{i} + 12\,\hat{j})\ \mathrm{m/s}}{15\ \mathrm{m/s}} = -0{,}6\,\hat{i} + 0{,}8\,\hat{j}
 $$
 
 Comprobación: $\sqrt{0{,}36 + 0{,}64} = 1$. El signo menos sobrevivió a la división, y tiene que
 sobrevivir: el viento va hacia el noroccidente y el unitario también.
 
-**2.** Magnitud por dirección, que es la identidad $\vec{A} = A\,\hat{u}$:
+**2.** Magnitud por dirección, que es la identidad $\vec{A} = A\,\hat{A}$:
 
 $$
 \vec{V} = 45\ \mathrm{m/s}\,(-0{,}6\,\hat{i} + 0{,}8\,\hat{j}) = (-27\,\hat{i} + 36\,\hat{j})\ \mathrm{m/s}
